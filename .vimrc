@@ -1,7 +1,8 @@
 syntax on
 set linebreak
 set spell
-set visualbell
+"" Do not like visual bell anymore
+"set visualbell
 imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 set wildmenu
 
