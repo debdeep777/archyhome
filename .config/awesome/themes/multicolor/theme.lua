@@ -16,7 +16,7 @@ theme.font                          = "droid-sans-monospace 10"
 theme.menu_bg_normal                = "#000000"
 theme.menu_bg_focus                 = "#000000"
 theme.bg_normal                     = "#000000"
-theme.bg_focus                      = "#000000"
+theme.bg_focus                      = "#444444"
 theme.bg_urgent                     = "#000000"
 theme.fg_normal                     = "#aaaaaa"
 theme.fg_focus                      = "#ff8c00"
@@ -63,7 +63,7 @@ theme.taglist_squares_sel           = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b.png"
 
 theme.tasklist_disable_icon         = true
-theme.tasklist_floating             = ""
+theme.tasklist_floating             = "#"
 theme.tasklist_maximized_horizontal = ""
 theme.tasklist_maximized_vertical   = ""
 
