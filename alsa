@@ -1,0 +1,10 @@
+# we have alsa.conf and alsa.conf.other. We want to interchange them.
+cp /usr/share/alsa/alsa.conf /usr/share/alsa/alsa.conf.tmp
+rm /usr/share/alsa/alsa.conf
+cp /usr/share/alsa/alsa.conf.other /usr/share/alsa/alsa.conf
+rm /usr/share/alsa/alsa.conf.other
+cp /usr/share/alsa/alsa.conf.tmp /usr/share/alsa/alsa.conf.other
+rm /usr/share/alsa/alsa.conf.tmp 
+
+
+
