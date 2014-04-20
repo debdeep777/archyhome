@@ -246,12 +246,14 @@ case ${TERM} in
 #        PS1="\[\$(load_color)\][\A\[${NC}\] "
         # User@Host (with connection type info):
         PS1="\[${SU}\]\u\[${NC}\]@\[${CNX}\]\h\[${NC}\]:"
+
         # PWD (with 'disk space' info):
         PS1=${PS1}"\[\$(disk_color)\]\W>\[${NC}\] "
         # Prompt (with 'job' info):
 #        PS1=${PS1}"\[\$(job_color)\]>\[${NC}\] "
         # Set title of current xterm:
 #        PS1=${PS1}"\[\e]0;[\u@\h] \w\a\]"
+
         ;;
     *)
 #        PS1="(\A \u@\h \W) > " # --> PS1="(\A \u@\h \w) > "
@@ -274,6 +276,7 @@ export HISTCONTROL=ignoredups
 export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 
 
+
 #============================================================
 #
 #  ALIASES AND FUNCTIONS
@@ -294,6 +297,16 @@ export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 # Add colors for filetype and  human-readable sizes by default on 'ls':
 alias ls='ls -h --color'
 
+function cd_
+{
+  [[ -d "$@" ]] || return 1
+  cd "$@"
+  echo $(pwd) > ~/.last_dir
+}
+
+# Renamed cd to cd and export the directory path we are entering
+alias cd='cd_'
+
 # Optional alias
 alias lx='ls -lXB'         #  Sort by extension.
 alias lk='ls -lSr'         #  Sort by size, biggest last.
@@ -305,6 +318,15 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 
 alias lscr='cmatrix -a -b -u 5; vlock -a'
 
+# A quick shortcut to my favourite working directory
+
+alias Lenovo='cd /storage/Lenovo/'
+
+# An experimental directory changing attempt from the last opened path
+# dmp to dump the current path in the file called .dumpedpath
+# ldp to load the path from the file .last_dir which was created by the modified "cd" alias. See the function cd_ for details.
+alias dmp='echo $(pwd) > ~/.dumpedpath'
+alias ldp='cd $(cat ~/.last_dir)'
 
 # LESS man page colors (makes Man pages more readable).
 export LESS_TERMCAP_mb=$'\E[01;31m'
