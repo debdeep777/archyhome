@@ -299,7 +299,7 @@ alias ls='ls -h --color'
 
 function cd_
 {
-  [[ -d "$@" ]] || return 1
+  #[[ -d "$@" ]] || return 1
   cd "$@"
   echo $(pwd) > ~/.last_dir
 }
