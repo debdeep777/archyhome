@@ -5,3 +5,9 @@ mv /usr/share/alsa/alsa.conf.other /usr/share/alsa/alsa.conf
 mv /usr/share/alsa/alsa.conf.tmp /usr/share/alsa/alsa.conf.other
 
 cat /usr/share/alsa/alsa.conf | grep "pcm.card "
+
+if [ $(cat /usr/share/alsa/alsa.conf | grep "pcm.card " | awk -F' ' '{printf $2}') -eq 2 ]
+then
+	echo "hi"
+	alsamixer -c 2
+fi
