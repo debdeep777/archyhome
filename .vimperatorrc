@@ -1,4 +1,4 @@
-set gui=nomenu
 set editor='xterm -e vim'
 highlight Normal -append font-size: 10pt
-
+noremap j <Down>
+noremap k <Up>
