@@ -740,3 +740,5 @@ for s = 1, screen.count() do screen[s]:connect_signal("arrange", function ()
       end)
 end
 -- }}}
+-- Commands to run at startup
+awful.util.spawn_with_shell("storage")
