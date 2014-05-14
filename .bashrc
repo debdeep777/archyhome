@@ -533,3 +533,4 @@ export PATH=$PATH:~/.myscr/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/s
 # The package bash-completion is needed
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
+
