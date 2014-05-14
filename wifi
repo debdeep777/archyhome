@@ -1,2 +1,0 @@
-systemctl restart netctl-auto@wlp6s0.service
-netctl-auto enable TIFRCAM
