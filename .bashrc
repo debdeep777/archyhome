@@ -527,3 +527,9 @@ function corename()   # Get name of app that created a corefile.
 #then
 export PATH=$PATH:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/build-tools/
 #fi
+
+
+# Use bash-completion, if available
+# The package bash-completion is needed
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
