@@ -565,6 +565,7 @@ globalkeys = awful.util.table.join(
 
     -- User programs
     awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn(browser) end),
+    awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
 --    awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
     --awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
     awful.key({ modkey, "Shift" }, "g", function () awful.util.spawn(graphics) end),
