@@ -674,6 +674,9 @@ awful.rules.rules = {
     { rule = { class = "Dclock" },
           properties = { fullscreen = true } },
 
+    { rule = { class = "XClock" },
+          properties = { fullscreen = true } },
+
     { rule = { instance = "plugin-container" },
    	    properties = { floating = true  } },
 --          properties = { tag = tags[1][2] } },
