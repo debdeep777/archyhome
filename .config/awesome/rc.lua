@@ -671,12 +671,11 @@ awful.rules.rules = {
     { rule = { class = "Apvlv" },
           properties = { tag = tags[1][3] } },
 
-    { rule = { class = "xclock" },
-          properties = { tag = tags[1][2]  } },
+    { rule = { class = "Dclock" },
+          properties = { floating = true } },
 
     { rule = { instance = "plugin-container" },
-   	    properties = { floating = true  } ,
-	    properties = { fullscreen = true  } },
+   	    properties = { floating = true  } },
 --          properties = { tag = tags[1][2] } },
 
 	  { rule = { class = "Gimp" },
