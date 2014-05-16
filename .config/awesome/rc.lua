@@ -671,7 +671,8 @@ awful.rules.rules = {
     { rule = { class = "Apvlv" },
           properties = { tag = tags[1][3] } },
 
---    { rule = { instance = "plugin-container" },
+    { rule = { instance = "plugin-container" },
+   	    properties = { floating = true  } },
 --          properties = { tag = tags[1][2] } },
 
 	  { rule = { class = "Gimp" },
