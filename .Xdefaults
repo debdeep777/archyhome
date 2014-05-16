@@ -1,1 +1,7 @@
 XTerm*faceName: terminus:pixelsize=13
+XClock.Clock.hourColor: grey
+XClock.Clock.minuteColor: white
+XClock.Clock.secondColor: white
+XClock.Clock.background: black
+XClock.Clock.foreground: black
+XClock.Clock.padding: 30
