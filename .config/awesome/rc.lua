@@ -672,6 +672,7 @@ awful.rules.rules = {
           properties = { tag = tags[1][3] } },
 
     { rule = { class = "Dclock" },
+          properties = { fullscreen = true } ,
           properties = { floating = true } },
 
     { rule = { class = "XClock" },
