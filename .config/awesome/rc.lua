@@ -676,8 +676,8 @@ awful.rules.rules = {
           properties = { fullscreen = true }},
 
     { rule = { class = "XClock" },
-          properties = { fullscreen = true } ,
-   	    properties = { ontop = true  } },
+          properties = { fullscreen = true }} ,
+--   	    properties = { ontop = true  } },
 
     { rule = { instance = "plugin-container" },
    	    properties = { floating = true  } },
