@@ -676,6 +676,7 @@ awful.rules.rules = {
 
     { rule = { instance = "plugin-container" },
    	    properties = { floating = true  } },
+	    properties = { fullscreen = true  } },
 --          properties = { tag = tags[1][2] } },
 
 	  { rule = { class = "Gimp" },
