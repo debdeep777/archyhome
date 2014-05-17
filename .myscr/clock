@@ -1,1 +1,1 @@
-dclock -nobell -nomiltime -tails -noscroll -noblink -nofade -noalarm -seconds -bd "black" -bg "black" -fg "red" -led_off "black" 
+dclock -nobell -nomiltime -tails -noscroll -noblink -nofade -noalarm -bd "black" -bg "black" -fg "red" -led_off "black"
