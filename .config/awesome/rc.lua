@@ -752,3 +752,4 @@ end
 -- }}}
 -- Commands to run at startup
 awful.util.spawn_with_shell("storage")
+awful.util.spawn_with_shell("wifi")
