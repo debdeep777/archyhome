@@ -1,4 +1,4 @@
 fdisk -l
 read -p "Device to mount in pen: /dev/sd" modev
-targ = "/dev/sd".$modev
+targ = '/dev/sd'.$modev
 #mount /dev/sdb1 /pen
