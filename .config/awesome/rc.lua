@@ -672,6 +672,9 @@ awful.rules.rules = {
     { rule = { class = "Apvlv" },
           properties = { tag = tags[1][3] } },
 
+    { rule = { class = "Calibre" },
+          properties = { tag = tags[1][1] } },
+
     { rule = { class = "Dclock" },
 --          properties = { floating = true } ,
           properties = { fullscreen = true }},
