@@ -1,0 +1,3 @@
+# gcc and running a.out in the same script
+gcc -lm $1 -o $1.out
+./$1.out
