@@ -1,3 +1,4 @@
+# Changes the default sound card
 # do NOT run if you don't have the alsa.conf.other file
 # we have alsa.conf and alsa.conf.other. We want to interchange them.
 cp /usr/share/alsa/alsa.conf /usr/share/alsa/alsa.conf.tmp
