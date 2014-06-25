@@ -1,10 +1,4 @@
 -- Modified by me
---[[
-                                      
-     Multicolor Awesome WM config 2.0 
-     github.com/copycat-killer        
-                                      
---]]
 
 -- {{{ Required libraries
 local gears     = require("gears")
@@ -51,13 +45,16 @@ end
 
 --run_once("xterm")
 run_once("unclutter")
+run_once("storage")
+run_once("wifi")
 -- }}}
+
 
 -- {{{ Variable definitions
 -- localization
 os.setlocale(os.getenv("LANG"))
 
--- beautiful init
+-- beautiful inti
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/multicolor/theme.lua")
 
 -- common
@@ -77,7 +74,7 @@ mail       = terminal .. " -e mutt "
 local layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+    awful.layout.suit.tile.right,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
@@ -184,6 +181,8 @@ cpuwidget = lain.widgets.cpu({
         widget:set_markup(markup("#e33a6e", cpu_now.usage .. "% "))
     end
 })
+
+
 
 -- Coretemp
 tempicon = wibox.widget.imagebox(beautiful.widget_temp)
@@ -753,6 +752,3 @@ for s = 1, screen.count() do screen[s]:connect_signal("arrange", function ()
       end)
 end
 -- }}}
--- Commands to run at startup
-awful.util.spawn_with_shell("storage")
-awful.util.spawn_with_shell("wifi")
