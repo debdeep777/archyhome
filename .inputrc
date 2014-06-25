@@ -1,4 +1,3 @@
-set bell-style none
 set editing-mode vi
 set keymap vi-command
 "\e[A": history-search-backward
