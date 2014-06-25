@@ -322,6 +322,10 @@ alias lscr='cmatrix -a -b -u 5; vlock -a'
 
 alias Lenovo='cd /storage/Lenovo/'
 
+# An alias needed by .myscr called dwz to change to the tempo directory after extracting the latest zip file
+
+alias gtstf='dwz && cd ~/tempo'
+
 # An experimental directory changing attempt from the last opened path
 # dmp to dump the current path in the file called .dumpedpath
 # ldp to load the path from the file .last_dir which was created by the modified "cd" alias. See the function cd_ for details.
