@@ -324,7 +324,7 @@ alias Lenovo='cd /storage/Lenovo/'
 
 # An alias needed by .myscr called dwz to change to the tempo directory after extracting the latest zip file
 
-alias gtstf='dwz && cd ~/tempo'
+alias dwz='gtstf && cd ~/tempo'
 
 # An experimental directory changing attempt from the last opened path
 # dmp to dump the current path in the file called .dumpedpath
