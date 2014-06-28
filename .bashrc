@@ -529,7 +529,7 @@ function corename()   # Get name of app that created a corefile.
 # Script to include abd paths if /sda2 in mounted
 #if mount | grep /mnt;
 #then
-export PATH=$PATH:~/.myscr/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/build-tools/
+export PATH=$PATH:~/.myscr/:/storage/Lenovo/a706/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/build-tools/
 #fi
 
 
