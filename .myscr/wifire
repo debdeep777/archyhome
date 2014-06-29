@@ -6,4 +6,6 @@ xdotool search --desktop 3 --class "Firefox" windowactivate
 # and then clicking on the window with mouse
 
 sleep 1
-xdotool key r
+
+# Sending Firefox the reload command, CTRL+R
+xdotool search --desktop 3 --class "Firefox" key --clearmodifiers "CTRL+R"
