@@ -1,3 +1,8 @@
+# Reconnect wifi and reload firefox's latest tab
+
+# Reconnect wifi
+wifi
+
 # Sending Firefox the reload command, CTRL+R
 xdotool search --desktop 3 --class "Firefox" key --clearmodifiers "CTRL+R"
 # Here, --desktop 3 is necessary without which xdotools was unable to activate
