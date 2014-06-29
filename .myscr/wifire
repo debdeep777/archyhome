@@ -1,3 +1,9 @@
+# Activating the firefox window
 xdotool search --desktop 3 --class "Firefox" windowactivate 
+# Here, --desktop 3 is necessary without which xdotools was unable to activate
+# The Number 3 is because firefox is located in the 4th taglist in awesome window manager. The count goes from 0,1,2,3,4,.. etc
+# You can find the desktop number using: xprop | grep WM_DESKTOP
+# and then clicking on the window with mouse
+
 sleep 1
 xdotool key r
