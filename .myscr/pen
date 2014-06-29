@@ -1,0 +1,4 @@
+# Mounts /dev/sd* to pen depending on the input
+fdisk -l
+read -p "Device to mount in /pen: /dev/sd" modev
+mount /dev/sd$modev /pen

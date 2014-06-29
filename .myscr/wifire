@@ -1,0 +1,3 @@
+xdotool search --desktop 3 --class "Firefox" windowactivate 
+sleep 1
+xdotool key r
