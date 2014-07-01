@@ -1,2 +1,2 @@
 cd ~/Downloads
-unzip $(ls -t | head -1) -d ~/tempo
+unzip "$(ls -t | head -1)" -d ~/tempo
