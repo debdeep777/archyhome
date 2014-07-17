@@ -1,4 +1,4 @@
 cd ~/Downloads
-name="$(ls -t | head -$1 | tail -1)"
+name="$(ls -t | head -${1:-1} | tail -1)"
 fullname="~/Downloads/"$name
 echo $fullname
