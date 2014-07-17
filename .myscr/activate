@@ -9,5 +9,6 @@ echo 'Adding to the git list..'
 cd ~
 echo 'Changed directory'
 ls
-git add ~/.myscr/$1
+onlyfile=$(basename $1)
+git add ~/.myscr/$onlyfile
 echo 'Done.'
