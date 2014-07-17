@@ -1,5 +1,5 @@
 #!/bin/bash
-# We are going to source the file using an alias
+# We are going to source the file using an alias called dwn
 name="$(ls -t ~/Downloads/ | head -${1:-1} | tail -1)"
 # Here, we want to get the n-th file downloaded, sorted by created last
 # "ls -t | head -$1 | tail -1" will do the job where $1 is the value of n
