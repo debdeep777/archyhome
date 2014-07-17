@@ -1,4 +1,9 @@
 cd ~/Downloads
 name="$(ls -t | head -${1:-1} | tail -1)"
+# Here, we want to get the n-th file downloaded, sorted by created last
+# "ls -t | head -$1 | tail -1" will do the job where $1 is the value of n
+# We want to give a default value for $1 if it is not set
+# Hence, the syntax is, ${1:-default_value}
+# in this case, the default value is 1
 fullname="~/Downloads/"$name
 echo $fullname
