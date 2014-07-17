@@ -326,6 +326,9 @@ alias Lenovo='cd /storage/Lenovo/'
 
 alias dwz='gtstf && cd ~/tempo'
 
+# An alias needed by .myscr called dwn to copy the path of the n-th latest downloaded file to an environment variable called $dw, which we can use directly
+alias dwn='. ctstf'
+
 # An experimental directory changing attempt from the last opened path
 # dmp to dump the current path in the file called .dumpedpath
 # ldp to load the path from the file .last_dir which was created by the modified "cd" alias. See the function cd_ for details.
