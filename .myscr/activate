@@ -7,8 +7,8 @@ mv $1 ~/.myscr/
 echo 'Adding to the git list..'
 # Need to run ~'s git
 cd ~
-echo 'Changed directory'
-ls
 onlyfile=$(basename $1)
+# Need to extract the file name from a possible path name. basename does that.
+
 git add ~/.myscr/$onlyfile
 echo 'Done.'
