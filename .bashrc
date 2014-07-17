@@ -314,6 +314,11 @@ alias lt='ls -ltr'         #  Sort by date, most recent last.
 alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 
+
+# For colour output in cat
+
+alias ccat='vimcat'
+
 # Added by me for a custom lock screen comand
 
 alias lscr='cmatrix -a -b -u 5; vlock -a'
@@ -326,8 +331,8 @@ alias Lenovo='cd /storage/Lenovo/'
 
 alias dwz='gtstf && cd ~/tempo'
 
-# An alias needed by .myscr called dwn to copy the path of the n-th latest downloaded file to an environment variable called $dw, which we can use directly
 alias dwn='. ctstf'
+
 
 # An experimental directory changing attempt from the last opened path
 # dmp to dump the current path in the file called .dumpedpath

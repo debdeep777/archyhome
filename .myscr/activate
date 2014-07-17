@@ -7,5 +7,7 @@ mv $1 ~/.myscr/
 echo 'Adding to the git list..'
 # Need to run ~'s git
 cd ~
+echo 'Changed directory'
+ls
 git add ~/.myscr/$1
 echo 'Done.'
