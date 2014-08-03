@@ -1,4 +1,5 @@
 currparent=$(pwd | awk -F '/' '{printf $2}')
+echo $currparent
 if [ $currparent == 'pen' ]
 then
 	echo 'You are inside pen. Please cd.'
