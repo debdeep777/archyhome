@@ -1,3 +1,6 @@
+let @w = 'maF>vf<yGop`an'
+let @e = '10@wGV9ky'
+let @d = '/<80>ku^M10@wGV9ky'
 syntax on
 set linebreak
 set spell
