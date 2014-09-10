@@ -1,2 +1,3 @@
 pdflatex $1.tex
+echo "Opening in evince"
 evince $1.pdf
