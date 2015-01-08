@@ -53,6 +53,5 @@ set grepprg=grep\ -nH\ $*
 " Supposedly it can make the default output file to be pdf
 let g:Tex_DefaultTargetFormat='pdf'
 
-" Disabling vim-latex menus
-TexLet g:Tex_Menus = 1
+
 
