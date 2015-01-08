@@ -54,4 +54,5 @@ set grepprg=grep\ -nH\ $*
 let g:Tex_DefaultTargetFormat='pdf'
 
 
-
+" Trying to change the default viewer
+let g:Tex_ViewRule_pdf = 'evince'
