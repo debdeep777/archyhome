@@ -55,4 +55,4 @@ let g:Tex_DefaultTargetFormat='pdf'
 
 
 " To change the default viewer
-let g:Tex_ViewRule_pdf = 'evince'
+let g:Tex_ViewRule_dvi = 'evince'
