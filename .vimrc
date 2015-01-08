@@ -73,7 +73,7 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 " pdf with zathura, let's see
 "let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername pdfsession --remote +\%l \%f" $* &'
 
-let g:Tex_ViewRuleComplete_pdf = 'zathura -x 'vim --servername this --remote +%{line} %{input}' $* &'
+let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername this --remote +\%{line} \%{input}" $* &'
 
 "removing the menus from the gvim
 "let g:Tex_Menus = 0
