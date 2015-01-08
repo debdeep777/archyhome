@@ -77,4 +77,4 @@ let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --re
 
 
 " Testing
-nnoremap <F9>   :exec "!szathura %:r.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
+nnoremap <F9>   :exec "!szathura %:.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
