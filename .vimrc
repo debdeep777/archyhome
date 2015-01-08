@@ -75,6 +75,3 @@ let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --re
 "removing the menus from the gvim
 "let g:Tex_Menus = 0
 
-
-" Testing
-nnoremap <F9>   :exec "!szathura %:.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
