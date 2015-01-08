@@ -69,11 +69,7 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 " This is for dvi -> tex. Works!, to use it, need to launch vim with --servername sofun
 "let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f" $* &'
 
-
-" pdf with zathura, let's see
-"let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername pdfsession --remote +\%l \%f" $* &'
-
-let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername this --remote +\%l \%f" $ &'
+let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername this --remote +\%{line} \%{input}" $* &'
 
 "removing the menus from the gvim
 "let g:Tex_Menus = 0
