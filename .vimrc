@@ -62,3 +62,7 @@ let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 
 "test
 let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "gvim --servername xdvi --remote +\%l \%f" $* &'
+
+"removing the menus from the gvim
+let g:Tex_Menus = 0
+
