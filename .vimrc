@@ -48,7 +48,7 @@ set grepprg=grep\ -nH\ $*
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
-"let g:tex_flavor='latex'
+let g:tex_flavor='latex'
 
 " Supposedly it can make the default output file to be pdf
 "let g:Tex_DefaultTargetFormat='pdf'
