@@ -51,8 +51,8 @@ set grepprg=grep\ -nH\ $*
 "let g:tex_flavor='latex'
 
 " Supposedly it can make the default output file to be pdf
-let g:Tex_DefaultTargetFormat='pdf'
+"let g:Tex_DefaultTargetFormat='pdf'
 
 
-" Trying to change the default viewer
+" To change the default viewer
 let g:Tex_ViewRule_pdf = 'evince'
