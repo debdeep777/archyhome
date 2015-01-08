@@ -56,8 +56,8 @@ let g:Tex_DefaultTargetFormat='pdf'
 
 " Never Forget, To set the default viewer:: Very Important
 let g:Tex_ViewRule_dvi = 'xdvi'
-"let g:Tex_ViewRule_pdf = 'zathura'
-let g:Tex_ViewRule_pdf = 'xpdf'
+let g:Tex_ViewRule_pdf = 'zathura'
+"let g:Tex_ViewRule_pdf = 'xpdf'
 
 " add forward search capability through -src-specials
 let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
@@ -73,7 +73,7 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 " pdf with zathura, let's see
 "let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername pdfsession --remote +\%l \%f" $* &'
 
-let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername this --remote +\%{line} \%{input}" $* &'
+let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername this --remote +\%{line} \%{input}" $ &'
 
 "removing the menus from the gvim
 "let g:Tex_Menus = 0
