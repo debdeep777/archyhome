@@ -51,12 +51,13 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 " Supposedly it can make the default output file to be pdf
-"let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_DefaultTargetFormat='pdf'
 
 
 " Never Forget, To set the default viewer:: Very Important
 let g:Tex_ViewRule_dvi = 'xdvi'
-let g:Tex_ViewRule_pdf = 'zathura'
+"let g:Tex_ViewRule_pdf = 'zathura'
+let g:Tex_ViewRule_pdf = 'xpdf'
 
 " add forward search capability through -src-specials
 let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
@@ -65,11 +66,12 @@ let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 
 
-" Works!, to use it, need to launch vim with --servername sofun
-let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f" $* &'
+" This is for dvi -> tex. Works!, to use it, need to launch vim with --servername sofun
+"let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f" $* &'
+
 
 " pdf with zathura, let's see
-let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername pdfsession --remote +\%l \%f" $* &'
+"let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername pdfsession --remote +\%l \%f" $* &'
 
 
 "removing the menus from the gvim
