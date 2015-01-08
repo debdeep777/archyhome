@@ -55,4 +55,4 @@ set grepprg=grep\ -nH\ $*
 
 
 " To change the default viewer
-let g:Tex_ViewRule_dvi = 'xdvi'
+"let g:Tex_ViewRule_dvi = 'xdvi'
