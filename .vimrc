@@ -49,3 +49,10 @@ set grepprg=grep\ -nH\ $*
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 "let g:tex_flavor='latex'
+
+" Supposedly it can make the default output file to be pdf
+let g:Tex_DefaultTargetFormat='pdf'
+
+" Disabling vim-latex menus
+TexLet g:Tex_Menus = 1
+
