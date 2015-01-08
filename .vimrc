@@ -55,4 +55,12 @@ set grepprg=grep\ -nH\ $*
 
 
 " To change the default viewer
-"let g:Tex_ViewRule_dvi = 'xdvi'
+let g:Tex_ViewRule_dvi = 'xdvi'
+
+" add forward search
+let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
+
+"test
+let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername xdvi --remote +\%l \%f" $* &'
+
+
