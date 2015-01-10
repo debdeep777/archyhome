@@ -546,14 +546,3 @@ export PATH=$PATH:~/.myscr/:/storage/Lenovo/a706/adt-bundle-linux-x86_64-2013103
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-## Running vVim in server mode, if it is a tex file
-## Set vim servername to be the root name of tex file (if specified)
-#for i in "$@"; do
-#    if [[ ${i} == *.tex ]]; then
-#        fileName=$i;
-#        # Strip off path and extension, and convert to uppercase.
-#        serverName=$(sed -e 's:\(.*/\)\?\(.*\)\.tex:\U\2\E:' <<< $i)
-#        break;
-#    fi
-#done
-# Modifying the major programme
