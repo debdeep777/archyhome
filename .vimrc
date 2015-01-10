@@ -67,9 +67,10 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 
 
 " This is for dvi -> tex. Works!, to use it, need to launch vim with --servername sofun
-let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f"'
+let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f" $* &'
 
 " This works in termnal, but not inside vimrc: zathura -x "vim --servername nope --remote +\%{line} \%{input}" db.pdf
+let g:Tex_ViewRuleComplete_pdf = 'zathura -l 5 $* &'
 
 "removing the menus from the gvim
 "let g:Tex_Menus = 0
