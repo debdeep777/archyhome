@@ -97,5 +97,5 @@ function! SyncTexForward()
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR><C-L>
 
-
-nmap <Leader>k :silent !pdflatex -synctex=1 -interaction=nonstopmode %<CR><C-L>
+" To compile without the war
+"nmap <Leader>k :silent !pdflatex -synctex=1 -interaction=nonstopmode %<CR><C-L>
