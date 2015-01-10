@@ -74,3 +74,10 @@ let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --re
 "removing the menus from the gvim
 "let g:Tex_Menus = 0
 
+let g:Tex_Com_sum = "\\sum\\limits\_{<++>}\^{<++>}<++>"
+let g:Tex_Com_cap = "\\bigcap\\limits\_{<++>}\^{<++>}<++>"
+let g:Tex_Com_cup = "\\bigcup\\limits\_{<++>}\^{<++>}<++>"
+let g:Tex_Com_lim = "\\lim\\limits\_{<++>}\^{<++>}<++>"
+
+" Attempting to remove the need to hit enter while compiling through pdflatex
+map <leader>ll :silent call Tex_RunLaTeX()<cr>
