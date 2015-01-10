@@ -93,4 +93,5 @@ let g:Tex_Com_lim = "\\lim\\limits\_{<++>}\^{<++>}<++>"
 function! SyncTexForward()
 "     let execstr = "silent !zathura --synctex-forward %:p:r.pdf\\#src:".line(".")."%:p &"
      exec execstr = 'silent !zathura --synctex-forward line("."):col("."):expand("%") %:p:r.pdf"'
+			'silent! !zathura --synctex-forward '.line('.').':1:"'.expand('%').'" "'.expand("%:p:r").".pdf'
 endfunction
