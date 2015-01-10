@@ -56,7 +56,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 
 " Never Forget, To set the default viewer:: Very Important
 let g:Tex_ViewRule_dvi = 'xdvi'
-let g:Tex_ViewRule_pdf = 'zathura'
+let g:Tex_ViewRule_pdf = 'zathura "$@" 2>/dev/null'
 "let g:Tex_ViewRule_pdf = 'xpdf'
 
 " add forward search capability through -src-specials
