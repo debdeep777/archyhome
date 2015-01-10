@@ -95,5 +95,7 @@ function! SyncTexForward()
 	let execstr = 'silent! !zathura --synctex-forward '.line('.').':1:"'.expand('%').'" "'.expand("%:p:r").'".pdf'
 	execute execstr 
 endfunction
-nmap <Leader>ls :call SyncTexForward()<CR><C-L>
+nmap <Leader>f :call SyncTexForward()<CR><C-L>
 
+
+nmap <Leader>k :silent !pdflatex -synctex=1 -interaction=nonstopmode %<CR><C-L>
