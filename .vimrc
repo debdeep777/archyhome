@@ -51,6 +51,8 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" this stuff is for tex.vim in the ~/.vim/ftplugin/
+""""""""""""""""""""""""""""""""""""""""
 "" Supposedly it can make the default output file to be pdf
 "let g:Tex_DefaultTargetFormat='pdf'
 "
