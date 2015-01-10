@@ -89,7 +89,8 @@ let g:Tex_Com_lim = "\\lim\\limits\_{<++>}\^{<++>}<++>"
 " Forward search
 " zathura --synctex-forward 193:1:paper.tex paper.pdf
 " szathura %:r.pdf" line('.')  col('.') "%
-"function! SyncTexForward()
-""     let execstr = "silent !zathura --synctex-forward %:p:r.pdf\\#src:".line(".")."%:p &"
-"     exec execstr = 'silent !zathura --synctex-forward line("."):col("."):expand("%") "%:p:r".".pdf"'
-"endfunction
+"
+function! SyncTexForward()
+"     let execstr = "silent !zathura --synctex-forward %:p:r.pdf\\#src:".line(".")."%:p &"
+     exec execstr = 'silent !zathura --synctex-forward line("."):col("."):expand("%") "%:p:r".".pdf"'
+endfunction
