@@ -80,4 +80,4 @@ let g:Tex_Com_cup = "\\bigcup\\limits\_{<++>}\^{<++>}<++>"
 let g:Tex_Com_lim = "\\lim\\limits\_{<++>}\^{<++>}<++>"
 
 " Attempting to remove the need to hit enter while compiling through pdflatex
-map <leader>ll :silent call Tex_RunLaTeX()<CR><CR>
+map \ll :silent call Tex_RunLaTeX()<CR><CR>
