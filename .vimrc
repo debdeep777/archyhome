@@ -96,7 +96,4 @@ function! SyncTexForward()
 	execute execstr 
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR>
-if !has('gui_running')
-                redraw!
-endif
 
