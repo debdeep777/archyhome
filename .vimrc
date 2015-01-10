@@ -67,7 +67,11 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 
 
 " This is for dvi -> tex. Works!, to use it, need to launch vim with --servername sofun
-let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f" $* &'
+let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f" $*.dvi &'
+"let g:Tex_ViewRuleComplete_pdf = 'zathura $*.pdf 2>/dev/nul &'
+"
+" Working!!!, when we run vim appropriately
+let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername nope --remote +\%{line} \%{input}" $*.pdf 2>/dev/nul &'
 
 " This works in termnal, but not inside vimrc: zathura -x "vim --servername nope --remote +\%{line} \%{input}" db.pdf
 
@@ -81,3 +85,11 @@ let g:Tex_Com_lim = "\\lim\\limits\_{<++>}\^{<++>}<++>"
 
 " Attempting to remove the need to hit enter while compiling through pdflatex
 "map \ll :silent call Tex_RunLaTeX()<CR><CR>
+
+" Forward search
+" zathura --synctex-forward 193:1:paper.tex paper.pdf
+" szathura %:r.pdf" line('.')  col('.') "%
+function! SyncTexForward()
+"     let execstr = "silent !zathura --synctex-forward %:p:r.pdf\\#src:".line(".")."%:p &"
+     exec execstr = 'silent !zathura --synctex-forward line("."):col("."):expand("%") "%:p:r".".pdf"'
+endfunction

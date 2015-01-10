@@ -547,4 +547,4 @@ export PATH=$PATH:~/.myscr/:/storage/Lenovo/a706/adt-bundle-linux-x86_64-2013103
     . /usr/share/bash-completion/bash_completion
 
 #retest
-alias zathura='zathura "$@" 2>/dev/null'
+#alias zathura='zathura "$@" 2>/dev/null'
