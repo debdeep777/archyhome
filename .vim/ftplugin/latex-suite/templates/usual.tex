@@ -1,0 +1,27 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+
+% Documentclass
+\documentclass{article}
+
+% To use \text{} inside math mode
+\usepackage{amsmath}
+% To use \newtheorem styles
+\usepackage{amsthm}
+% To use \mathbb{} for fancy fonts
+\usepackage{amsfonts}
+
+% User defined fun
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{result}{Result}
+\newtheorem*{notation}{Notation}
+
+\begin{document}
+
+<++>
+
+\end{document}
