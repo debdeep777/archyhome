@@ -1,4 +1,27 @@
 # Write your default config options here!
 softvol=1
 
+# Display
+double="yes" # Double buffering.
+framedrop="1" # For slow machines
+
+# Subtitles
+#font=/usr/share/fonts/truetype/msttcorefonts/impact.ttf
+
+# ffactor="10" # Black outline.
+# sub-bg-alpha="0" # Background color ala closed captions.
+# sub-bg-color="0" # Black to white.
+# subfont-text-scale="3.7" # Truetype font scaling.
+# subfont-blur="1" # Slight blur.
+unicode=1
+utf8=yes
+
+# subpos="90" # By default subtitles are too low
+# subalign="2"
+
+# Always keep mplayer on top
+#ontop="1"
+
+# # Prevent xscreensaver from locking.
+# heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 
