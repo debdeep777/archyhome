@@ -55,3 +55,19 @@ new [description:"Make the tasker popup of awesome organised" entry:"1422304784"
 time 1422306468
 new [description:"Open the store" due:"1420081200" entry:"1422306468" modified:"1422306468" status:"pending" uuid:"2c0aebbe-6e74-4165-844a-1a22e904a5eb"]
 ---
+time 1422308272
+old [description:"Read the plans list and implement" entry:"1422303845" modified:"1422303845" project:"Linux" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+new [description:"Read the plans list and implement" entry:"1422303845" modified:"1422303845" project:"Linux" start:"1422308272" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+---
+time 1422308287
+old [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"Linux" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"Linux" start:"1422308287" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422308303
+old [description:"Open the store" due:"1420081200" entry:"1422306468" modified:"1422306468" status:"pending" uuid:"2c0aebbe-6e74-4165-844a-1a22e904a5eb"]
+new [description:"Open the store" due:"1420081200" end:"1422308301" entry:"1422306468" modified:"1422306468" status:"deleted" uuid:"2c0aebbe-6e74-4165-844a-1a22e904a5eb"]
+---
+time 1422308335
+old [description:"Make the tasker popup of awesome organised" entry:"1422304784" modified:"1422304784" project:"Linux" status:"pending" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+new [description:"Make the tasker popup of awesome organised" end:"1422308335" entry:"1422304784" modified:"1422304784" project:"Linux" status:"completed" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+---

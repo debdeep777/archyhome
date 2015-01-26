@@ -14,3 +14,7 @@
 {"description":"Find a way to insert the .taskrc file inside the .task directory","entry":"20150126T205433Z","modified":"20150126T205433Z","project":"Linux","status":"pending","uuid":"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"}
 {"description":"Make the tasker popup of awesome organised","entry":"20150126T203944Z","modified":"20150126T203944Z","project":"Linux","status":"pending","uuid":"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"}
 {"description":"Open the store","due":"20150101T030000Z","entry":"20150126T210748Z","modified":"20150126T210748Z","status":"pending","uuid":"2c0aebbe-6e74-4165-844a-1a22e904a5eb"}
+{"description":"Read the plans list and implement","entry":"20150126T202405Z","modified":"20150126T202405Z","project":"Linux","start":"20150126T213752Z","status":"pending","uuid":"421b54fb-c092-4b58-9475-5ac279ba4b06"}
+{"description":"Get used to taskwarrior","entry":"20150126T203703Z","modified":"20150126T203703Z","project":"Linux","start":"20150126T213807Z","status":"pending","uuid":"a034254c-a041-46ab-8545-b1011e4f2a0a"}
+{"description":"Open the store","due":"20150101T030000Z","end":"20150126T213821Z","entry":"20150126T210748Z","modified":"20150126T210748Z","status":"deleted","uuid":"2c0aebbe-6e74-4165-844a-1a22e904a5eb"}
+{"description":"Make the tasker popup of awesome organised","end":"20150126T213855Z","entry":"20150126T203944Z","modified":"20150126T203944Z","project":"Linux","status":"completed","uuid":"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"}
