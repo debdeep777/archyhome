@@ -1,0 +1,57 @@
+time 1422303845
+new [description:"Read docs in plans and implement as much as possible" entry:"1422303845" modified:"1422303845" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+---
+time 1422304361
+old [description:"Read docs in plans and implement as much as possible" entry:"1422303845" modified:"1422303845" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+new [description:"Obsession" entry:"1422303845" modified:"1422303845" project:"Linux" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+---
+time 1422304392
+old [description:"Obsession" entry:"1422303845" modified:"1422303845" project:"Linux" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+new [description:"Read the plans list and implement" entry:"1422303845" modified:"1422303845" project:"Linux" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+---
+time 1422304623
+new [description:"Get used to task" entry:"1422304623" modified:"1422304623" project:"linux" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422304707
+old [description:"Get used to task" entry:"1422304623" modified:"1422304623" project:"linux" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"linux" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422304784
+new [description:"Make the output of tasker in awesome neater, maybe without or smaller icon" entry:"1422304784" modified:"1422304784" status:"pending" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+---
+time 1422304810
+old [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"linux" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"Linux" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422304810
+old [description:"Make the output of tasker in awesome neater, maybe without or smaller icon" entry:"1422304784" modified:"1422304784" status:"pending" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+new [description:"Make the output of tasker in awesome neater, maybe without or smaller icon" entry:"1422304784" modified:"1422304784" project:"Linux" status:"pending" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+---
+time 1422304864
+new [description:"Convert the plans file into task file maybe" entry:"1422304864" modified:"1422304864" status:"pending" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]
+---
+time 1422305397
+new [description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+---
+time 1422305673
+new [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" status:"pending" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+---
+time 1422305825
+old [description:"Convert the plans file into task file maybe" entry:"1422304864" modified:"1422304864" status:"pending" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]
+new [description:"Convert the plans file into task file maybe" entry:"1422304864" modified:"1422304864" project:"Linux" status:"pending" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]
+---
+time 1422305835
+old [description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+new [description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" project:"Linux" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+---
+time 1422305835
+old [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" status:"pending" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+new [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" project:"Linux" status:"pending" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+---
+time 1422306065
+old [description:"Make the output of tasker in awesome neater, maybe without or smaller icon" entry:"1422304784" modified:"1422304784" project:"Linux" status:"pending" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+new [description:"Make the tasker popup of awesome organised" entry:"1422304784" modified:"1422304784" project:"Linux" status:"pending" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+---
+time 1422306468
+new [description:"Open the store" due:"1420081200" entry:"1422306468" modified:"1422306468" status:"pending" uuid:"2c0aebbe-6e74-4165-844a-1a22e904a5eb"]
+---
