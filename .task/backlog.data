@@ -34,3 +34,5 @@
 {"description":"Get used to taskwarrior","entry":"20150126T203703Z","modified":"20150126T203703Z","project":"Linux","start":"20150126T213807Z","status":"pending","tags":["task"],"uuid":"a034254c-a041-46ab-8545-b1011e4f2a0a"}
 {"description":"Find a way to insert the .taskrc file inside the .task directory","entry":"20150126T205433Z","modified":"20150126T205433Z","project":"Linux","status":"pending","tags":["task"],"uuid":"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"}
 {"description":"Modify awesome and use shortcut to implement many useful things","entry":"20150126T214608Z","modified":"20150126T214608Z","project":"Linux","status":"pending","tags":["task"],"uuid":"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"}
+{"description":"Learn prioritising taks","entry":"20150126T215017Z","modified":"20150126T215017Z","status":"pending","tags":["task"],"uuid":"9f51677a-6339-41e4-9633-8ad2274a29e1"}
+{"description":"Learn printing tasks with proper needs","entry":"20150126T215052Z","modified":"20150126T215052Z","status":"pending","tags":["task"],"uuid":"998fc7c6-bd67-4fd1-9bc3-3b8bfd2a7135"}
