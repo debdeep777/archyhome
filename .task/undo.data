@@ -71,3 +71,62 @@ time 1422308335
 old [description:"Make the tasker popup of awesome organised" entry:"1422304784" modified:"1422304784" project:"Linux" status:"pending" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
 new [description:"Make the tasker popup of awesome organised" end:"1422308335" entry:"1422304784" modified:"1422304784" project:"Linux" status:"completed" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
 ---
+time 1422308561
+new [description:"Learn a calender organising programme like ledger" entry:"1422308561" modified:"1422308561" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1422308590
+new [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" status:"pending" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1422308628
+old [description:"Learn a calender organising programme like ledger" entry:"1422308561" modified:"1422308561" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+new [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1422308681
+new [description:"Maybe Configure mpd, but not necessary" entry:"1422308681" modified:"1422308681" status:"pending" uuid:"e09ce1e6-1dd3-4635-a151-f0de996b39a2"]
+---
+time 1422308728
+new [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+---
+time 1422308768
+new [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" status:"pending" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+---
+time 1422308806
+old [description:"Read the plans list and implement" entry:"1422303845" modified:"1422303845" project:"Linux" start:"1422308272" status:"pending" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+new [description:"Read the plans list and implement" end:"1422308806" entry:"1422303845" modified:"1422303845" project:"Linux" status:"completed" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+---
+time 1422308821
+old [description:"Convert the plans file into task file maybe" entry:"1422304864" modified:"1422304864" project:"Linux" status:"pending" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]
+new [description:"Convert the plans file into task file maybe" end:"1422308821" entry:"1422304864" modified:"1422304864" project:"Linux" status:"completed" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]
+---
+time 1422308870
+old [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+new [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"Linux" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1422308870
+old [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" status:"pending" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+new [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"Linux" status:"pending" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1422308870
+old [description:"Maybe Configure mpd, but not necessary" entry:"1422308681" modified:"1422308681" status:"pending" uuid:"e09ce1e6-1dd3-4635-a151-f0de996b39a2"]
+new [description:"Maybe Configure mpd, but not necessary" entry:"1422308681" modified:"1422308681" project:"Linux" status:"pending" uuid:"e09ce1e6-1dd3-4635-a151-f0de996b39a2"]
+---
+time 1422308870
+old [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+new [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"Linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+---
+time 1422308870
+old [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" status:"pending" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+new [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" project:"Linux" status:"pending" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+---
+time 1422308961
+old [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"Linux" start:"1422308287" status:"pending" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"Linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422308961
+old [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" project:"Linux" status:"pending" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+new [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" project:"Linux" status:"pending" tags:"task" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+---
+time 1422308961
+old [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" project:"Linux" status:"pending" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+new [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" project:"Linux" status:"pending" tags:"task" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+---
