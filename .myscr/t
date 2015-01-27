@@ -1,1 +1,7 @@
-vim --servername TODONEWINSTALLATION --remote '/storage/Lenovo/lin/TODO new_installation'
+# Open the file "TODO new_installation" for occasional editing and consulting
+# TO avoid multiple sessions, we want to jump to the open instance
+# see .myscr/wifire for another interesting example
+
+echo $(xdotool search --name "TODO new_installation")
+
+#vim --servername TODONEWINSTALLATION --remote '/storage/Lenovo/lin/TODO new_installation'
