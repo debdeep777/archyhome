@@ -1,7 +1,17 @@
 let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
 let @i = '0x$xj'
+
+" This is for syntax Highlighting
 syntax on
+
+" color scheme for a dark terminal setup,
+" an alternative is pablo, but spellcheck highlight is ugly in that one
+" although, tex files look nice in that one
+" you'll get used to this one
+colorscheme slate
+
+
 set linebreak
 set spell
 "" Do not like visual bell anymore

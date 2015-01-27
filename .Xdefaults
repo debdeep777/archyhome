@@ -1,4 +1,13 @@
 XTerm*faceName: DejaVu Sans Mono:pixelsize=13
+## color scheme for xterm
+#xterm*background: grey11
+xterm*background: '#93A1A1'
+xterm*foreground: cornsilk1
+
+#xterm*background: black
+#xterm*foreground: white
+
+# xclock fun
 XClock.Clock.hourColor: grey
 XClock.Clock.minuteColor: white
 XClock.Clock.secondColor: white

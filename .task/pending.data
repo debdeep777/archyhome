@@ -26,3 +26,6 @@
 [description:"How to print the minimal list report, the vb report by default while typing task" entry:"1422352290" modified:"1422352290" project:"linux" status:"pending" tags:"task" uuid:"d1fcb633-37df-43e3-9eac-dffcc5108091"]
 [description:"get rid of ugly icons and replace them by graphs and bars" entry:"1422352441" modified:"1422352441" project:"linux" status:"pending" tags:"task" uuid:"36779538-d6bb-416f-b17a-391b757a2283"]
 [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" project:"linux" status:"pending" tags:"task,awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+[description:"write a code to delete the thumnali cache for sxiv, get used to this programme, update the RAW file handling blog also" entry:"1422354921" modified:"1422354921" project:"linux" status:"pending" uuid:"fc44131d-ba8e-44d8-a504-35eed04b99ff"]
+[description:"make firefox darker after updating following the tutorial for 35 version and above" entry:"1422356583" modified:"1422356583" status:"pending" uuid:"3cb43b5e-630b-4c26-b69d-5c2d8d3017a5"]
+[description:"make the terminal use darker colors" entry:"1422356614" modified:"1422356614" status:"pending" tags:"productivity,experiment" uuid:"0a5b401b-bf64-4f58-85c6-96bb5462f3ca"]
