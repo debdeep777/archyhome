@@ -1,4 +1,4 @@
-XTerm*faceName: terminus:pixelsize=13
+XTerm*faceName: DejaVu Sans Mono:pixelsize=13
 XClock.Clock.hourColor: grey
 XClock.Clock.minuteColor: white
 XClock.Clock.secondColor: white
