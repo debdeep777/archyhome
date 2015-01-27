@@ -1,10 +1,12 @@
 " Set vim to be the default editor
 set editor='xterm -e vim'
 
-" Autocomplete
-set complete=l
+" Turn off the scrollbars
+"set sb=false
 
+" Show tab numbers so that we jump to them like 12gt to go to the 12th tab
+set tn=true
 
-"highlight Normal -append font-size: 10pt
+highlight Normal -append font-size: 10pt
 noremap j <Down>
 noremap k <Up>
