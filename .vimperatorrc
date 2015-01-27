@@ -1,4 +1,10 @@
+" Set vim to be the default editor
 set editor='xterm -e vim'
-highlight Normal -append font-size: 10pt
+
+" Autocomplete
+set complete=l
+
+
+"highlight Normal -append font-size: 10pt
 noremap j <Down>
 noremap k <Up>
