@@ -115,10 +115,11 @@ function task:attach(widget, args)
     task.font_size =  tonumber(args.font_size) or 11
     task.font      =  "DejaVu" --beautiful.font:sub(beautiful.font:find(""),
                   --beautiful.font:find(" "))
-	naughty.notify({
-		title = task.font,
-		text = "this"
-		})
+----	trying to capture the current font
+--	naughty.notify({
+--		title = task.font,
+--		text = "this"
+--		})
     task.fg        =  args.fg or beautiful.fg_normal or "#FFFFFF"
     task.bg        =  args.bg or beautiful.bg_normal or "#FFFFFF"
     task.position  =  args.position or "top_right"
