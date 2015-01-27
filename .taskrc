@@ -37,10 +37,11 @@ report.vb.description='A list with very basic information, created by me.'
 report.vb.columns=id,project,tags,description.count,due
 report.vb.sort=start-,urgency-
 report.vb.filter=status:pending
+# Making this report my default command
+default.command=vb
 
 # A custom report to use effectively in an awesome widget, bad idea, I know
 report.widgetneeds.description='for the awesome widget, very basic.'
 report.widgetneeds.columns=project,description.count,due
 report.widgetneeds.sort=start-,urgency-
 report.widgetneeds.filter=status:pending
-

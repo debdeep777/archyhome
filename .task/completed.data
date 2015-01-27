@@ -1,3 +1,5 @@
+[description:"make date and time in textclock acronymed to save space" end:"1422365959" entry:"1422351710" modified:"1422351710" status:"completed" uuid:"bb43a433-bff0-473e-853c-805b5439baa5"]
+[description:"make firefox darker after updating following the tutorial for 35 version and above" end:"1422365918" entry:"1422356583" modified:"1422356583" status:"completed" uuid:"3cb43b5e-630b-4c26-b69d-5c2d8d3017a5"]
 [annotation_1422313486:"annotate learned, i guess." description:"Learn printing tasks with proper needs" end:"1422313486" entry:"1422309052" modified:"1422309052" project:"linux" status:"completed" tags:"task" uuid:"998fc7c6-bd67-4fd1-9bc3-3b8bfd2a7135"]
 [annotation_1422313401:"annotate Not possible or safe according to manpage" description:"Find a way to insert the .taskrc file inside the .task directory" end:"1422313401" entry:"1422305673" modified:"1422305673" project:"linux" status:"completed" tags:"task" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
 [description:"Convert the plans file into task file maybe" end:"1422308821" entry:"1422304864" modified:"1422304864" project:"linux" status:"completed" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]

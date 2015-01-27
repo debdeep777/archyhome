@@ -2,6 +2,12 @@
 # TO avoid multiple sessions, we want to jump to the open instance
 # see .myscr/wifire for another interesting example
 
-echo $(xdotool search --name "TODO new_installation")
+if [ $(xdotool search --name "TODO new_installation") ]
+then
+ xdotool search --name "TODO new_installation" windowactivate
+else
+ xterm -e vim '/storage/Lenovo/lin/TODO new_installation' &
+fi
 
+## Wanted to run in server mode and what not, not needed
 #vim --servername TODONEWINSTALLATION --remote '/storage/Lenovo/lin/TODO new_installation'

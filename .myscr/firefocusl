@@ -1,0 +1,13 @@
+# Launch firefox if not already running, focus otherwise
+# see .myscr/wifire  and t for other interesting examples
+# Problem is, only works when firefox in in the 4th tag (--desktop 3)
+# Otherwise, cannot windowactivate
+# wrokaround is to check for every desktop and activate the first one found, creepy
+
+if [ $(xdotool search --class "Firefox" | head -1) ]
+then
+ xdotool search --desktop 3 --class "Firefox" windowactivate
+else
+ firefox &
+fi
+

@@ -363,3 +363,24 @@ new [description:"Make awesome default color zathurarc bg color" entry:"14223625
 time 1422362570
 new [description:"make the dropdown of the awesome popups transparent" entry:"1422362570" modified:"1422362570" status:"pending" tags:"awesome,timepass" uuid:"c01ad3a5-b905-4ba1-a273-9f72ebce0bb2"]
 ---
+time 1422365918
+old [description:"make firefox darker after updating following the tutorial for 35 version and above" entry:"1422356583" modified:"1422356583" status:"pending" uuid:"3cb43b5e-630b-4c26-b69d-5c2d8d3017a5"]
+new [description:"make firefox darker after updating following the tutorial for 35 version and above" end:"1422365918" entry:"1422356583" modified:"1422356583" status:"completed" uuid:"3cb43b5e-630b-4c26-b69d-5c2d8d3017a5"]
+---
+time 1422365959
+old [description:"make date and time in textclock acronymed to save space" entry:"1422351710" modified:"1422351710" status:"pending" uuid:"bb43a433-bff0-473e-853c-805b5439baa5"]
+new [description:"make date and time in textclock acronymed to save space" end:"1422365959" entry:"1422351710" modified:"1422351710" status:"completed" uuid:"bb43a433-bff0-473e-853c-805b5439baa5"]
+---
+time 1422367448
+new [description:"vimperator remove address bar and somehow keep the plugins and use the bottom bar efficiently" entry:"1422367448" modified:"1422367448" project:"linux" status:"pending" tags:"productivity" uuid:"8402136c-8e11-4f5f-a746-951b4de321d5"]
+---
+time 1422370000
+new [description:"MOd4+shift+f shoudl focus on firefox if open." entry:"1422370000" modified:"1422370000" project:"linux" status:"pending" tags:"productivity" uuid:"e27e7a05-18f6-4a0a-816b-e9d1d82adfb3"]
+---
+time 1422370028
+old [description:"MOd4+shift+f shoudl focus on firefox if open." entry:"1422370000" modified:"1422370000" project:"linux" status:"pending" tags:"productivity" uuid:"e27e7a05-18f6-4a0a-816b-e9d1d82adfb3"]
+new [annotation_1422370028:"same for t" description:"MOd4+shift+f shoudl focus on firefox if open." entry:"1422370000" modified:"1422370000" project:"linux" status:"pending" tags:"productivity" uuid:"e27e7a05-18f6-4a0a-816b-e9d1d82adfb3"]
+---
+time 1422370116
+new [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
+---

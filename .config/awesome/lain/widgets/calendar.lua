@@ -83,12 +83,18 @@ function calendar:show(t_out, inc_offset)
        f = io.popen(calendar.cal .. ' ' .. month .. ' ' .. year)
     end
 
-    c_text = "<tt><span font='" .. calendar.font .. " "
-             .. calendar.font_size .. "'><b>"
+
+    c_text = "<tt><span><b>"
              .. f:read() .. "</b>\n\n"
              .. f:read() .. "\n"
              .. f:read("*all"):gsub("\n*$", "")
              .. "</span></tt>"
+  --  c_text = "<tt><span font='" .. calendar.font .. " "
+  --           .. calendar.font_size .. "'><b>"
+  --           .. f:read() .. "</b>\n\n"
+  --           .. f:read() .. "\n"
+  --           .. f:read("*all"):gsub("\n*$", "")
+  --           .. "</span></tt>"
     f:close()
 
     cal_notification = naughty.notify({

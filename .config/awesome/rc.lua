@@ -90,6 +90,8 @@ editor_cmd = terminal .. " -e " .. editor
 
 -- user defined
 browser    = "firefox"
+browserfocusl = "firefocusl"
+launchtodofile = "t"
 --browser2   = "iron"
 --gui_editor = "gvim"
 graphics   = "gimp"
@@ -590,7 +592,12 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "c", function () os.execute("xsel -p -o | xsel -i -b") end),
 
     -- User programs
-    awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn(browser) end),
+    -- I like to launch my firefox nicely
+    awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn(browserfocusl) end),
+    -- T want the 'todo new installation' to launch with Mod4+Shift+T
+    awful.key({ modkey, "Shift" }, "t", function () awful.util.spawn(launchtodofile) end),
+
+
     awful.key({ modkey }, "e", function () awful.util.spawn("xterm -e ranger") end),
     awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
 --    awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
