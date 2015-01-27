@@ -23,3 +23,4 @@
 [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
 [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
 [description:"Write cron to sync tasks periodically without the prompt" entry:"1422363630" modified:"1422363630" project:"linux" status:"pending" tags:"productivity,task" uuid:"16fc4a32-0a0d-424d-ae7a-5b564f27e78b"]
+[description:"Percentage bar while copying, code from t, keep in bashrc" entry:"1422385852" modified:"1422385852" project:"linux" status:"pending" tags:"productivity" uuid:"23ddc000-7e71-47f6-97ed-53ca2c5b325e"]
