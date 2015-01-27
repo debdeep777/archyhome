@@ -384,3 +384,6 @@ new [annotation_1422370028:"same for t" description:"MOd4+shift+f shoudl focus o
 time 1422370116
 new [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
 ---
+time 1422373346
+new [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
+---

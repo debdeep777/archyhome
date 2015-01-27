@@ -32,3 +32,4 @@
 [description:"vimperator remove address bar and somehow keep the plugins and use the bottom bar efficiently" entry:"1422367448" modified:"1422367448" project:"linux" status:"pending" tags:"productivity" uuid:"8402136c-8e11-4f5f-a746-951b4de321d5"]
 [annotation_1422370028:"same for t" description:"MOd4+shift+f shoudl focus on firefox if open." entry:"1422370000" modified:"1422370000" project:"linux" status:"pending" tags:"productivity" uuid:"e27e7a05-18f6-4a0a-816b-e9d1d82adfb3"]
 [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
+[description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
