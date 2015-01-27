@@ -136,3 +136,166 @@ new [description:"Learn prioritising taks" entry:"1422309017" modified:"14223090
 time 1422309052
 new [description:"Learn printing tasks with proper needs" entry:"1422309052" modified:"1422309052" status:"pending" tags:"task" uuid:"998fc7c6-bd67-4fd1-9bc3-3b8bfd2a7135"]
 ---
+time 1422311177
+old [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"Linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422311177
+old [description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" project:"Linux" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+new [description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" project:"linux" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+---
+time 1422311177
+old [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" project:"Linux" status:"pending" tags:"task" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+new [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" project:"linux" status:"pending" tags:"task" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+---
+time 1422311177
+old [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"Linux" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+new [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"linux" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1422311177
+old [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"Linux" status:"pending" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+new [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"linux" status:"pending" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1422311177
+old [description:"Maybe Configure mpd, but not necessary" entry:"1422308681" modified:"1422308681" project:"Linux" status:"pending" uuid:"e09ce1e6-1dd3-4635-a151-f0de996b39a2"]
+new [description:"Maybe Configure mpd, but not necessary" entry:"1422308681" modified:"1422308681" project:"linux" status:"pending" uuid:"e09ce1e6-1dd3-4635-a151-f0de996b39a2"]
+---
+time 1422311177
+old [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"Linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+new [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+---
+time 1422311177
+old [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" project:"Linux" status:"pending" tags:"task" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+new [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" project:"linux" status:"pending" tags:"task" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+---
+time 1422311177
+old [description:"Convert the plans file into task file maybe" end:"1422308821" entry:"1422304864" modified:"1422304864" project:"Linux" status:"completed" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]
+new [description:"Convert the plans file into task file maybe" end:"1422308821" entry:"1422304864" modified:"1422304864" project:"linux" status:"completed" uuid:"29de3aca-c7df-4e2b-8404-f11c7c736258"]
+---
+time 1422311177
+old [description:"Read the plans list and implement" end:"1422308806" entry:"1422303845" modified:"1422303845" project:"Linux" status:"completed" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+new [description:"Read the plans list and implement" end:"1422308806" entry:"1422303845" modified:"1422303845" project:"linux" status:"completed" uuid:"421b54fb-c092-4b58-9475-5ac279ba4b06"]
+---
+time 1422311177
+old [description:"Make the tasker popup of awesome organised" end:"1422308335" entry:"1422304784" modified:"1422304784" project:"Linux" status:"completed" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+new [description:"Make the tasker popup of awesome organised" end:"1422308335" entry:"1422304784" modified:"1422304784" project:"linux" status:"completed" uuid:"8bed97f2-f7f2-4a88-9cba-16b7fa6cc5e1"]
+---
+time 1422311206
+old [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+new [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" project:"linux" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+---
+time 1422311206
+old [description:"Learn printing tasks with proper needs" entry:"1422309052" modified:"1422309052" status:"pending" tags:"task" uuid:"998fc7c6-bd67-4fd1-9bc3-3b8bfd2a7135"]
+new [description:"Learn printing tasks with proper needs" entry:"1422309052" modified:"1422309052" project:"linux" status:"pending" tags:"task" uuid:"998fc7c6-bd67-4fd1-9bc3-3b8bfd2a7135"]
+---
+time 1422311206
+old [description:"Open the store" due:"1420081200" end:"1422308301" entry:"1422306468" modified:"1422306468" status:"deleted" uuid:"2c0aebbe-6e74-4165-844a-1a22e904a5eb"]
+new [description:"Open the store" due:"1420081200" end:"1422308301" entry:"1422306468" modified:"1422306468" project:"linux" status:"deleted" uuid:"2c0aebbe-6e74-4165-844a-1a22e904a5eb"]
+---
+time 1422311261
+old [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+new [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" priority:"L" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+---
+time 1422311288
+old [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" priority:"L" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+new [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+---
+time 1422311366
+new [description:"List things to take to Kolkata from home" entry:"1422311366" modified:"1422311366" project:"future" status:"pending" uuid:"c39f32e1-1967-4cd8-a89e-4ebdc7ae78c7"]
+---
+time 1422311595
+new [description:"Look for VIM based keybinding for task warrior, which exists" entry:"1422311595" modified:"1422311595" status:"pending" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+---
+time 1422311623
+new [description:"Install android app which sysncs with task warrior, exists" entry:"1422311623" modified:"1422311623" status:"pending" tags:"task" uuid:"0c41d36a-a86f-42ac-8c8b-7fbbc32d3ac4"]
+---
+time 1422311667
+old [description:"Look for VIM based keybinding for task warrior, which exists" entry:"1422311595" modified:"1422311595" status:"pending" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+new [description:"Look for VIM based keybinding for task warrior, which exists" entry:"1422311595" modified:"1422311595" project:"linux" status:"pending" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+---
+time 1422311667
+old [description:"Install android app which sysncs with task warrior, exists" entry:"1422311623" modified:"1422311623" status:"pending" tags:"task" uuid:"0c41d36a-a86f-42ac-8c8b-7fbbc32d3ac4"]
+new [description:"Install android app which sysncs with task warrior, exists" entry:"1422311623" modified:"1422311623" project:"linux" status:"pending" tags:"task" uuid:"0c41d36a-a86f-42ac-8c8b-7fbbc32d3ac4"]
+---
+time 1422312034
+new [description:"Fix teeth immediately" entry:"1422312034" modified:"1422312034" priority:"H" status:"pending" tags:"future" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
+---
+time 1422312117
+old [description:"Fix teeth immediately" entry:"1422312034" modified:"1422312034" priority:"H" status:"pending" tags:"future" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
+new [description:"Fix teeth immediately" entry:"1422312034" modified:"1422312034" priority:"H" project:"future" status:"pending" tags:"health" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
+---
+time 1422312167
+new [description:"Fix the sleep cycle" entry:"1422312167" modified:"1422312167" project:"future" status:"pending" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
+---
+time 1422312365
+new [description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1422312392
+old [description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+new [description:"annotate from March preferably" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1422312447
+old [description:"annotate from March preferably" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+new [description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1422312453
+old [description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+new [annotation_1422312453:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1422312632
+old [annotation_1422312453:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+new [annotation_1422312453:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" urgency:"0.8" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1422313042
+new [description:"The undo command in task warrior" entry:"1422313042" modified:"1422313042" status:"pending" tags:"task" uuid:"88668dbe-24fe-4cc6-bb1f-a396a5c64950"]
+---
+time 1422313369
+old [description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" project:"linux" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+new [annotation_1422313369:"It is irritating to write task every time" description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" project:"linux" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+---
+time 1422313401
+old [description:"Find a way to insert the .taskrc file inside the .task directory" entry:"1422305673" modified:"1422305673" project:"linux" status:"pending" tags:"task" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+new [annotation_1422313401:"annotate Not possible or safe according to manpage" description:"Find a way to insert the .taskrc file inside the .task directory" end:"1422313401" entry:"1422305673" modified:"1422305673" project:"linux" status:"completed" tags:"task" uuid:"cd6293e2-0d17-4f8c-88fd-4988e5e13d7d"]
+---
+time 1422313486
+old [description:"Learn printing tasks with proper needs" entry:"1422309052" modified:"1422309052" project:"linux" status:"pending" tags:"task" uuid:"998fc7c6-bd67-4fd1-9bc3-3b8bfd2a7135"]
+new [annotation_1422313486:"annotate learned, i guess." description:"Learn printing tasks with proper needs" end:"1422313486" entry:"1422309052" modified:"1422309052" project:"linux" status:"completed" tags:"task" uuid:"998fc7c6-bd67-4fd1-9bc3-3b8bfd2a7135"]
+---
+time 1422313630
+new [description:"Finish Evans-gareipy first chapter" due:"1422728999" entry:"1422313630" modified:"1422313630" project:"academic" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+---
+time 1422313788
+new [description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" status:"pending" tags:"productivity" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
+---
+time 1422313872
+old [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"linux" status:"pending" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+new [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"linux" status:"pending" tags:"productivity" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1422313872
+old [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"linux" status:"pending" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+new [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"linux" status:"pending" tags:"productivity" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1422314056
+old [description:"Finish Evans-gareipy first chapter" due:"1422728999" entry:"1422313630" modified:"1422313630" project:"academic" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+new [description:"Finish Evans-gareipy first chapter" due:"1422815400" entry:"1422313630" modified:"1422313630" project:"academic" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+---
+time 1422314354
+new [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314354" modified:"1422314354" status:"pending" uuid:"e8ce46e3-1398-43bd-bb67-8b958529f779"]
+---
+time 1422314361
+new [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" status:"pending" tags:"timepass" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+---
+time 1422314446
+new [description:"Strip down awesomerc and utilize the unused features for benefit, but not obsessively" entry:"1422314446" modified:"1422314446" status:"pending" tags:"timepass" uuid:"d3e9c03b-39d5-489f-bdb6-e9014787f83c"]
+---
+time 1422314548
+new [description:"Understand pop-up for awesome and implement for printing ip address, exec tasksh script output and other cool things" entry:"1422314548" modified:"1422314548" status:"pending" tags:"awesome,timepass" uuid:"9bf0ba80-e85d-4b1a-b870-aaa2989aaa5b"]
+---
+time 1422314584
+old [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" status:"pending" tags:"timepass" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+new [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+---
+time 1422314584
+old [description:"Strip down awesomerc and utilize the unused features for benefit, but not obsessively" entry:"1422314446" modified:"1422314446" status:"pending" tags:"timepass" uuid:"d3e9c03b-39d5-489f-bdb6-e9014787f83c"]
+new [description:"Strip down awesomerc and utilize the unused features for benefit, but not obsessively" entry:"1422314446" modified:"1422314446" status:"pending" tags:"timepass,awesome" uuid:"d3e9c03b-39d5-489f-bdb6-e9014787f83c"]
+---
