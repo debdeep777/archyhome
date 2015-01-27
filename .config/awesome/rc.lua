@@ -85,7 +85,7 @@ end
 
 -- A function to show the output of a shell script in popup
 -- is used later for fun
-function arandom(shellcommand)
+function shelloutpop(shellcommand)
 local f, c_text
 f = io.popen(shellcommand)
 c_text = f:read("*all")
@@ -612,7 +612,13 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift" }, "t", function () awful.util.spawn(launchtodofile) end),
     
     -- Pops up the output after running the "randomscr" script kept in .myscr
-    awful.key({ modkey,         }, "q", function ()     arandom("randomscr")         end),
+    awful.key({ modkey,         }, "q", function ()    shelloutpop("randomscr")         end),
+
+    -- Takes a screenshot while the print screen button is pressed
+    -- Need the package ImageMagick for import 
+    awful.key({ }, "Print", function () awful.util.spawn("import -window root capture-$(date +%d-%h-%Y-%H-%M-%S).jpg ") 
+					popup("Screen Captured",),      
+
 
     awful.key({ modkey }, "e", function () awful.util.spawn("xterm -e ranger") end),
     awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
