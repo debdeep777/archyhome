@@ -531,3 +531,6 @@ time 1422442835
 old [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
 new [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
 ---
+time 1422363630
+new [description:"Write cron to sync tasks periodically without the prompt" entry:"1422363630" modified:"1422363630" project:"linux" status:"pending" tags:"productivity,task" uuid:"16fc4a32-0a0d-424d-ae7a-5b564f27e78b"]
+---
