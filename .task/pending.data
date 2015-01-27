@@ -21,3 +21,5 @@
 [description:"Understand pop-up for awesome and implement for printing ip address, exec tasksh script output and other cool things" entry:"1422314548" modified:"1422314548" project:"linux" status:"pending" tags:"awesome,timepass,task" uuid:"9bf0ba80-e85d-4b1a-b870-aaa2989aaa5b"]
 [description:"download copycat-killer and try to get the best out of them, them merge your own rc.lua with it" entry:"1422350316" modified:"1422350316" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"fd5461c8-eb34-4b40-ad6d-f30627cdefc9"]
 [description:"Get the righ font for awesome, tiny at the menu, monospace in popup" entry:"1422350386" modified:"1422350386" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"81c9daae-36df-4538-9157-2861ad867af1"]
+[description:"make date and time in textclock acronymed to save space" entry:"1422351710" modified:"1422351710" status:"pending" uuid:"bb43a433-bff0-473e-853c-805b5439baa5"]
+[description:"make a clear distinction between widget section and window section" entry:"1422351750" modified:"1422351750" status:"pending" uuid:"02aa51db-4581-45e2-a4d2-fecc610bdb59"]

@@ -69,7 +69,7 @@ beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/multicolor/theme.lu
 -- so, why not fg?
 function popup(sometitle, sometext)
 naughty.notify({
-	title = "<tt>" .. sometitle .. "</tt>",
+	title = sometitle,
         text = sometext,
 --        icon = calendar.notify_icon,
 --        position = calendar.position,
@@ -78,7 +78,7 @@ naughty.notify({
 --	  timeout = 5
     })
 end
-popup("helllooo","Theese are the texts")
+--popup("helllooo","Theese are the texts")
 
 
 -- common
@@ -155,7 +155,7 @@ markup      = lain.util.markup
 
 -- Textclock
 clockicon = wibox.widget.imagebox(beautiful.widget_clock)
-mytextclock = awful.widget.textclock(markup("#CCCCff", "%A ") .. markup("#ffffff", "%d ") .. markup("#c7a8ff", "%B ") .. markup("#ffffff", " %I:%M %p"))
+mytextclock = awful.widget.textclock(markup("#CCCCff", "%a ") .. markup("#ffffff", "%d ") .. markup("#c7a8ff", "%b") .. markup("#ffffff", " %I:%M %p"))
 
 -- Calendar, attached to the textclock
 lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
