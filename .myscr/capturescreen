@@ -1,0 +1,19 @@
+# Script to take a screenshot
+# Requires ImageMagick
+
+# Format or extension
+fextension='png'
+
+# Filename section
+# Give the timestamp to the filename to avoid overwriting, provided, not more than one picture is taken every second
+firstpart=$(date +%d-%h-%Y-%H-%M-%S)
+
+# Final filename
+fname='capture-'$firstpart.$fextension
+
+# Capture all of the screen
+import -window root $fname 
+
+# Finally, output the filename
+# Very important, since -verbose output cannot be captured by >> because of some strange reason
+echo $fname

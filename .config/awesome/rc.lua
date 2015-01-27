@@ -83,14 +83,20 @@ end
 -- usage:
 --popup("helllooo","Theese are the texts")
 
+-- Runs a shell script and return its output
+-- very useful
+function run_get(shellcommand)
+	local f, c_text
+	f = io.popen(shellcommand)
+	c_text = f:read("*all")
+	f:close()
+	return c_text
+end
+
 -- A function to show the output of a shell script in popup
 -- is used later for fun
-function shelloutpop(shellcommand)
-local f, c_text
-f = io.popen(shellcommand)
-c_text = f:read("*all")
-f:close()
-popup("Output", c_text)
+function run_pop(headingtxt,shellcommand)
+	popup(headingtxt, run_get(shellcommand))
 end
 ------------------------
 ------------------------
@@ -612,11 +618,11 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift" }, "t", function () awful.util.spawn(launchtodofile) end),
     
     -- Pops up the output after running the "randomscr" script kept in .myscr
-    awful.key({ modkey,         }, "q", function ()    shelloutpop("randomscr")         end),
+    awful.key({ modkey,         }, "q", function ()    run_pop(run_get("cat .myscr/randomscr"),"randomscr")         end),
 
     -- Takes a screenshot while the print screen button is pressed
     -- Need the package ImageMagick for import 
-    awful.key({ }, "Print", function ()  shelloutpop("import -verbose -window root capture-$(date +%d-%h-%Y-%H-%M-%S).jpg ") end),
+    awful.key({ }, "Print", function ()  run_pop("Captured Screen to:", "capturescreen") end),
 
 
     awful.key({ modkey }, "e", function () awful.util.spawn("xterm -e ranger") end),
