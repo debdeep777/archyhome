@@ -616,8 +616,7 @@ globalkeys = awful.util.table.join(
 
     -- Takes a screenshot while the print screen button is pressed
     -- Need the package ImageMagick for import 
-    awful.key({ }, "Print", function () awful.util.spawn("import -window root capture-$(date +%d-%h-%Y-%H-%M-%S).jpg ") 
-					popup("Screen Captured",),      
+    awful.key({ }, "Print", function ()  shelloutpop("import -verbose -window root capture-$(date +%d-%h-%Y-%H-%M-%S).jpg ") end),
 
 
     awful.key({ modkey }, "e", function () awful.util.spawn("xterm -e ranger") end),
