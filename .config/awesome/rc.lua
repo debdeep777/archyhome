@@ -67,6 +67,8 @@ beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/multicolor/theme.lu
 -- kept it after beautiful.init, hence they inherit the bg, fg, font etc from
 -- the theme file, don't know how though
 -- so, why not fg?
+-- maybe make it transparent?
+-- make it have terminal colors... too much to ask?
 function popup(sometitle, sometext)
 naughty.notify({
 	title = sometitle,
@@ -78,17 +80,20 @@ naughty.notify({
 --	  timeout = 5
     })
 end
+-- usage:
 --popup("helllooo","Theese are the texts")
 
-function arandom()
-shellcommand='ls'
+-- A function to show the output of a shell script in popup
+-- is used later for fun
+function arandom(shellcommand)
 local f, c_text
 f = io.popen(shellcommand)
 c_text = f:read("*all")
 f:close()
-popup("list files", c_text)
+popup("Output", c_text)
 end
-------------------------should delete to make it fast
+------------------------
+------------------------
 
 -- common
 modkey     = "Mod4"
@@ -605,7 +610,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn(browserfocusl) end),
     -- T want the 'todo new installation' to launch with Mod4+Shift+T
     awful.key({ modkey, "Shift" }, "t", function () awful.util.spawn(launchtodofile) end),
-
+    
+    -- Pops up the output after running the "randomscr" script kept in .myscr
+    awful.key({ modkey,         }, "q", function ()     arandom("randomscr")         end),
 
     awful.key({ modkey }, "e", function () awful.util.spawn("xterm -e ranger") end),
     awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
@@ -627,7 +634,6 @@ globalkeys = awful.util.table.join(
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
--- din not work    awful.key({ modkey,           }, "p",      arandom()                                        ),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
