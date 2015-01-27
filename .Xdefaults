@@ -1,7 +1,7 @@
 XTerm*faceName: DejaVu Sans Mono:pixelsize=13
 ## color scheme for xterm
 #xterm*background: grey11
-xterm*background: '#93A1A1'
+xterm*background: #002B36
 xterm*foreground: cornsilk1
 
 #xterm*background: black
