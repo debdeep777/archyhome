@@ -1,1 +1,1 @@
-vim '/storage/Lenovo/lin/TODO new_installation'
+vim --servername TODONEWINST --remote '/storage/Lenovo/lin/TODO new_installation'

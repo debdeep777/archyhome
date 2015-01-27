@@ -357,3 +357,9 @@ new [description:"make firefox darker after updating following the tutorial for 
 time 1422356614
 new [description:"make the terminal use darker colors" entry:"1422356614" modified:"1422356614" status:"pending" tags:"productivity,experiment" uuid:"0a5b401b-bf64-4f58-85c6-96bb5462f3ca"]
 ---
+time 1422362514
+new [description:"Make awesome default color zathurarc bg color" entry:"1422362514" modified:"1422362514" status:"pending" uuid:"0884f631-cc85-42e6-a5f7-a1464771262f"]
+---
+time 1422362570
+new [description:"make the dropdown of the awesome popups transparent" entry:"1422362570" modified:"1422362570" status:"pending" tags:"awesome,timepass" uuid:"c01ad3a5-b905-4ba1-a273-9f72ebce0bb2"]
+---

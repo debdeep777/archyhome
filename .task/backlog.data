@@ -97,3 +97,5 @@
 {"description":"write a code to delete the thumnali cache for sxiv, get used to this programme, update the RAW file handling blog also","entry":"20150127T103521Z","modified":"20150127T103521Z","project":"linux","status":"pending","uuid":"fc44131d-ba8e-44d8-a504-35eed04b99ff"}
 {"description":"make firefox darker after updating following the tutorial for 35 version and above","entry":"20150127T110303Z","modified":"20150127T110303Z","status":"pending","uuid":"3cb43b5e-630b-4c26-b69d-5c2d8d3017a5"}
 {"description":"make the terminal use darker colors","entry":"20150127T110334Z","modified":"20150127T110334Z","status":"pending","tags":["productivity","experiment"],"uuid":"0a5b401b-bf64-4f58-85c6-96bb5462f3ca"}
+{"description":"Make awesome default color zathurarc bg color","entry":"20150127T124154Z","modified":"20150127T124154Z","status":"pending","uuid":"0884f631-cc85-42e6-a5f7-a1464771262f"}
+{"description":"make the dropdown of the awesome popups transparent","entry":"20150127T124250Z","modified":"20150127T124250Z","status":"pending","tags":["awesome","timepass"],"uuid":"c01ad3a5-b905-4ba1-a273-9f72ebce0bb2"}
