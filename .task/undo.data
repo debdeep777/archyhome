@@ -768,3 +768,7 @@ time 1422392879
 old [annotation_1422392868:"some anno" description:"random2" entry:"1422392800" modified:"1422392800" status:"pending" uuid:"fa2238ba-31c3-40aa-bf4c-37fa9f19baf8"]
 new [annotation_1422392868:"some anno" description:"random2" end:"1422392879" entry:"1422392800" modified:"1422392800" status:"deleted" uuid:"fa2238ba-31c3-40aa-bf4c-37fa9f19baf8"]
 ---
+time 1422394744
+old [description:"random" end:"1422392859" entry:"1422392796" modified:"1422392796" status:"completed" uuid:"7e5fe23f-cbc1-40ac-8bed-307a8a2f6d9e"]
+new [description:"random" end:"1422392859" entry:"1422392796" modified:"1422392796" status:"completed" uuid:"7e5fe23f-cbc1-40ac-8bed-307a8a2f6d9e"]
+---
