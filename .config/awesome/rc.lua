@@ -12,7 +12,12 @@ local beautiful = require("beautiful")
 local naughty   = require("naughty")
 local drop      = require("scratchdrop")	-- Only for the dropdown terminal
 local lain      = require("lain")
+local redshift = require("redshift")		-- the package redshift has to be installed also
 -- }}}
+
+-- launching redshift in the beginning
+-- 1 for dim, 0 for not dimmed
+redshift.init(1)
 
 -- {{{ Error handling
 if awesome.startup_errors then
@@ -634,6 +639,10 @@ globalkeys = awful.util.table.join(
 	 --end
 	-- }}}
     											end),
+
+    -- Redshift toggling
+    -- config file for redshift is in its usual place, .config/redshift.conf
+    awful.key({modkey}, "d", redshift.toggle),
 
     awful.key({ modkey }, "e", function () awful.util.spawn("xterm -e ranger") end),
     awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
