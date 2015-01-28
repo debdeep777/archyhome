@@ -849,3 +849,7 @@ time 1422405184
 old [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
 new [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
 ---
+time 1422407381
+old [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+new [annotation_1422407381:"Wrote wallify, then mod4+ctrl+w to change. responds slow though." description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+---

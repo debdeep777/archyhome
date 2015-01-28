@@ -1,1 +1,2 @@
 3196359a-a91d-4c3b-a951-93697cb85466
+{"description":"Add shortcut to awesome to change the wallpaper back and forth","entry":"20150126T231921Z","modified":"20150126T231921Z","project":"linux","status":"pending","tags":["timepass","awesome"],"uuid":"174dac92-a51f-4102-b40b-000c5a8fb40c","annotations":[{"entry":"20150128T010941Z","description":"Wrote wallify, then mod4+ctrl+w to change. responds slow though."}]}

@@ -623,7 +623,7 @@ globalkeys = awful.util.table.join(
     -- Takes a screenshot while the print screen button is pressed
     -- Need the package ImageMagick for import 
     awful.key({ }, "Print", function ()  run_pop("Captured Screen to:", "capturescreen") end),
-    awful.key({ modkey, "Shift" }, "w", function()
+    awful.key({ modkey, "Control" }, "w", function()
     -- Changing wallpaper at will
 	-- {{{ Wallpaper
 	 --if beautiful.wallpaper then
