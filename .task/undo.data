@@ -387,3 +387,35 @@ new [description:"activate shortcut in tasker widget so that it launches a promp
 time 1422373346
 new [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
 ---
+time 1422402356
+old [annotation_1422370028:"same for t" description:"MOd4+shift+f shoudl focus on firefox if open." entry:"1422370000" modified:"1422370000" project:"linux" status:"pending" tags:"productivity" uuid:"e27e7a05-18f6-4a0a-816b-e9d1d82adfb3"]
+new [annotation_1422370028:"same for t" description:"MOd4+shift+f shoudl focus on firefox if open." end:"1422402356" entry:"1422370000" modified:"1422370000" project:"linux" status:"completed" tags:"productivity" uuid:"e27e7a05-18f6-4a0a-816b-e9d1d82adfb3"]
+---
+time 1422402394
+old [description:"Strip down awesomerc and utilize the unused features for benefit, but not obsessively" entry:"1422314446" modified:"1422314446" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"d3e9c03b-39d5-489f-bdb6-e9014787f83c"]
+new [description:"Strip down awesomerc and utilize the unused features for benefit, but not obsessively" end:"1422402392" entry:"1422314446" modified:"1422314446" project:"linux" status:"deleted" tags:"timepass,awesome" uuid:"d3e9c03b-39d5-489f-bdb6-e9014787f83c"]
+---
+time 1422402417
+old [description:"Get the righ font for awesome, tiny at the menu, monospace in popup" entry:"1422350386" modified:"1422350386" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"81c9daae-36df-4538-9157-2861ad867af1"]
+new [description:"Get the righ font for awesome, tiny at the menu, monospace in popup" end:"1422402417" entry:"1422350386" modified:"1422350386" project:"linux" status:"completed" tags:"awesome,timepass" uuid:"81c9daae-36df-4538-9157-2861ad867af1"]
+---
+time 1422402436
+old [annotation_1422313369:"It is irritating to write task every time" description:"Learn vimperator bookmarking tabs command" entry:"1422305397" modified:"1422305397" project:"linux" status:"pending" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+new [annotation_1422313369:"It is irritating to write task every time" description:"Learn vimperator bookmarking tabs command" end:"1422402436" entry:"1422305397" modified:"1422305397" project:"linux" status:"completed" uuid:"20d5e725-e317-42a0-b4f7-8ba184748c9f"]
+---
+time 1422402452
+old [description:"Modify awesome and use shortcut to implement many useful things" entry:"1422308768" modified:"1422308768" project:"linux" status:"pending" tags:"task" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+new [description:"Modify awesome and use shortcut to implement many useful things" end:"1422402451" entry:"1422308768" modified:"1422308768" project:"linux" status:"deleted" tags:"task" uuid:"47ea7bf2-29f5-473f-a3cd-ed49c496b1cf"]
+---
+time 1422402499
+old [description:"How to print the minimal list report, the vb report by default while typing task" entry:"1422352290" modified:"1422352290" project:"linux" status:"pending" tags:"task" uuid:"d1fcb633-37df-43e3-9eac-dffcc5108091"]
+new [description:"How to print the minimal list report, the vb report by default while typing task" end:"1422402499" entry:"1422352290" modified:"1422352290" project:"linux" status:"completed" tags:"task" uuid:"d1fcb633-37df-43e3-9eac-dffcc5108091"]
+---
+time 1422402548
+old [description:"vimperator remove address bar and somehow keep the plugins and use the bottom bar efficiently" entry:"1422367448" modified:"1422367448" project:"linux" status:"pending" tags:"productivity" uuid:"8402136c-8e11-4f5f-a746-951b4de321d5"]
+new [annotation_1422402548:"annotate could not be added addons to status bar, changed color though" description:"vimperator remove address bar and somehow keep the plugins and use the bottom bar efficiently" end:"1422402548" entry:"1422367448" modified:"1422367448" project:"linux" status:"completed" tags:"productivity" uuid:"8402136c-8e11-4f5f-a746-951b4de321d5"]
+---
+time 1422402570
+old [description:"make the terminal use darker colors" entry:"1422356614" modified:"1422356614" status:"pending" tags:"productivity,experiment" uuid:"0a5b401b-bf64-4f58-85c6-96bb5462f3ca"]
+new [description:"make the terminal use darker colors" end:"1422402570" entry:"1422356614" modified:"1422356614" status:"completed" tags:"productivity,experiment" uuid:"0a5b401b-bf64-4f58-85c6-96bb5462f3ca"]
+---
