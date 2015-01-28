@@ -853,3 +853,30 @@ time 1422407381
 old [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
 new [annotation_1422407381:"Wrote wallify, then mod4+ctrl+w to change. responds slow though." description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
 ---
+time 1422407412
+old [annotation_1422407381:"Wrote wallify, then mod4+ctrl+w to change. responds slow though." description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+new [annotation_1422407381:"Wrote wallify, then mod4+ctrl+w to change. responds slow though." description:"Add shortcut to awesome to change the wallpaper back and forth" end:"1422407412" entry:"1422314361" modified:"1422314361" project:"linux" status:"completed" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+---
+time 1422407502
+old [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" project:"linux" status:"pending" tags:"task,awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+new [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" priority:"L" project:"linux" status:"pending" tags:"task,awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+---
+time 1422407550
+old [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314354" modified:"1422314354" project:"linux" status:"pending" tags:"task" uuid:"e8ce46e3-1398-43bd-bb67-8b958529f779"]
+new [description:"Add shortcut to awesome to change the wallpaper back and forth" end:"1422407550" entry:"1422314354" modified:"1422314354" project:"linux" status:"completed" tags:"task" uuid:"e8ce46e3-1398-43bd-bb67-8b958529f779"]
+---
+time 1422407834
+old [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" priority:"L" project:"linux" status:"pending" tags:"task,awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+new [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" priority:"L" project:"linux" status:"pending" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+---
+time 1422407848
+old [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" priority:"L" project:"linux" status:"pending" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+new [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" project:"linux" status:"pending" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+---
+time 1422407925
+new [description:"Stop the weather widget project:linux" entry:"1422407925" modified:"1422407925" status:"pending" uuid:"d5957562-4b2a-4d13-9190-1b7cd325a773"]
+---
+time 1422407969
+old [description:"Stop the weather widget project:linux" entry:"1422407925" modified:"1422407925" status:"pending" uuid:"d5957562-4b2a-4d13-9190-1b7cd325a773"]
+new [description:"Stop the weather widget project:linux" end:"1422407969" entry:"1422407925" modified:"1422407925" status:"deleted" uuid:"d5957562-4b2a-4d13-9190-1b7cd325a773"]
+---
