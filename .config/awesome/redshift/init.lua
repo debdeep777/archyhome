@@ -14,7 +14,8 @@ redshift.state = 1                         -- 1 for screen dimming, 0 for none
 -- functions
 redshift.dim = function()
     awful.util.spawn("notify-send 'Redshifting'")
-    awful.util.spawn("redshift") -- If screen fluctuates, redshift -o
+    awful.util.spawn("pgrep -u $USER -x redshift || redshift") -- Ensures that only one instance of this program runs by this method, very clever trick
+-- If screen fluctuates, redshift -o
     redshift.state = 1
 end
 
