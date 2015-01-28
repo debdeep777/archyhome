@@ -250,7 +250,7 @@ batwidget = lain.widgets.bat({
     settings = function()
     	batperc = bat_now.perc .. "%"
         if bat_now.status == "Discharging" then
-		widget:set_markup(markup("#FF0505", batperc))
+		widget:set_markup(markup("#FF0505", bat_now.time))
         else
 		widget:set_markup(markup("#00FF33", batperc))
         end
