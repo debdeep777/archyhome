@@ -1,3 +1,4 @@
+[description:"List things to take to Kolkata from home" end:"1422456606" entry:"1422311366" modified:"1422311366" project:"future" status:"completed" uuid:"c39f32e1-1967-4cd8-a89e-4ebdc7ae78c7"]
 [description:"Stop the weather widget project:linux" end:"1422407969" entry:"1422407925" modified:"1422407925" status:"deleted" uuid:"d5957562-4b2a-4d13-9190-1b7cd325a773"]
 [description:"Add shortcut to awesome to change the wallpaper back and forth" end:"1422407550" entry:"1422314354" modified:"1422314354" project:"linux" status:"completed" tags:"task" uuid:"e8ce46e3-1398-43bd-bb67-8b958529f779"]
 [annotation_1422407381:"Wrote wallify, then mod4+ctrl+w to change. responds slow though." description:"Add shortcut to awesome to change the wallpaper back and forth" end:"1422407412" entry:"1422314361" modified:"1422314361" project:"linux" status:"completed" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]

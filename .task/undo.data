@@ -880,3 +880,102 @@ time 1422407969
 old [description:"Stop the weather widget project:linux" entry:"1422407925" modified:"1422407925" status:"pending" uuid:"d5957562-4b2a-4d13-9190-1b7cd325a773"]
 new [description:"Stop the weather widget project:linux" end:"1422407969" entry:"1422407925" modified:"1422407925" status:"deleted" uuid:"d5957562-4b2a-4d13-9190-1b7cd325a773"]
 ---
+time 1422456418
+old [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" priority:"M" project:"linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422456426
+old [description:"Finish Evans-gareipy first chapter" due:"1422815400" entry:"1422313630" modified:"1422380828" project:"Work" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+new [description:"Finish Evans-gareipy first chapter" due:"1422815400" entry:"1422313630" modified:"1422380828" priority:"H" project:"Work" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+---
+time 1422456436
+old [description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" project:"linux" status:"pending" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
+new [description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" priority:"M" project:"linux" status:"pending" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
+---
+time 1422456443
+old [description:"make the dropdown of the awesome popups transparent" entry:"1422362570" modified:"1422381506" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"c01ad3a5-b905-4ba1-a273-9f72ebce0bb2"]
+new [description:"make the dropdown of the awesome popups transparent" entry:"1422362570" modified:"1422381506" priority:"L" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"c01ad3a5-b905-4ba1-a273-9f72ebce0bb2"]
+---
+time 1422456455
+old [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"linux" status:"pending" tags:"productivity" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+new [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" priority:"L" project:"linux" status:"pending" tags:"productivity" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1422456467
+old [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"linux" status:"pending" tags:"productivity" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+new [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" priority:"L" project:"linux" status:"pending" tags:"productivity" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1422456481
+old [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" project:"linux" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+new [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" priority:"H" project:"linux" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+---
+time 1422456501
+old [description:"Fix the sleep cycle" entry:"1422312167" modified:"1422312167" project:"future" status:"pending" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
+new [description:"Fix the sleep cycle" entry:"1422312167" modified:"1422312167" priority:"M" project:"future" status:"pending" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
+---
+time 1422456506
+old [annotation_1422312365:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+new [annotation_1422312365:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" priority:"L" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1422456516
+old [description:"get rid of ugly icons and replace them by graphs and bars" entry:"1422352441" modified:"1422352441" project:"linux" status:"pending" tags:"task" uuid:"36779538-d6bb-416f-b17a-391b757a2283"]
+new [description:"get rid of ugly icons and replace them by graphs and bars" entry:"1422352441" modified:"1422352441" priority:"L" project:"linux" status:"pending" tags:"task" uuid:"36779538-d6bb-416f-b17a-391b757a2283"]
+---
+time 1422456536
+old [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" project:"linux" status:"pending" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+new [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" priority:"L" project:"linux" status:"pending" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+---
+time 1422456545
+old [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
+new [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
+---
+time 1422456552
+old [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
+new [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
+---
+time 1422456560
+old [description:"Percentage bar while copying, code from t, keep in bashrc" entry:"1422385852" modified:"1422385852" project:"linux" status:"pending" tags:"productivity" uuid:"23ddc000-7e71-47f6-97ed-53ca2c5b325e"]
+new [description:"Percentage bar while copying, code from t, keep in bashrc" entry:"1422385852" modified:"1422385852" priority:"L" project:"linux" status:"pending" tags:"productivity" uuid:"23ddc000-7e71-47f6-97ed-53ca2c5b325e"]
+---
+time 1422456567
+old [description:"How to copy paste between terminals, especially the previous lines in the terminal output" entry:"1422386729" modified:"1422386729" project:"linux" status:"pending" tags:"productivity" uuid:"4b85fb60-486f-444a-9e9e-583e671065b2"]
+new [description:"How to copy paste between terminals, especially the previous lines in the terminal output" entry:"1422386729" modified:"1422386729" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"4b85fb60-486f-444a-9e9e-583e671065b2"]
+---
+time 1422456577
+old [description:"Change the tab navigation keys for vimperator and make it with left hand and intuitive. Conflicts with carat mode" entry:"1422391099" modified:"1422391099" project:"linux" status:"pending" tags:"productivity" uuid:"3d00e8b7-2402-468e-9c19-ff6c7b558943"]
+new [description:"Change the tab navigation keys for vimperator and make it with left hand and intuitive. Conflicts with carat mode" entry:"1422391099" modified:"1422391099" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"3d00e8b7-2402-468e-9c19-ff6c7b558943"]
+---
+time 1422456585
+old [annotation_1422400934:"and 'tags'" description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+new [annotation_1422400934:"and 'tags'" description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" priority:"H" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+---
+time 1422456606
+old [description:"List things to take to Kolkata from home" entry:"1422311366" modified:"1422311366" project:"future" status:"pending" uuid:"c39f32e1-1967-4cd8-a89e-4ebdc7ae78c7"]
+new [description:"List things to take to Kolkata from home" end:"1422456606" entry:"1422311366" modified:"1422311366" project:"future" status:"completed" uuid:"c39f32e1-1967-4cd8-a89e-4ebdc7ae78c7"]
+---
+time 1422456613
+old [description:"make a clear distinction between widget section and window section" entry:"1422351750" modified:"1422381506" project:"linux" status:"pending" uuid:"02aa51db-4581-45e2-a4d2-fecc610bdb59"]
+new [description:"make a clear distinction between widget section and window section" entry:"1422351750" modified:"1422381506" priority:"M" project:"linux" status:"pending" uuid:"02aa51db-4581-45e2-a4d2-fecc610bdb59"]
+---
+time 1422456620
+old [description:"Make awesome default color zathurarc bg color" entry:"1422362514" modified:"1422381506" project:"linux" status:"pending" uuid:"0884f631-cc85-42e6-a5f7-a1464771262f"]
+new [description:"Make awesome default color zathurarc bg color" entry:"1422362514" modified:"1422381506" priority:"L" project:"linux" status:"pending" uuid:"0884f631-cc85-42e6-a5f7-a1464771262f"]
+---
+time 1422456647
+old [annotation_1422400934:"and 'tags'" description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" priority:"H" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+new [annotation_1422400934:"and 'tags'" description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" priority:"H" project:"linux" status:"pending" tags:"task" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+---
+time 1422456802
+new [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" status:"pending" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+---
+time 1422456812
+old [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" status:"pending" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+new [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" project:"Work" status:"pending" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+---
+time 1422456872
+old [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" project:"Work" status:"pending" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+new [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" project:"Work" status:"pending" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+---
+time 1422457218
+old [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" project:"Work" status:"pending" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+new [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" project:"Work" start:"1422457218" status:"pending" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+---
