@@ -663,7 +663,7 @@ clientkeys = awful.util.table.join(
         function (c)
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
-            c.minimized = not c.minimized
+            c.minimized = true
         end),
     awful.key({ modkey,           }, "m",
         function (c)

@@ -1,8 +1,12 @@
 # wallify the wallpaper
-#
-rm /root/.config/awesome/themes/multicolor/min.jpg.bak
 
-ln -s -T $(pwd)/$1 /root/.config/awesome/themes/multicolor/min.jpg.bak 
+if [ $1 ]
+then
+	rm /root/.config/awesome/themes/multicolor/min.jpg.bak
+
+	ln -s -T $(pwd)/$1 /root/.config/awesome/themes/multicolor/min.jpg.bak 
+
+fi
 cd /root/.config/awesome/themes/multicolor/
 cp min.jpg tmp
 mv min.jpg.bak min.jpg
