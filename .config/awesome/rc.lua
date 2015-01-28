@@ -248,11 +248,11 @@ tempwidget = lain.widgets.temp({
 baticon = wibox.widget.imagebox(beautiful.widget_batt)
 batwidget = lain.widgets.bat({
     settings = function()
-    	bat_now.perc = bat_now.perc .. "%"
+    	batperc = bat_now.perc .. "%"
         if bat_now.status == "Discharging" then
-		widget:set_markup(markup("#FF0505", bat_now.perc))
+		widget:set_markup(markup("#FF0505", batperc))
         else
-		widget:set_markup(markup("#00FF33", bat_now.perc))
+		widget:set_markup(markup("#00FF33", batperc))
         end
     end
 })
