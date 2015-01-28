@@ -291,6 +291,9 @@ memwidget = lain.widgets.mem({
     end
 })
 
+
+
+
 -- MPD
 mpdicon = wibox.widget.imagebox()
 mpdwidget = lain.widgets.mpd({
