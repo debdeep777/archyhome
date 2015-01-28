@@ -629,7 +629,7 @@ globalkeys = awful.util.table.join(
 	 --if beautiful.wallpaper then
 	     --for s = 1, screen.count() do
 --		    gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-		    gears.wallpaper.fit(beautiful.wallpaper, 1,"")
+		    gears.wallpaper.fit(beautiful.wallpaper, 1,black)
 	     --end
 	 --end
 	-- }}}

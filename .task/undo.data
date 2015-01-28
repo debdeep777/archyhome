@@ -845,3 +845,7 @@ time 1422400934
 old [description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
 new [annotation_1422400934:"and 'tags'" description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
 ---
+time 1422405184
+old [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
+new [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
+---
