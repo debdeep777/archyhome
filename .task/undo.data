@@ -419,3 +419,11 @@ time 1422402570
 old [description:"make the terminal use darker colors" entry:"1422356614" modified:"1422356614" status:"pending" tags:"productivity,experiment" uuid:"0a5b401b-bf64-4f58-85c6-96bb5462f3ca"]
 new [description:"make the terminal use darker colors" end:"1422402570" entry:"1422356614" modified:"1422356614" status:"completed" tags:"productivity,experiment" uuid:"0a5b401b-bf64-4f58-85c6-96bb5462f3ca"]
 ---
+time 1422405868
+old [description:"Maybe Configure mpd, but not necessary" entry:"1422308681" modified:"1422308681" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"e09ce1e6-1dd3-4635-a151-f0de996b39a2"]
+new [annotation_1422405867:"annotate I do not see any need" description:"Maybe Configure mpd, but not necessary" end:"1422405867" entry:"1422308681" modified:"1422308681" project:"linux" status:"deleted" tags:"awesome,timepass" uuid:"e09ce1e6-1dd3-4635-a151-f0de996b39a2"]
+---
+time 1422405928
+old [description:"download copycat-killer and try to get the best out of them, them merge your own rc.lua with it" entry:"1422350316" modified:"1422350316" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"fd5461c8-eb34-4b40-ad6d-f30627cdefc9"]
+new [annotation_1422405928:"annotata Simply do not want to" description:"download copycat-killer and try to get the best out of them, them merge your own rc.lua with it" end:"1422405928" entry:"1422350316" modified:"1422350316" project:"linux" status:"completed" tags:"awesome,timepass" uuid:"fd5461c8-eb34-4b40-ad6d-f30627cdefc9"]
+---

@@ -34,7 +34,7 @@ include /usr/share/doc/task/rc/dark-green-256.theme
 
 # A custom report for quick view
 report.vb.description='A list with very basic information, created by me.'
-report.vb.columns=id,project,tags,description.count,due
+report.vb.columns=project,tags,id,description.count,due
 report.vb.sort=start-,urgency-
 report.vb.filter=status:pending
 # Making this report my default command
