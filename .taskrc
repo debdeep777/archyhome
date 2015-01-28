@@ -45,3 +45,10 @@ report.widgetneeds.description='for the awesome widget, very basic.'
 report.widgetneeds.columns=project,description.count,due
 report.widgetneeds.sort=start-,urgency-
 report.widgetneeds.filter=status:pending
+
+# This portion comes from the free task syncing server freecinc
+taskd.server=freecinc.com:53589
+taskd.key=\/root\/.task\/freecinc_f99e9cdf.key.pem
+taskd.certificate=\/root\/.task\/freecinc_f99e9cdf.cert.pem
+taskd.ca=\/root\/.task\/freecinc_f99e9cdf.ca.pem
+taskd.credentials=FreeCinc\/freecinc_f99e9cdf\/0c9ab909-60db-45f8-ae47-1653f69942ab

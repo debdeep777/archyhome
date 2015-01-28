@@ -11,9 +11,13 @@ syntax on
 " you'll get used to this one
 colorscheme slate
 
-
+" 
 set linebreak
+
+" Setting the spell check
 set spell
+
+
 "" Do not like visual bell anymore
 "set visualbell
 imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u

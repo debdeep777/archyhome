@@ -427,3 +427,107 @@ time 1422405928
 old [description:"download copycat-killer and try to get the best out of them, them merge your own rc.lua with it" entry:"1422350316" modified:"1422350316" project:"linux" status:"pending" tags:"awesome,timepass" uuid:"fd5461c8-eb34-4b40-ad6d-f30627cdefc9"]
 new [annotation_1422405928:"annotata Simply do not want to" description:"download copycat-killer and try to get the best out of them, them merge your own rc.lua with it" end:"1422405928" entry:"1422350316" modified:"1422350316" project:"linux" status:"completed" tags:"awesome,timepass" uuid:"fd5461c8-eb34-4b40-ad6d-f30627cdefc9"]
 ---
+time 1422407150
+old [description:"write a code to delete the thumnali cache for sxiv, get used to this programme, update the RAW file handling blog also" entry:"1422354921" modified:"1422354921" project:"linux" status:"pending" uuid:"fc44131d-ba8e-44d8-a504-35eed04b99ff"]
+new [description:"write a code to delete the thumnali cache for sxiv, get used to this programme, update the RAW file handling blog also" end:"1422407150" entry:"1422354921" modified:"1422354921" project:"linux" status:"completed" uuid:"fc44131d-ba8e-44d8-a504-35eed04b99ff"]
+---
+time 1422442580
+old [description:"Look for VIM based keybinding for task warrior, which exists" entry:"1422311595" modified:"1422311595" project:"linux" status:"pending" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+new [annotation_1422442580:"annotate Found vit, but not satisfied since freezes during any major modification." description:"Look for VIM based keybinding for task warrior, which exists" end:"1422442580" entry:"1422311595" modified:"1422311595" project:"linux" status:"completed" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+---
+time 1422442835
+old [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" entry:"1422304623" modified:"1422304623" project:"linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1422442835
+old [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"linux" status:"pending" tags:"productivity" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+new [description:"Learn a calender organising programme like calcurse" entry:"1422308561" modified:"1422308561" project:"linux" status:"pending" tags:"productivity" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1422442835
+old [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"linux" status:"pending" tags:"productivity" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+new [description:"Learn a money management programme like ledger" entry:"1422308590" modified:"1422308590" project:"linux" status:"pending" tags:"productivity" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1422442835
+old [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+new [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+---
+time 1422442835
+old [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" project:"linux" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+new [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" project:"linux" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+---
+time 1422442835
+old [description:"List things to take to Kolkata from home" entry:"1422311366" modified:"1422311366" project:"future" status:"pending" uuid:"c39f32e1-1967-4cd8-a89e-4ebdc7ae78c7"]
+new [description:"List things to take to Kolkata from home" entry:"1422311366" modified:"1422311366" project:"future" status:"pending" uuid:"c39f32e1-1967-4cd8-a89e-4ebdc7ae78c7"]
+---
+time 1422442835
+old [annotation_1422442580:"annotate Found vit, but not satisfied since freezes during any major modification." description:"Look for VIM based keybinding for task warrior, which exists" end:"1422442580" entry:"1422311595" modified:"1422311595" project:"linux" status:"completed" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+new [description:"Look for VIM based keybinding for task warrior, which exists" entry:"1422311595" modified:"1422311595" project:"linux" status:"pending" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+---
+time 1422442835
+old [description:"Install android app which sysncs with task warrior, exists" entry:"1422311623" modified:"1422311623" project:"linux" status:"pending" tags:"task" uuid:"0c41d36a-a86f-42ac-8c8b-7fbbc32d3ac4"]
+new [description:"Install android app which sysncs with task warrior, exists" entry:"1422311623" modified:"1422311623" project:"linux" status:"pending" tags:"task" uuid:"0c41d36a-a86f-42ac-8c8b-7fbbc32d3ac4"]
+---
+time 1422442835
+old [description:"Fix teeth immediately" entry:"1422312034" modified:"1422312034" priority:"H" project:"future" status:"pending" tags:"health" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
+new [description:"Fix teeth immediately" entry:"1422312034" modified:"1422312034" priority:"H" project:"future" status:"pending" tags:"health" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
+---
+time 1422442835
+old [description:"Fix the sleep cycle" entry:"1422312167" modified:"1422312167" project:"future" status:"pending" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
+new [description:"Fix the sleep cycle" entry:"1422312167" modified:"1422312167" project:"future" status:"pending" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
+---
+time 1422442835
+old [annotation_1422312453:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" urgency:"0.8" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+new [annotation_1422312453:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1422442835
+old [description:"The undo command in task warrior" entry:"1422313042" modified:"1422313042" project:"linux" status:"pending" tags:"task" uuid:"88668dbe-24fe-4cc6-bb1f-a396a5c64950"]
+new [description:"The undo command in task warrior" entry:"1422313042" modified:"1422313042" project:"linux" status:"pending" tags:"task" uuid:"88668dbe-24fe-4cc6-bb1f-a396a5c64950"]
+---
+time 1422442835
+old [description:"Finish Evans-gareipy first chapter" due:"1422815400" entry:"1422313630" modified:"1422313630" project:"academic" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+new [description:"Finish Evans-gareipy first chapter" due:"1422815400" entry:"1422313630" modified:"1422313630" project:"academic" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+---
+time 1422442835
+old [description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" project:"linux" status:"pending" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
+new [description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" project:"linux" status:"pending" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
+---
+time 1422442835
+old [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314354" modified:"1422314354" project:"linux" status:"pending" tags:"task" uuid:"e8ce46e3-1398-43bd-bb67-8b958529f779"]
+new [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314354" modified:"1422314354" project:"linux" status:"pending" tags:"task" uuid:"e8ce46e3-1398-43bd-bb67-8b958529f779"]
+---
+time 1422442835
+old [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+new [description:"Add shortcut to awesome to change the wallpaper back and forth" entry:"1422314361" modified:"1422314361" project:"linux" status:"pending" tags:"timepass,awesome" uuid:"174dac92-a51f-4102-b40b-000c5a8fb40c"]
+---
+time 1422442835
+old [description:"Understand pop-up for awesome and implement for printing ip address, exec tasksh script output and other cool things" entry:"1422314548" modified:"1422314548" project:"linux" status:"pending" tags:"awesome,timepass,task" uuid:"9bf0ba80-e85d-4b1a-b870-aaa2989aaa5b"]
+new [description:"Understand pop-up for awesome and implement for printing ip address, exec tasksh script output and other cool things" entry:"1422314548" modified:"1422314548" project:"linux" status:"pending" tags:"awesome,timepass,task" uuid:"9bf0ba80-e85d-4b1a-b870-aaa2989aaa5b"]
+---
+time 1422442835
+old [description:"make a clear distinction between widget section and window section" entry:"1422351750" modified:"1422351750" status:"pending" uuid:"02aa51db-4581-45e2-a4d2-fecc610bdb59"]
+new [description:"make a clear distinction between widget section and window section" entry:"1422351750" modified:"1422351750" status:"pending" uuid:"02aa51db-4581-45e2-a4d2-fecc610bdb59"]
+---
+time 1422442835
+old [description:"get rid of ugly icons and replace them by graphs and bars" entry:"1422352441" modified:"1422352441" project:"linux" status:"pending" tags:"task" uuid:"36779538-d6bb-416f-b17a-391b757a2283"]
+new [description:"get rid of ugly icons and replace them by graphs and bars" entry:"1422352441" modified:"1422352441" project:"linux" status:"pending" tags:"task" uuid:"36779538-d6bb-416f-b17a-391b757a2283"]
+---
+time 1422442835
+old [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" project:"linux" status:"pending" tags:"task,awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+new [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" project:"linux" status:"pending" tags:"task,awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+---
+time 1422442835
+old [description:"Make awesome default color zathurarc bg color" entry:"1422362514" modified:"1422362514" status:"pending" uuid:"0884f631-cc85-42e6-a5f7-a1464771262f"]
+new [description:"Make awesome default color zathurarc bg color" entry:"1422362514" modified:"1422362514" status:"pending" uuid:"0884f631-cc85-42e6-a5f7-a1464771262f"]
+---
+time 1422442835
+old [description:"make the dropdown of the awesome popups transparent" entry:"1422362570" modified:"1422362570" status:"pending" tags:"awesome,timepass" uuid:"c01ad3a5-b905-4ba1-a273-9f72ebce0bb2"]
+new [description:"make the dropdown of the awesome popups transparent" entry:"1422362570" modified:"1422362570" status:"pending" tags:"awesome,timepass" uuid:"c01ad3a5-b905-4ba1-a273-9f72ebce0bb2"]
+---
+time 1422442835
+old [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
+new [description:"activate shortcut in tasker widget so that it launches a prompt box to directly enter after task add, maybe a terminal will launch" entry:"1422370116" modified:"1422370116" project:"linux" status:"pending" tags:"productivity" uuid:"b22f95de-f531-4230-a78b-5c978dcf156e"]
+---
+time 1422442835
+old [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
+new [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
+---
