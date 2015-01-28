@@ -772,3 +772,76 @@ time 1422394744
 old [description:"random" end:"1422392859" entry:"1422392796" modified:"1422392796" status:"completed" uuid:"7e5fe23f-cbc1-40ac-8bed-307a8a2f6d9e"]
 new [description:"random" end:"1422392859" entry:"1422392796" modified:"1422392796" status:"completed" uuid:"7e5fe23f-cbc1-40ac-8bed-307a8a2f6d9e"]
 ---
+time 1422397211
+old [description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+new [annotation_1422397211:"i know." description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+---
+time 1422397943
+new [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
+---
+time 1422398344
+new [description:"im just testing" entry:"1422398020" modified:"1422398020" project:"Work" status:"pending" uuid:"d852286f-53a4-4f4c-b484-895b98229397"]
+---
+time 1422399024
+old [annotation_1422397211:"i know." description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+new [annotation_1422397211:"i know." annotation_1422399024:"found a way" description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+---
+time 1422400016
+old [annotation_1422397211:"i know." annotation_1422399024:"found a way" description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+new [annotation_1422397211:"i know." annotation_1422399024:"found a way" annotation_1422400016:"maybe" description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+---
+time 1422400064
+old [description:"Write cron to sync tasks periodically without the prompt" entry:"1422363630" modified:"1422363630" project:"linux" status:"pending" tags:"productivity,task" uuid:"16fc4a32-0a0d-424d-ae7a-5b564f27e78b"]
+new [description:"Write cron to sync tasks periodically without the prompt" end:"1422400064" entry:"1422363630" modified:"1422363630" project:"linux" status:"completed" tags:"productivity,task" uuid:"16fc4a32-0a0d-424d-ae7a-5b564f27e78b"]
+---
+time 1422400073
+old [description:"Check if crontab updates the task log every time" entry:"1422390747" modified:"1422390747" project:"linux" status:"pending" tags:"task,productivity" uuid:"517f296f-737d-4344-a00c-eb1f658d4319"]
+new [description:"Check if crontab updates the task log every time" end:"1422400073" entry:"1422390747" modified:"1422390747" project:"linux" status:"completed" tags:"task,productivity" uuid:"517f296f-737d-4344-a00c-eb1f658d4319"]
+---
+time 1422400114
+old [description:"Look for VIM based keybinding for task warrior, which exists" entry:"1422311595" modified:"1422311595" project:"linux" status:"pending" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+new [description:"Look for VIM based keybinding for task warrior, which exists" end:"1422400114" entry:"1422311595" modified:"1422311595" project:"linux" status:"completed" tags:"task" uuid:"afdeced6-c278-431b-83dd-c4dcd8714757"]
+---
+time 1422400124
+old [description:"Install android app which sysncs with task warrior, exists" entry:"1422311623" modified:"1422311623" project:"linux" status:"pending" tags:"task" uuid:"0c41d36a-a86f-42ac-8c8b-7fbbc32d3ac4"]
+new [description:"Install android app which sysncs with task warrior, exists" end:"1422400124" entry:"1422311623" modified:"1422311623" project:"linux" status:"completed" tags:"task" uuid:"0c41d36a-a86f-42ac-8c8b-7fbbc32d3ac4"]
+---
+time 1422400165
+old [description:"The undo command in task warrior" entry:"1422313042" modified:"1422313042" project:"linux" status:"pending" tags:"task" uuid:"88668dbe-24fe-4cc6-bb1f-a396a5c64950"]
+new [annotation_1422400165:"task undo" description:"The undo command in task warrior" entry:"1422313042" modified:"1422313042" project:"linux" status:"pending" tags:"task" uuid:"88668dbe-24fe-4cc6-bb1f-a396a5c64950"]
+---
+time 1422400177
+old [annotation_1422400165:"task undo" description:"The undo command in task warrior" entry:"1422313042" modified:"1422313042" project:"linux" status:"pending" tags:"task" uuid:"88668dbe-24fe-4cc6-bb1f-a396a5c64950"]
+new [annotation_1422400165:"task undo" description:"The undo command in task warrior" end:"1422400177" entry:"1422313042" modified:"1422313042" project:"linux" status:"completed" tags:"task" uuid:"88668dbe-24fe-4cc6-bb1f-a396a5c64950"]
+---
+time 1422400257
+old [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" entry:"1422308728" modified:"1422308728" project:"linux" status:"pending" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+new [description:"Find a way to connect android system to this task, money and calender management syste, maybe more, very low priority" end:"1422400257" entry:"1422308728" modified:"1422308728" project:"linux" status:"completed" uuid:"f46ff7d1-0e80-4005-87c6-f921876de059"]
+---
+time 1422400375
+old [description:"Mail Indiana asap" entry:"1422380626" modified:"1422380905" project:"Work" status:"pending" uuid:"05897e08-8ecd-4481-b6e5-4e7c5acaca98"]
+new [description:"Mail Indiana asap" end:"1422400375" entry:"1422380626" modified:"1422380905" project:"Work" status:"completed" uuid:"05897e08-8ecd-4481-b6e5-4e7c5acaca98"]
+---
+time 1422400381
+old [description:"im just testing" entry:"1422398020" modified:"1422398020" project:"Work" status:"pending" uuid:"d852286f-53a4-4f4c-b484-895b98229397"]
+new [description:"im just testing" end:"1422400381" entry:"1422398020" modified:"1422398020" project:"Work" status:"deleted" uuid:"d852286f-53a4-4f4c-b484-895b98229397"]
+---
+time 1422400602
+old [annotation_1422397211:"i know." annotation_1422399024:"found a way" annotation_1422400016:"maybe" description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+new [annotation_1422397211:"i know." annotation_1422399024:"found a way" annotation_1422400016:"maybe" annotation_1422400602:"now ill know" description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+---
+time 1422400733
+old [annotation_1422397211:"i know." annotation_1422399024:"found a way" annotation_1422400016:"maybe" annotation_1422400602:"now ill know" description:"vit not working" entry:"1422387882" modified:"1422387882" project:"linux" status:"pending" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+new [annotation_1422397211:"i know." annotation_1422399024:"found a way" annotation_1422400016:"maybe" annotation_1422400602:"now ill know" description:"vit not working" end:"1422400733" entry:"1422387882" modified:"1422387882" project:"linux" status:"completed" tags:"task,productivity" uuid:"7a97e665-646e-4f56-b4d4-9de5be002715"]
+---
+time 1422400785
+new [description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+---
+time 1422400805
+old [description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+new [description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+---
+time 1422400934
+old [description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+new [annotation_1422400934:"and 'tags'" description:"How to use 'started' in vit?" entry:"1422400785" modified:"1422400785" project:"linux" status:"pending" uuid:"59aa520a-f6c0-4038-9fbf-789ae77b5368"]
+---

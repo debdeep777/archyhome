@@ -32,13 +32,23 @@ include /usr/share/doc/task/rc/dark-green-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
+# Warning:: Does not work with vit!!
 # A custom report for quick view
 report.vb.description='A list with very basic information, created by me.'
-report.vb.columns=project,tags,id,description.count,due
+report.vb.columns=project,tags,id,description,due
 report.vb.sort=start-,urgency-
 report.vb.filter=status:pending
+
+# mod
+report.ne.columns=id,depends,priority,project,tags,scheduled.countdown,due.age,until.age,description.count,urgency
+report.ne.labels=ID,Deps,P,Project,Tag,S,Due,Until,Description,Urg
+report.ne.description=Most urgent tasks
+report.ne.filter=status:pending limit:page
+report.ne.sort=start-,urgency-
+urgency.ne.coefficient=15.0
+
 # Making this report my default command
-default.command=vb
+default.command=ne
 
 # A custom report to use effectively in an awesome widget, bad idea, I know
 report.widgetneeds.description='for the awesome widget, very basic.'
