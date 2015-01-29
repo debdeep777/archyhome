@@ -38,3 +38,4 @@
 {"description":"start","entry":"20150128T145322Z","modified":"20150128T145322Z","project":"Work","status":"pending","tags":["health"],"uuid":"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"}
 {"description":"Create a time schedule for work, academic excellence and lifesyle","entry":"20150128T145322Z","modified":"20150128T145322Z","project":"Work","status":"pending","tags":["health"],"uuid":"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"}
 {"description":"Create a time schedule for work, academic excellence and lifesyle","entry":"20150128T145322Z","modified":"20150128T145322Z","project":"Work","start":"20150128T150018Z","status":"pending","tags":["health"],"uuid":"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"}
+{"description":"Add low battery warning to awesomerc battery widget","end":"20150129T015719Z","entry":"20150127T154226Z","modified":"20150127T154226Z","priority":"M","project":"linux","status":"completed","tags":["productivity"],"uuid":"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"}

@@ -236,16 +236,16 @@ mailwidget = lain.widgets.imap({
 --cpuicon = wibox.widget.imagebox()
 --cpuicon:set_image(beautiful.widget_cpu)
 -- I don't need no icon
-cpuwidget = lain.widgets.cpu({
-    settings = function()
---        widget:set_markup(markup("#e33a6e", cpu_now.usage .. "% "))
-	  widget:set_markup(markup("#e33a6e", cpu_now.usage))
-    end
-})
+--cpuwidget = lain.widgets.cpu({
+--    settings = function()
+----        widget:set_markup(markup("#e33a6e", cpu_now.usage .. "% "))
+--	  widget:set_markup(markup("#e33a6e", cpu_now.usage))
+--    end
+--})
 
 -- Coretemp
 -- Impractical, but can stay
--- What will I do when laptop get hot? Pour water? Sell it?
+-- What will I do when laptop gets hot? Pour water? Sell it?
 tempicon = wibox.widget.imagebox(beautiful.widget_temp)
 tempwidget = lain.widgets.temp({
     settings = function()
@@ -256,7 +256,7 @@ tempwidget = lain.widgets.temp({
 
 -- Battery
 -- Useful because I have set it to show different info for different status
-baticon = wibox.widget.imagebox(beautiful.widget_batt)
+--baticon = wibox.widget.imagebox(beautiful.widget_batt)
 batwidget = lain.widgets.bat({
     settings = function()
     	batperc = bat_now.perc .. "%"
@@ -270,7 +270,7 @@ batwidget = lain.widgets.bat({
 
 -- ALSA volume
 -- Good. Only updates on input
-volicon = wibox.widget.imagebox(beautiful.widget_vol)
+--volicon = wibox.widget.imagebox(beautiful.widget_vol)
 volumewidget = lain.widgets.alsa({
     settings = function()
         if volume_now.status == "off" then
@@ -314,7 +314,7 @@ volumewidget = lain.widgets.alsa({
 -- This is the one
 memvbar = awful.widget.progressbar()
 -- Progressbar properties
-memvbar:set_width(15)
+memvbar:set_width(10)
 memvbar:set_height(15)		-- because the wibox height is set to be 15. Check.
 memvbar:set_vertical(true)
 memvbar:set_background_color("#494B4F")
@@ -342,7 +342,7 @@ vicious.register(bbar, vicious.widgets.bat, "$2", 45, "BAT1")
 --  Also, only one is indicative of the others, right?
 cpuw = awful.widget.graph()
 -- Graph properties
-cpuw:set_width(50)
+cpuw:set_width(25)
 cpuw:set_background_color("#494B4F")
 cpuw:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
                     {1, "#AECF96" }}})
@@ -488,21 +488,25 @@ lain.widgets.contrib.task:attach(mytasklist[s])
 --    right_layout:add(netdowninfo)
 --    right_layout:add(netupicon)
 --    right_layout:add(netupinfo)
-    right_layout:add(volicon)
+--    right_layout:add(volicon)
+    right_layout:add(memvbar)
     right_layout:add(volumewidget)
-    right_layout:add(memicon)
-    right_layout:add(memwidget)
-    right_layout:add(cpuicon)
-    right_layout:add(cpuwidget)
+    right_layout:add(cpuw)
+--    right_layout:add(memicon)
+--    right_layout:add(memwidget)
+--    right_layout:add(cpuicon)
+--    right_layout:add(cpuwidget)
 --    right_layout:add(fsicon)
 --    right_layout:add(fswidget)
 --    right_layout:add(weathericon)
 --    right_layout:add(yawn.widget)
-    right_layout:add(tempicon)
-    right_layout:add(tempwidget)
+--    right_layout:add(tempicon)
+--    right_layout:add(tempwidget)
     --right_layout:add(baticon)
     right_layout:add(batwidget)
-    right_layout:add(clockicon)
+    right_layout:add(bbar)
+    right_layout:add(fswidget)
+--    right_layout:add(clockicon)
     right_layout:add(mytextclock)
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -642,7 +646,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey,           }, "c",      function () lain.widgets.calendar:show(7) end),
     -- The filesystem popup
     -- conflicts with another one
-    awful.key({ altkey,           }, "h",      function () fswidget.show(7) end),
+    awful.key({ modkey,           }, "h",      function () fswidget.show(10) end),
     -- The weather popup
     awful.key({ altkey,           }, "w",      function () yawn.show(7) end),
 

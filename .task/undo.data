@@ -979,3 +979,7 @@ time 1422457218
 old [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" project:"Work" status:"pending" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
 new [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1422456802" project:"Work" start:"1422457218" status:"pending" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
 ---
+time 1422496639
+old [description:"Add low battery warning to awesomerc battery widget" entry:"1422373346" modified:"1422373346" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
+new [description:"Add low battery warning to awesomerc battery widget" end:"1422496639" entry:"1422373346" modified:"1422373346" priority:"M" project:"linux" status:"completed" tags:"productivity" uuid:"3fc26ef2-a410-4cb3-bdaa-94845f3c70bd"]
+---
