@@ -1,3 +1,5 @@
+
+"What are these macros??!
 let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
 let @i = '0x$xj'
@@ -18,6 +20,17 @@ syntax on
 set hidden
 :au BufAdd,BufNewFile * nested tab sball
 
+" Searching
+"""""""""""
+" Experimental since I do not know if I need to get used to the original
+" searching conventions
+" search as characters are entered
+set incsearch
+" Tired of clearing highlighted searches?
+" pressing ,/ clears the previous highlights
+set hlsearch
+nmap <silent> ,/ :nohlsearch<CR>
+
 
 " color scheme for a dark terminal setup,
 " an alternative is pablo, but spellcheck highlight is ugly in that one
@@ -25,10 +38,22 @@ set hidden
 " you'll get used to this one
 colorscheme slate
 
+"" Really cool cursor-location-highlighting feature
+"" Makes my tex files very slow to navigate so i'm stopping them
+"" Works as a great chick-magnet though
+"" Can be underlined or highlighted, see help
+"set cursorline
+"" Used for keeping codes lined up
+"set cursorcolumn
+
+"" Setting up the hybrid numbering mode
+"set relativenumber 
+"set number 
+
 " 
 set linebreak
 
-" Setting the spell check
+" Setting the spell check by highlighting
 set spell
 
 
