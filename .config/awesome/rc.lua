@@ -13,6 +13,8 @@ local naughty   = require("naughty")
 local drop      = require("scratchdrop")	-- Only for the dropdown terminal
 local lain      = require("lain")
 local redshift = require("redshift")		-- the package redshift has to be installed also
+
+local vicious =  require("vicious")		-- the package must be installed "pacman -S vicious"
 -- }}}
 
 -- launching redshift in the beginning
@@ -292,6 +294,45 @@ memwidget = lain.widgets.mem({
 })
 
 
+-- Memory usage progress bar
+memvbar = awful.widget.progressbar()
+-- Progressbar properties
+memvbar:set_width(15)
+memvbar:set_height(15)
+memvbar:set_vertical(true)
+memvbar:set_background_color("#494B4F")
+memvbar:set_border_color("#ffffff")
+memvbar:set_color({ type = "linear", from = { 0, 0 }, to = { 0, 15 }, stops = { {0, "#FF1111"}, {0.5, "#FFFF11"}, 
+                    {1, "#11FF11"}}})
+                    -- Register widget
+                    vicious.register(memvbar, vicious.widgets.mem, "$1", 5)
+
+---- Battery bar
+bbar = awful.widget.progressbar()
+bbar:set_width(8)
+bbar:set_height(20)
+bbar:set_vertical(true)
+bbar:set_background_color('#FF1122')
+bbar:set_color('#9CFF33')
+vicious.register(bbar, vicious.widgets.bat, "$2", 5, "BAT1")
+
+
+-- Initialize widget
+cpuw = awful.widget.graph()
+-- Graph properties
+cpuw:set_width(50)
+cpuw:set_background_color("#494B4F")
+cpuw:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
+                    {1, "#AECF96" }}})
+                    -- Register widget
+                    vicious.register(cpuw, vicious.widgets.cpu, "$1", 0.5)
+
+-- Buttons for volume widget
+volumewidget:buttons(awful.util.table.join(
+awful.button({ }, 4, function () awful.util.spawn("amixer set Master 5+%") volumewidget.update() end),
+awful.button({ }, 5, function () awful.util.spawn("amixer set Master 5-%") volumewidget.update() end),
+awful.button({ }, 1, function () awful.util.spawn("amixer set Master toggle-mute") volumewidget.update() end)
+))
 
 
 -- MPD
