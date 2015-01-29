@@ -315,7 +315,7 @@ volumewidget = lain.widgets.alsa({
 memvbar = awful.widget.progressbar()
 -- Progressbar properties
 memvbar:set_width(15)
-memvbar:set_height(15)
+memvbar:set_height(15)		-- because the wibox height is set to be 15. Check.
 memvbar:set_vertical(true)
 memvbar:set_background_color("#494B4F")
 memvbar:set_border_color("#ffffff")
@@ -324,17 +324,22 @@ memvbar:set_color({ type = "linear", from = { 0, 0 }, to = { 0, 15 }, stops = { 
                     -- Register widget
                     vicious.register(memvbar, vicious.widgets.mem, "$1", 5)
 
+
 ---- Battery bar
+-- Although updating takes time, it's bar, so...
 bbar = awful.widget.progressbar()
 bbar:set_width(8)
 bbar:set_height(20)
 bbar:set_vertical(true)
 bbar:set_background_color('#FF1122')
 bbar:set_color('#9CFF33')
-vicious.register(bbar, vicious.widgets.bat, "$2", 5, "BAT1")
+vicious.register(bbar, vicious.widgets.bat, "$2", 45, "BAT1")
 
 
--- Initialize widget
+-- CPU activity graph. 
+-- I suspect that it is the avg of all core, not the first one
+--  Created 3 more with $2 $3 etc and saw no activity on those 
+--  Also, only one is indicative of the others, right?
 cpuw = awful.widget.graph()
 -- Graph properties
 cpuw:set_width(50)
@@ -345,6 +350,8 @@ cpuw:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, 
                     vicious.register(cpuw, vicious.widgets.cpu, "$1", 0.5)
 
 -- Buttons for volume widget
+-- For mouse-friendly people
+-- We have Alt++,-,M, Ctrl+M also
 volumewidget:buttons(awful.util.table.join(
 awful.button({ }, 4, function () awful.util.spawn("amixer set Master 5+%") volumewidget.update() end),
 awful.button({ }, 5, function () awful.util.spawn("amixer set Master 5-%") volumewidget.update() end),
@@ -352,35 +359,40 @@ awful.button({ }, 1, function () awful.util.spawn("amixer set Master toggle-mute
 ))
 
 
--- MPD
-mpdicon = wibox.widget.imagebox()
-mpdwidget = lain.widgets.mpd({
-    settings = function()
-        mpd_notification_preset = {
-            text = string.format("%s [%s] - %s\n%s", mpd_now.artist,
-                   mpd_now.album, mpd_now.date, mpd_now.title)
-        }
+---- MPD
+-- Will use only when I learn it
+--mpdicon = wibox.widget.imagebox()
+--mpdwidget = lain.widgets.mpd({
+--    settings = function()
+--        mpd_notification_preset = {
+--            text = string.format("%s [%s] - %s\n%s", mpd_now.artist,
+--                   mpd_now.album, mpd_now.date, mpd_now.title)
+--        }
+--
+--        if mpd_now.state == "play" then
+--            artist = mpd_now.artist .. " > "
+--            title  = mpd_now.title .. " "
+--            mpdicon:set_image(beautiful.widget_note_on)
+--        elseif mpd_now.state == "pause" then
+--            artist = "mpd "
+--            title  = "paused "
+--        else
+--            artist = ""
+--            title  = ""
+--            mpdicon:set_image(nil)
+--        end
+--        widget:set_markup(markup("#e54c62", artist) .. markup("#b2b2b2", title))
+--    end
+--})
 
-        if mpd_now.state == "play" then
-            artist = mpd_now.artist .. " > "
-            title  = mpd_now.title .. " "
-            mpdicon:set_image(beautiful.widget_note_on)
-        elseif mpd_now.state == "pause" then
-            artist = "mpd "
-            title  = "paused "
-        else
-            artist = ""
-            title  = ""
-            mpdicon:set_image(nil)
-        end
-        widget:set_markup(markup("#e54c62", artist) .. markup("#b2b2b2", title))
-    end
-})
 
 -- Spacer
+-- Don't forget this one
 spacer = wibox.widget.textbox(" ")
 
 -- }}}
+
+
 
 -- {{{ Layout
 
@@ -451,6 +463,7 @@ for s = 1, screen.count() do
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
     -- Create a tasklist widget
+    -- This one is related to task Warrior, inside the contrib widget family
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 lain.widgets.contrib.task:attach(mytasklist[s])
 
@@ -625,9 +638,12 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,	          }, "z",      function () drop(terminal) end),
 
     -- Widgets popups
+    -- The calendar pop-up
     awful.key({ altkey,           }, "c",      function () lain.widgets.calendar:show(7) end),
+    -- The filesystem popup
     -- conflicts with another one
-    --awful.key({ altkey,           }, "h",      function () fswidget.show(7) end),
+    awful.key({ altkey,           }, "h",      function () fswidget.show(7) end),
+    -- The weather popup
     awful.key({ altkey,           }, "w",      function () yawn.show(7) end),
 
     -- ALSA volume control
