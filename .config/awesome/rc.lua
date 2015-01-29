@@ -190,6 +190,8 @@ mytextclock = awful.widget.textclock(markup("#CCCCff", "%a ") .. markup("#ffffff
 lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
 
 -- Weather
+-- Maybe I'll use it soon, in some months, hopefully
+-- Better keep it handy
 weathericon = wibox.widget.imagebox(beautiful.widget_weather)
 yawn = lain.widgets.yawn(2295420, {
     settings = function()
@@ -198,6 +200,9 @@ yawn = lain.widgets.yawn(2295420, {
 })
 
 -- / fs
+-- Don't use it usually
+-- At least gives me the "running out" warnings
+-- Will be useful if I can make a bar
 fsicon = wibox.widget.imagebox(beautiful.widget_fs)
 fswidget = lain.widgets.fs({
     settings  = function()
@@ -205,6 +210,7 @@ fswidget = lain.widgets.fs({
     end
 })
 
+-- Is constantly running firefox not enough?
 --[[ Mail IMAP check
 -- commented because it needs to be set before use
 mailicon = wibox.widget.imagebox()
@@ -227,8 +233,9 @@ mailwidget = lain.widgets.imap({
 ]]
 
 -- CPU
-cpuicon = wibox.widget.imagebox()
-cpuicon:set_image(beautiful.widget_cpu)
+--cpuicon = wibox.widget.imagebox()
+--cpuicon:set_image(beautiful.widget_cpu)
+-- I don't need no icon
 cpuwidget = lain.widgets.cpu({
     settings = function()
 --        widget:set_markup(markup("#e33a6e", cpu_now.usage .. "% "))
@@ -236,9 +243,9 @@ cpuwidget = lain.widgets.cpu({
     end
 })
 
-
-
 -- Coretemp
+-- Impractical, but can stay
+-- What will I do when laptop get hot? Pour water? Sell it?
 tempicon = wibox.widget.imagebox(beautiful.widget_temp)
 tempwidget = lain.widgets.temp({
     settings = function()
@@ -246,7 +253,9 @@ tempwidget = lain.widgets.temp({
     end
 })
 
+
 -- Battery
+-- Useful because I have set it to show different info for different status
 baticon = wibox.widget.imagebox(beautiful.widget_batt)
 batwidget = lain.widgets.bat({
     settings = function()
@@ -260,6 +269,7 @@ batwidget = lain.widgets.bat({
 })
 
 -- ALSA volume
+-- Good. Only updates on input
 volicon = wibox.widget.imagebox(beautiful.widget_vol)
 volumewidget = lain.widgets.alsa({
     settings = function()
@@ -271,30 +281,37 @@ volumewidget = lain.widgets.alsa({
     end
 })
 
--- Net 
-netdownicon = wibox.widget.imagebox(beautiful.widget_netdown)
---netdownicon.align = "middle"
-netdowninfo = wibox.widget.textbox()
-netupicon = wibox.widget.imagebox(beautiful.widget_netup)
---netupicon.align = "middle"
-netupinfo = lain.widgets.net({
-    settings = function()
-        widget:set_markup(markup("#e54c62", net_now.sent .. " "))
-        netdowninfo:set_markup(markup("#87af5f", net_now.received .. " "))
-    end
-})
 
--- MEM
-memicon = wibox.widget.imagebox(beautiful.widget_mem)
-memwidget = lain.widgets.mem({
-    settings = function()
---        widget:set_markup(markup("#e0da37", mem_now.usedperc .. "% "))
-        widget:set_markup(markup("#e0da37", mem_now.usedperc))
-    end
-})
+---- Net 
+-- No need anymore, what am I? A bandwidth hogger?
+-- Maybe one wifi-signal level display will be nice
+-- Or,an IP address, or systemctl restart netctl-auto service shortcut
+--netdownicon = wibox.widget.imagebox(beautiful.widget_netdown)
+----netdownicon.align = "middle"
+--netdowninfo = wibox.widget.textbox()
+--netupicon = wibox.widget.imagebox(beautiful.widget_netup)
+----netupicon.align = "middle"
+--netupinfo = lain.widgets.net({
+--    settings = function()
+--        widget:set_markup(markup("#e54c62", net_now.sent .. " "))
+--        netdowninfo:set_markup(markup("#87af5f", net_now.received .. " "))
+--    end
+--})
+
+
+---- MEM
+-- Have a better one, a bar
+--memicon = wibox.widget.imagebox(beautiful.widget_mem)
+--memwidget = lain.widgets.mem({
+--    settings = function()
+----        widget:set_markup(markup("#e0da37", mem_now.usedperc .. "% "))
+--        widget:set_markup(markup("#e0da37", mem_now.usedperc))
+--    end
+--})
 
 
 -- Memory usage progress bar
+-- This is the one
 memvbar = awful.widget.progressbar()
 -- Progressbar properties
 memvbar:set_width(15)
