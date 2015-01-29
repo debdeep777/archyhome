@@ -463,9 +463,11 @@ for s = 1, screen.count() do
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
     -- Create a tasklist widget
-    -- This one is related to task Warrior, inside the contrib widget family
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
-lain.widgets.contrib.task:attach(mytasklist[s])
+
+-- Not using anymore, changed approach
+-- Attaching task warrior widget with tasklist
+--lain.widgets.contrib.task:attach(mytasklist[s])
 
     -- Create the upper wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s, height = 15 }) 
@@ -557,6 +559,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey }, "Escape", awful.tag.history.restore),
+
+    -- Launch vit for task warrior in a new xterm
+    -- only "xterm -e vit &" prints residue output to the same terminal, hence 2>/dev/nul
+    awful.key({ altkey }, "t", function() awful.util.spawn("xterm -e vit 2>/dev/nul &") end),
 
     -- Non-empty tag browsing
     awful.key({ altkey }, "Left", function () lain.util.tag_view_nonempty(-1) end),
@@ -709,6 +715,9 @@ globalkeys = awful.util.table.join(
     -- Takes a screenshot while the print screen button is pressed
     -- Need the package ImageMagick for import 
     awful.key({ }, "Print", function ()  run_pop("Captured Screen to:", "capturescreen") end),
+
+
+
     awful.key({ modkey, "Control" }, "w", function()
     -- Changing wallpaper at will
 	-- {{{ Wallpaper
