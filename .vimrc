@@ -36,7 +36,13 @@ nmap <silent> ,/ :nohlsearch<CR>
 " an alternative is pablo, but spellcheck highlight is ugly in that one
 " although, tex files look nice in that one
 " you'll get used to this one
-colorscheme slate
+"colorscheme slate
+
+" Using the solarized color scheme, must have 
+syntax enable
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 "" Really cool cursor-location-highlighting feature
 "" Makes my tex files very slow to navigate so i'm stopping them
