@@ -7,6 +7,16 @@ let @i = '0x$xj'
 " This is for syntax Highlighting
 syntax on
 
+" Using the solarized color scheme, must have 
+" syntax enable
+" let g:solarized_termcolors=256
+" set background=dark
+
+"colorscheme solarized
+"let g:solarized_diffmode="high"
+ 
+
+
 " Experimental. Remove if buggy.
 " This is incredible. I like it.
 " gt, gT to navigate through tabs
@@ -38,11 +48,6 @@ nmap <silent> ,/ :nohlsearch<CR>
 " you'll get used to this one
 "colorscheme slate
 
-" Using the solarized color scheme, must have 
-syntax enable
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
 
 "" Really cool cursor-location-highlighting feature
 "" Makes my tex files very slow to navigate so i'm stopping them
