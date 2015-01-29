@@ -5,6 +5,20 @@ let @i = '0x$xj'
 " This is for syntax Highlighting
 syntax on
 
+" Experimental. Remove if buggy.
+" This is incredible. I like it.
+" gt, gT to navigate through tabs
+" :qa to quit all, :wqa to save and quit all, :qa! to quit all without saving 
+" Most important of all:
+" :tabo to close all other tabs except the current one
+" Find out more for tab navigation
+" set hidden actually lets you open another buffer by :o, :e etc even when the
+" current file has unmodified changes. Fun!
+
+set hidden
+:au BufAdd,BufNewFile * nested tab sball
+
+
 " color scheme for a dark terminal setup,
 " an alternative is pablo, but spellcheck highlight is ugly in that one
 " although, tex files look nice in that one
