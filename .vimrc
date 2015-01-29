@@ -46,7 +46,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 " an alternative is pablo, but spellcheck highlight is ugly in that one
 " although, tex files look nice in that one
 " you'll get used to this one
-"colorscheme slate
+colorscheme slate
 
 
 "" Really cool cursor-location-highlighting feature
@@ -60,6 +60,9 @@ nmap <silent> ,/ :nohlsearch<CR>
 "" Setting up the hybrid numbering mode
 "set relativenumber 
 "set number 
+
+" The paste mode toggle
+set pastetoggle=<F2>
 
 " 
 set linebreak
