@@ -8,13 +8,14 @@ let @i = '0x$xj'
 syntax on
 
 " Using the solarized color scheme, must have 
- syntax enable
- let g:solarized_termcolors=256
- set background=dark
+syntax enable
+let g:solarized_termcolors=256
 "let g:solarized_diffmode="low"
 "let g:solarized_contrast = "high"
 
 colorscheme solarized
+set background=dark
+
  
 
 
@@ -50,17 +51,17 @@ nmap <silent> ,/ :nohlsearch<CR>
 "colorscheme slate
 
 
-"" Really cool cursor-location-highlighting feature
-"" Makes my tex files very slow to navigate so i'm stopping them
-"" Works as a great chick-magnet though
-"" Can be underlined or highlighted, see help
-"set cursorline
-"" Used for keeping codes lined up
-"set cursorcolumn
+" Really cool cursor-location-highlighting feature
+" Makes my tex files very slow to navigate so i'm stopping them
+" Works as a great chick-magnet though
+" Can be underlined or highlighted, see help
+set cursorline
+" Used for keeping codes lined up
+set cursorcolumn
 
-"" Setting up the hybrid numbering mode
-"set relativenumber 
-"set number 
+" Setting up the hybrid numbering mode
+set relativenumber 
+set number 
 
 " The paste mode toggle
 set pastetoggle=<F2>
