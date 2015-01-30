@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/root/.config/awesome/redshift'
 let g:netrw_dirhist_2='/usr/share/awesome'
 let g:netrw_dirhist_3='/usr/share/awesome/lib'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/root/.config/zathura'
 let g:netrw_dirhist_5='/root/.vim/ftplugin'
 let g:netrw_dirhist_6='/media'
 let g:netrw_dirhist_7='/proc'
+let g:netrw_dirhist_8='/root/.config/awesome/themes'
