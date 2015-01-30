@@ -8,12 +8,13 @@ let @i = '0x$xj'
 syntax on
 
 " Using the solarized color scheme, must have 
-" syntax enable
-" let g:solarized_termcolors=256
-" set background=dark
+ syntax enable
+ let g:solarized_termcolors=256
+ set background=dark
+"let g:solarized_diffmode="low"
+"let g:solarized_contrast = "high"
 
-"colorscheme solarized
-"let g:solarized_diffmode="high"
+colorscheme solarized
  
 
 
@@ -46,7 +47,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 " an alternative is pablo, but spellcheck highlight is ugly in that one
 " although, tex files look nice in that one
 " you'll get used to this one
-colorscheme slate
+"colorscheme slate
 
 
 "" Really cool cursor-location-highlighting feature
