@@ -4,8 +4,8 @@ let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
 let @i = '0x$xj'
 
-" This is for syntax Highlighting
-syntax on
+" This one overrides the settings and restores defaults
+"syntax on
 
 " Using the solarized color scheme, must have 
 syntax enable
