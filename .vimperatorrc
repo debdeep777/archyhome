@@ -6,6 +6,7 @@ noremap j <Down>
 noremap k <Up>
 
 " I prefer using h and l, since there's a good chance you switch tabs more often than you scroll horizontally:
+" When you HAVE to scroll horizontally, you have the Arrow key at your disposal.
 noremap l gt
 noremap h gT
 
