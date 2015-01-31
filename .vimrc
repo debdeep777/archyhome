@@ -9,11 +9,11 @@ syntax on
 
 " Using the solarized color scheme, must have 
 syntax enable
-"let g:solarized_termcolors=256
-""let g:solarized_diffmode="low"
-""let g:solarized_contrast = "high"
-"
-"colorscheme solarized
+let g:solarized_termcolors=256
+"let g:solarized_diffmode="low"
+"let g:solarized_contrast = "high"
+
+colorscheme solarized
 set background=dark
 
  
