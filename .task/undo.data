@@ -1119,3 +1119,7 @@ time 1422697096
 old [description:"How to copy paste between terminals, especially the previous lines in the terminal output" entry:"1422386729" modified:"1422386729" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"4b85fb60-486f-444a-9e9e-583e671065b2"]
 new [description:"How to copy paste between terminals, especially the previous lines in the terminal output" end:"1422697096" entry:"1422386729" modified:"1422386729" priority:"M" project:"linux" status:"completed" tags:"productivity" uuid:"4b85fb60-486f-444a-9e9e-583e671065b2"]
 ---
+time 1422697236
+old [description:"Change the tab navigation keys for vimperator and make it with left hand and intuitive. Conflicts with carat mode" entry:"1422391099" modified:"1422391099" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"3d00e8b7-2402-468e-9c19-ff6c7b558943"]
+new [description:"Change the tab navigation keys for vimperator and make it with left hand and intuitive. Conflicts with carat mode" end:"1422697236" entry:"1422391099" modified:"1422391099" priority:"M" project:"linux" status:"completed" tags:"productivity" uuid:"3d00e8b7-2402-468e-9c19-ff6c7b558943"]
+---
