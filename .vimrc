@@ -29,8 +29,8 @@ set background=dark
 " set hidden actually lets you open another buffer by :o, :e etc even when the
 " current file has unmodified changes. Fun!
 
-set hidden
-:au BufAdd,BufNewFile * nested tab sball
+"set hidden
+":au BufAdd,BufNewFile * nested tab sball
 
 " Searching
 """""""""""
@@ -41,7 +41,7 @@ set incsearch
 " Tired of clearing highlighted searches?
 " pressing ,/ clears the previous highlights
 set hlsearch
-nmap <silent> ,/ :nohlsearch<CR>
+"nmap <silent> ,/ :nohlsearch<CR>
 
 
 " color scheme for a dark terminal setup,
