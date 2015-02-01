@@ -70,6 +70,7 @@ theme.bg_normal  = theme.colors.base3
 theme.bg_focus   = theme.colors.base1
 theme.bg_urgent  = theme.colors.red
 theme.bg_systray = theme.bg_normal
+-- }}}
 
 theme.menu_submenu_icon             = theme.confdir .. "/icons/submenu.png"
 theme.widget_temp                   = theme.confdir .. "/icons/temp.png"
