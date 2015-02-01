@@ -15,12 +15,6 @@ theme.font                          = "DejaVu Sans Mono 10"
 --theme.taglist_font                =
 theme.menu_bg_normal                = "#000000"
 theme.menu_bg_focus                 = "#000000"
-theme.bg_normal                     = "#000000" -- zathurarc bg color #002B36
-theme.bg_focus                      = "#444444"
-theme.bg_urgent                     = "#000000"
-theme.fg_normal                     = "#aaaaaa"
-theme.fg_focus                      = "#ff8c00"
-theme.fg_urgent                     = "#af1d18"
 theme.fg_minimize                   = "#ffffff"
 theme.fg_black                      = "#424242"
 theme.fg_red                        = "#ce5666"
@@ -43,24 +37,24 @@ theme.menu_bg_normal                = "#050505dd"
 theme.menu_bg_focus                 = "#050505dd"
 
 theme.colors = {}
-theme.colors.base3   = "#002b36"
-theme.colors.base2   = "#073642"
-theme.colors.base1   = "#586e75"
-theme.colors.base0   = "#657b83"
-theme.colors.base00  = "#839496"
-theme.colors.base01  = "#93a1a1"
-theme.colors.base02  = "#eee8d5"
-theme.colors.base03  = "#fdf6e3"
-theme.colors.yellow  = "#b58900"
-theme.colors.orange  = "#cb4b16"
-theme.colors.red     = "#dc322f"
-theme.colors.magenta = "#d33682"
-theme.colors.violet  = "#6c71c4"
-theme.colors.blue    = "#268bd2"
-theme.colors.cyan    = "#2aa198"
-theme.colors.green   = "#859900"
+theme.colors.base3   = "#1c1c1c"
+theme.colors.base2   = "#262626"
+theme.colors.base1   = "#585858"
+theme.colors.base0   = "#626262"
+theme.colors.base00  = "#808080"
+theme.colors.base01  = "#8a8a8a"
+theme.colors.base02  = "#e4e4e4"
+theme.colors.base03  = "#ffffd7"
+theme.colors.yellow  = "#af8700"
+theme.colors.orange  = "#d75f00"
+theme.colors.red     = "#d70000"
+theme.colors.magenta = "#af005f"
+theme.colors.violet  = "#5f5faf"
+theme.colors.blue    = "#0087ff"
+theme.colors.cyan    = "#00afaf"
+theme.colors.green   = "#5f8700"
 -- }}}
- 
+
 -- {{{ Colors
 theme.fg_normal  = theme.colors.base02
 theme.fg_focus   = theme.colors.base03
@@ -69,7 +63,7 @@ theme.fg_urgent  = theme.colors.base3
 theme.bg_normal  = theme.colors.base3
 theme.bg_focus   = theme.colors.base1
 theme.bg_urgent  = theme.colors.red
-theme.bg_systray = theme.bg_normal
+theme.bg_systray = bg_blue
 -- }}}
 
 theme.menu_submenu_icon             = theme.confdir .. "/icons/submenu.png"
