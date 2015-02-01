@@ -12,12 +12,10 @@ set adjust-open width
 "set default-bg "#002B36"
 "set default-fg "#93A1A1"
 
-"set recolor-darkcolor "#93A1A1"
+set recolor-darkcolor "#93A1A1"
 "set recolor-lightcolor "#002B36"
+"matching my modified solarized theme
+set recolor-lightcolor "#1c1c1c"
 
-
-set recolor-darkcolor "#1c1c1c"
-set recolor-lightcolor "#808080"
-
-"set recolor true
+set recolor true
 
