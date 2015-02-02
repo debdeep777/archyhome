@@ -42,10 +42,10 @@ set background=dark
 " Experimental since I do not know if I need to get used to the original
 " searching conventions
 " search as characters are entered
-set incsearch
+"set incsearch
 " Tired of clearing highlighted searches?
 " pressing ,/ clears the previous highlights
-set hlsearch
+"set hlsearch
 "nmap <silent> ,/ :nohlsearch<CR>
 
 
@@ -104,8 +104,8 @@ inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
 inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
 
 " Remapping i,j to relative
-nnoremap i gi
-nnoremap j gj
+"nnoremap i gi
+"nnoremap j gj
 
 " Plugin requirements
 " Vim-latex requirements
