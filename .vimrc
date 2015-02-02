@@ -72,11 +72,15 @@ set linebreak
 set spell
 
 
-"" Do not like visual bell anymore
-"set visualbell
+" Keymaps
+""""""""""""""""""""
+" Ctrl+ L to spellcheck while typing
 imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" What is this?
 set wildmenu
 
+" Smooth scrolling for Ctrl+D/U
 function SmoothScroll(up)
     if a:up
         let scrollaction=""
@@ -99,7 +103,12 @@ nnoremap <C-D> :call SmoothScroll(0)<Enter>
 inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
 inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
 
+" Remapping i,j to relative
+nnoremap i gi
+nnoremap j gj
 
+" Plugin requirements
+" Vim-latex requirements
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
