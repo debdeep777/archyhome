@@ -77,7 +77,7 @@ set spell
 " Ctrl+ L to spellcheck while typing
 imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-" What is this?
+" The drop-down for autocomplete
 set wildmenu
 
 " Smooth scrolling for Ctrl+D/U
