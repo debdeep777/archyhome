@@ -1123,3 +1123,7 @@ time 1422697236
 old [description:"Change the tab navigation keys for vimperator and make it with left hand and intuitive. Conflicts with carat mode" entry:"1422391099" modified:"1422391099" priority:"M" project:"linux" status:"pending" tags:"productivity" uuid:"3d00e8b7-2402-468e-9c19-ff6c7b558943"]
 new [description:"Change the tab navigation keys for vimperator and make it with left hand and intuitive. Conflicts with carat mode" end:"1422697236" entry:"1422391099" modified:"1422391099" priority:"M" project:"linux" status:"completed" tags:"productivity" uuid:"3d00e8b7-2402-468e-9c19-ff6c7b558943"]
 ---
+time 1423055684
+old [description:"Go to shealdah tomorrow at 9:30" entry:"1422312034" modified:"1422380904" priority:"H" project:"Work" status:"pending" tags:"health" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
+new [description:"Go to shealdah tomorrow at 9:30" end:"1423055684" entry:"1422312034" modified:"1422380904" priority:"H" project:"Work" status:"deleted" tags:"health" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
+---
