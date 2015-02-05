@@ -318,9 +318,9 @@ memvbar:set_width(10)
 memvbar:set_height(15)		-- because the wibox height is set to be 15. Check.
 memvbar:set_vertical(true)
 memvbar:set_background_color("#494B4F")
-memvbar:set_border_color("#ffffff")
-memvbar:set_color({ type = "linear", from = { 0, 0 }, to = { 0, 15 }, stops = { {0, "#FF1111"}, {0.5, "#FFFF11"}, 
-                    {1, "#11FF11"}}})
+memvbar:set_border_color("#d75700")
+memvbar:set_color({ type = "linear", from = { 0, 0 }, to = { 0, 15 }, stops = { {0, "#d70000"}, {0.5, "#af8700"}, 
+                   {1, "#5f8700"}}})
                     -- Register widget
                     vicious.register(memvbar, vicious.widgets.mem, "$1", 5)
 
@@ -331,8 +331,8 @@ bbar = awful.widget.progressbar()
 bbar:set_width(8)
 bbar:set_height(20)
 bbar:set_vertical(true)
-bbar:set_background_color('#FF1122')
-bbar:set_color('#9CFF33')
+bbar:set_background_color("#d70000")
+bbar:set_color('#5f8700')
 vicious.register(bbar, vicious.widgets.bat, "$2", 45, "BAT1")
 
 

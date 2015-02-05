@@ -1127,3 +1127,7 @@ time 1423055684
 old [description:"Go to shealdah tomorrow at 9:30" entry:"1422312034" modified:"1422380904" priority:"H" project:"Work" status:"pending" tags:"health" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
 new [description:"Go to shealdah tomorrow at 9:30" end:"1423055684" entry:"1422312034" modified:"1422380904" priority:"H" project:"Work" status:"deleted" tags:"health" uuid:"5f9522b3-b7d4-4bc7-a850-87a504014bab"]
 ---
+time 1423168221
+old [description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" priority:"M" project:"linux" status:"pending" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
+new [description:"Setup a time to organise tasks, less obsessively though" end:"1423168221" entry:"1422313788" modified:"1422313788" priority:"M" project:"linux" status:"completed" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
+---

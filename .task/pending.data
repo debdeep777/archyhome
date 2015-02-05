@@ -5,7 +5,6 @@
 [annotation_1422540640:"make it recursive everyday with time for sleep" description:"Fix the sleep cycle" entry:"1422312167" modified:"1422312167" priority:"M" project:"future" status:"pending" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
 [annotation_1422312365:"from March preferably" description:"Learn how to drive" entry:"1422312365" modified:"1422312365" priority:"L" project:"future" status:"pending" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
 [description:"Finish Evans-gareipy first chapter" due:"1422815400" entry:"1422313630" modified:"1422380828" priority:"H" project:"Work" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
-[description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" priority:"M" project:"linux" status:"pending" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
 [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" priority:"L" project:"linux" start:"1422542964" status:"pending" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
 [description:"Percentage bar while copying, code from t, keep in bashrc" entry:"1422385852" modified:"1422385852" priority:"L" project:"linux" status:"pending" tags:"productivity" uuid:"23ddc000-7e71-47f6-97ed-53ca2c5b325e"]
 [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
