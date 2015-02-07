@@ -46,6 +46,7 @@ let g:Tex_Com_sum = "\\sum\\limits\_{<++>}\^{<++>}<++>"
 let g:Tex_Com_cap = "\\bigcap\\limits\_{<++>}\^{<++>}<++>"
 let g:Tex_Com_cup = "\\bigcup\\limits\_{<++>}\^{<++>}<++>"
 let g:Tex_Com_lim = "\\lim\\limits\_{<++>\\to<++>}<++>"
+let g:Tex_Com_int = "\\int\\limits\_{<++>}^{<++>}<++>"
 let g:Tex_Com_Rn = "\\mathbb\{R\}\^n"
 
 " Attempting to remove the need to hit enter while compiling through pdflatex

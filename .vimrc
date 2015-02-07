@@ -71,6 +71,9 @@ set linebreak
 " Setting the spell check by highlighting
 set spell
 
+" mouse
+set mouse=a
+
 
 " Keymaps
 """"""""""""""""""""
