@@ -1131,3 +1131,6 @@ time 1423168221
 old [description:"Setup a time to organise tasks, less obsessively though" entry:"1422313788" modified:"1422313788" priority:"M" project:"linux" status:"pending" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
 new [description:"Setup a time to organise tasks, less obsessively though" end:"1423168221" entry:"1422313788" modified:"1422313788" priority:"M" project:"linux" status:"completed" tags:"productivity,task" uuid:"05e91022-7aff-4c30-802b-f1636f07a13f"]
 ---
+time 1423301217
+new [description:"Fatou, MCT, DCT 1,2, Th" entry:"1423301217" modified:"1423301217" status:"pending" uuid:"8ba8af49-2e09-4784-a2ff-4f8b40720e53"]
+---
