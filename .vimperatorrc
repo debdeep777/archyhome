@@ -15,7 +15,7 @@ set sb=false
 
 """""""""""""""""""
 " no gui
-set gui=none,tabs
+set gui=none,tabs,navigation
 """"""""""""""""""
 
 " Show tab numbers so that we jump to them like 12gt to go to the 12th tab
