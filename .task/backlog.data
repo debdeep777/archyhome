@@ -83,3 +83,6 @@
 {"description":"Go to shealdah tomorrow at 9:30","end":"20150204T131444Z","entry":"20150126T224034Z","modified":"20150127T174824Z","priority":"H","project":"Work","status":"deleted","tags":["health"],"uuid":"5f9522b3-b7d4-4bc7-a850-87a504014bab"}
 {"description":"Setup a time to organise tasks, less obsessively though","end":"20150205T203021Z","entry":"20150126T230948Z","modified":"20150126T230948Z","priority":"M","project":"linux","status":"completed","tags":["productivity","task"],"uuid":"05e91022-7aff-4c30-802b-f1636f07a13f"}
 {"description":"Fatou, MCT, DCT 1,2, Th","entry":"20150207T092657Z","modified":"20150207T092657Z","status":"pending","uuid":"8ba8af49-2e09-4784-a2ff-4f8b40720e53"}
+{"description":"south asian university 9 march","entry":"20150303T153113Z","modified":"20150303T153113Z","status":"pending","uuid":"aef55ade-fb1a-4210-8429-4b162879e91b"}
+{"description":"IIT hyderabad","entry":"20150303T153119Z","modified":"20150303T153119Z","status":"pending","uuid":"5594281f-4523-47a7-8e63-af9dc7b95bb0"}
+{"description":"IISER mohali","entry":"20150303T153211Z","modified":"20150303T153211Z","status":"pending","uuid":"2af28380-4d6a-4a82-845e-42e39d920325"}
