@@ -1152,3 +1152,6 @@ new [description:"iit bombay phd" entry:"1425839003" modified:"1425839003" statu
 time 1425839187
 new [description:"iit madras due: 22 March" entry:"1425839187" modified:"1425839187" status:"pending" uuid:"b28af125-3e3d-409c-aee5-9e4aa43f1c4f"]
 ---
+time 1426960401
+new [description:"spellcheck in firefox" entry:"1426960401" modified:"1426960401" status:"pending" uuid:"daf4afae-3d5e-40c2-abdf-f529e69c279b"]
+---
