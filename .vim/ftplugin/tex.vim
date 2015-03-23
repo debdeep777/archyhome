@@ -63,7 +63,7 @@ nmap <Leader>f :call SyncTexForward()<CR><C-L>
 " To save and compile with one command \k (k=kompile) :)
 " no need to launch the pdf aliong with this because zathura can refresh
 " itself after every compilation produces a new pdf, so \k is enough
-nmap <Leader>k :w<CR> <Leader>ll<C-L>`.a
+nmap <Leader>k :w<CR> <Leader>ll<C-L>
 
 " I will just reamp this \lv thing to \v just to be consistent with \k and \f
 nmap <Leader>v <Leader>lv
