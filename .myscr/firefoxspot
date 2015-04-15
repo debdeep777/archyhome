@@ -2,8 +2,9 @@ firefox &&
 
 sleep 4 
 
-export DISPLAY=:0
 xdotool keydown Super_L key 4 &&
+# Does not work as a run_once script
 
 xdotool search --desktop 3 --class "Firefox" windowactivate
-
+#useless because 4 seconds is not enough time for firefox to load
+#more time gap defeats the purpose
