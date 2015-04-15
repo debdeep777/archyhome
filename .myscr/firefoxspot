@@ -1,5 +1,9 @@
 firefox &&
+
 sleep 4 
+
+export DISPLAY=:0
+xdotool keydown Super_L key 4 &&
+
 xdotool search --desktop 3 --class "Firefox" windowactivate
-sleep 8
-xdotool search --desktop 3 --class "Firefox" windowactivate
+
