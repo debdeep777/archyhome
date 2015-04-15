@@ -1,3 +1,5 @@
 firefox &&
 sleep 4 
 xdotool search --desktop 3 --class "Firefox" windowactivate
+sleep 8
+xdotool search --desktop 3 --class "Firefox" windowactivate

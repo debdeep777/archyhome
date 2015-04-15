@@ -59,7 +59,7 @@ run_once("mount /dev/sda3 /small")
 
 -- temporary for rtorrent coz disk space is low
 run_once("otherlin")
---run_once("firefoxspot")
+run_once("firefoxspot")
 --run_once("wifi")
 -- }}}
 
