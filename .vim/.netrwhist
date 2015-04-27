@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/root/.vim/ftplugin'
 let g:netrw_dirhist_2='/root/.config/zathura'
+let g:netrw_dirhist_3='/root/.vimperator'
+let g:netrw_dirhist_4='/root/.vimperator/colors'
