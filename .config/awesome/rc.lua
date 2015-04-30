@@ -355,9 +355,9 @@ cpuw:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, 
 -- For mouse-friendly people
 -- We have Alt++,-,M, Ctrl+M also
 volumewidget:buttons(awful.util.table.join(
-awful.button({ }, 4, function () awful.util.spawn("amixer set Master 5+%") volumewidget.update() end),
-awful.button({ }, 5, function () awful.util.spawn("amixer set Master 5-%") volumewidget.update() end),
-awful.button({ }, 1, function () awful.util.spawn("amixer set Master toggle-mute") volumewidget.update() end)
+awful.button({ }, 4, function () awful.util.spawn("amixer -q set Master 5%+") volumewidget.update() end),
+awful.button({ }, 5, function () awful.util.spawn("amixer -q set Master 5%-") volumewidget.update() end),
+awful.button({ }, 1, function () awful.util.spawn("amixer -q set Master playback toggle") volumewidget.update() end)
 ))
 
 
