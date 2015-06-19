@@ -1164,3 +1164,67 @@ new [description:"Monash Form-A by 5th" entry:"1427924899" modified:"1427924899"
 time 1427924913
 new [description:"IIT Bombay by 3rd April" entry:"1427924913" modified:"1427924913" status:"pending" uuid:"3d252697-f7eb-4ea6-b768-0e5d81317adb"]
 ---
+time 1434750524
+old [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." entry:"1422352513" modified:"1422352513" priority:"L" project:"linux" start:"1422542964" status:"pending" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+new [description:"print color-coded text in awesome popup, like the terminal output. useful for tasker." end:"1434750524" entry:"1422352513" modified:"1434750524" priority:"L" project:"linux" status:"completed" tags:"awesome" uuid:"438ec893-4014-4c26-a571-74d98325959c"]
+---
+time 1434750536
+old [description:"south asian university 9 march" entry:"1425396673" modified:"1425396673" status:"pending" uuid:"aef55ade-fb1a-4210-8429-4b162879e91b"]
+new [description:"south asian university 9 march" end:"1434750536" entry:"1425396673" modified:"1434750536" status:"completed" uuid:"aef55ade-fb1a-4210-8429-4b162879e91b"]
+---
+time 1434750538
+old [description:"IIT hyderabad" entry:"1425396679" modified:"1425396679" status:"pending" uuid:"5594281f-4523-47a7-8e63-af9dc7b95bb0"]
+new [description:"IIT hyderabad" end:"1434750538" entry:"1425396679" modified:"1434750538" status:"completed" uuid:"5594281f-4523-47a7-8e63-af9dc7b95bb0"]
+---
+time 1434750539
+old [description:"IISER mohali" entry:"1425396731" modified:"1425396731" status:"pending" uuid:"2af28380-4d6a-4a82-845e-42e39d920325"]
+new [description:"IISER mohali" end:"1434750539" entry:"1425396731" modified:"1434750539" status:"completed" uuid:"2af28380-4d6a-4a82-845e-42e39d920325"]
+---
+time 1434750540
+old [description:"monash-iitb by 20th March" entry:"1425571925" modified:"1425571925" status:"pending" uuid:"7c801193-5bcd-4a93-afac-7b090e35fcf5"]
+new [description:"monash-iitb by 20th March" end:"1434750540" entry:"1425571925" modified:"1434750540" status:"completed" uuid:"7c801193-5bcd-4a93-afac-7b090e35fcf5"]
+---
+time 1434750541
+old [description:"iit bombay phd" entry:"1425839003" modified:"1425839003" status:"pending" uuid:"c608205d-15ef-47ec-ba10-240435273b5e"]
+new [description:"iit bombay phd" end:"1434750541" entry:"1425839003" modified:"1434750541" status:"completed" uuid:"c608205d-15ef-47ec-ba10-240435273b5e"]
+---
+time 1434750542
+old [description:"iit madras due: 22 March" entry:"1425839187" modified:"1425839187" status:"pending" uuid:"b28af125-3e3d-409c-aee5-9e4aa43f1c4f"]
+new [description:"iit madras due: 22 March" end:"1434750542" entry:"1425839187" modified:"1434750542" status:"completed" uuid:"b28af125-3e3d-409c-aee5-9e4aa43f1c4f"]
+---
+time 1434750543
+old [description:"spellcheck in firefox" entry:"1426960401" modified:"1426960401" status:"pending" uuid:"daf4afae-3d5e-40c2-abdf-f529e69c279b"]
+new [description:"spellcheck in firefox" end:"1434750543" entry:"1426960401" modified:"1434750543" status:"completed" uuid:"daf4afae-3d5e-40c2-abdf-f529e69c279b"]
+---
+time 1434750546
+old [description:"MUst go to chennai to get used to hard work, face awkward situation and be professional, a grown up" entry:"1427924865" modified:"1427924865" status:"pending" uuid:"8a5b0b42-af99-466e-8f63-8173d2b3abee"]
+new [description:"MUst go to chennai to get used to hard work, face awkward situation and be professional, a grown up" end:"1434750546" entry:"1427924865" modified:"1434750546" status:"completed" uuid:"8a5b0b42-af99-466e-8f63-8173d2b3abee"]
+---
+time 1434750547
+old [description:"Monash Form-A by 5th" entry:"1427924899" modified:"1427924899" status:"pending" uuid:"e4f9fbc9-a23d-4523-aa74-89f96f9c9258"]
+new [description:"Monash Form-A by 5th" end:"1434750547" entry:"1427924899" modified:"1434750547" status:"completed" uuid:"e4f9fbc9-a23d-4523-aa74-89f96f9c9258"]
+---
+time 1434750548
+old [description:"IIT Bombay by 3rd April" entry:"1427924913" modified:"1427924913" status:"pending" uuid:"3d252697-f7eb-4ea6-b768-0e5d81317adb"]
+new [description:"IIT Bombay by 3rd April" end:"1434750548" entry:"1427924913" modified:"1434750548" status:"completed" uuid:"3d252697-f7eb-4ea6-b768-0e5d81317adb"]
+---
+time 1434750565
+old [description:"Ignore CSS and use solarized in firefox" entry:"1422649940" modified:"1422649940" project:"linux" status:"pending" uuid:"a6bc30a2-2bb7-4f1b-ad26-044d7c35026c"]
+new [description:"Ignore CSS and use solarized in firefox" end:"1434750565" entry:"1422649940" modified:"1434750565" project:"linux" status:"completed" uuid:"a6bc30a2-2bb7-4f1b-ad26-044d7c35026c"]
+---
+time 1434750580
+old [description:"How to copy texts in vimperator bar" entry:"1422649678" modified:"1422649678" project:"linux" status:"pending" tags:"productivity" uuid:"988a1d31-c0cc-4fa8-90ce-0fd524e871cd"]
+new [description:"How to copy texts in vimperator bar" end:"1434750580" entry:"1422649678" modified:"1434750580" project:"linux" status:"completed" tags:"productivity" uuid:"988a1d31-c0cc-4fa8-90ce-0fd524e871cd"]
+---
+time 1434750588
+old [description:"Vim view-only mode, no cursor movement?" entry:"1422647796" modified:"1422647796" project:"linux" status:"pending" tags:"productivity" uuid:"3eef2b22-75f4-4691-8ea7-a3f50778d10f"]
+new [description:"Vim view-only mode, no cursor movement?" end:"1434750588" entry:"1422647796" modified:"1434750588" project:"linux" status:"completed" tags:"productivity" uuid:"3eef2b22-75f4-4691-8ea7-a3f50778d10f"]
+---
+time 1434750593
+old [description:"Write code to find the closest color in a set of given colors to pick up the allowed accent tones" entry:"1422646748" modified:"1422646748" project:"linux" status:"pending" tags:"productivity" uuid:"e6307ebc-9c1a-426b-a892-6133db6db72f"]
+new [description:"Write code to find the closest color in a set of given colors to pick up the allowed accent tones" end:"1434750593" entry:"1422646748" modified:"1434750593" project:"linux" status:"completed" tags:"productivity" uuid:"e6307ebc-9c1a-426b-a892-6133db6db72f"]
+---
+time 1434750600
+old [description:"how should i use important tasks to motivate me through pop or static view? has to be minimal." entry:"1422540930" modified:"1422540930" project:"linux" status:"pending" tags:"productivity" uuid:"b8b4f3b6-47ab-49bc-a0d7-f84b0bb99a96"]
+new [description:"how should i use important tasks to motivate me through pop or static view? has to be minimal." end:"1434750600" entry:"1422540930" modified:"1434750600" project:"linux" status:"completed" tags:"productivity" uuid:"b8b4f3b6-47ab-49bc-a0d7-f84b0bb99a96"]
+---
