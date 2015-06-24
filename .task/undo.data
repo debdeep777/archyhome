@@ -1228,3 +1228,55 @@ time 1434750600
 old [description:"how should i use important tasks to motivate me through pop or static view? has to be minimal." entry:"1422540930" modified:"1422540930" project:"linux" status:"pending" tags:"productivity" uuid:"b8b4f3b6-47ab-49bc-a0d7-f84b0bb99a96"]
 new [description:"how should i use important tasks to motivate me through pop or static view? has to be minimal." end:"1434750600" entry:"1422540930" modified:"1434750600" project:"linux" status:"completed" tags:"productivity" uuid:"b8b4f3b6-47ab-49bc-a0d7-f84b0bb99a96"]
 ---
+time 1435180591
+old [description:"Finish Evans-gareipy first chapter" due:"1422815400" entry:"1422313630" modified:"1422380828" priority:"H" project:"Work" status:"pending" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+new [description:"Finish Evans-gareipy first chapter" due:"1422815400" end:"1435180591" entry:"1422313630" modified:"1435180591" priority:"H" project:"Work" status:"completed" uuid:"9bde13f6-0428-49f9-b627-22bf46f9e200"]
+---
+time 1435180608
+old [description:"Percentage bar while copying, code from t, keep in bashrc" entry:"1422385852" modified:"1422385852" priority:"L" project:"linux" status:"pending" tags:"productivity" uuid:"23ddc000-7e71-47f6-97ed-53ca2c5b325e"]
+new [description:"Percentage bar while copying, code from t, keep in bashrc" end:"1435180608" entry:"1422385852" modified:"1435180608" priority:"L" project:"linux" status:"completed" tags:"productivity" uuid:"23ddc000-7e71-47f6-97ed-53ca2c5b325e"]
+---
+time 1435180616
+old [description:"Look for a documentation management system to manege my TODO_new_installation file" entry:"1422647834" modified:"1422647834" project:"linux" status:"pending" tags:"productivity" uuid:"6fa127b8-38d9-4179-ad73-da62a72afcb8"]
+new [description:"Look for a documentation management system to manege my TODO_new_installation file" end:"1435180616" entry:"1422647834" modified:"1435180616" project:"linux" status:"completed" tags:"productivity" uuid:"6fa127b8-38d9-4179-ad73-da62a72afcb8"]
+---
+time 1435180621
+old [description:"Clearing up the orphan packages, read bookmarked link related to it" entry:"1422649834" modified:"1422649834" project:"linux" status:"pending" tags:"timepass" uuid:"b6b81c86-c19e-49b5-9efe-04841199444c"]
+new [description:"Clearing up the orphan packages, read bookmarked link related to it" end:"1435180621" entry:"1422649834" modified:"1435180621" project:"linux" status:"completed" tags:"timepass" uuid:"b6b81c86-c19e-49b5-9efe-04841199444c"]
+---
+time 1435180630
+old [description:"Changing the background of GTK to black \/ solarized" entry:"1422650065" modified:"1422650065" project:"linux" status:"pending" uuid:"b168d3b6-ed5a-43e0-9c9a-657d1e5278fc"]
+new [description:"Changing the background of GTK to black \/ solarized" end:"1435180630" entry:"1422650065" modified:"1435180630" project:"linux" status:"completed" uuid:"b168d3b6-ed5a-43e0-9c9a-657d1e5278fc"]
+---
+time 1435180655
+old [description:"Learn about flat palette and flat design" entry:"1422650211" modified:"1422650211" status:"pending" uuid:"f88a7e2d-3ac6-4511-bc23-a7cea5766502"]
+new [description:"Learn about flat palette and flat design" end:"1435180655" entry:"1422650211" modified:"1435180655" status:"completed" uuid:"f88a7e2d-3ac6-4511-bc23-a7cea5766502"]
+---
+time 1435180728
+new [description:"Fill up employment verification form +work" entry:"1435180728" modified:"1435180728" status:"pending" uuid:"564e993a-a601-4473-8c68-fb5baffd614c"]
+---
+time 1435180744
+old [description:"Fill up employment verification form +work" entry:"1435180728" modified:"1435180728" status:"pending" uuid:"564e993a-a601-4473-8c68-fb5baffd614c"]
+new [description:"Fill up employment verification form +work" entry:"1435180728" modified:"1435180744" project:"Work" status:"pending" uuid:"564e993a-a601-4473-8c68-fb5baffd614c"]
+---
+time 1435180764
+new [description:"Mail about the Quals" entry:"1435180764" modified:"1435180764" status:"pending" uuid:"720f483f-022f-4609-9810-d463db170c17"]
+---
+time 1435180774
+new [description:"Mail profs thanking them" entry:"1435180774" modified:"1435180774" status:"pending" uuid:"1e958339-acf4-4be8-a087-4de24d93c473"]
+---
+time 1435180788
+old [description:"Mail about the Quals" entry:"1435180764" modified:"1435180764" status:"pending" uuid:"720f483f-022f-4609-9810-d463db170c17"]
+new [description:"Mail about the Quals" entry:"1435180764" modified:"1435180788" project:"Work" status:"pending" uuid:"720f483f-022f-4609-9810-d463db170c17"]
+---
+time 1435180805
+old [description:"Mail profs thanking them" entry:"1435180774" modified:"1435180774" status:"pending" uuid:"1e958339-acf4-4be8-a087-4de24d93c473"]
+new [description:"Mail profs thanking them" entry:"1435180774" modified:"1435180805" project:"Work" status:"pending" uuid:"1e958339-acf4-4be8-a087-4de24d93c473"]
+---
+time 1435181081
+new [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1435181081" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
+---
+time 1435181090
+old [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1435181081" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
+new [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1435181090" project:"Work" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
+---
