@@ -58,7 +58,7 @@ report.widgetneeds.filter=status:pending
 
 # This portion comes from the free task syncing server freecinc
 taskd.server=freecinc.com:53589
-taskd.key=\/root\/.task\/freecinc_f99e9cdf.key.pem
-taskd.certificate=\/root\/.task\/freecinc_f99e9cdf.cert.pem
-taskd.ca=\/root\/.task\/freecinc_f99e9cdf.ca.pem
-taskd.credentials=FreeCinc\/freecinc_f99e9cdf\/0c9ab909-60db-45f8-ae47-1653f69942ab
+taskd.key=\/root\/.task\/freecinc_0ef6f1b6.key.pem
+taskd.certificate=\/root\/.task\/freecinc_0ef6f1b6.cert.pem
+taskd.ca=\/root\/.task\/freecinc_0ef6f1b6.ca.pem
+taskd.credentials=FreeCinc\/freecinc_0ef6f1b6\/c146235a-fdda-4d6c-8e99-2257182fc7f3
