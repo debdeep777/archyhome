@@ -16,3 +16,5 @@
 [description:"Finish immunization form before 1 August" entry:"1435254713" modified:"1435254717" project:"Work" status:"pending" uuid:"7d307f75-02ff-4ea5-9490-9858604734ab"]
 [description:"First task" entry:"19800" modified:"1435259369" project:"Inbox" status:"pending" uuid:"8044d64f-1127-47f2-8996-44d4bf597d24"]
 [description:"new task" entry:"1435259734" modified:"1435259734" status:"pending" tags:"forfun" uuid:"1ead1245-414c-4973-85a8-c5be0fad4ee2"]
+[description:"another one" entry:"1435261301" modified:"1435261301" status:"pending" tags:"funfuntoo" uuid:"939a0c32-f873-417a-8684-aa5da8127708"]
+[description:"online check - in for flight" entry:"1435264056" modified:"1435264063" project:"work" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
