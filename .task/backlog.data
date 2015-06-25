@@ -123,3 +123,4 @@
 {"description":"Mail profs thanking them","entry":"20150624T211934Z","modified":"20150624T212005Z","project":"Work","status":"pending","uuid":"1e958339-acf4-4be8-a087-4de24d93c473"}
 {"description":"Fix name (Depdeep) in GWU system","entry":"20150624T212441Z","modified":"20150624T212441Z","status":"pending","uuid":"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"}
 {"description":"Fix name (Depdeep) in GWU system","entry":"20150624T212441Z","modified":"20150624T212450Z","project":"Work","status":"pending","uuid":"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"}
+{"description":"Mail profs thanking them","end":"20150625T094054Z","entry":"20150624T211934Z","modified":"20150625T094054Z","project":"Work","status":"completed","uuid":"1e958339-acf4-4be8-a087-4de24d93c473"}

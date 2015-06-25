@@ -1280,3 +1280,7 @@ time 1435181090
 old [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1435181081" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
 new [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1435181090" project:"Work" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
 ---
+time 1435225254
+old [description:"Mail profs thanking them" entry:"1435180774" modified:"1435180805" project:"Work" status:"pending" uuid:"1e958339-acf4-4be8-a087-4de24d93c473"]
+new [description:"Mail profs thanking them" end:"1435225254" entry:"1435180774" modified:"1435225254" project:"Work" status:"completed" uuid:"1e958339-acf4-4be8-a087-4de24d93c473"]
+---
