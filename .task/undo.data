@@ -1309,3 +1309,9 @@ time 1435254717
 old [description:"Finish immunization form before 1 August" entry:"1435254713" modified:"1435254713" status:"pending" uuid:"7d307f75-02ff-4ea5-9490-9858604734ab"]
 new [description:"Finish immunization form before 1 August" entry:"1435254713" modified:"1435254717" project:"Work" status:"pending" uuid:"7d307f75-02ff-4ea5-9490-9858604734ab"]
 ---
+time 1435259584
+new [description:"First task" entry:"19800" modified:"1435259369" project:"Inbox" status:"pending" uuid:"8044d64f-1127-47f2-8996-44d4bf597d24"]
+---
+time 1435259734
+new [description:"new task" entry:"1435259734" modified:"1435259734" status:"pending" tags:"forfun" uuid:"1ead1245-414c-4973-85a8-c5be0fad4ee2"]
+---
