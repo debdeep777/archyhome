@@ -1325,3 +1325,7 @@ time 1435264063
 old [description:"online check - in for flight" entry:"1435264056" modified:"1435264056" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
 new [description:"online check - in for flight" entry:"1435264056" modified:"1435264063" project:"work" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
 ---
+time 1435342249
+old [description:"Mail about the Quals" entry:"1435180764" modified:"1435180788" project:"Work" status:"pending" uuid:"720f483f-022f-4609-9810-d463db170c17"]
+new [description:"Mail about the Quals" end:"1435342249" entry:"1435180764" modified:"1435342249" project:"Work" status:"completed" uuid:"720f483f-022f-4609-9810-d463db170c17"]
+---
