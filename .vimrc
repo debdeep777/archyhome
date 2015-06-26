@@ -4,8 +4,6 @@ let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
 let @i = '0x$xj'
 
-
-
 " This one overrides the settings and restores defaults
 "syntax on
 
@@ -77,6 +75,17 @@ set mouse=a
 
 " Keymaps
 """"""""""""""""""""
+" Killing the arrow keys to force the habit of using hjkl
+noremap <up>    :echoerr 'USE K TO GO UP'<CR>
+noremap <down>  :echoerr 'USE J TO GO DOWN'<CR>
+noremap <left>  :echoerr 'USE H TO GO LEFT'<CR>
+noremap <right> :echoerr 'USE L TO GO RIGHT'<CR>
+" For insert mode also
+inoremap <up>    <ESC>:echom 'USE K TO GO UP'<CR>
+inoremap <down>  <ESC>:echom 'USE J TO GO DOWN'<CR>
+inoremap <right> <ESC>:echom 'USE L TO GO RIGHT'<CR>
+inoremap <left>  <ESC>:echom 'USE H TO GO LEFT'<CR>
+
 " Ctrl+ L to spellcheck while typing
 imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
