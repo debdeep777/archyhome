@@ -1329,3 +1329,15 @@ time 1435342249
 old [description:"Mail about the Quals" entry:"1435180764" modified:"1435180788" project:"Work" status:"pending" uuid:"720f483f-022f-4609-9810-d463db170c17"]
 new [description:"Mail about the Quals" end:"1435342249" entry:"1435180764" modified:"1435342249" project:"Work" status:"completed" uuid:"720f483f-022f-4609-9810-d463db170c17"]
 ---
+time 1435355936
+old [description:"First task" entry:"19800" modified:"1435259369" project:"Inbox" status:"pending" uuid:"8044d64f-1127-47f2-8996-44d4bf597d24"]
+new [description:"First task" end:"1435355936" entry:"19800" modified:"1435355936" project:"Inbox" status:"deleted" uuid:"8044d64f-1127-47f2-8996-44d4bf597d24"]
+---
+time 1435355951
+old [description:"new task" entry:"1435259734" modified:"1435259734" status:"pending" tags:"forfun" uuid:"1ead1245-414c-4973-85a8-c5be0fad4ee2"]
+new [description:"new task" end:"1435355951" entry:"1435259734" modified:"1435355951" status:"deleted" tags:"forfun" uuid:"1ead1245-414c-4973-85a8-c5be0fad4ee2"]
+---
+time 1435355953
+old [description:"another one" entry:"1435261301" modified:"1435261301" status:"pending" tags:"funfuntoo" uuid:"939a0c32-f873-417a-8684-aa5da8127708"]
+new [description:"another one" end:"1435355953" entry:"1435261301" modified:"1435355953" status:"deleted" tags:"funfuntoo" uuid:"939a0c32-f873-417a-8684-aa5da8127708"]
+---

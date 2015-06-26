@@ -1,1 +1,4 @@
 2db5b4a2-e610-43d0-bc70-f1b535c510b5
+{"description":"First task","end":"20150626T215856Z","entry":"19700101T053000Z","modified":"20150626T215856Z","project":"Inbox","status":"deleted","uuid":"8044d64f-1127-47f2-8996-44d4bf597d24"}
+{"description":"new task","end":"20150626T215911Z","entry":"20150625T191534Z","modified":"20150626T215911Z","status":"deleted","tags":["forfun"],"uuid":"1ead1245-414c-4973-85a8-c5be0fad4ee2"}
+{"description":"another one","end":"20150626T215913Z","entry":"20150625T194141Z","modified":"20150626T215913Z","status":"deleted","tags":["funfuntoo"],"uuid":"939a0c32-f873-417a-8684-aa5da8127708"}
