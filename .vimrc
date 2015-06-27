@@ -72,6 +72,8 @@ set spell
 " mouse
 set mouse=a
 
+" Make sure that there are always 3 lines above and below the cursor
+set scrolloff=3
 
 " Keymaps
 """"""""""""""""""""
