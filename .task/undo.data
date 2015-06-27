@@ -1341,3 +1341,6 @@ time 1435355953
 old [description:"another one" entry:"1435261301" modified:"1435261301" status:"pending" tags:"funfuntoo" uuid:"939a0c32-f873-417a-8684-aa5da8127708"]
 new [description:"another one" end:"1435355953" entry:"1435261301" modified:"1435355953" status:"deleted" tags:"funfuntoo" uuid:"939a0c32-f873-417a-8684-aa5da8127708"]
 ---
+time 1435363011
+new [description:"change colorscheme for xterm since commented TODO in vim is invisible" entry:"1435363011" modified:"1435363011" status:"pending" uuid:"c37fdecf-5c6b-439e-a44e-caae24a4911a"]
+---
