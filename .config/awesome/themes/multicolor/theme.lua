@@ -15,9 +15,9 @@ theme.wallpaper                     = theme.confdir .. "/min.jpg"
 theme.font                          = "DejaVu Sans Mono 10"
 
 -- OMG! We can use different fonts for different parts
-theme.taglist_font                  = "DejaVu Serif 10"
+theme.taglist_font                  = "DejaVu Serif 9"
 -- And the tasklist too!
-theme.tasklist_font                  = "DejaVu Serif Condensed 12"
+theme.tasklist_font                  = "DejaVu Sans Light 10"
 
 theme.menu_bg_normal                = "#000000"
 theme.menu_bg_focus                 = "#000000"
@@ -91,7 +91,6 @@ theme.widget_vol                    = theme.confdir .. "/icons/spkr.png"
 
 theme.taglist_squares_sel           = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b.png"
-theme.taglist_fg_focus		    = "#0000ff"
 
 theme.tasklist_disable_icon         = true
 theme.tasklist_floating             = "#"  --for some reason, this is the symbol for maximized window, the symbol for floating is ^, where is that setting?
