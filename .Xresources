@@ -103,3 +103,36 @@
 !! white dark/light
 *color7:                S_base2
 *color15:               S_base3
+
+
+!! For applying for settings to GTK also (because font.conf does not apply automatically for some reason)
+
+
+!! This setting is good, but fonts are a little longer
+!! Render setting for cairo -> pango -> gtk
+!! Settled down for font size 90 instead of original 96
+Xft.dpi:        90
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgb
+Xft.hintstyle:  hintslight
+
+
+!! Very bad result
+!!!! Render setting for cairo -> pango -> gtk
+!!Xft.dpi:        96
+!!!!Xft.autohint:	true
+!!Xft.antialias:  true
+!!Xft.hinting:    true
+!!Xft.rgba:       none
+!!Xft.hintstyle:  hintmedium
+
+
+!!!! Nice result, but a little blurry sometimes when made smaller.
+!!!! Render setting for cairo -> pango -> gtk
+!!Xft.dpi:        90
+!!Xft.autohint:	true
+!!Xft.antialias:  true
+!!Xft.hinting:    false
+!!Xft.rgba:       none
+!!Xft.hintstyle:  hintnone

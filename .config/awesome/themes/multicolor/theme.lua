@@ -11,8 +11,14 @@ theme                               = {}
 theme.confdir                       = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                     = theme.confdir .. "/min.jpg"
 
+-- Main theme font. This gets used in various widget. So, has to be equal width, for example, "DejaVu Sans Mono 10"
 theme.font                          = "DejaVu Sans Mono 10"
---theme.taglist_font                =
+
+-- OMG! We can use different fonts for different parts
+theme.taglist_font                  = "DejaVu Serif 10"
+-- And the tasklist too!
+theme.tasklist_font                  = "DejaVu Serif Condensed 12"
+
 theme.menu_bg_normal                = "#000000"
 theme.menu_bg_focus                 = "#000000"
 theme.fg_minimize                   = "#ffffff"

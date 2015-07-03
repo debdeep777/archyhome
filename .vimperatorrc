@@ -20,7 +20,7 @@ set gui=none,tabs,navigation
 
 " Show tab numbers so that we jump to them like 12gt to go to the 12th tab
 " Caution: causes the tab bar to flicker on Ctrl+click on firefox 37.0.2
-"set tn=true
+set tn=true
 
 " Animations: Must be memory-hungry. Disable for performance.  Set the animation on, while the auto complete suggestions pop up
 "set ani=true
