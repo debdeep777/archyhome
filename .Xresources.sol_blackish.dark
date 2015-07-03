@@ -25,14 +25,14 @@ XTerm*termName:         xterm-256color
 
 
 !! Only the XTERM/HEX colors are taken since my terminal does not support all those colors
-#define S_base3    #1c1c1c     
-#define S_base2    #262626     
-#define S_base1    #585858     
-#define S_base0    #626262     
-#define S_base00     #808080     
-#define S_base01     #8a8a8a     
-#define S_base02     #e4e4e4     
-#define S_base03     #ffffd7     
+#define S_base03    #1c1c1c     
+#define S_base02    #262626     
+#define S_base01    #585858     
+#define S_base00    #626262     
+#define S_base0     #808080     
+#define S_base1     #8a8a8a     
+#define S_base2     #e4e4e4     
+#define S_base3     #ffffd7     
 #define S_yellow    #af8700    
 #define S_orange    #d75f00    
 #define S_red       #d70000    

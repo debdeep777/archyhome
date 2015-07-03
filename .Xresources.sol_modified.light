@@ -25,22 +25,22 @@ XTerm*termName:         xterm-256color
 
 
 !! Only the XTERM/HEX colors are taken since my terminal does not support all those colors
-#define S_base3    #1c1c1c     
-#define S_base2    #262626     
-#define S_base1    #585858     
-#define S_base0    #626262     
-#define S_base00     #808080     
-#define S_base01     #8a8a8a     
-#define S_base02     #e4e4e4     
-#define S_base03     #ffffd7     
-#define S_yellow    #af8700    
-#define S_orange    #d75f00    
-#define S_red       #d70000    
-#define S_magenta   #af005f    
-#define S_violet    #5f5faf    
-#define S_blue      #0087ff    
-#define S_cyan      #00afaf    
-#define S_green     #5f8700    
+#define S_base3    #002b36         
+#define S_base2    #073642         
+#define S_base1    #586e75         
+#define S_base0    #657b83         
+#define S_base00   #839496         
+#define S_base01   #93a1a1         
+#define S_base02   #eee8d5         
+#define S_base03   #fdf6e3         
+#define S_yellow   #b58900         
+#define S_orange   #cb4b16         
+#define S_red      #dc322f         
+#define S_magenta  #d33682         
+#define S_violet   #6c71c4         
+#define S_blue     #268bd2         
+#define S_cyan     #2aa198         
+#define S_green    #859900         
 
 
 !! Colors defined by me for fun
