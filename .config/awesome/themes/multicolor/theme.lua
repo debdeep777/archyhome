@@ -15,9 +15,9 @@ theme.wallpaper                     = theme.confdir .. "/min.jpg"
 theme.font                          = "DejaVu Sans Mono 10"
 
 -- OMG! We can use different fonts for different parts
-theme.taglist_font                  = "DejaVu Serif 9"
+theme.taglist_font                  = "DejaVu Serif Mono 9"
 -- And the tasklist too!
-theme.tasklist_font                  = "DejaVu Sans Light 10"
+theme.tasklist_font                  = "DejaVu Sans Condensed 10"
 
 theme.menu_bg_normal                = "#000000"
 theme.menu_bg_focus                 = "#000000"
