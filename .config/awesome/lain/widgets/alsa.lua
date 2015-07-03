@@ -12,7 +12,8 @@ local newtimer        = require("lain.helpers").newtimer
 local wibox           = require("wibox")
 
 local io              = { popen  = io.popen }
-local string          = { match  = string.match }
+local string          = { match  = string.match,
+                          format = string.format }
 
 local setmetatable    = setmetatable
 
@@ -23,14 +24,16 @@ local alsa = {}
 local function worker(args)
     local args     = args or {}
     local timeout  = args.timeout or 5
-    local channel  = args.channel or "Master"
     local settings = args.settings or function() end
+
+    alsa.cmd     = args.cmd or "amixer"
+    alsa.channel = args.channel or "Master"
 
     alsa.widget = wibox.widget.textbox('')
 
     function alsa.update()
-        local f = assert(io.popen('amixer get ' .. channel))
-        local mixer = f:read("*all")
+        local f = assert(io.popen(string.format("%s get %s", alsa.cmd, alsa.channel)))
+        local mixer = f:read("*a")
         f:close()
 
         volume_now = {}
