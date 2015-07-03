@@ -43,22 +43,22 @@ theme.menu_bg_normal                = "#050505dd"
 theme.menu_bg_focus                 = "#050505dd"
 
 theme.colors = {}
-theme.colors.base03   = "#002b36"
-theme.colors.base02   = "#073642"
-theme.colors.base01   = "#586e75"
-theme.colors.base00   = "#657b83"
-theme.colors.base0  = "#839496"
-theme.colors.base1  = "#93a1a1"
-theme.colors.base2  = "#eee8d5"
-theme.colors.base3  = "#fdf6e3"
-theme.colors.yellow  = "#b58900"
-theme.colors.orange  = "#cb4b16"
-theme.colors.red     = "#dc322f"
-theme.colors.magenta = "#d33682"
-theme.colors.violet  = "#6c71c4"
-theme.colors.blue    = "#268bd2"
-theme.colors.cyan    = "#2aa198"
-theme.colors.green   = "#859900"
+theme.colors.base3   = "#1c1c1c"
+theme.colors.base2   = "#262626"
+theme.colors.base1   = "#585858"
+theme.colors.base0   = "#626262"
+theme.colors.base00  = "#808080"
+theme.colors.base01  = "#8a8a8a"
+theme.colors.base02  = "#e4e4e4"
+theme.colors.base03  = "#ffffd7"
+theme.colors.yellow  = "#af8700"
+theme.colors.orange  = "#d75f00"
+theme.colors.red     = "#d70000"
+theme.colors.magenta = "#af005f"
+theme.colors.violet  = "#5f5faf"
+theme.colors.blue    = "#0087ff"
+theme.colors.cyan    = "#00afaf"
+theme.colors.green   = "#5f8700"
 -- }}}
  
 -- {{{ Colors
@@ -89,7 +89,7 @@ theme.widget_clock                  = theme.confdir .. "/icons/clock.png"
 theme.widget_vol                    = theme.confdir .. "/icons/spkr.png"
 
 theme.taglist_squares_sel           = theme.confdir .. "/icons/square_a.png"
-theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b_dark.png"
+theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b.png"
 
 theme.tasklist_disable_icon         = true
 theme.tasklist_floating             = "#"  --for some reason, this is the symbol for maximized window, the symbol for floating is ^, where is that setting?
