@@ -11,9 +11,7 @@ local newtimer        = require("lain.helpers").newtimer
 
 local wibox           = require("wibox")
 
-local util            = require("lain.util")
-
-local io              = { popen  = io.popen }
+local io              = io
 local os              = { getenv = os.getenv }
 local pairs           = pairs
 local string          = { len    = string.len,
@@ -53,7 +51,7 @@ local function worker(args)
                 local np = io.popen("find " .. line ..
                                     "/new -mindepth 1 -type f " ..
                                     "-not -name '.*' -printf a")
-                local mailstring = np:read("*a")
+                local mailstring = np:read("*all")
 
                 -- Strip off leading mailpath.
                 local box = string.match(line, mailpath .. "/*([^/]+)")
@@ -68,16 +66,15 @@ local function worker(args)
         table.sort(boxes)
 
         newmail = "no mail"
-        --Count the total number of mails irrespective of where it was found
-        total = 0
 
+        local count = 0
         for box, number in pairs(boxes)
         do
+            count = count + 1
             -- Add this box only if it's not to be ignored.
             if not util.element_in_table(box, ignore_boxes)
             then
-                total = total + number
-                if newmail == "no mail"
+                if newmail == ""
                 then
                     newmail = box .. "(" .. number .. ")"
                 else

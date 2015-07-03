@@ -2,14 +2,14 @@
 --[[
                                                   
      Licensed under GNU General Public License v2 
-      * (c) 2013, Luke Bonham                     
+      * (c) 2013,      Luke Bonham                
                                                   
 --]]
 
 local debug  = require("debug")
 
 local capi   = { timer = timer }
-local io     = { open  = io.open,
+local io     = { open = io.open,
                  lines = io.lines }
 local rawget = rawget
 

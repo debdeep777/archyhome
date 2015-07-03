@@ -26,7 +26,8 @@ local bat = {}
 local function worker(args)
     local args = args or {}
     local timeout = args.timeout or 30
-    local battery = args.battery or "BAT0"
+-- Had to modify  to BAT1 since in the path /sys/class/power_supply, there is only BAT1
+    local battery = args.battery or "BAT1"
     local notify = args.notify or "on"
     local settings = args.settings or function() end
 
@@ -129,13 +130,13 @@ local function worker(args)
             then
                 bat.id = naughty.notify({
                     preset = bat_notification_critical_preset,
-                    replaces_id = bat.id,
+                    replaces_id = bat.id
                 }).id
             elseif nperc <= 15
             then
                 bat.id = naughty.notify({
                     preset = bat_notification_low_preset,
-                    replaces_id = bat.id,
+                    replaces_id = bat.id
                 }).id
             end
         end

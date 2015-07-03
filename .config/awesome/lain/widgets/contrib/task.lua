@@ -2,6 +2,7 @@
 --[[
                                                   
      Licensed under GNU General Public License v2 
+      * (c) 2013, Luke Bonham                     
       * (c) 2013, Jan Xie                         
                                                   
 --]]
@@ -19,7 +20,7 @@ local tonumber     = tonumber
 local setmetatable = setmetatable
 
 -- Taskwarrior notification
--- lain.widgets.contrib.task
+-- lain.widgets.task
 local task = {}
 
 local task_notification = nil
@@ -36,22 +37,18 @@ function task:show()
 
     local f, c_text
 
-    f = io.popen('task')
-    c_text = "<span font='"
-             .. task.font .. " "
-             .. task.font_size .. "'>"
-             .. f:read("*all"):gsub("\n*$", "")
-             .. "</span>"
+    f = io.popen('task widgetneeds')
+    c_text = f:read("*all")
     f:close()
 
-    task_notification = naughty.notify({ title = "[task next]",
-                                         text = c_text,
-                                         icon = task.notify_icon,
+    task_notification = naughty.notify({ --title = "[task next]",
+                                        text = c_text,
+--					text=io.open('task'),
+                                         --icon = task.notify_icon,
                                          position = task.position,
                                          fg = task.fg,
                                          bg = task.bg,
-                                         timeout = task.timeout,
-                                     })
+                                         timeout = task.timeout })
 end
 
 function task:prompt_add()
@@ -72,7 +69,7 @@ function task:prompt_add()
               position = task.position,
               fg       = task.fg,
               bg       = task.bg,
-              timeout  = task.timeout,
+              timeout  = task.timeout
           })
       end,
       nil,
@@ -105,7 +102,7 @@ function task:prompt_search()
               position = task.position,
               fg       = task.fg,
               bg       = task.bg,
-              timeout  = task.timeout,
+              timeout  = task.timeout
           })
       end,
       nil,
@@ -115,13 +112,18 @@ end
 function task:attach(widget, args)
     local args     = args or {}
 
-    task.font_size = tonumber(args.font_size) or 12
-    task.font      = beautiful.font:sub(beautiful.font:find(""),
-                     beautiful.font:find(" "))
-    task.fg        = args.fg or beautiful.fg_normal or "#FFFFFF"
-    task.bg        = args.bg or beautiful.bg_normal or "#FFFFFF"
-    task.position  = args.position or "top_right"
-    task.timeout   = args.timeout or 7
+    task.font_size =  tonumber(args.font_size) or 11
+    task.font      =  "DejaVu" --beautiful.font:sub(beautiful.font:find(""),
+                  --beautiful.font:find(" "))
+----	trying to capture the current font
+--	naughty.notify({
+--		title = task.font,
+--		text = "this"
+--		})
+    task.fg        =  args.fg or beautiful.fg_normal or "#FFFFFF"
+    task.bg        =  args.bg or beautiful.bg_normal or "#FFFFFF"
+    task.position  =  args.position or "top_right"
+    task.timeout   =  args.timeout or 7
 
     task.notify_icon = icons_dir .. "/taskwarrior/task.png"
     task.notify_icon_small = icons_dir .. "/taskwarrior/tasksmall.png"

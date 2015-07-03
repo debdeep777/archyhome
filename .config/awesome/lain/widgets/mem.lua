@@ -13,7 +13,9 @@ local wibox           = require("wibox")
 
 local io              = { lines  = io.lines }
 local math            = { floor  = math.floor }
-local string          = { gmatch = string.gmatch }
+local string          = { format = string.format,
+                          gmatch = string.gmatch,
+                          len    = string.len }
 
 local setmetatable    = setmetatable
 
@@ -46,7 +48,8 @@ local function worker(args)
 
         mem_now.used = mem_now.total - (mem_now.free + mem_now.buf + mem_now.cache)
         mem_now.swapused = mem_now.swap - mem_now.swapf
-
+-- Added to calculate the percentage
+	mem_now.usedperc = math.floor(mem_now.used / mem_now.total * 100)
         widget = mem.widget
         settings()
     end
