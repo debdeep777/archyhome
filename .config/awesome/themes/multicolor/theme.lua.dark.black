@@ -43,14 +43,14 @@ theme.menu_bg_normal                = "#050505dd"
 theme.menu_bg_focus                 = "#050505dd"
 
 theme.colors = {}
-theme.colors.base03  = "#1c1c1c"
-theme.colors.base02  = "#262626"
-theme.colors.base01  = "#585858"
-theme.colors.base00  = "#626262"
-theme.colors.base0   = "#808080"
-theme.colors.base1   = "#8a8a8a"
-theme.colors.base2   = "#e4e4e4"
-theme.colors.base3   = "#ffffd7"
+theme.colors.base3   = "#1c1c1c"
+theme.colors.base2   = "#262626"
+theme.colors.base1   = "#585858"
+theme.colors.base0   = "#626262"
+theme.colors.base00  = "#808080"
+theme.colors.base01  = "#8a8a8a"
+theme.colors.base02  = "#e4e4e4"
+theme.colors.base03  = "#ffffd7"
 theme.colors.yellow  = "#af8700"
 theme.colors.orange  = "#d75f00"
 theme.colors.red     = "#d70000"
@@ -89,7 +89,7 @@ theme.widget_clock                  = theme.confdir .. "/icons/clock.png"
 theme.widget_vol                    = theme.confdir .. "/icons/spkr.png"
 
 theme.taglist_squares_sel           = theme.confdir .. "/icons/square_a.png"
-theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b_dark.png"
+theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b.png"
 
 theme.tasklist_disable_icon         = true
 theme.tasklist_floating             = "#"  --for some reason, this is the symbol for maximized window, the symbol for floating is ^, where is that setting?
