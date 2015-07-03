@@ -91,6 +91,7 @@ theme.widget_vol                    = theme.confdir .. "/icons/spkr.png"
 
 theme.taglist_squares_sel           = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b.png"
+theme.taglist_fg_focus		    = "#0000ff"
 
 theme.tasklist_disable_icon         = true
 theme.tasklist_floating             = "#"  --for some reason, this is the symbol for maximized window, the symbol for floating is ^, where is that setting?
