@@ -1,4 +1,3 @@
-
 "What are these macros??!
 let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
@@ -14,7 +13,7 @@ let g:solarized_termcolors=256
 "let g:solarized_contrast = "high"
 
 colorscheme solarized
-set background=dark
+"set background=dark
 " color scheme for a dark terminal setup,
 " an alternative is pablo, but spellcheck highlight is ugly in that one
 " although, tex files look nice in that one
