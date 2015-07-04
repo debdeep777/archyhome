@@ -11,3 +11,5 @@ cd /root/.config/awesome/themes/multicolor/
 cp min.jpg tmp
 mv min.jpg.bak min.jpg
 mv tmp min.jpg.bak
+
+echo "Symlink created and old pic backed up. Press Mod4+Ctrl+W to change wallpaper"
