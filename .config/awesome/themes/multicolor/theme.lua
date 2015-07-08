@@ -68,6 +68,7 @@ theme.border_focus                  = theme.colors.base02
 --theme.fg_minimize                   = "#ffffff"
 --Couldn't find any use of it
 --theme.bg_systray = theme.bg_focus
+--theme.systray_font 	= "DejaVu 16"
 -- Couldn't see any use of this one
 
 --}}} Colors
