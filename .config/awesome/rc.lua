@@ -280,7 +280,7 @@ volumewidget = lain.widgets.alsa({
 	   widget:set_markup(markup(beautiful.colors.red, volume_now.level))
 	else
 --        widget:set_markup(markup("#7493d2", volume_now.level .. "% "))
-	  widget:set_markup(markup(beautiful.colors.violet, volume_now.level))
+	  widget:set_markup(markup(beautiful.colors.blue, volume_now.level))
 	end
     end
 })

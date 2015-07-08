@@ -5,7 +5,6 @@
                                       
 --]]
 
-
 theme                               = {}
 
 theme.confdir                       = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
@@ -13,34 +12,8 @@ theme.wallpaper                     = theme.confdir .. "/min.jpg"
 
 theme.font                          = "DejaVu Sans Mono 10"
 --theme.taglist_font                =
-theme.menu_bg_normal                = "#000000"
-theme.menu_bg_focus                 = "#000000"
-theme.bg_normal                     = "#000000" -- zathurarc bg color #002B36
-theme.bg_focus                      = "#444444"
-theme.bg_urgent                     = "#000000"
-theme.fg_normal                     = "#aaaaaa"
-theme.fg_focus                      = "#ff8c00"
-theme.fg_urgent                     = "#af1d18"
-theme.fg_minimize                   = "#ffffff"
-theme.fg_black                      = "#424242"
-theme.fg_red                        = "#ce5666"
-theme.fg_green                      = "#80a673"
-theme.fg_yellow                     = "#ffaf5f"
-theme.fg_blue                       = "#7788af"
-theme.fg_magenta                    = "#94738c"
-theme.fg_cyan                       = "#778baf"
-theme.fg_white                      = "#aaaaaa"
-theme.fg_blu                        = "#8ebdde"
-theme.border_width                  = "1"
-theme.border_normal                 = "#000000"
-theme.border_focus                  = "#606060"
-theme.border_marked                 = "#3ca4d8"
-theme.menu_width                    = "110"
-theme.menu_border_width             = "0"
-theme.menu_fg_normal                = "#aaaaaa"
-theme.menu_fg_focus                 = "#ff8c00"
-theme.menu_bg_normal                = "#050505dd"
-theme.menu_bg_focus                 = "#050505dd"
+theme.tasklist_font               = "DejaVu 10"
+
 
 theme.colors = {}
 theme.colors.base3   = "#1c1c1c"
@@ -60,16 +33,45 @@ theme.colors.blue    = "#0087ff"
 theme.colors.cyan    = "#00afaf"
 theme.colors.green   = "#5f8700"
 -- }}}
- 
+
+
 -- {{{ Colors
-theme.fg_normal  = theme.colors.base02
+theme.fg_black                      = theme.colors.base3
+theme.fg_white                      = theme.colors.base03
+theme.fg_red                        = theme.colors.red
+theme.fg_green                      = theme.colors.green
+theme.fg_yellow                     = theme.colors.yellow 
+theme.fg_blue                       = theme.colors.blue
+theme.fg_magenta                    = theme.colors.magenta
+theme.fg_cyan                       = theme.colors.cyan
+
+theme.fg_normal  = theme.colors.base01
 theme.fg_focus   = theme.colors.base03
 theme.fg_urgent  = theme.colors.base3
  
 theme.bg_normal  = theme.colors.base3
 theme.bg_focus   = theme.colors.base1
-theme.bg_urgent  = theme.colors.red
-theme.bg_systray = theme.bg_normal
+theme.bg_urgent  = theme.colors.orange
+
+theme.menu_bg_normal                = theme.colors.base3
+theme.menu_bg_focus                 = theme.colors.base1
+theme.menu_fg_normal                = theme.colors.base01
+theme.menu_fg_focus                 = theme.colors.base03
+theme.menu_width                    = "110"
+theme.menu_border_width             = "0"
+
+theme.border_width                  = "1"
+theme.border_normal                 = theme.colors.base1
+theme.border_focus                  = theme.colors.base02
+
+--theme.border_marked                 = "#3ca4d8"
+--theme.fg_minimize                   = "#ffffff"
+--Couldn't find any use of it
+--theme.bg_systray = theme.bg_focus
+-- Couldn't see any use of this one
+
+--}}} Colors
+
 
 theme.menu_submenu_icon             = theme.confdir .. "/icons/submenu.png"
 theme.widget_temp                   = theme.confdir .. "/icons/temp.png"
@@ -91,7 +93,7 @@ theme.widget_vol                    = theme.confdir .. "/icons/spkr.png"
 theme.taglist_squares_sel           = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b.png"
 
-theme.tasklist_disable_icon         = true
+theme.tasklist_disable_icon         = false
 theme.tasklist_floating             = "#"  --for some reason, this is the symbol for maximized window, the symbol for floating is ^, where is that setting?
 theme.tasklist_maximized_horizontal = ""
 theme.tasklist_maximized_vertical   = ""
