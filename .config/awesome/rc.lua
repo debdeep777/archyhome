@@ -739,7 +739,9 @@ globalkeys = awful.util.table.join(
     awful.key({modkey}, "d", redshift.toggle),
 
     awful.key({ modkey }, "e", function () awful.util.spawn("xterm -e ranger") end),
-    awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
+    --awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
+    --using conky. Remember not to run xcompmgr to avoid transparency
+    awful.key({ modkey }, "l", function () awful.util.spawn("lockconky") end),
 --    awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
     --awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
     awful.key({ modkey, "Shift" }, "g", function () awful.util.spawn(graphics) end),
@@ -853,6 +855,11 @@ awful.rules.rules = {
           properties = { tag = tags[1][1] } },
 
     { rule = { class = "Dclock" },
+--          properties = { floating = true } ,
+          properties = { fullscreen = true }},
+
+--My new lockscreen candidate
+    { rule = { class = "Conky" },
 --          properties = { floating = true } ,
           properties = { fullscreen = true }},
 
