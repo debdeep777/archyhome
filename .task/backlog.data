@@ -2,3 +2,4 @@ def86805-f426-4d7c-98a7-43d2a21d74c2
 {"description":"Fix linux time, ntpd -gq does not make it permanant","entry":"20150711T190258Z","modified":"20150711T190258Z","status":"pending","uuid":"96eb955c-b8a6-4888-b855-a26e52e59aa5"}
 {"description":"Fix linux time, ntpd -gq does not make it permanant","entry":"20150711T190258Z","modified":"20150711T190311Z","project":"linux","status":"pending","uuid":"96eb955c-b8a6-4888-b855-a26e52e59aa5"}
 {"description":"what is NSF charge?","entry":"20150711T204959Z","modified":"20150711T204959Z","status":"pending","uuid":"8d86a47d-b38b-4b3a-896b-8cfccaf9f8b5"}
+{"description":"what is NSF charge?","end":"20150711T211150Z","entry":"20150711T204959Z","modified":"20150711T211150Z","status":"completed","uuid":"8d86a47d-b38b-4b3a-896b-8cfccaf9f8b5"}

@@ -1354,3 +1354,7 @@ new [description:"Fix linux time, ntpd -gq does not make it permanant" entry:"14
 time 1436647799
 new [description:"what is NSF charge?" entry:"1436647799" modified:"1436647799" status:"pending" uuid:"8d86a47d-b38b-4b3a-896b-8cfccaf9f8b5"]
 ---
+time 1436649110
+old [description:"what is NSF charge?" entry:"1436647799" modified:"1436647799" status:"pending" uuid:"8d86a47d-b38b-4b3a-896b-8cfccaf9f8b5"]
+new [description:"what is NSF charge?" end:"1436649110" entry:"1436647799" modified:"1436649110" status:"completed" uuid:"8d86a47d-b38b-4b3a-896b-8cfccaf9f8b5"]
+---
