@@ -16,3 +16,4 @@
 [description:"online check - in for flight" entry:"1435264056" modified:"1435264063" project:"work" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
 [description:"change colorscheme for xterm since commented TODO in vim is invisible" entry:"1435363011" modified:"1435363011" status:"pending" uuid:"c37fdecf-5c6b-439e-a44e-caae24a4911a"]
 [description:"Fix linux time, ntpd -gq does not make it permanant" entry:"1436641378" modified:"1436641391" project:"linux" status:"pending" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
+[description:"what is NSF charge?" entry:"1436647799" modified:"1436647799" status:"pending" uuid:"8d86a47d-b38b-4b3a-896b-8cfccaf9f8b5"]
