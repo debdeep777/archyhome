@@ -1369,3 +1369,13 @@ time 1437242722
 old [description:"change colorscheme for xterm since commented TODO in vim is invisible" entry:"1435363011" modified:"1435363011" status:"pending" uuid:"c37fdecf-5c6b-439e-a44e-caae24a4911a"]
 new [description:"change colorscheme for xterm since commented TODO in vim is invisible" end:"1437242722" entry:"1435363011" modified:"1437242722" status:"completed" uuid:"c37fdecf-5c6b-439e-a44e-caae24a4911a"]
 ---
+time 1437245065
+new [description:"test task" due:"2147365800" entry:"1437245065" modified:"1437245065" status:"pending" uuid:"f24e9cba-19e5-4159-9846-f0bda586c5d1"]
+---
+time 1437245086
+new [description:"test 2" entry:"1437245086" modified:"1437245086" status:"pending" uuid:"f1f49f8f-b55e-4486-a935-0848da65b8ef"]
+---
+time 1437245122
+old [description:"test 2" entry:"1437245086" modified:"1437245086" status:"pending" uuid:"f1f49f8f-b55e-4486-a935-0848da65b8ef"]
+new [description:"test 2" end:"1437245120" entry:"1437245086" modified:"1437245122" status:"deleted" uuid:"f1f49f8f-b55e-4486-a935-0848da65b8ef"]
+---

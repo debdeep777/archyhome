@@ -6,3 +6,6 @@ def86805-f426-4d7c-98a7-43d2a21d74c2
 {"description":"Ask about immunization","end":"20150718T180408Z","entry":"20150625T175121Z","modified":"20150718T180408Z","project":"Work","status":"completed","uuid":"9b60a388-a131-4359-bc8c-7cf784fb1171"}
 {"description":"Finish immunization on 28th and send the documents.","entry":"20150718T180432Z","modified":"20150718T180432Z","status":"pending","uuid":"94929276-d9ff-49d9-bb95-06a158e23dec"}
 {"description":"change colorscheme for xterm since commented TODO in vim is invisible","end":"20150718T180522Z","entry":"20150626T235651Z","modified":"20150718T180522Z","status":"completed","uuid":"c37fdecf-5c6b-439e-a44e-caae24a4911a"}
+{"description":"test task","due":"20380117T183000Z","entry":"20150718T184425Z","modified":"20150718T184425Z","status":"pending","uuid":"f24e9cba-19e5-4159-9846-f0bda586c5d1"}
+{"description":"test 2","entry":"20150718T184446Z","modified":"20150718T184446Z","status":"pending","uuid":"f1f49f8f-b55e-4486-a935-0848da65b8ef"}
+{"description":"test 2","end":"20150718T184520Z","entry":"20150718T184446Z","modified":"20150718T184522Z","status":"deleted","uuid":"f1f49f8f-b55e-4486-a935-0848da65b8ef"}
