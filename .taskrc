@@ -32,12 +32,13 @@ include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
-# Warning:: Does not work with vit!!
+# Warning:: To use it in Vit, must print the id column with label "ID" (both Upper case) Strange!
 # A custom report for quick view
-report.vb.description='A list with very basic information, created by me.'
-report.vb.columns=project,tags,id,description,due
+report.vb.columns=project,tags,description,due,id
+report.vb.labels=Project,Tag,Description,Due,ID
+report.vb.description=A list with very basic information, created by me
+report.vb.filter=status:pending limit:page
 report.vb.sort=start-,urgency-
-report.vb.filter=status:pending
 
 # mod
 report.ne.columns=id,depends,priority,project,tags,scheduled.countdown,due.age,until.age,description.count,urgency
@@ -45,10 +46,10 @@ report.ne.labels=ID,Deps,P,Project,Tag,S,Due,Until,Description,Urg
 report.ne.description=Most urgent tasks
 report.ne.filter=status:pending limit:page
 report.ne.sort=start-,urgency-
-urgency.ne.coefficient=15.0
 
-# Making this report my default command
-default.command=ne
+## Making this report my default command
+## To use it with vit
+#default.command=ne
 
 # A custom report to use effectively in an awesome widget, bad idea, I know
 report.widgetneeds.description='for the awesome widget, very basic.'
@@ -56,9 +57,19 @@ report.widgetneeds.columns=project,description.count,due
 report.widgetneeds.sort=start-,urgency-
 report.widgetneeds.filter=status:pending
 
-# This portion comes from the free task syncing server freecinc
-taskd.server=freecinc.com:53589
-taskd.key=\/root\/.task\/freecinc_0ef6f1b6.key.pem
-taskd.certificate=\/root\/.task\/freecinc_0ef6f1b6.cert.pem
-taskd.ca=\/root\/.task\/freecinc_0ef6f1b6.ca.pem
-taskd.credentials=FreeCinc\/freecinc_0ef6f1b6\/c146235a-fdda-4d6c-8e99-2257182fc7f3
+## This portion comes from the free task syncing server freecinc
+#taskd.server=freecinc.com:53589
+#taskd.key=\/root\/.task\/freecinc_0ef6f1b6.key.pem
+#taskd.certificate=\/root\/.task\/freecinc_0ef6f1b6.cert.pem
+#taskd.ca=\/root\/.task\/freecinc_0ef6f1b6.ca.pem
+#taskd.credentials=FreeCinc\/freecinc_0ef6f1b6\/c146235a-fdda-4d6c-8e99-2257182fc7f3
+
+# inthe.AM server for task syncing
+#Credentials
+taskd.certificate=\/root\/.task\/private.certificate.pem
+taskd.key=\/root\/.task\/private.key.pem
+taskd.ca=\/root\/.task\/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/debdeep777/bb0d29a9-3032-48c5-a18e-9af4af85ef65
+#If you are using Taskwarrior version 2.4 or newer
+taskd.trust=ignore hostname
