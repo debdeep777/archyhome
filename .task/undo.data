@@ -1672,3 +1672,75 @@ time 1437284572
 old [description:"USe promodoro method to solve quals" entry:"1437257591" modified:"1437283936" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
 new [description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1437284572" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
 ---
+time 1437268743
+old [description:"Fatou, MCT, DCT 1,2, Th" end:"1437283774" entry:"1423301217" modified:"1437283775" status:"deleted" uuid:"8ba8af49-2e09-4784-a2ff-4f8b40720e53"]
+new [description:"Fatou, MCT, DCT 1,2, Th" end:"1437283774" entry:"1423301217" modified:"1437283775" status:"deleted" uuid:"8ba8af49-2e09-4784-a2ff-4f8b40720e53"]
+---
+time 1437268743
+old [description:"stream current sound output of system over network so that you dont have to copy \/ stream \/ startover" entry:"1422543504" modified:"1437283709" priority:"L" project:"linux" status:"pending" uuid:"b44184ba-a634-4a71-8424-1ecf3983c39b"]
+new [description:"stream current sound output of system over network so that you dont have to copy \/ stream \/ startover" entry:"1422543504" modified:"1437283709" priority:"L" project:"linux" status:"pending" uuid:"b44184ba-a634-4a71-8424-1ecf3983c39b"]
+---
+time 1437268743
+old [description:"Keystroke to toggle psmouse module" entry:"1422543127" modified:"1437283709" priority:"L" project:"linux" status:"pending" uuid:"1c5c5e50-392c-4b9d-88e4-550477542225"]
+new [description:"Keystroke to toggle psmouse module" entry:"1422543127" modified:"1437283709" priority:"L" project:"linux" status:"pending" uuid:"1c5c5e50-392c-4b9d-88e4-550477542225"]
+---
+time 1437268743
+old [annotation_1422312365:"from March preferably" description:"Learn how to drive" end:"1437283672" entry:"1422312365" modified:"1437283674" priority:"L" project:"future" start:"1437282716" status:"deleted" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+new [annotation_1422312365:"from March preferably" description:"Learn how to drive" end:"1437283672" entry:"1422312365" modified:"1437283674" priority:"L" project:"future" start:"1437282716" status:"deleted" uuid:"cf69d8fd-7221-4082-9762-038fb53e06bb"]
+---
+time 1437268743
+old [description:"test task" due:"2147365800" end:"1437257194" entry:"1437245065" modified:"1437257194" status:"deleted" uuid:"f24e9cba-19e5-4159-9846-f0bda586c5d1"]
+new [description:"test task" due:"2147365800" end:"1437257194" entry:"1437245065" modified:"1437257194" status:"deleted" uuid:"f24e9cba-19e5-4159-9846-f0bda586c5d1"]
+---
+time 1437268743
+old [description:"Check if Sterling Infosystem finished the banckground check." entry:"1435254659" modified:"1437283876" priority:"M" project:"work" status:"pending" uuid:"3b8b2162-12e7-4295-b336-0ad899e80bff"]
+new [description:"Check if Sterling Infosystem finished the banckground check." entry:"1435254659" modified:"1437283876" priority:"M" project:"work" status:"pending" uuid:"3b8b2162-12e7-4295-b336-0ad899e80bff"]
+---
+time 1437268743
+old [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1437283904" priority:"H" project:"work" start:"1422457218" status:"pending" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+new [description:"Create a time schedule for work, academic excellence and lifesyle" entry:"1422456802" modified:"1437283904" priority:"H" project:"work" start:"1422457218" status:"pending" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
+---
+time 1437268743
+old [description:"Learn a calender organising programme like calcurse" end:"1437262023" entry:"1422308561" modified:"1437262023" priority:"L" project:"linux" status:"completed" tags:"productivity" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+new [description:"Learn a calender organising programme like calcurse" end:"1437262023" entry:"1422308561" modified:"1437262023" priority:"L" project:"linux" status:"completed" tags:"productivity" uuid:"1a42d674-93d5-4ea3-992f-610a6b67351c"]
+---
+time 1437268743
+old [description:"Fix linux time, ntpd -gq does not make it permanant" entry:"1436641378" modified:"1437282830" priority:"H" project:"linux" status:"pending" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
+new [description:"Fix linux time, ntpd -gq does not make it permanant" entry:"1436641378" modified:"1437282830" priority:"H" project:"linux" status:"pending" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
+---
+time 1437268743
+old [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1437283876" priority:"L" project:"work" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
+new [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1437283876" priority:"L" project:"work" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
+---
+time 1437268743
+old [description:"Finish immunization form before 1 August" end:"1437282929" entry:"1435254713" modified:"1437282929" priority:"H" project:"Work" status:"deleted" uuid:"7d307f75-02ff-4ea5-9490-9858604734ab"]
+new [description:"Finish immunization form before 1 August" end:"1437282929" entry:"1435254713" modified:"1437282929" priority:"H" project:"Work" status:"deleted" uuid:"7d307f75-02ff-4ea5-9490-9858604734ab"]
+---
+time 1437268743
+old [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" priority:"H" project:"linux" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+new [description:"Learn prioritising taks" entry:"1422309017" modified:"1422309017" priority:"H" project:"linux" status:"pending" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
+---
+time 1437268743
+old [description:"Finish immunization on 28th and send the documents." due:"1438281000" entry:"1437242672" modified:"1437283035" priority:"H" project:"depart" status:"pending" uuid:"94929276-d9ff-49d9-bb95-06a158e23dec"]
+new [description:"Finish immunization on 28th and send the documents." due:"1438281000" entry:"1437242672" modified:"1437283035" priority:"H" project:"depart" status:"pending" uuid:"94929276-d9ff-49d9-bb95-06a158e23dec"]
+---
+time 1437268743
+old [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
+new [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
+---
+time 1437268743
+old [description:"Get used to taskwarrior" due:"1438799400" entry:"1422304623" modified:"1437283065" priority:"M" project:"linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+new [description:"Get used to taskwarrior" due:"1438799400" entry:"1422304623" modified:"1437283065" priority:"M" project:"linux" start:"1422308287" status:"pending" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
+---
+time 1437268743
+old [description:"Learn a money management programme like ledger" due:"1438799400" entry:"1422308590" modified:"1437283085" priority:"L" project:"linux" start:"1437282688" status:"pending" tags:"productivity" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+new [description:"Learn a money management programme like ledger" due:"1438799400" entry:"1422308590" modified:"1437283085" priority:"L" project:"linux" start:"1437282688" status:"pending" tags:"productivity" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1437268743
+old [annotation_1422540640:"make it recursive everyday with time for sleep" annotation_1437257242:"I wi lthink about it" description:"Fix the sleep cycle" end:"1437262009" entry:"1422312167" modified:"1437262009" priority:"M" project:"future" status:"deleted" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
+new [annotation_1422312167:"make it recursive everyday with time for sleep" annotation_1437257242:"I wi lthink about it" description:"Fix the sleep cycle" end:"1437262009" entry:"1422312167" modified:"1437262009" priority:"M" project:"future" status:"deleted" tags:"health" uuid:"7eadb294-841a-4777-aa9a-378081b0f064"]
+---
+time 1437268743
+old [description:"online check-in for flight" due:"1438367396" entry:"1435264056" modified:"1437284524" priority:"M" project:"depart" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
+new [description:"online check-in for flight" due:"1438367396" entry:"1435264056" modified:"1437284524" priority:"M" project:"depart" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
+---
