@@ -1,3 +1,4 @@
+[description:"Get used to taskwarrior" due:"1438799400" end:"1437333550" entry:"1422304623" modified:"1437333550" priority:"M" project:"linux" status:"completed" tags:"task" uuid:"a034254c-a041-46ab-8545-b1011e4f2a0a"]
 [description:"Clean up task warrior" end:"1437291358" entry:"1437258062" modified:"1437291358" priority:"M" project:"life" status:"completed" uuid:"8fd0e3e4-b93d-4752-92e7-650ba7c3050e"]
 [description:"Learn prioritising taks" end:"1437291104" entry:"1422309017" modified:"1437291104" priority:"H" project:"linux" status:"completed" tags:"task" uuid:"9f51677a-6339-41e4-9633-8ad2274a29e1"]
 [annotation_1437291085:"Too vague" description:"Create a time schedule for work, academic excellence and lifesyle" end:"1437291085" entry:"1422456802" modified:"1437291088" priority:"H" project:"work" start:"1422457218" status:"deleted" tags:"health" uuid:"d87988db-1e7f-4d1b-b6fc-31f1aa55081e"]
