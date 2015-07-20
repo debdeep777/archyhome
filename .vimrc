@@ -1,4 +1,8 @@
 
+" Smartindent 
+set smartindent
+
+
 "What are these macros??!
 let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
