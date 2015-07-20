@@ -140,3 +140,9 @@ set grepprg=grep\ -nH\ $*
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
+
+"vim-ledger requirement
+"String that will be used to fill the space between account name and amount in
+"the foldtext. Set this to get some kind of lines or visual aid.
+ "let g:ledger_fillstring = '    -'
