@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/root/.ssh'
 let g:netrw_dirhist_2='/etc/fonts/conf.avail'
 let g:netrw_dirhist_3='/root/.vim/bundle/vim-latex'
 let g:netrw_dirhist_4='/root/.vim/bundle/vim-latex/ftplugin'
+let g:netrw_dirhist_5='/root/.vim/bundle/vim-latex'
+let g:netrw_dirhist_6='/root/.vim/bundle/vim-latex/ftplugin'
