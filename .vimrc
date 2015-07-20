@@ -171,3 +171,4 @@ let g:tex_flavor='latex'
 "String that will be used to fill the space between account name and amount in
 "the foldtext. Set this to get some kind of lines or visual aid.
  "let g:ledger_fillstring = '    -'
+ "let g:ledger_maxwidth = 80
