@@ -22,3 +22,6 @@
 [description:"Order converters India to USA with mimimum delivery time" due:"1437526516" entry:"1437333916" modified:"1437333916" project:"depart" status:"pending" uuid:"5c838c96-2554-4366-bec3-6ed4a097ef52"]
 [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437334011" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
 [description:"My onePlus cardboard arrives" due:"1438021800" entry:"1437334263" modified:"1437334263" project:"linux" status:"pending" tags:"fun" uuid:"4b7d15e4-07b1-4b13-a7e4-8957041b0311"]
+[description:"Create step by step process for parents" due:"1438799400" entry:"1437426887" modified:"1437426887" project:"work" status:"pending" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
+[description:"International roaming" due:"1438799400" entry:"1437426916" modified:"1437426916" project:"work" status:"pending" uuid:"8098f741-6c23-4924-989a-59591acc4acb"]
+[description:"Reduce number of utensils for apartment needs" due:"1437706008" entry:"1437427008" modified:"1437427008" project:"work" status:"pending" uuid:"963c0f49-cfff-4d25-ae9a-90893af32be1"]
