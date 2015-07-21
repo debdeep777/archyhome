@@ -1936,3 +1936,11 @@ time 1437430745
 old [description:"Create step by step process for parents" due:"1438799400" entry:"1437426887" modified:"1437426887" project:"work" status:"pending" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
 new [description:"Create step by step process for parents" due:"1438799400" entry:"1437426887" modified:"1437426887" project:"work" status:"pending" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
 ---
+time 1437476411
+old [description:"Learn a money management programme like ledger" due:"1438799400" entry:"1422308590" modified:"1437291009" priority:"L" project:"linux" start:"1437282688" status:"pending" tags:"skill" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+new [description:"Learn a money management programme like ledger" due:"1438799400" end:"1437476411" entry:"1422308590" modified:"1437476411" priority:"L" project:"linux" status:"completed" tags:"skill" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
+---
+time 1437476521
+old [description:"Call Lalu Da for driving classes." due:"1437562599" entry:"1437283394" modified:"1437283599" project:"driving" status:"pending" uuid:"6217ec65-962a-47aa-8206-ad73dfad0412"]
+new [description:"Call Lalu Da for driving classes." due:"1437562599" end:"1437476521" entry:"1437283394" modified:"1437476521" project:"driving" status:"completed" uuid:"6217ec65-962a-47aa-8206-ad73dfad0412"]
+---

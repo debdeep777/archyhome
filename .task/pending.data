@@ -1,4 +1,3 @@
-[description:"Learn a money management programme like ledger" due:"1438799400" entry:"1422308590" modified:"1437291009" priority:"L" project:"linux" start:"1437282688" status:"pending" tags:"skill" uuid:"e3f79d1a-dfcd-47f9-b05c-87cf630d264a"]
 [description:"never ask her to write your mails" entry:"1422397943" modified:"1422397943" status:"pending" tags:"imp" uuid:"d90d358c-068e-4232-a522-906934981520"]
 [description:"Keystroke to toggle psmouse module" entry:"1422543127" modified:"1437283709" priority:"L" project:"linux" status:"pending" uuid:"1c5c5e50-392c-4b9d-88e4-550477542225"]
 [description:"stream current sound output of system over network so that you dont have to copy \/ stream \/ startover" entry:"1422543504" modified:"1437283709" priority:"L" project:"linux" status:"pending" uuid:"b44184ba-a634-4a71-8424-1ecf3983c39b"]
@@ -11,7 +10,6 @@
 [description:"3 categories of tasks, life, quals, depart" entry:"1437262128" modified:"1437262128" project:"life" status:"pending" tags:"idea" uuid:"9624ddb5-9b0f-435f-adeb-e1aa66d57771"]
 [description:"Buy all the things in the list to take" due:"1438194600" entry:"1437283342" modified:"1437284366" project:"depart" status:"pending" uuid:"124b9bde-05d0-4c10-8d7b-720801053b48"]
 [depends:"124b9bde-05d0-4c10-8d7b-720801053b48" description:"Pack all the bags" due:"1438626600" entry:"1437283367" modified:"1437284398" priority:"H" project:"depart" status:"pending" uuid:"767c09c5-5bce-4e90-98b9-e561e53cbd35"]
-[description:"Call Lalu Da for driving classes." due:"1437562599" entry:"1437283394" modified:"1437283599" project:"driving" status:"pending" uuid:"6217ec65-962a-47aa-8206-ad73dfad0412"]
 [depends:"6217ec65-962a-47aa-8206-ad73dfad0412" description:"Take the driving exam to get the licence." due:"1438626600" entry:"1437283468" modified:"1437284045" priority:"L" project:"driving" status:"pending" uuid:"782cf895-4a22-4bc7-909d-d5bb1e3ba9a1"]
 [description:"Get the immunization injection" due:"1438108200" entry:"1437332939" modified:"1437333282" priority:"H" project:"work" scheduled:"1437935400" status:"waiting" uuid:"51c2f797-d2d0-4b7b-8340-e71cec098cd3" wait:"1437849000"]
 [description:"Print immunization form" due:"1437849000" entry:"1437332998" modified:"1437333301" project:"work" status:"pending" uuid:"14f6704e-ece5-440a-9ab4-7b8f3dc1775f"]
