@@ -1951,3 +1951,11 @@ time 1437520743
 old [description:"what to do with the white hard disk" entry:"1437516401" modified:"1437516401" project:"depart" status:"pending" uuid:"1d237e14-1e23-414e-9c8d-34aaedd8fce7"]
 new [description:"what to do with the white hard disk" entry:"1437516401" modified:"1437516401" project:"depart" status:"pending" uuid:"1d237e14-1e23-414e-9c8d-34aaedd8fce7"]
 ---
+time 1437654713
+old [description:"Order converters India to USA with mimimum delivery time" due:"1437526516" entry:"1437333916" modified:"1437333916" project:"depart" status:"pending" uuid:"5c838c96-2554-4366-bec3-6ed4a097ef52"]
+new [description:"Order converters India to USA with mimimum delivery time" due:"1437526516" end:"1437654713" entry:"1437333916" modified:"1437654713" project:"depart" status:"completed" uuid:"5c838c96-2554-4366-bec3-6ed4a097ef52"]
+---
+time 1437654749
+old [description:"My onePlus cardboard arrives" due:"1438021800" entry:"1437334263" modified:"1437334263" project:"linux" status:"pending" tags:"fun" uuid:"4b7d15e4-07b1-4b13-a7e4-8957041b0311"]
+new [description:"My onePlus cardboard arrives" due:"1438021800" end:"1437654749" entry:"1437334263" modified:"1437654749" project:"linux" status:"completed" tags:"fun" uuid:"4b7d15e4-07b1-4b13-a7e4-8957041b0311"]
+---
