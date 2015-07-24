@@ -2003,3 +2003,105 @@ time 1437762537
 old [description:"Setup a reminder system related to tasker, prefereably to the phone" due:"1437766200" entry:"1437762526" modified:"1437762526" project:"linux" status:"pending" uuid:"c2a6dad6-29ae-40b2-9f00-34e87e3215d8"]
 new [description:"Setup a reminder system related to tasker, prefereably to the phone" due:"1437766200" entry:"1437762526" modified:"1437762537" project:"linux" start:"1437762537" status:"pending" uuid:"c2a6dad6-29ae-40b2-9f00-34e87e3215d8"]
 ---
+time 1437765543
+old [description:"Setup a reminder system related to tasker, prefereably to the phone" due:"1437766200" entry:"1437762526" modified:"1437762537" project:"linux" start:"1437762537" status:"pending" uuid:"c2a6dad6-29ae-40b2-9f00-34e87e3215d8"]
+new [description:"Setup a reminder system related to tasker, prefereably to the phone" due:"1437786000" entry:"1437762526" modified:"1437762537" project:"linux" start:"1437762537" status:"pending" uuid:"c2a6dad6-29ae-40b2-9f00-34e87e3215d8"]
+---
+time 1437767487
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437334011" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767440" progress:"1.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437767487
+old [description:"Reduce number of utensils for apartment needs" due:"1437706008" entry:"1437427008" modified:"1437427008" project:"work" status:"pending" uuid:"963c0f49-cfff-4d25-ae9a-90893af32be1"]
+new [description:"Reduce number of utensils for apartment needs" due:"1437706008" end:"1437767475" entry:"1437427008" modified:"1437767384" progress:"100.000000" project:"work" status:"completed" uuid:"963c0f49-cfff-4d25-ae9a-90893af32be1"]
+---
+time 1437767487
+old [description:"Check the billing statement for gwumail" due:"1437676200" entry:"1437666273" modified:"1437666273" project:"work" status:"pending" uuid:"aec57931-ba61-4373-bb6d-1f857c8e859a"]
+new [description:"Check the billing statement for gwumail" due:"1437676200" end:"1437767475" entry:"1437666273" modified:"1437767372" progress:"100.000000" project:"work" status:"completed" uuid:"aec57931-ba61-4373-bb6d-1f857c8e859a"]
+---
+time 1437767611
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767440" progress:"1.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767586" progress:"36.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437767696
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767586" progress:"36.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"progress:40" due:"1437440211" entry:"1437334011" modified:"1437767696" progress:"36.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437767737
+old [description:"progress:40" due:"1437440211" entry:"1437334011" modified:"1437767696" progress:"36.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767737" progress:"36.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437767878
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767737" progress:"36.000000" project:"work" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767853" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437767878
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767853" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767853" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437768068
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437767853" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437768068" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" tags:"experiment" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437768086
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437768068" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" tags:"experiment" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437768086" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437768825
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437768086" progress:"36.000000" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437768825" progress:"50" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437768870
+old [description:"Implement quals solving plans" due:"1437440211" entry:"1437334011" modified:"1437768825" progress:"50" project:"work" reminder:"20150725T205720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437460011" entry:"1437334011" modified:"1437768856" progress:"69.000000" project:"work" reminder:"20150726T022720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437768969
+new [description:"test" entry:"1437768969" modified:"1437768969" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+---
+time 1437768991
+old [description:"test" entry:"1437768969" modified:"1437768969" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+new [description:"test" entry:"1437768969" modified:"1437768991" progress:"2" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+---
+time 1437769014
+old [description:"test" entry:"1437768969" modified:"1437768991" progress:"2" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+new [description:"test" entry:"1437768969" modified:"1437769014" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+---
+time 1437769024
+old [description:"test" entry:"1437768969" modified:"1437769014" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+new [description:"test" entry:"1437768969" modified:"1437769024" progress:"0" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+---
+time 1437769044
+new [description:"test2" entry:"1437769044" modified:"1437769044" progress:"120" status:"pending" uuid:"03c2e977-6e18-40a0-99f5-4a1ead8b70eb"]
+---
+time 1437769143
+old [description:"test2" entry:"1437769044" modified:"1437769044" progress:"120" status:"pending" uuid:"03c2e977-6e18-40a0-99f5-4a1ead8b70eb"]
+new [description:"test2" entry:"1437769044" modified:"1437769044" progress:"120.000000" status:"pending" uuid:"03c2e977-6e18-40a0-99f5-4a1ead8b70eb"]
+---
+time 1437769143
+old [description:"test" entry:"1437768969" modified:"1437769024" progress:"0" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+new [description:"test" entry:"1437768969" modified:"1437769024" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+---
+time 1437769322
+old [description:"test2" entry:"1437769044" modified:"1437769044" progress:"120.000000" status:"pending" uuid:"03c2e977-6e18-40a0-99f5-4a1ead8b70eb"]
+new [description:"test2" end:"1437769315" entry:"1437769044" modified:"1437769170" progress:"86.000000" status:"deleted" uuid:"03c2e977-6e18-40a0-99f5-4a1ead8b70eb"]
+---
+time 1437769322
+old [description:"test" entry:"1437768969" modified:"1437769024" status:"pending" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+new [description:"test" end:"1437769316" entry:"1437768969" modified:"1437769024" status:"deleted" uuid:"76b6d558-5f0e-4ec3-b640-bf4e74780adb"]
+---
+time 1437769585
+old [description:"Implement quals solving plans" due:"1437460011" entry:"1437334011" modified:"1437768856" progress:"69.000000" project:"work" reminder:"20150726T022720Z" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437460011" entry:"1437334011" modified:"1437769574" progress:"69.000000" project:"work" reminder:"1437974840" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437769669
+old [description:"Implement quals solving plans" due:"1437460011" entry:"1437334011" modified:"1437769574" progress:"69.000000" project:"work" reminder:"1437974840" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437460011" entry:"1437334011" modified:"1437769669" progress:"69.000000" project:"work" reminder:"1438145100" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437769746
+old [description:"Implement quals solving plans" due:"1437460011" entry:"1437334011" modified:"1437769669" progress:"69.000000" project:"work" reminder:"1438145100" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437479811" entry:"1437334011" modified:"1437769729" progress:"69.000000" project:"work" reminder:"1438158300" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437769788
+old [description:"Implement quals solving plans" due:"1437479811" entry:"1437334011" modified:"1437769729" progress:"69.000000" project:"work" reminder:"1438158300" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437479811" entry:"1437334011" modified:"1437769788" progress:"69.000000" project:"work" reminder:"1438146840" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---

@@ -74,3 +74,14 @@ taskd.server=taskwarrior.inthe.am:53589
 taskd.credentials=inthe_am/debdeep777/bb0d29a9-3032-48c5-a18e-9af4af85ef65
 #If you are using Taskwarrior version 2.4 or newer
 taskd.trust=ignore hostname
+
+
+# User defined attributes
+# Had to add it because Mirakel uses these
+
+# progress of a task (should be between 1 and 100, but there is no harm if it other than that :P)
+uda.progress.label=progress
+uda.progress.type=numeric
+
+uda.reminder.label=reminder
+uda.reminder.type=date
