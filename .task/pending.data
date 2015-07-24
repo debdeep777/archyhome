@@ -22,3 +22,4 @@
 [description:"what to do with the white hard disk" entry:"1437516401" modified:"1437516401" project:"depart" status:"pending" uuid:"1d237e14-1e23-414e-9c8d-34aaedd8fce7"]
 [description:"Complete I - 9 form for GWU" due:"1440268200" entry:"1437664916" modified:"1437664916" project:"work" status:"pending" uuid:"eb4efe8d-94e8-4c56-8d65-98ba79a2f764"]
 [description:"Check the billing statement for gwumail" due:"1437676200" entry:"1437666273" modified:"1437666273" project:"work" status:"pending" uuid:"aec57931-ba61-4373-bb6d-1f857c8e859a"]
+[description:"Setup a reminder system related to tasker, prefereably to the phone" due:"1437766200" entry:"1437762526" modified:"1437762537" project:"linux" start:"1437762537" status:"pending" uuid:"c2a6dad6-29ae-40b2-9f00-34e87e3215d8"]
