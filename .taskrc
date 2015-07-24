@@ -84,4 +84,4 @@ uda.progress.label=progress
 uda.progress.type=numeric
 
 uda.reminder.label=reminder
-uda.reminder.type=date
+uda.reminder.type=string
