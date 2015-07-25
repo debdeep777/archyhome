@@ -2303,3 +2303,7 @@ time 1437782153
 old [description:"new4" due:"1437849000" entry:"1437782113" modified:"1437782113" reminder:"1437849000" status:"pending" uuid:"a887a2eb-9a0d-49a6-80eb-d85560c6b55b"]
 new [description:"new4" due:"1437849000" end:"1437782151" entry:"1437782113" modified:"1437782153" reminder:"1437849000" status:"deleted" uuid:"a887a2eb-9a0d-49a6-80eb-d85560c6b55b"]
 ---
+time 1437798603
+old [description:"Implement quals solving plans" due:"1437519411" entry:"1437334011" modified:"1437771210" progress:"69.000000" project:"work" reminder:"2015-07-26T12:15:30" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437539211" entry:"1437334011" modified:"1437797453" progress:"69.000000" project:"work" reminder:"1437798353" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
