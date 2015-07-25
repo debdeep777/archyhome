@@ -2307,3 +2307,10 @@ time 1437798603
 old [description:"Implement quals solving plans" due:"1437519411" entry:"1437334011" modified:"1437771210" progress:"69.000000" project:"work" reminder:"2015-07-26T12:15:30" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
 new [description:"Implement quals solving plans" due:"1437539211" entry:"1437334011" modified:"1437797453" progress:"69.000000" project:"work" reminder:"1437798353" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
 ---
+time 1437819543
+old [description:"Implement quals solving plans" due:"1437539211" entry:"1437334011" modified:"1437797453" progress:"69.000000" project:"work" reminder:"1437798353" status:"pending" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+new [description:"Implement quals solving plans" due:"1437539211" end:"1437817450" entry:"1437334011" modified:"1437815334" progress:"100.000000" project:"work" reminder:"1437798353" status:"completed" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
+---
+time 1437819543
+new [annotation_1437815535:"pomodoro applied." description:"solve all the quals!" due:"1440181800" entry:"1437815388" modified:"1437815535" project:"work" reminder:"1437888631" status:"pending" uuid:"9dd72a96-ebdf-4ebd-9000-71426ee71da4"]
+---
