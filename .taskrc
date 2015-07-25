@@ -83,5 +83,6 @@ taskd.trust=ignore hostname
 uda.progress.label=progress
 uda.progress.type=numeric
 
-#uda.reminder.label=reminder
-#uda.reminder.type=date
+# very buggy, currently looking at this
+uda.reminder.label=reminder
+uda.reminder.type=date
