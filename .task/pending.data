@@ -15,7 +15,6 @@
 [description:"Find fax centres in Contai to sent the immunization form" due:"1437935400" entry:"1437333045" modified:"1437333318" project:"work" status:"pending" uuid:"69310b6d-c092-4414-8fd9-3774e92a53b6"]
 [depends:"14f6704e-ece5-440a-9ab4-7b8f3dc1775f" description:"Get the immunization form duly signed and prepared" due:"1438108200" entry:"1437333095" modified:"1437333461" project:"work" status:"pending" uuid:"0a34e8dc-dfc5-404b-8531-0a9a655fcae9"]
 [depends:"69310b6d-c092-4414-8fd9-3774e92a53b6" description:"Fax the immunization from to GWU" due:"1438383600" entry:"1437333233" modified:"1437333469" project:"work" scheduled:"1438086600" status:"pending" uuid:"ca9b6115-4da3-4007-a2a1-aa9a9a2a0272"]
-[description:"Implement quals solving plans" due:"1437539211" end:"1437817450" entry:"1437334011" modified:"1437815334" progress:"100.000000" project:"work" reminder:"1437798353" status:"completed" uuid:"a20e28ea-816f-4a32-986c-0ae7961a926f"]
 [description:"Create step by step process for parents" due:"1438799400" entry:"1437426887" modified:"1437426887" project:"work" status:"pending" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
 [description:"International roaming" due:"1438799400" entry:"1437426916" modified:"1437426916" project:"work" status:"pending" uuid:"8098f741-6c23-4924-989a-59591acc4acb"]
 [description:"what to do with the white hard disk" entry:"1437516401" modified:"1437516401" project:"depart" status:"pending" uuid:"1d237e14-1e23-414e-9c8d-34aaedd8fce7"]
