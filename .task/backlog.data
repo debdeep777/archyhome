@@ -1,2 +1,4 @@
-a99a7793-43d1-45a6-b604-f33b17a3dbef
-{"description":"International roaming","due":"20150804T183000Z","entry":"20150720T211516Z","modified":"20150727T184333Z","project":"work","status":"pending","uuid":"8098f741-6c23-4924-989a-59591acc4acb"}
+e144aa60-2856-44e8-83b3-371972afccf3
+{"description":"Setup a reminder system related to tasker, prefereably to the phone","due":"20150725T004000Z","entry":"20150724T182846Z","modified":"20150727T202718Z","project":"linux","start":"20150724T182857Z","status":"pending","uuid":"c2a6dad6-29ae-40b2-9f00-34e87e3215d8","annotations":[{"entry":"20150724T233443Z","description":"It's a dead end."},{"entry":"20150727T202718Z","description":"Mirakel stopped sync function!"}]}
+{"description":"3 categories of tasks, life, quals, depart","end":"20150727T202824Z","entry":"20150718T232848Z","modified":"20150727T202824Z","project":"life","status":"completed","tags":["idea"],"uuid":"9624ddb5-9b0f-435f-adeb-e1aa66d57771"}
+{"description":"test1","end":"20150727T202837Z","entry":"20150727T122234Z","modified":"20150727T202839Z","project":"test","reminder":"20150728T044500Z","status":"deleted","uuid":"fe45541d-0396-4cf1-acb1-0c94ddb364fb"}
