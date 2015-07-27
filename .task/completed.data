@@ -1,3 +1,6 @@
+[annotation_1438030134:"Too vague" description:"Buy all the things in the list to take" due:"1438194600" end:"1438030134" entry:"1437283342" modified:"1438030136" project:"depart" status:"deleted" uuid:"124b9bde-05d0-4c10-8d7b-720801053b48"]
+[description:"Underwears" end:"1438030237" entry:"1438030215" modified:"1438030238" status:"deleted" tags:"buy" uuid:"a2729cba-a8aa-40c8-a27b-7ed4ebf1334a"]
+[description:"stream current sound output of system over network so that you dont have to copy \/ stream \/ startover" end:"1438029005" entry:"1422642504" modified:"1438029006" status:"deleted" uuid:"b44184ba-a634-4a71-8424-1ecf3983c39b"]
 [description:"test1" end:"1438028917" entry:"1437999754" modified:"1438028919" project:"test" reminder:"1438058700" status:"deleted" uuid:"fe45541d-0396-4cf1-acb1-0c94ddb364fb"]
 [description:"3 categories of tasks, life, quals, depart" end:"1438028904" entry:"1437262128" modified:"1438028904" project:"life" status:"completed" tags:"idea" uuid:"9624ddb5-9b0f-435f-adeb-e1aa66d57771"]
 [description:"Print immunization form" due:"1437849000" end:"1438028675" entry:"1437332998" modified:"1438028675" project:"work" status:"completed" uuid:"14f6704e-ece5-440a-9ab4-7b8f3dc1775f"]
