@@ -1,3 +1,5 @@
+[description:"Find fax centres in Contai to sent the immunization form" due:"1437935400" end:"1438093815" entry:"1437333045" modified:"1438093815" project:"work" status:"completed" uuid:"69310b6d-c092-4414-8fd9-3774e92a53b6"]
+[description:"Get the immunization injection" due:"1438108200" end:"1438062540" entry:"1437372539" modified:"1438062540" priority:"H" project:"work" status:"completed" uuid:"51c2f797-d2d0-4b7b-8340-e71cec098cd3"]
 [annotation_1438030134:"Too vague" description:"Buy all the things in the list to take" due:"1438194600" end:"1438030134" entry:"1437283342" modified:"1438030136" project:"depart" status:"deleted" uuid:"124b9bde-05d0-4c10-8d7b-720801053b48"]
 [description:"Underwears" end:"1438030237" entry:"1438030215" modified:"1438030238" status:"deleted" tags:"buy" uuid:"a2729cba-a8aa-40c8-a27b-7ed4ebf1334a"]
 [description:"stream current sound output of system over network so that you dont have to copy \/ stream \/ startover" end:"1438029005" entry:"1422642504" modified:"1438029006" status:"deleted" uuid:"b44184ba-a634-4a71-8424-1ecf3983c39b"]

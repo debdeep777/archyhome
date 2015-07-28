@@ -7,8 +7,6 @@
 [description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1437284572" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
 [depends:"124b9bde-05d0-4c10-8d7b-720801053b48" description:"Pack all the bags" due:"1438626600" entry:"1437283367" modified:"1437284398" priority:"H" project:"depart" status:"pending" uuid:"767c09c5-5bce-4e90-98b9-e561e53cbd35"]
 [depends:"6217ec65-962a-47aa-8206-ad73dfad0412" description:"Take the driving exam to get the licence." due:"1438626600" entry:"1437283468" modified:"1437284045" priority:"L" project:"driving" status:"pending" uuid:"782cf895-4a22-4bc7-909d-d5bb1e3ba9a1"]
-[description:"Get the immunization injection" due:"1438108200" end:"1438062540" entry:"1437372539" modified:"1438062540" priority:"H" project:"work" status:"completed" uuid:"51c2f797-d2d0-4b7b-8340-e71cec098cd3"]
-[description:"Find fax centres in Contai to sent the immunization form" due:"1437935400" entry:"1437333045" modified:"1437333318" project:"work" status:"pending" uuid:"69310b6d-c092-4414-8fd9-3774e92a53b6"]
 [depends:"14f6704e-ece5-440a-9ab4-7b8f3dc1775f" description:"Get the immunization form duly signed and prepared" due:"1438108200" entry:"1437333095" modified:"1437333461" project:"work" status:"pending" uuid:"0a34e8dc-dfc5-404b-8531-0a9a655fcae9"]
 [depends:"69310b6d-c092-4414-8fd9-3774e92a53b6" description:"Fax the immunization from to GWU" due:"1438383600" entry:"1437333233" modified:"1437333469" project:"work" scheduled:"1438086600" status:"pending" uuid:"ca9b6115-4da3-4007-a2a1-aa9a9a2a0272"]
 [description:"Create step by step process for parents" due:"1438799400" entry:"1437426887" modified:"1437426887" project:"work" status:"pending" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
@@ -24,3 +22,4 @@
 [description:"Give the full pants to the shop so that they can cut it short" due:"1438108200" entry:"1438029969" modified:"1438029969" project:"depart" status:"pending" uuid:"7d84c16a-df5a-4a62-a838-f3c80e4d210a"]
 [description:"Tell brother to bring my Brown Jacket and USB this weekend positively" due:"1438194600" entry:"1438030048" modified:"1438030048" priority:"H" project:"depart" status:"pending" uuid:"194e9e70-fc7a-4a4a-8e46-3153f702ecf1"]
 [annotation_1438030440:"Buy filter" description:"Buy underwears and socks" due:"1438626600" entry:"1438030096" modified:"1438030440" project:"depart" status:"pending" uuid:"05385659-2ecd-41e0-917f-7c5c1442d263"]
+[description:"mail GWU saying that the document has been sent" due:"1438108200" entry:"1438099590" modified:"1438099590" project:"work" status:"pending" uuid:"676c170d-6277-4ec9-8e54-78e070ee5c2e"]
