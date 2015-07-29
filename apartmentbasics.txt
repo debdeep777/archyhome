@@ -77,7 +77,7 @@ nightstand 2 = 80
 total = 1100
 
 ----------------------------------------------------
-Kuchen and utensils+ cleaning supplies
+Kichen and utensils+ cleaning supplies
 
 3 big pots with lids = 60
 3 frying pans = 30
