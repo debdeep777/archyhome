@@ -2459,3 +2459,11 @@ time 1438169436
 old [depends:"6217ec65-962a-47aa-8206-ad73dfad0412" description:"Take the driving exam to get the licence." due:"1438626600" entry:"1437283468" modified:"1437284045" priority:"L" project:"driving" status:"pending" uuid:"782cf895-4a22-4bc7-909d-d5bb1e3ba9a1"]
 new [depends:"6217ec65-962a-47aa-8206-ad73dfad0412" description:"Take the driving exam to get the licence." due:"1438626600" end:"1438169436" entry:"1437283468" modified:"1438169436" priority:"L" project:"driving" status:"completed" uuid:"782cf895-4a22-4bc7-909d-d5bb1e3ba9a1"]
 ---
+time 1438234204
+old [description:"Take the last driving class" due:"1438061400" entry:"1438029172" modified:"1438029172" project:"driving" status:"pending" uuid:"10bad1ae-4297-456a-a250-ebde46886f33"]
+new [description:"Take the last driving class" due:"1438061400" end:"1438233734" entry:"1438029172" modified:"1438233734" project:"driving" status:"completed" uuid:"10bad1ae-4297-456a-a250-ebde46886f33"]
+---
+time 1438236543
+old [description:"mail GWU saying that the document has been sent" due:"1438108200" entry:"1438099590" modified:"1438099590" project:"work" status:"pending" uuid:"676c170d-6277-4ec9-8e54-78e070ee5c2e"]
+new [annotation_1438234201:"Cannot be done since they don't have an email id." description:"mail GWU saying that the document has been sent" due:"1438108200" entry:"1438099590" modified:"1438234201" project:"work" status:"pending" uuid:"676c170d-6277-4ec9-8e54-78e070ee5c2e"]
+---
