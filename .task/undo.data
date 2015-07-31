@@ -2483,3 +2483,6 @@ time 1438291358
 old [annotation_1438234201:"Cannot be done since they don't have an email id." description:"mail GWU saying that the document has been sent" due:"1438108200" entry:"1438099590" modified:"1438234201" project:"work" status:"pending" uuid:"676c170d-6277-4ec9-8e54-78e070ee5c2e"]
 new [annotation_1438234201:"Cannot be done since they don't have an email id." annotation_1438291357:"Could not find the email id" description:"mail GWU saying that the document has been sent" due:"1438108200" end:"1438291357" entry:"1438099590" modified:"1438291358" project:"work" status:"deleted" uuid:"676c170d-6277-4ec9-8e54-78e070ee5c2e"]
 ---
+time 1438298524
+new [description:"Get preacription and supply of frequently uaee medicatiin from the doctor" due:"1438557724" entry:"1438298524" modified:"1438298524" project:"depart" status:"pending" uuid:"95a801ed-f555-4ad1-a72b-fa3f543f1967"]
+---
