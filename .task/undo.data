@@ -2486,3 +2486,26 @@ new [annotation_1438234201:"Cannot be done since they don't have an email id." a
 time 1438298524
 new [description:"Get preacription and supply of frequently uaee medicatiin from the doctor" due:"1438557724" entry:"1438298524" modified:"1438298524" project:"depart" status:"pending" uuid:"95a801ed-f555-4ad1-a72b-fa3f543f1967"]
 ---
+time 1438395071
+old [description:"Tell brother to bring my Brown Jacket and USB this weekend positively" due:"1438194600" entry:"1438030048" modified:"1438030048" priority:"H" project:"depart" status:"pending" uuid:"194e9e70-fc7a-4a4a-8e46-3153f702ecf1"]
+new [description:"Tell brother to bring my Brown Jacket and USB this weekend positively" due:"1438194600" end:"1438395071" entry:"1438030048" modified:"1438395071" priority:"H" project:"depart" status:"completed" uuid:"194e9e70-fc7a-4a4a-8e46-3153f702ecf1"]
+---
+time 1438395085
+old [annotation_1437780883:"It's a dead end." annotation_1438028839:"Mirakel stopped sync function!" description:"Setup a reminder system related to tasker, prefereably to the phone" due:"1437784800" entry:"1437762526" modified:"1438029892" project:"linux" status:"pending" uuid:"c2a6dad6-29ae-40b2-9f00-34e87e3215d8"]
+new [annotation_1437780883:"It's a dead end." annotation_1438028839:"Mirakel stopped sync function!" description:"Setup a reminder system related to tasker, prefereably to the phone" due:"1437784800" end:"1438395084" entry:"1437762526" modified:"1438395085" project:"linux" status:"deleted" uuid:"c2a6dad6-29ae-40b2-9f00-34e87e3215d8"]
+---
+time 1438395121
+old [description:"Goto the airtel store to find out if the sim supports IN roaming" due:"1438108200" entry:"1438029650" modified:"1438029650" project:"depart" status:"pending" uuid:"4e20b379-1662-4bf7-a9c2-d359ca24f5d1"]
+new [description:"Goto the airtel store to find out if the sim supports IN roaming" due:"1438453800" entry:"1438029650" modified:"1438395121" project:"depart" status:"pending" uuid:"4e20b379-1662-4bf7-a9c2-d359ca24f5d1"]
+---
+time 1438395139
+old [description:"Give the full pants to the shop so that they can cut it short" due:"1438281000" entry:"1438029969" modified:"1438291338" project:"depart" status:"pending" uuid:"7d84c16a-df5a-4a62-a838-f3c80e4d210a"]
+new [description:"Give the full pants to the shop so that they can cut it short" due:"1438453800" entry:"1438029969" modified:"1438395139" project:"depart" status:"pending" uuid:"7d84c16a-df5a-4a62-a838-f3c80e4d210a"]
+---
+time 1438395153
+old [annotation_1438030440:"Buy filter" description:"Buy underwears and socks" due:"1438626600" entry:"1438030096" modified:"1438030440" project:"depart" status:"pending" uuid:"05385659-2ecd-41e0-917f-7c5c1442d263"]
+new [annotation_1438030440:"Buy filter" description:"Buy underwears and socks" due:"1438626600" end:"1438395153" entry:"1438030096" modified:"1438395153" project:"depart" status:"completed" uuid:"05385659-2ecd-41e0-917f-7c5c1442d263"]
+---
+time 1438395180
+new [description:"Change 4 socks to big ones" due:"1438453800" entry:"1438395180" modified:"1438395180" project:"depart" status:"pending" uuid:"69fc852d-2b3c-4216-a7a3-928223f7cf59"]
+---
