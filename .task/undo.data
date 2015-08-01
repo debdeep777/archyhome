@@ -2509,3 +2509,21 @@ new [annotation_1438030440:"Buy filter" description:"Buy underwears and socks" d
 time 1438395180
 new [description:"Change 4 socks to big ones" due:"1438453800" entry:"1438395180" modified:"1438395180" project:"depart" status:"pending" uuid:"69fc852d-2b3c-4216-a7a3-928223f7cf59"]
 ---
+time 1438465713
+new [description:"Build the cover for kobo" entry:"1438465713" modified:"1438465713" project:"packing" status:"pending" uuid:"aaf95d2e-7986-4713-b0a2-139f1577a192"]
+---
+time 1438465731
+new [description:"Rearrange the dark disk" entry:"1438465731" modified:"1438465731" project:"packing" status:"pending" uuid:"2d7831d2-a9ee-4017-b1bf-be75e7c780e7"]
+---
+time 1438465793
+new [description:"Dry all 3 bags" entry:"1438465793" modified:"1438465793" project:"packing" status:"pending" uuid:"829f40a2-cf5e-45f6-b7cc-6719c10ac191"]
+---
+time 1438466131
+new [description:"Buy thick socks 4 pairs" entry:"1438466131" modified:"1438466131" project:"packing" status:"pending" tags:"buy" uuid:"1f071b00-77c9-4ac9-aef6-1e1054bb5d1e"]
+---
+time 1438466733
+new [description:"Shave beard" due:"1438453800" entry:"1438466733" modified:"1438466733" project:"packing" status:"pending" uuid:"d0f3eeda-12c4-44ed-a65d-96840caa29df"]
+---
+time 1438467636
+new [description:"Verify if the cab is booked for 6th" due:"1438540200" entry:"1438467636" modified:"1438467636" project:"depart" status:"pending" uuid:"6177c4ad-68b3-4f0a-b350-18ced7e9cc6c"]
+---
