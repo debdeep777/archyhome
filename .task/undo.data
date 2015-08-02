@@ -2578,3 +2578,6 @@ time 1438547774
 old [description:"old" entry:"1438547231" modified:"1438547231" status:"pending" tags:"hd" uuid:"f54f084e-d34b-4829-ab5c-cf8b6495c724"]
 new [description:"old" end:"1438547774" entry:"1438547231" modified:"1438547774" status:"completed" tags:"hd" uuid:"f54f084e-d34b-4829-ab5c-cf8b6495c724"]
 ---
+time 1438554371
+new [description:"Buy elasktic bands to make the ebook cover" due:"1438626600" entry:"1438554371" modified:"1438554371" project:"packing" status:"pending" uuid:"2e9a9f2c-a129-4a33-a7b3-806774135afe"]
+---
