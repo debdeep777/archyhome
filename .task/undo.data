@@ -2621,3 +2621,21 @@ new [description:"Carry apartment address in the airport" entry:"1438560872" mod
 time 1438629549
 new [description:"Write and paste Name and Destination on the bags" due:"1438713000" entry:"1438629549" modified:"1438629549" project:"depart" status:"pending" uuid:"ec7160c7-4ee4-40af-9919-3a898665413e"]
 ---
+time 1438637919
+new [description:"Buy Belt" entry:"1438637919" modified:"1438637919" status:"pending" tags:"buy" uuid:"d611a3bd-b66c-4d69-82e8-bdfd8855faff"]
+---
+time 1438637930
+old [description:"porn" entry:"1438547153" modified:"1438547153" status:"pending" tags:"hd" uuid:"01f9c518-e58c-4508-ad06-4123dd66eef4"]
+new [description:"porn" end:"1438637930" entry:"1438547153" modified:"1438637930" status:"completed" tags:"hd" uuid:"01f9c518-e58c-4508-ad06-4123dd66eef4"]
+---
+time 1438637930
+old [description:"games - .t" entry:"1438547208" modified:"1438547208" status:"pending" tags:"hd" uuid:"d4a34a26-8a13-4ba1-8591-1d6fb14d55c7"]
+new [description:"games - .t" end:"1438637930" entry:"1438547208" modified:"1438637930" status:"completed" tags:"hd" uuid:"d4a34a26-8a13-4ba1-8591-1d6fb14d55c7"]
+---
+time 1438637952
+old [description:"Buy Belt" entry:"1438637919" modified:"1438637919" status:"pending" tags:"buy" uuid:"d611a3bd-b66c-4d69-82e8-bdfd8855faff"]
+new [description:"Belt" entry:"1438637919" modified:"1438637952" status:"pending" tags:"buy" uuid:"d611a3bd-b66c-4d69-82e8-bdfd8855faff"]
+---
+time 1438637982
+new [description:"4 more half pants" entry:"1438637982" modified:"1438637982" status:"pending" tags:"buy" uuid:"9cbbb66b-964d-44d8-8123-a1751d5e2651"]
+---
