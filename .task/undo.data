@@ -2648,3 +2648,7 @@ new [description:"Put the dollars in different places" due:"1438713000" entry:"1
 time 1438695194
 new [description:"Xerox 3 docuemtns and write down serial for the travellers cheque and keep at home" due:"1438626600" entry:"1438695194" modified:"1438695194" project:"depart" status:"pending" uuid:"938e1667-897a-4574-bb85-c4d4ce95ce59"]
 ---
+time 1438703503
+old [description:"Scan birth Certificate and msc certificate" due:"1438626600" entry:"1438695141" modified:"1438695141" project:"depart" status:"pending" uuid:"abe90fd2-59c4-4560-9eb9-1b75d393c786"]
+new [description:"Scan birth Certificate and msc certificate" due:"1438626600" end:"1438703503" entry:"1438695141" modified:"1438703503" project:"depart" status:"completed" uuid:"abe90fd2-59c4-4560-9eb9-1b75d393c786"]
+---
