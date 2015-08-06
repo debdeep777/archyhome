@@ -4,7 +4,7 @@
 [description:"online check-in for flight" due:"1438713000" entry:"1435264056" modified:"1438545007" priority:"M" project:"depart" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
 [description:"Fix linux time, ntpd -gq does not make it permanant" due:"1438587235" entry:"1436641378" modified:"1437291235" priority:"H" project:"linux" status:"pending" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
 [description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1437284572" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
-[depends:"124b9bde-05d0-4c10-8d7b-720801053b48" description:"Pack all the bags" due:"1438626600" entry:"1437283367" modified:"1437284398" priority:"H" project:"depart" status:"pending" uuid:"767c09c5-5bce-4e90-98b9-e561e53cbd35"]
+[depends:"124b9bde-05d0-4c10-8d7b-720801053b48" description:"Pack all the bags" due:"1438626600" end:"1438822763" entry:"1437283367" modified:"1438822763" priority:"H" project:"depart" status:"completed" uuid:"767c09c5-5bce-4e90-98b9-e561e53cbd35"]
 [description:"Create step by step process for parents" due:"1438799400" entry:"1437426887" modified:"1437426887" project:"work" status:"pending" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
 [annotation_1438643124:"Give it to Didibhai" description:"what to do with the white hard disk" due:"1438713000" entry:"1437516401" modified:"1438643124" project:"depart" status:"pending" uuid:"1d237e14-1e23-414e-9c8d-34aaedd8fce7"]
 [description:"Complete I - 9 form for GWU" due:"1440268200" entry:"1437664916" modified:"1437664916" project:"work" status:"pending" uuid:"eb4efe8d-94e8-4c56-8d65-98ba79a2f764"]

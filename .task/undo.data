@@ -2652,3 +2652,7 @@ time 1438703503
 old [description:"Scan birth Certificate and msc certificate" due:"1438626600" entry:"1438695141" modified:"1438695141" project:"depart" status:"pending" uuid:"abe90fd2-59c4-4560-9eb9-1b75d393c786"]
 new [description:"Scan birth Certificate and msc certificate" due:"1438626600" end:"1438703503" entry:"1438695141" modified:"1438703503" project:"depart" status:"completed" uuid:"abe90fd2-59c4-4560-9eb9-1b75d393c786"]
 ---
+time 1438822763
+old [depends:"124b9bde-05d0-4c10-8d7b-720801053b48" description:"Pack all the bags" due:"1438626600" entry:"1437283367" modified:"1437284398" priority:"H" project:"depart" status:"pending" uuid:"767c09c5-5bce-4e90-98b9-e561e53cbd35"]
+new [depends:"124b9bde-05d0-4c10-8d7b-720801053b48" description:"Pack all the bags" due:"1438626600" end:"1438822763" entry:"1437283367" modified:"1438822763" priority:"H" project:"depart" status:"completed" uuid:"767c09c5-5bce-4e90-98b9-e561e53cbd35"]
+---
