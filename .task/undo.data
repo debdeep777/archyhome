@@ -2691,3 +2691,9 @@ time 1438803259
 old [description:"4 more half pants" entry:"1438637982" modified:"1438637982" status:"pending" tags:"buy" uuid:"9cbbb66b-964d-44d8-8123-a1751d5e2651"]
 new [annotation_1438803258:"No need" description:"4 more half pants" end:"1438803258" entry:"1438637982" modified:"1438803259" status:"deleted" tags:"buy" uuid:"9cbbb66b-964d-44d8-8123-a1751d5e2651"]
 ---
+time 1439093486
+new [description:"Register Metro card online" entry:"1439093486" modified:"1439093486" project:"gettingStarted" status:"pending" uuid:"9f04955a-c1a8-4485-a69d-ff404dc7cf43"]
+---
+time 1439093519
+new [description:"Give lecture to pratima about ledger and tasj warrior" entry:"1439093519" modified:"1439093519" project:"gettingStarted" status:"pending" uuid:"6bc7d9de-4ac5-48ff-a73b-f186af372429"]
+---

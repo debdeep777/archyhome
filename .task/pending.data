@@ -12,3 +12,5 @@
 [description:"Buy elasktic bands to make the ebook cover" due:"1438626600" entry:"1438554371" modified:"1438554371" project:"packing" status:"pending" uuid:"2e9a9f2c-a129-4a33-a7b3-806774135afe"]
 [description:"Put the dollars in different places" due:"1438713000" entry:"1438695159" modified:"1438695159" project:"depart" status:"pending" uuid:"60650013-a817-4a5b-aae7-527e35525d95"]
 [description:"Buy tiny lock for the smaller bag" due:"1438799400" entry:"1438803208" modified:"1438803208" priority:"H" project:"depart" status:"pending" uuid:"792600a8-a23f-4621-9363-e89e26ed14f5"]
+[description:"Register Metro card online" entry:"1439093486" modified:"1439093486" project:"gettingStarted" status:"pending" uuid:"9f04955a-c1a8-4485-a69d-ff404dc7cf43"]
+[description:"Give lecture to pratima about ledger and tasj warrior" entry:"1439093519" modified:"1439093519" project:"gettingStarted" status:"pending" uuid:"6bc7d9de-4ac5-48ff-a73b-f186af372429"]
