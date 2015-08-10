@@ -1,3 +1,14 @@
-a582ac61-92cd-4bb7-9407-ca08b91de2cf
-{"description":"Register Metro card online","entry":"20150809T041126Z","modified":"20150809T041126Z","project":"gettingStarted","status":"pending","uuid":"9f04955a-c1a8-4485-a69d-ff404dc7cf43"}
-{"description":"Give lecture to pratima about ledger and tasj warrior","entry":"20150809T041159Z","modified":"20150809T041159Z","project":"gettingStarted","status":"pending","uuid":"6bc7d9de-4ac5-48ff-a73b-f186af372429"}
+f33696b3-1042-497a-be23-3cb2641907c4
+{"description":"online check-in for flight","due":"20150804T183000Z","end":"20150810T154052Z","entry":"20150625T202736Z","modified":"20150810T154056Z","priority":"M","project":"depart","status":"completed","uuid":"0473c124-7c67-47f2-a059-f1098741988b"}
+{"description":"what to do with the white hard disk","due":"20150804T183000Z","end":"20150810T154056Z","entry":"20150721T220641Z","modified":"20150810T154056Z","project":"depart","status":"completed","uuid":"1d237e14-1e23-414e-9c8d-34aaedd8fce7","annotations":[{"entry":"20150803T230524Z","description":"Give it to Didibhai"}]}
+{"description":"Buy tiny lock for the smaller bag","due":"20150805T183000Z","end":"20150810T154056Z","entry":"20150805T193328Z","modified":"20150810T154056Z","priority":"H","project":"depart","status":"completed","uuid":"792600a8-a23f-4621-9363-e89e26ed14f5"}
+{"description":"Create step by step process for parents","due":"20150805T183000Z","end":"20150810T154114Z","entry":"20150720T211447Z","modified":"20150810T154115Z","project":"work","status":"completed","uuid":"7c8d766a-d666-4981-992b-1e83e19d1a0e"}
+{"description":"zip the junk folder","due":"20150805T183000Z","end":"20150810T154115Z","entry":"20150802T195140Z","modified":"20150810T154115Z","project":"depart","status":"completed","uuid":"9133135d-77de-48a5-88ab-28a8ded0ebe8"}
+{"description":"Buy elasktic bands to make the ebook cover","due":"20150803T183000Z","end":"20150810T154115Z","entry":"20150802T222611Z","modified":"20150810T154115Z","project":"packing","status":"completed","uuid":"2e9a9f2c-a129-4a33-a7b3-806774135afe"}
+{"description":"Put the dollars in different places","due":"20150804T183000Z","end":"20150810T154115Z","entry":"20150804T133239Z","modified":"20150810T154115Z","project":"depart","status":"completed","uuid":"60650013-a817-4a5b-aae7-527e35525d95"}
+{"description":"Build the cover for kobo","end":"20150810T154142Z","entry":"20150801T214833Z","modified":"20150810T154142Z","project":"packing","status":"completed","uuid":"aaf95d2e-7986-4713-b0a2-139f1577a192"}
+{"description":"Call wifi and setup","entry":"20150810T154245Z","modified":"20150810T154245Z","project":"home","status":"pending","uuid":"d655e897-b2f2-4773-977b-db2a4c4e09b5"}
+{"description":"SSN","entry":"20150810T154255Z","modified":"20150810T154255Z","project":"univ","status":"pending","uuid":"62786528-0c8f-4e3c-8479-911bf0896d2f"}
+{"description":"Bank accoutn","entry":"20150810T154319Z","modified":"20150810T154319Z","project":"univ","status":"pending","uuid":"17bce6cc-01ea-4bf1-b623-9e65bd48f683"}
+{"description":"Fill up tax form","entry":"20150810T154349Z","modified":"20150810T154349Z","project":"univ","status":"pending","uuid":"9ed9c33a-f717-4c7b-921c-851b9cf5af08"}
+{"description":"State ID","entry":"20150810T154403Z","modified":"20150810T154403Z","project":"univ","status":"pending","uuid":"4c8d56f0-3b3a-44b7-ab74-2a4823559ee4"}

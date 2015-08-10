@@ -2697,3 +2697,50 @@ new [description:"Register Metro card online" entry:"1439093486" modified:"14390
 time 1439093519
 new [description:"Give lecture to pratima about ledger and tasj warrior" entry:"1439093519" modified:"1439093519" project:"gettingStarted" status:"pending" uuid:"6bc7d9de-4ac5-48ff-a73b-f186af372429"]
 ---
+time 1439221256
+old [description:"online check-in for flight" due:"1438713000" entry:"1435264056" modified:"1438545007" priority:"M" project:"depart" status:"pending" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
+new [description:"online check-in for flight" due:"1438713000" end:"1439221252" entry:"1435264056" modified:"1439221256" priority:"M" project:"depart" status:"completed" uuid:"0473c124-7c67-47f2-a059-f1098741988b"]
+---
+time 1439221256
+old [annotation_1438643124:"Give it to Didibhai" description:"what to do with the white hard disk" due:"1438713000" entry:"1437516401" modified:"1438643124" project:"depart" status:"pending" uuid:"1d237e14-1e23-414e-9c8d-34aaedd8fce7"]
+new [annotation_1438643124:"Give it to Didibhai" description:"what to do with the white hard disk" due:"1438713000" end:"1439221256" entry:"1437516401" modified:"1439221256" project:"depart" status:"completed" uuid:"1d237e14-1e23-414e-9c8d-34aaedd8fce7"]
+---
+time 1439221256
+old [description:"Buy tiny lock for the smaller bag" due:"1438799400" entry:"1438803208" modified:"1438803208" priority:"H" project:"depart" status:"pending" uuid:"792600a8-a23f-4621-9363-e89e26ed14f5"]
+new [description:"Buy tiny lock for the smaller bag" due:"1438799400" end:"1439221256" entry:"1438803208" modified:"1439221256" priority:"H" project:"depart" status:"completed" uuid:"792600a8-a23f-4621-9363-e89e26ed14f5"]
+---
+time 1439221275
+old [description:"Create step by step process for parents" due:"1438799400" entry:"1437426887" modified:"1437426887" project:"work" status:"pending" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
+new [description:"Create step by step process for parents" due:"1438799400" end:"1439221274" entry:"1437426887" modified:"1439221275" project:"work" status:"completed" uuid:"7c8d766a-d666-4981-992b-1e83e19d1a0e"]
+---
+time 1439221275
+old [description:"zip the junk folder" due:"1438799400" entry:"1438545100" modified:"1438545100" project:"depart" status:"pending" uuid:"9133135d-77de-48a5-88ab-28a8ded0ebe8"]
+new [description:"zip the junk folder" due:"1438799400" end:"1439221275" entry:"1438545100" modified:"1439221275" project:"depart" status:"completed" uuid:"9133135d-77de-48a5-88ab-28a8ded0ebe8"]
+---
+time 1439221275
+old [description:"Buy elasktic bands to make the ebook cover" due:"1438626600" entry:"1438554371" modified:"1438554371" project:"packing" status:"pending" uuid:"2e9a9f2c-a129-4a33-a7b3-806774135afe"]
+new [description:"Buy elasktic bands to make the ebook cover" due:"1438626600" end:"1439221275" entry:"1438554371" modified:"1439221275" project:"packing" status:"completed" uuid:"2e9a9f2c-a129-4a33-a7b3-806774135afe"]
+---
+time 1439221275
+old [description:"Put the dollars in different places" due:"1438713000" entry:"1438695159" modified:"1438695159" project:"depart" status:"pending" uuid:"60650013-a817-4a5b-aae7-527e35525d95"]
+new [description:"Put the dollars in different places" due:"1438713000" end:"1439221275" entry:"1438695159" modified:"1439221275" project:"depart" status:"completed" uuid:"60650013-a817-4a5b-aae7-527e35525d95"]
+---
+time 1439221302
+old [description:"Build the cover for kobo" entry:"1438465713" modified:"1438465713" project:"packing" status:"pending" uuid:"aaf95d2e-7986-4713-b0a2-139f1577a192"]
+new [description:"Build the cover for kobo" end:"1439221302" entry:"1438465713" modified:"1439221302" project:"packing" status:"completed" uuid:"aaf95d2e-7986-4713-b0a2-139f1577a192"]
+---
+time 1439221365
+new [description:"Call wifi and setup" entry:"1439221365" modified:"1439221365" project:"home" status:"pending" uuid:"d655e897-b2f2-4773-977b-db2a4c4e09b5"]
+---
+time 1439221375
+new [description:"SSN" entry:"1439221375" modified:"1439221375" project:"univ" status:"pending" uuid:"62786528-0c8f-4e3c-8479-911bf0896d2f"]
+---
+time 1439221399
+new [description:"Bank accoutn" entry:"1439221399" modified:"1439221399" project:"univ" status:"pending" uuid:"17bce6cc-01ea-4bf1-b623-9e65bd48f683"]
+---
+time 1439221429
+new [description:"Fill up tax form" entry:"1439221429" modified:"1439221429" project:"univ" status:"pending" uuid:"9ed9c33a-f717-4c7b-921c-851b9cf5af08"]
+---
+time 1439221443
+new [description:"State ID" entry:"1439221443" modified:"1439221443" project:"univ" status:"pending" uuid:"4c8d56f0-3b3a-44b7-ab74-2a4823559ee4"]
+---
