@@ -2744,3 +2744,10 @@ new [description:"Fill up tax form" entry:"1439221429" modified:"1439221429" pro
 time 1439221443
 new [description:"State ID" entry:"1439221443" modified:"1439221443" project:"univ" status:"pending" uuid:"4c8d56f0-3b3a-44b7-ab74-2a4823559ee4"]
 ---
+time 1439301026
+new [description:"twilight does not follow local time" entry:"1439301026" modified:"1439301026" project:"linux" status:"pending" uuid:"06aa9ba9-b958-4364-92ec-d078e92c1ef4"]
+---
+time 1439301055
+old [description:"Bank accoutn" entry:"1439221399" modified:"1439221399" project:"univ" status:"pending" uuid:"17bce6cc-01ea-4bf1-b623-9e65bd48f683"]
+new [description:"Bank accoutn" end:"1439301055" entry:"1439221399" modified:"1439301055" project:"univ" status:"completed" uuid:"17bce6cc-01ea-4bf1-b623-9e65bd48f683"]
+---
