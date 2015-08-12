@@ -2827,3 +2827,6 @@ new [description:"Library Orientation at Gelman Library Room 301 or 302 at 1 - 2
 time 1439389731
 new [description:"Dinner with Micah" due:"1439524800" entry:"1439389731" modified:"1439389731" project:"home" status:"pending" uuid:"e4732807-7d53-4cff-9fde-eaa8f6fdcc09"]
 ---
+time 1439389925
+new [description:"Dinner at DC with UMD students" due:"1440887400" entry:"1439389925" modified:"1439389925" project:"work" status:"pending" uuid:"ea111c97-3944-4d0d-b452-8b32e1647075"]
+---
