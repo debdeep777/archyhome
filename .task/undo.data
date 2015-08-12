@@ -2789,3 +2789,32 @@ new [description:"Bank accoutn" end:"1439301055" entry:"1439221399" modified:"14
 time 1439309375
 new [description:"List down all my work date wise" entry:"1439309375" modified:"1439309375" project:"work" status:"pending" uuid:"9974f21b-5ff6-4c12-9f10-5f5b3699e9a8"]
 ---
+time 1439386075
+new [description:"GTAP Orientation at Funger Hall" entry:"1439386075" modified:"1439386075" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+---
+time 1439386312
+old [description:"GTAP Orientation at Funger Hall" entry:"1439386075" modified:"1439386075" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+new [description:"Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" entry:"1439386075" modified:"1439386312" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+---
+time 1439386354
+old [description:"Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" entry:"1439386075" modified:"1439386312" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+new [description:"Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" entry:"1439386075" modified:"1439386354" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+---
+time 1439386721
+old [description:"Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" entry:"1439386075" modified:"1439386354" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+new [description:"GTAP Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" entry:"1439386075" modified:"1439386721" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+---
+time 1439386845
+new [description:"Qualifying exam analysis at Monroe Hall, Room 257 at 10am - 12pm" due:"1440684000" entry:"1439386845" modified:"1439386845" status:"pending" uuid:"fc95f39b-ada7-4259-a033-b3d0febe7880"]
+---
+time 1439386882
+old [description:"GTAP Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" entry:"1439386075" modified:"1439386721" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+new [description:"GTAP Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" entry:"1439386075" modified:"1439386882" project:"work" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+---
+time 1439386882
+old [description:"Qualifying exam analysis at Monroe Hall, Room 257 at 10am - 12pm" due:"1440684000" entry:"1439386845" modified:"1439386845" status:"pending" uuid:"fc95f39b-ada7-4259-a033-b3d0febe7880"]
+new [description:"Qualifying exam analysis at Monroe Hall, Room 257 at 10am - 12pm" due:"1440684000" entry:"1439386845" modified:"1439386882" project:"work" status:"pending" uuid:"fc95f39b-ada7-4259-a033-b3d0febe7880"]
+---
+time 1439387926
+new [description:"Graduate Welcome Ceremony at \/lisner Auditorium of GWU, 730 21st street from 5 - 6pm" due:"1440709200" entry:"1439387926" modified:"1439387926" project:"work" status:"pending" uuid:"d240dd5f-5357-40db-ae9b-94185691ce59"]
+---
