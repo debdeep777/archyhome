@@ -16,3 +16,6 @@
 [description:"GTAP Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" entry:"1439386075" modified:"1439386882" project:"work" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
 [description:"Qualifying exam analysis at Monroe Hall, Room 257 at 10am - 12pm" due:"1440684000" entry:"1439386845" modified:"1439386882" project:"work" status:"pending" uuid:"fc95f39b-ada7-4259-a033-b3d0febe7880"]
 [description:"Graduate Welcome Ceremony at \/lisner Auditorium of GWU, 730 21st street from 5 - 6pm" due:"1440709200" entry:"1439387926" modified:"1439387926" project:"work" status:"pending" uuid:"d240dd5f-5357-40db-ae9b-94185691ce59"]
+[description:"INternational Student Orientation on 25th from 1 to 4:30 pm at Elliott School of Int Affairs 1957 E st, Room 113" due:"1440522000" entry:"1439389294" modified:"1439389294" project:"work" status:"pending" uuid:"60fdb369-78cd-4f3a-bef1-bae6691e5a7f"]
+[description:"Library Orientation at Gelman Library Room 301 or 302 at 1 - 2pm on 21st" due:"1440176400" entry:"1439389682" modified:"1439389682" project:"work" status:"pending" uuid:"b6188413-2e5b-49a7-8e15-77f75e488951"]
+[description:"Dinner with Micah" due:"1439524800" entry:"1439389731" modified:"1439389731" project:"home" status:"pending" uuid:"e4732807-7d53-4cff-9fde-eaa8f6fdcc09"]

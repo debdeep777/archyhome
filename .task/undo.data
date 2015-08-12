@@ -2818,3 +2818,12 @@ new [description:"Qualifying exam analysis at Monroe Hall, Room 257 at 10am - 12
 time 1439387926
 new [description:"Graduate Welcome Ceremony at \/lisner Auditorium of GWU, 730 21st street from 5 - 6pm" due:"1440709200" entry:"1439387926" modified:"1439387926" project:"work" status:"pending" uuid:"d240dd5f-5357-40db-ae9b-94185691ce59"]
 ---
+time 1439389294
+new [description:"INternational Student Orientation on 25th from 1 to 4:30 pm at Elliott School of Int Affairs 1957 E st, Room 113" due:"1440522000" entry:"1439389294" modified:"1439389294" project:"work" status:"pending" uuid:"60fdb369-78cd-4f3a-bef1-bae6691e5a7f"]
+---
+time 1439389682
+new [description:"Library Orientation at Gelman Library Room 301 or 302 at 1 - 2pm on 21st" due:"1440176400" entry:"1439389682" modified:"1439389682" project:"work" status:"pending" uuid:"b6188413-2e5b-49a7-8e15-77f75e488951"]
+---
+time 1439389731
+new [description:"Dinner with Micah" due:"1439524800" entry:"1439389731" modified:"1439389731" project:"home" status:"pending" uuid:"e4732807-7d53-4cff-9fde-eaa8f6fdcc09"]
+---
