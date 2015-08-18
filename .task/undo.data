@@ -2836,3 +2836,11 @@ new [description:"Pizza party at the departrment at the hall of the second floor
 time 1439408831
 new [description:"New grad student orientation at 267 Monroe at 10 am" due:"1440770400" entry:"1439408831" modified:"1439408831" project:"work" status:"pending" uuid:"cf7fa9c0-cc3d-4946-ae15-48e36310c213"]
 ---
+time 1439924402
+old [description:"Dinner with Micah" due:"1439524800" entry:"1439389731" modified:"1439389731" project:"home" status:"pending" uuid:"e4732807-7d53-4cff-9fde-eaa8f6fdcc09"]
+new [description:"Dinner with Micah" due:"1439524800" end:"1439869366" entry:"1439389731" modified:"1439869366" project:"home" status:"completed" uuid:"e4732807-7d53-4cff-9fde-eaa8f6fdcc09"]
+---
+time 1439924402
+old [description:"Register Metro card online" entry:"1439093486" modified:"1439093486" project:"gettingStarted" status:"pending" uuid:"9f04955a-c1a8-4485-a69d-ff404dc7cf43"]
+new [description:"Register Metro card online" end:"1439869532" entry:"1439093486" modified:"1439869532" project:"gettingStarted" status:"completed" uuid:"9f04955a-c1a8-4485-a69d-ff404dc7cf43"]
+---
