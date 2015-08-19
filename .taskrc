@@ -39,7 +39,7 @@ report.vb.columns=project,tags,description,due,id
 report.vb.labels=Project,Tag,Description,Due,ID
 report.vb.description=A list with very basic information, created by me
 report.vb.filter=status:pending limit:page
-report.vb.sort=due-,urgency-
+report.vb.sort=due+,urgency-
 
 # mod
 report.ne.columns=id,depends,priority,project,tags,scheduled.countdown,due.age,until.age,description.count,urgency
