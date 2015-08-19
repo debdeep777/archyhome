@@ -2848,3 +2848,11 @@ time 1439946563
 old [description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1437284572" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
 new [annotation_1439946563:"Room number changed to Room 702, the International Brotherhood of Teamsters Room. No food or drink is allowed in the space." description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1439946563" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
 ---
+time 1440005845
+old [description:"Library Orientation at Gelman Library Room 301 or 302 at 1 - 2pm on 21st" due:"1440176400" entry:"1439389682" modified:"1439389682" project:"work" status:"pending" uuid:"b6188413-2e5b-49a7-8e15-77f75e488951"]
+new [annotation_1440005845:"Room number changed to Room 702, the International Brotherhood of Teamsters Room. No food or drink is allowed in the space." description:"Library Orientation at Gelman Library Room 301 or 302 at 1 - 2pm on 21st" due:"1440176400" entry:"1439389682" modified:"1440005845" project:"work" status:"pending" uuid:"b6188413-2e5b-49a7-8e15-77f75e488951"]
+---
+time 1440005864
+old [annotation_1439946563:"Room number changed to Room 702, the International Brotherhood of Teamsters Room. No food or drink is allowed in the space." description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1439946563" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
+new [description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1440005864" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
+---

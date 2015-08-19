@@ -150,10 +150,6 @@
 	Expenses:Laundry			$3.50
 	Assets:Pratima:Checking			
 
-2015-08-16	Unknown Reason
-	Expenses:Unknown			$7.00
-	Assets:Pratima:Checking			
-
 2015-08-17 Metro
 	Expenses:Travel:Debdeep		$20
 	Expenses:Travel:Pratima		$20
@@ -174,4 +170,9 @@
 2015-08-17	Giant at DC
 	Expenses:Grocery			$18.14	;bought beer
 	Assets:Pratima:Checking	
+
+2015-08-19 Netflix
+	Expenses:Netflix			$7.99
+	Assets:Pratima:Checking
+
 
