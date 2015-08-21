@@ -2871,3 +2871,6 @@ new [description:"Graduate Service Fair from 2 - 4pm at marvin Centre Grand Ball
 time 1440131363
 new [description:"Graduate Welcome REception at 6 - 7pm at Kogan Plaza and Midcampus Quad" due:"1440712800" entry:"1440131363" modified:"1440131363" project:"work" status:"pending" uuid:"6c55f04c-1ea5-47e4-bf70-958ba6961cb9"]
 ---
+time 1440131517
+new [description:"Movie at the university Yard Rain at Continental Ballroom at 7:30pm" due:"1440977400" entry:"1440131517" modified:"1440131517" project:"work" status:"pending" uuid:"300bbc4b-c8b1-454e-ad16-bfbaec7061b8"]
+---

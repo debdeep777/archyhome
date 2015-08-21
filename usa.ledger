@@ -175,4 +175,13 @@
 	Expenses:Netflix			$7.99
 	Assets:Pratima:Checking
 
+2015-08-21 New Debit card
+	Assets:Debdeep:Checking		$30
+	Assets:Debdeep:Cash
+
+2015-08-21 Target
+	Expenses:Furniture		$12.77	;umbrella
+	Expenses:Grocery		$47.82
+	Assets:Debdeep:Checking
+
 
