@@ -2856,3 +2856,12 @@ time 1440005864
 old [annotation_1439946563:"Room number changed to Room 702, the International Brotherhood of Teamsters Room. No food or drink is allowed in the space." description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1439946563" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
 new [description:"USe promodoro method to solve quals" due:"1440009000" entry:"1437257591" modified:"1440005864" priority:"H" project:"work" status:"pending" uuid:"452e6204-6738-458b-88fa-75baefba1f46"]
 ---
+time 1440130756
+new [description:"Print the Health insurance card online" entry:"1440130756" modified:"1440130756" project:"work" status:"pending" uuid:"42b8ed04-d14e-4281-99d4-82fc278429a8"]
+---
+time 1440130996
+new [description:"Assignment for the the Teaching course" due:"1441857600" entry:"1440130996" modified:"1440130996" project:"work" status:"pending" uuid:"2c60336a-cf89-41d0-8772-ab4765e1fb47"]
+---
+time 1440112677
+new [description:"Carry originals and xerox copies of the transcripts" due:"1440129600" entry:"1440112677" modified:"1440112677" project:"work" status:"pending" uuid:"a556d98e-86b2-42e5-bb82-624294756504"]
+---
