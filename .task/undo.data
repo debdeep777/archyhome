@@ -2865,3 +2865,9 @@ new [description:"Assignment for the the Teaching course" due:"1441857600" entry
 time 1440112677
 new [description:"Carry originals and xerox copies of the transcripts" due:"1440129600" entry:"1440112677" modified:"1440112677" project:"work" status:"pending" uuid:"a556d98e-86b2-42e5-bb82-624294756504"]
 ---
+time 1440131194
+new [description:"Graduate Service Fair from 2 - 4pm at marvin Centre Grand Ballroom at 800 21st street NW" due:"1440698400" entry:"1440131194" modified:"1440131194" project:"work" status:"pending" uuid:"a1f07efd-93b9-49ff-958a-680bf88ab1b2"]
+---
+time 1440131363
+new [description:"Graduate Welcome REception at 6 - 7pm at Kogan Plaza and Midcampus Quad" due:"1440712800" entry:"1440131363" modified:"1440131363" project:"work" status:"pending" uuid:"6c55f04c-1ea5-47e4-bf70-958ba6961cb9"]
+---
