@@ -175,13 +175,26 @@
 	Expenses:Netflix			$7.99
 	Assets:Pratima:Checking
 
-2015-08-21 New Debit card
+2015-08-20 New Debit card
 	Assets:Debdeep:Checking		$30
 	Assets:Debdeep:Cash
 
-2015-08-21 Target
+2015-08-20 Target
 	Expenses:Furniture		$12.77	;umbrella
 	Expenses:Grocery		$47.82
 	Assets:Debdeep:Checking
 
+2015-08-21	Metro
+	Assets:Pratima:Checking		-$30
+	Assets:Debdeep:Checking		-$40
+	Expenses:Travel
+
+2015-08-21	Baked and Wired, DC
+	Expenses:Buffer:Food		$8.01
+	Assets:Debdeep:Checking
+
+2015-08-21	District of Pi, DC
+	Assets:Pratima:Checking		-$12.97
+	Assets:Debdeep:Checking		-$13
+	Expenses:Buffer:Food
 
