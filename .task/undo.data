@@ -2874,3 +2874,7 @@ new [description:"Graduate Welcome REception at 6 - 7pm at Kogan Plaza and Midca
 time 1440131517
 new [description:"Movie at the university Yard Rain at Continental Ballroom at 7:30pm" due:"1440977400" entry:"1440131517" modified:"1440131517" project:"work" status:"pending" uuid:"300bbc4b-c8b1-454e-ad16-bfbaec7061b8"]
 ---
+time 1440367209
+old [description:"Carry originals and xerox copies of the transcripts" due:"1440129600" entry:"1440112677" modified:"1440112677" project:"work" status:"pending" uuid:"a556d98e-86b2-42e5-bb82-624294756504"]
+new [description:"Carry originals and xerox copies of the transcripts" due:"1440129600" end:"1440366463" entry:"1440112677" modified:"1440366463" project:"work" status:"completed" uuid:"a556d98e-86b2-42e5-bb82-624294756504"]
+---
