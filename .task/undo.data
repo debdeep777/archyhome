@@ -2878,3 +2878,11 @@ time 1440367209
 old [description:"Carry originals and xerox copies of the transcripts" due:"1440129600" entry:"1440112677" modified:"1440112677" project:"work" status:"pending" uuid:"a556d98e-86b2-42e5-bb82-624294756504"]
 new [description:"Carry originals and xerox copies of the transcripts" due:"1440129600" end:"1440366463" entry:"1440112677" modified:"1440366463" project:"work" status:"completed" uuid:"a556d98e-86b2-42e5-bb82-624294756504"]
 ---
+time 1440452794
+old [annotation_1440005845:"Room number changed to Room 702, the International Brotherhood of Teamsters Room. No food or drink is allowed in the space." description:"Library Orientation at Gelman Library Room 301 or 302 at 1 - 2pm on 21st" due:"1440176400" entry:"1439389682" modified:"1440005845" project:"work" status:"pending" uuid:"b6188413-2e5b-49a7-8e15-77f75e488951"]
+new [annotation_1440005845:"Room number changed to Room 702, the International Brotherhood of Teamsters Room. No food or drink is allowed in the space." description:"Library Orientation at Gelman Library Room 301 or 302 at 1 - 2pm on 21st" due:"1440176400" end:"1440452794" entry:"1439389682" modified:"1440452794" project:"work" status:"completed" uuid:"b6188413-2e5b-49a7-8e15-77f75e488951"]
+---
+time 1440452827
+old [annotation_1439305157:"Located at the corner of 21st and G Street" annotation_1439305185:"walk down the ramp and through the sliding doors in order to access the department" description:"Oral Proficiency Exam at the Speech and Hearing Department" due:"1440424800" entry:"1439305077" modified:"1439305393" project:"work" scheduled:"1440216000" status:"pending" uuid:"fdfd0d4d-953e-4997-bcee-8b2f7982577a"]
+new [annotation_1439305157:"Located at the corner of 21st and G Street" annotation_1439305185:"walk down the ramp and through the sliding doors in order to access the department" description:"Oral Proficiency Exam at the Speech and Hearing Department" due:"1440424800" end:"1440452827" entry:"1439305077" modified:"1440452827" project:"work" scheduled:"1440216000" status:"completed" uuid:"fdfd0d4d-953e-4997-bcee-8b2f7982577a"]
+---
