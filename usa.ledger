@@ -198,3 +198,13 @@
 	Assets:Debdeep:Checking		-$13
 	Expenses:Buffer:Food
 
+2015-08-23 E street cinema
+	Expenses:Buffer		$19	; movie
+	Expenses:Buffer		$4	; chips
+	Assets:Debdeep:Checking		-$19
+	Assets:Pratima:Cash
+
+2015-08-24	New Grand Mart
+	Expenses:Grocery	$42.27
+	Assets:Debdeep:Checking
+
