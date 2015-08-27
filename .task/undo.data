@@ -2937,3 +2937,12 @@ new [description:"twilight does not follow local time" end:"1440634975" entry:"1
 time 1440635037
 new [description:"RSVP yourself to MIsrak Negatu and May garcia" due:"1440648000" entry:"1440635037" modified:"1440635037" project:"work" status:"pending" uuid:"2efae07a-3eb9-422d-9faf-5222e087a3b8"]
 ---
+time 1440635517
+new [description:"Get a confirmation receipt for the Verizon deposit 00" entry:"1440635517" modified:"1440635517" project:"work" status:"pending" uuid:"23f0f4f4-9a44-45a8-be80-11d426d72aa5"]
+---
+time 1440636734
+new [description:"Fill up the tax form" entry:"1440636734" modified:"1440636734" project:"work" status:"pending" uuid:"9e460c26-467b-4824-890c-83fb94a35757"]
+---
+time 1440637574
+new [description:"Make the message notikfication in phone silent" entry:"1440637574" modified:"1440637574" status:"pending" uuid:"f2307ef0-67e4-4284-9691-bc14cd3a5d4a"]
+---

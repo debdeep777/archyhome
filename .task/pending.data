@@ -27,3 +27,6 @@
 [description:"Pay bill to the university" due:"1440993600" entry:"1440634855" modified:"1440634855" project:"work" status:"pending" uuid:"71d4be76-d56d-4fbe-8183-d1759963366c"]
 [description:"Pay rent and utility" due:"1440820800" entry:"1440634901" modified:"1440634901" project:"work" status:"pending" uuid:"64f5c6ba-f0f4-4ba7-b5b9-6061209e23fb"]
 [description:"RSVP yourself to MIsrak Negatu and May garcia" due:"1440648000" entry:"1440635037" modified:"1440635037" project:"work" status:"pending" uuid:"2efae07a-3eb9-422d-9faf-5222e087a3b8"]
+[description:"Get a confirmation receipt for the Verizon deposit 00" entry:"1440635517" modified:"1440635517" project:"work" status:"pending" uuid:"23f0f4f4-9a44-45a8-be80-11d426d72aa5"]
+[description:"Fill up the tax form" entry:"1440636734" modified:"1440636734" project:"work" status:"pending" uuid:"9e460c26-467b-4824-890c-83fb94a35757"]
+[description:"Make the message notikfication in phone silent" entry:"1440637574" modified:"1440637574" status:"pending" uuid:"f2307ef0-67e4-4284-9691-bc14cd3a5d4a"]
