@@ -2890,3 +2890,7 @@ time 1440567542
 old [description:"INternational Student Orientation on 25th from 1 to 4:30 pm at Elliott School of Int Affairs 1957 E st, Room 113" due:"1440522000" entry:"1439389294" modified:"1439389294" project:"work" status:"pending" uuid:"60fdb369-78cd-4f3a-bef1-bae6691e5a7f"]
 new [description:"INternational Student Orientation on 25th from 1 to 4:30 pm at Elliott School of Int Affairs 1957 E st, Room 113" due:"1440522000" end:"1440566153" entry:"1439389294" modified:"1440566153" project:"work" status:"completed" uuid:"60fdb369-78cd-4f3a-bef1-bae6691e5a7f"]
 ---
+time 1440632759
+old [description:"GTAP Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" entry:"1439386075" modified:"1439386882" project:"work" status:"pending" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+new [description:"GTAP Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm" due:"1440604800" end:"1440632759" entry:"1439386075" modified:"1440632759" project:"work" status:"completed" uuid:"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"]
+---
