@@ -1,2 +1,14 @@
-d78fe4bb-ead0-4ea8-99b5-4e8e89a86e1e
-{"description":"GTAP Orientation at Funger Hall 2201 G St. NW, Room 103 at 12:00 pm","due":"20150826T160000Z","end":"20150826T234559Z","entry":"20150812T132755Z","modified":"20150826T234559Z","project":"work","status":"completed","uuid":"2ca4b2c8-7bee-4002-91b7-ea21a7207d7c"}
+e9d497c2-dbea-41a7-bea0-63433ba7ee41
+{"description":"Pay verizon BIll","entry":"20150827T001336Z","modified":"20150827T001336Z","status":"pending","uuid":"87ef85b3-0e92-49b6-9752-41f53261300e"}
+{"description":"Pay verizon BIll","entry":"20150827T001336Z","modified":"20150827T001347Z","project":"work","status":"pending","uuid":"87ef85b3-0e92-49b6-9752-41f53261300e"}
+{"description":"See if weekly passes are a good idea","entry":"20150827T001450Z","modified":"20150827T001450Z","project":"work","status":"pending","uuid":"117600d5-ee9c-4293-be83-045312956e14"}
+{"description":"Mail Roosevelt","due":"20150826T040000Z","entry":"20150827T001512Z","modified":"20150827T001512Z","project":"work","status":"pending","uuid":"84d2f86c-0150-47ea-acb7-ebf9fe4001f5"}
+{"description":"Ask the linux guy to get a envelop from ISI","entry":"20150827T001546Z","modified":"20150827T001546Z","project":"work","status":"pending","uuid":"86ceb53f-2eb3-4dcd-8879-dce6fb45efc5"}
+{"description":"Mail abuot Disablity Course credit","entry":"20150827T001725Z","modified":"20150827T001725Z","project":"work","status":"pending","uuid":"933b4cb5-d965-4c85-971a-a001e843faa5"}
+{"description":"Sign up for Direct Deposit of Salary","due":"20150828T040000Z","entry":"20150827T001906Z","modified":"20150827T001906Z","project":"work","status":"pending","uuid":"e1b38c65-c536-4679-9f08-5d16e99c0a1c"}
+{"description":"Pay bill to the university","due":"20150831T040000Z","entry":"20150827T002055Z","modified":"20150827T002055Z","project":"work","status":"pending","uuid":"71d4be76-d56d-4fbe-8183-d1759963366c"}
+{"description":"Pay rent and utility","due":"20150829T040000Z","entry":"20150827T002141Z","modified":"20150827T002141Z","project":"work","status":"pending","uuid":"64f5c6ba-f0f4-4ba7-b5b9-6061209e23fb"}
+{"description":"Give lecture to pratima about ledger and tasj warrior","end":"20150827T002228Z","entry":"20150809T041159Z","modified":"20150827T002228Z","project":"gettingStarted","status":"completed","uuid":"6bc7d9de-4ac5-48ff-a73b-f186af372429"}
+{"description":"Call wifi and setup","end":"20150827T002243Z","entry":"20150810T154245Z","modified":"20150827T002243Z","project":"home","status":"completed","uuid":"d655e897-b2f2-4773-977b-db2a4c4e09b5"}
+{"description":"twilight does not follow local time","end":"20150827T002255Z","entry":"20150811T135026Z","modified":"20150827T002255Z","project":"linux","status":"completed","uuid":"06aa9ba9-b958-4364-92ec-d078e92c1ef4"}
+{"description":"RSVP yourself to MIsrak Negatu and May garcia","due":"20150827T040000Z","entry":"20150827T002357Z","modified":"20150827T002357Z","project":"work","status":"pending","uuid":"2efae07a-3eb9-422d-9faf-5222e087a3b8"}

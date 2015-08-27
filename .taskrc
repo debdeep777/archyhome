@@ -50,7 +50,7 @@ report.ne.sort=start-,urgency-
 
 ## Making this report my default command
 ## To use it with vit
-#default.command=ne
+default.command=vb
 
 # A custom report to use effectively in an awesome widget, bad idea, I know
 report.widgetneeds.description='for the awesome widget, very basic.'
