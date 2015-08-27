@@ -2946,3 +2946,11 @@ new [description:"Fill up the tax form" entry:"1440636734" modified:"1440636734"
 time 1440637574
 new [description:"Make the message notikfication in phone silent" entry:"1440637574" modified:"1440637574" status:"pending" uuid:"f2307ef0-67e4-4284-9691-bc14cd3a5d4a"]
 ---
+time 1440645215
+old [description:"Mail Roosevelt" due:"1440561600" entry:"1440634512" modified:"1440634512" project:"work" status:"pending" uuid:"84d2f86c-0150-47ea-acb7-ebf9fe4001f5"]
+new [description:"Mail Roosevelt" due:"1440561600" end:"1440645215" entry:"1440634512" modified:"1440645215" project:"work" status:"completed" uuid:"84d2f86c-0150-47ea-acb7-ebf9fe4001f5"]
+---
+time 1440645227
+old [description:"RSVP yourself to MIsrak Negatu and May garcia" due:"1440648000" entry:"1440635037" modified:"1440635037" project:"work" status:"pending" uuid:"2efae07a-3eb9-422d-9faf-5222e087a3b8"]
+new [description:"RSVP yourself to MIsrak Negatu and May garcia" due:"1440648000" end:"1440645227" entry:"1440635037" modified:"1440645227" project:"work" status:"completed" uuid:"2efae07a-3eb9-422d-9faf-5222e087a3b8"]
+---
