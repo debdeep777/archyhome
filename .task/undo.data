@@ -2988,3 +2988,10 @@ new [annotation_1440730323:"Q. How to set up a direct deposit" annotation_144073
 time 1440731461
 new [description:"Setup Smartrip for tax benefits" entry:"1440731461" modified:"1440731461" status:"pending" uuid:"26e4b235-dc0c-4d02-a964-1dce68b6ad68"]
 ---
+time 1440785549
+new [description:"Meet roosevelt at 12:30" due:"1440781200" entry:"1440785549" modified:"1440785549" project:"work" status:"pending" uuid:"734067f6-3b3a-467b-ab35-2e07c2affde8"]
+---
+time 1440785580
+old [description:"Meet roosevelt at 12:30" due:"1440781200" entry:"1440785549" modified:"1440785549" project:"work" status:"pending" uuid:"734067f6-3b3a-467b-ab35-2e07c2affde8"]
+new [annotation_1440785580:"meet trang ha" description:"Meet roosevelt at 12:30" due:"1440781200" entry:"1440785549" modified:"1440785580" project:"work" status:"pending" uuid:"734067f6-3b3a-467b-ab35-2e07c2affde8"]
+---

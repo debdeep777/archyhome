@@ -26,3 +26,4 @@
 [description:"Make the message notikfication in phone silent" entry:"1440637574" modified:"1440637574" status:"pending" uuid:"f2307ef0-67e4-4284-9691-bc14cd3a5d4a"]
 [description:"Pick up the documents from CCAS office" due:"1440734400" entry:"1440726860" modified:"1440726860" project:"work" status:"pending" uuid:"f637bb61-c50c-4c61-b6b7-f2de39dc85c9"]
 [description:"Setup Smartrip for tax benefits" entry:"1440731461" modified:"1440731461" status:"pending" uuid:"26e4b235-dc0c-4d02-a964-1dce68b6ad68"]
+[annotation_1440785580:"meet trang ha" description:"Meet roosevelt at 12:30" due:"1440781200" entry:"1440785549" modified:"1440785580" project:"work" status:"pending" uuid:"734067f6-3b3a-467b-ab35-2e07c2affde8"]
