@@ -1,5 +1,3 @@
 #!/bin/bash
-newtime=$(timedatectl | head -3 | tail -1 | awk -F ' ' '{printf $5}')
-echo 'Newtime to set:'$newtime
-timedatectl set-time $newtime
-echo 'Wait for a few seconds to see it in awesome widget.'
+ntpd -qg
+hwclock --systohc
