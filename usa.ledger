@@ -2,20 +2,20 @@
 ; All one-time purchase for the house is "Furniture"
 ; Cleaning supplies for the house goes to Groceries of Furnitures?
 
-~ Monthly
-    Expenses:Rent               $1172
-    Expenses:Utility          	$150
-    Expenses:Phone              $100
-    Expenses:Grocery		$360 	;Originally 400, onetime till 7Aug is 475 (475/12 = 39)
-    Expenses:Internet		$50
-    Expenses:Travel		$300
-    Expenses:Laundry		$15
-    Expenses:Buffer             $300.00  ;can allow this much monthly
-    Assets
-
-~ Yearly
-    Expenses:Furniture	        $2000
-    Assets
+;~ Monthly
+;    Expenses:Rent               $1172
+;    Expenses:Utility          	$150
+;    Expenses:Phone              $100
+;    Expenses:Grocery		$360 	;Originally 400, onetime till 7Aug is 475 (475/12 = 39)
+;    Expenses:Internet		$50
+;    Expenses:Travel		$300
+;    Expenses:Laundry		$15
+;    Expenses:Buffer             $300.00  ;can allow this much monthly
+;    Assets
+;
+;~ Yearly
+;    Expenses:Furniture	        $2000
+;    Assets
 
 
 2015/7/30	Initial Balance
@@ -208,17 +208,44 @@
 	Expenses:Grocery	$42.72
 	Assets:Debdeep:Checking
 
-2015-08-26
+2015-08-26	Metro	
 	Expenses:Travel		$30
 	Assets:Debdeep:Checking
 
-2015-08-26
+2015-08-26	For german visa
 	Assets:Debdeep:Cash	-$100
 	Assets:Pratima:Cash
 
-2015-08-
+2015-08-27	Doctor
+	Expenses:Medical	$15
+	Assets:Pratima:Checking
 
-2015-08-28
+2015-08-27	Medicine shop
+	Expenses:Medical	$2.50
+	Assets:Pratima:Cash
+
+2015-08-27	CVS
+	Expenses:Medical	$$6.50
+	Assets:Pratima:Checking
+
+2015-08-27	German Embassy Visa fee
+	Expenses:Buffer		$66
+	Assets:Pratima:Cash
+
+2015-08-27	Metro
+	Expenses:Travel		$40
+	Assets:Pratima:Checking
+
+2015-08-28	Metro
 	Expenses:Travel		$50
 	Assets:Debdeep:Checking
+
+2015-08-28	Giant
+	Expenses:Grocery	$61.55
+	Assets:Pratima:Checking
+
+2015-08-29	Liquor Store
+	Expenses:Grocery	$14.99	;beer
+	Expenses:Grocery	$13.99	;vodka
+	Assets:Pratima:Checking
 
