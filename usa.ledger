@@ -205,6 +205,20 @@
 	Assets:Pratima:Cash
 
 2015-08-24	New Grand Mart
-	Expenses:Grocery	$42.27
+	Expenses:Grocery	$42.72
+	Assets:Debdeep:Checking
+
+2015-08-26
+	Expenses:Travel		$30
+	Assets:Debdeep:Checking
+
+2015-08-26
+	Assets:Debdeep:Cash	-$100
+	Assets:Pratima:Cash
+
+2015-08-
+
+2015-08-28
+	Expenses:Travel		$50
 	Assets:Debdeep:Checking
 
