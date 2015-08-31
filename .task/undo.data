@@ -3015,3 +3015,11 @@ time 1440867095
 old [annotation_1440785580:"meet trang ha" description:"Meet roosevelt at 12:30" due:"1440781200" entry:"1440785549" modified:"1440785580" project:"work" status:"pending" uuid:"734067f6-3b3a-467b-ab35-2e07c2affde8"]
 new [annotation_1440785580:"meet trang ha" description:"Meet roosevelt at 12:30" due:"1440781200" end:"1440867095" entry:"1440785549" modified:"1440867095" project:"work" status:"completed" uuid:"734067f6-3b3a-467b-ab35-2e07c2affde8"]
 ---
+time 1440986407
+old [description:"Dinner at DC with UMD students" due:"1440887400" entry:"1439389925" modified:"1439389925" project:"work" status:"pending" uuid:"ea111c97-3944-4d0d-b452-8b32e1647075"]
+new [description:"Dinner at DC with UMD students" due:"1440887400" end:"1440985164" entry:"1439389925" modified:"1440985164" project:"work" status:"completed" uuid:"ea111c97-3944-4d0d-b452-8b32e1647075"]
+---
+time 1440986407
+old [description:"Fix linux time, ntpd -gq does not make it permanant" due:"1438587235" entry:"1436641378" modified:"1437291235" priority:"H" project:"linux" status:"pending" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
+new [description:"Fix linux time, ntpd -gq does not make it permanant" due:"1438587235" end:"1440985293" entry:"1436641378" modified:"1440985293" priority:"H" project:"linux" status:"completed" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
+---
