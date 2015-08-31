@@ -3026,3 +3026,6 @@ new [description:"Fix linux time, ntpd -gq does not make it permanant" due:"1438
 time 1440995056
 new [description:"Write mail to isi dean for transcrip" entry:"1440995056" modified:"1440995056" project:"work" status:"pending" uuid:"33c825be-3f3a-4373-ba72-6ee53097b24d"]
 ---
+time 1441030745
+new [description:"FIx bc for decimal number" entry:"1441030745" modified:"1441030745" project:"linux" status:"pending" uuid:"1498ca4a-bf2d-4441-b834-e1dac587290f"]
+---
