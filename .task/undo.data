@@ -3023,3 +3023,6 @@ time 1440986407
 old [description:"Fix linux time, ntpd -gq does not make it permanant" due:"1438587235" entry:"1436641378" modified:"1437291235" priority:"H" project:"linux" status:"pending" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
 new [description:"Fix linux time, ntpd -gq does not make it permanant" due:"1438587235" end:"1440985293" entry:"1436641378" modified:"1440985293" priority:"H" project:"linux" status:"completed" uuid:"96eb955c-b8a6-4888-b855-a26e52e59aa5"]
 ---
+time 1440995056
+new [description:"Write mail to isi dean for transcrip" entry:"1440995056" modified:"1440995056" project:"work" status:"pending" uuid:"33c825be-3f3a-4373-ba72-6ee53097b24d"]
+---
