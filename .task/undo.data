@@ -3029,3 +3029,39 @@ new [description:"Write mail to isi dean for transcrip" entry:"1440995056" modif
 time 1441030745
 new [description:"FIx bc for decimal number" entry:"1441030745" modified:"1441030745" project:"linux" status:"pending" uuid:"1498ca4a-bf2d-4441-b834-e1dac587290f"]
 ---
+time 1441085284
+old [description:"Complete I - 9 form for GWU" due:"1440268200" entry:"1437664916" modified:"1437664916" project:"work" status:"pending" uuid:"eb4efe8d-94e8-4c56-8d65-98ba79a2f764"]
+new [description:"Complete I - 9 form for GWU" due:"1440268200" end:"1441085284" entry:"1437664916" modified:"1441085284" project:"work" status:"completed" uuid:"eb4efe8d-94e8-4c56-8d65-98ba79a2f764"]
+---
+time 1441085291
+old [description:"Sign up for Direct Deposit of Salary" due:"1440734400" entry:"1440634746" modified:"1440634746" project:"work" status:"pending" uuid:"e1b38c65-c536-4679-9f08-5d16e99c0a1c"]
+new [description:"Sign up for Direct Deposit of Salary" due:"1440734400" end:"1441085291" entry:"1440634746" modified:"1441085291" project:"work" status:"completed" uuid:"e1b38c65-c536-4679-9f08-5d16e99c0a1c"]
+---
+time 1441085305
+old [description:"Pay rent and utility" due:"1440820800" entry:"1440634901" modified:"1440634901" project:"work" status:"pending" uuid:"64f5c6ba-f0f4-4ba7-b5b9-6061209e23fb"]
+new [description:"Pay rent and utility" due:"1440820800" end:"1441085305" entry:"1440634901" modified:"1441085305" project:"work" status:"completed" uuid:"64f5c6ba-f0f4-4ba7-b5b9-6061209e23fb"]
+---
+time 1441085315
+old [description:"Movie at the university Yard Rain at Continental Ballroom at 7:30pm" due:"1440977400" entry:"1440131517" modified:"1440131517" project:"work" status:"pending" uuid:"300bbc4b-c8b1-454e-ad16-bfbaec7061b8"]
+new [description:"Movie at the university Yard Rain at Continental Ballroom at 7:30pm" due:"1440977400" end:"1441085313" entry:"1440131517" modified:"1441085315" project:"work" status:"deleted" uuid:"300bbc4b-c8b1-454e-ad16-bfbaec7061b8"]
+---
+time 1441085433
+old [description:"Pay bill to the university" due:"1440993600" entry:"1440634855" modified:"1440634855" project:"work" status:"pending" uuid:"71d4be76-d56d-4fbe-8183-d1759963366c"]
+new [description:"Pay bill to the university" due:"1440993600" end:"1441085433" entry:"1440634855" modified:"1441085433" project:"work" status:"completed" uuid:"71d4be76-d56d-4fbe-8183-d1759963366c"]
+---
+time 1441085455
+old [description:"List down all my work date wise" entry:"1439309375" modified:"1439309375" project:"work" status:"pending" uuid:"9974f21b-5ff6-4c12-9f10-5f5b3699e9a8"]
+new [description:"List down all my work date wise" end:"1441085453" entry:"1439309375" modified:"1441085455" project:"work" status:"deleted" uuid:"9974f21b-5ff6-4c12-9f10-5f5b3699e9a8"]
+---
+time 1441086202
+new [description:"submit Tax form" entry:"1441086202" modified:"1441086202" project:"work" status:"pending" uuid:"2f657a36-0ea7-4a38-8d1c-7173b1c59b52"]
+---
+time 1441086223
+new [description:"Apply for SSN before 3" entry:"1441086223" modified:"1441086223" project:"work" status:"pending" uuid:"0565a997-3dbb-4265-a34a-bbe026f08579"]
+---
+time 1441086254
+new [description:"Pay verizon bill" due:"1441345454" entry:"1441086254" modified:"1441086254" project:"work" status:"pending" uuid:"0ad6b5a9-e9e4-4052-8984-26ceef7ce18c"]
+---
+time 1441086276
+new [description:"Recharge phone" due:"1441598400" entry:"1441086276" modified:"1441086276" status:"pending" uuid:"ca5f2e7e-8bf1-4598-9fe3-781468e81ca0"]
+---
