@@ -20,3 +20,4 @@
 [description:"Apply for SSN before 3" entry:"1441086223" modified:"1441086223" project:"work" status:"pending" uuid:"0565a997-3dbb-4265-a34a-bbe026f08579"]
 [description:"Pay verizon bill" due:"1441345454" entry:"1441086254" modified:"1441086254" project:"work" status:"pending" uuid:"0ad6b5a9-e9e4-4052-8984-26ceef7ce18c"]
 [description:"Recharge phone" due:"1441598400" entry:"1441086276" modified:"1441086276" status:"pending" uuid:"ca5f2e7e-8bf1-4598-9fe3-781468e81ca0"]
+[description:"Buy or download textbooks" entry:"1441156059" modified:"1441156059" project:"work" status:"pending" uuid:"3ce7eda2-bf30-4481-bec1-5ffef3edcb57"]
