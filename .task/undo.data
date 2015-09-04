@@ -3068,3 +3068,7 @@ new [description:"Recharge phone" due:"1441598400" entry:"1441086276" modified:"
 time 1441156059
 new [description:"Buy or download textbooks" entry:"1441156059" modified:"1441156059" project:"work" status:"pending" uuid:"3ce7eda2-bf30-4481-bec1-5ffef3edcb57"]
 ---
+time 1441329690
+old [description:"Pay verizon BIll" entry:"1440634416" modified:"1440634427" project:"work" status:"pending" uuid:"87ef85b3-0e92-49b6-9752-41f53261300e"]
+new [description:"Pay verizon BIll" entry:"1440634416" modified:"1441329690" project:"work" status:"pending" tags:"urgent" uuid:"87ef85b3-0e92-49b6-9752-41f53261300e"]
+---
