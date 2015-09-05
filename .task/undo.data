@@ -3072,3 +3072,27 @@ time 1441329690
 old [description:"Pay verizon BIll" entry:"1440634416" modified:"1440634427" project:"work" status:"pending" uuid:"87ef85b3-0e92-49b6-9752-41f53261300e"]
 new [description:"Pay verizon BIll" entry:"1440634416" modified:"1441329690" project:"work" status:"pending" tags:"urgent" uuid:"87ef85b3-0e92-49b6-9752-41f53261300e"]
 ---
+time 1441421217
+old [description:"Apply for SSN before 3" entry:"1441086223" modified:"1441086223" project:"work" status:"pending" uuid:"0565a997-3dbb-4265-a34a-bbe026f08579"]
+new [description:"Apply for SSN before 3" end:"1441421217" entry:"1441086223" modified:"1441421217" project:"work" status:"completed" uuid:"0565a997-3dbb-4265-a34a-bbe026f08579"]
+---
+time 1441421226
+old [description:"submit Tax form" entry:"1441086202" modified:"1441086202" project:"work" status:"pending" uuid:"2f657a36-0ea7-4a38-8d1c-7173b1c59b52"]
+new [description:"submit Tax form" end:"1441421226" entry:"1441086202" modified:"1441421226" project:"work" status:"completed" uuid:"2f657a36-0ea7-4a38-8d1c-7173b1c59b52"]
+---
+time 1441421236
+old [description:"Write mail to isi dean for transcrip" entry:"1440995056" modified:"1440995056" project:"work" status:"pending" uuid:"33c825be-3f3a-4373-ba72-6ee53097b24d"]
+new [description:"Write mail to isi dean for transcrip" end:"1441421236" entry:"1440995056" modified:"1441421236" project:"work" status:"completed" uuid:"33c825be-3f3a-4373-ba72-6ee53097b24d"]
+---
+time 1441421243
+old [description:"Fill up the tax form" entry:"1440636734" modified:"1440636734" project:"work" status:"pending" uuid:"9e460c26-467b-4824-890c-83fb94a35757"]
+new [description:"Fill up the tax form" end:"1441421243" entry:"1440636734" modified:"1441421243" project:"work" status:"completed" uuid:"9e460c26-467b-4824-890c-83fb94a35757"]
+---
+time 1441421253
+old [description:"Ask the linux guy to get a envelop from ISI" entry:"1440634546" modified:"1440634546" project:"work" status:"pending" uuid:"86ceb53f-2eb3-4dcd-8879-dce6fb45efc5"]
+new [description:"Ask the linux guy to get a envelop from ISI" end:"1441421253" entry:"1440634546" modified:"1441421253" project:"work" status:"completed" uuid:"86ceb53f-2eb3-4dcd-8879-dce6fb45efc5"]
+---
+time 1441421577
+old [description:"Keystroke to toggle psmouse module" entry:"1422543127" modified:"1437283709" priority:"L" project:"linux" status:"pending" uuid:"1c5c5e50-392c-4b9d-88e4-550477542225"]
+new [annotation_1441421574:"Not &open;ractical when workplace forces you to use windows with out a personal account" description:"Keystroke to toggle psmouse module" end:"1441421574" entry:"1422543127" modified:"1441421577" priority:"L" project:"linux" status:"deleted" uuid:"1c5c5e50-392c-4b9d-88e4-550477542225"]
+---
