@@ -3107,3 +3107,30 @@ time 1442005868
 old [annotation_1442005850:"Salsa" description:"milk, chips, cheerios, ziplock bags, good hummus, salad" entry:"1442003894" modified:"1442005850" status:"pending" uuid:"bdda31bb-d4fe-41ee-a89a-5a84603fb1cd"]
 new [annotation_1442005850:"Salsa" annotation_1442005868:"Tortilla chips" description:"milk, chips, cheerios, ziplock bags, good hummus, salad" entry:"1442003894" modified:"1442005868" status:"pending" uuid:"bdda31bb-d4fe-41ee-a89a-5a84603fb1cd"]
 ---
+time 1442065739
+old [description:"Pay verizon bill" due:"1441345454" entry:"1441086254" modified:"1441086254" project:"work" status:"pending" uuid:"0ad6b5a9-e9e4-4052-8984-26ceef7ce18c"]
+new [description:"Pay verizon bill" due:"1441345454" end:"1442065739" entry:"1441086254" modified:"1442065739" project:"work" status:"completed" uuid:"0ad6b5a9-e9e4-4052-8984-26ceef7ce18c"]
+---
+time 1442065739
+old [description:"Recharge phone" due:"1441598400" entry:"1441086276" modified:"1441086276" status:"pending" uuid:"ca5f2e7e-8bf1-4598-9fe3-781468e81ca0"]
+new [description:"Recharge phone" due:"1441598400" end:"1442065739" entry:"1441086276" modified:"1442065739" status:"completed" uuid:"ca5f2e7e-8bf1-4598-9fe3-781468e81ca0"]
+---
+time 1442065756
+old [description:"Assignment for the the Teaching course" due:"1441857600" entry:"1440130996" modified:"1440130996" project:"work" status:"pending" uuid:"2c60336a-cf89-41d0-8772-ab4765e1fb47"]
+new [description:"Assignment for the the Teaching course" due:"1441857600" end:"1442065756" entry:"1440130996" modified:"1442065756" project:"work" status:"completed" uuid:"2c60336a-cf89-41d0-8772-ab4765e1fb47"]
+---
+time 1442065797
+old [description:"Fix name (Depdeep) in GWU system" entry:"1435181081" modified:"1437291474" priority:"L" project:"work" status:"pending" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
+new [description:"Fix name (Depdeep) in GWU system" end:"1442065794" entry:"1435181081" modified:"1442065797" priority:"L" project:"work" status:"completed" uuid:"e2b0d6b5-f0a9-48c3-8ec8-28065b19fbe1"]
+---
+time 1442065797
+old [description:"Fill up tax form" entry:"1439221429" modified:"1439305439" project:"work" status:"pending" uuid:"9ed9c33a-f717-4c7b-921c-851b9cf5af08"]
+new [description:"Fill up tax form" end:"1442065797" entry:"1439221429" modified:"1442065797" project:"work" status:"completed" uuid:"9ed9c33a-f717-4c7b-921c-851b9cf5af08"]
+---
+time 1442065797
+old [description:"Pay verizon BIll" entry:"1440634416" modified:"1441329690" project:"work" status:"pending" tags:"urgent" uuid:"87ef85b3-0e92-49b6-9752-41f53261300e"]
+new [description:"Pay verizon BIll" end:"1442065797" entry:"1440634416" modified:"1442065797" project:"work" status:"completed" tags:"urgent" uuid:"87ef85b3-0e92-49b6-9752-41f53261300e"]
+---
+time 1442065857
+new [description:"Add lynda.com course per week to my schedule" entry:"1442065857" modified:"1442065857" status:"pending" uuid:"debb39d7-41d3-4f0e-b8c9-a964ecedb71b"]
+---
