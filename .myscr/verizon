@@ -1,0 +1,1 @@
+wpa_supplicant -B -i wlp6s0b1 -c /etc/wpa_supplicant/BPMTS.conf
