@@ -122,7 +122,7 @@ networkmanager_rm_unmanaged() {
 }
 
 CHANNEL=1
-GATEWAY=192.168.12.1
+GATEWAY=192.168.12.2
 WPA_VERSION=1+2
 ETC_HOSTS=0
 HIDDEN=0
