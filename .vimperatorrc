@@ -25,26 +25,27 @@ set tn=true
 " Animations: Must be memory-hungry. Disable for performance.  Set the animation on, while the auto complete suggestions pop up
 "set ani=true
 
-"""""""""""""""""""""""""""""""""""""""""""""""""
-" If I try to avoid the individual color settings
-" has to be before individual highlight settings
-"colorscheme solarized_dark
-
-
-
-" Set the size of the status bar
-highlight Normal -append font-size: 10pt;
-"highlight CmdLine -append font-size: 10pt;
-
-
-
-" Setting for color that is dark
-highlight Normal -append color: #ffffff; background-color: #000000;
-
-" The text that is being typed
-hi CmdLine background: #000000; color: #ffffff;
-
-"selected items left
-hi CompItem[selected]   color: Blue; background: grey;
-"item to the right, always
-hi CompDesc color: LightBlue;
+"""""Turning all the colors off
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" If I try to avoid the individual color settings
+"" has to be before individual highlight settings
+""colorscheme solarized_dark
+"
+"
+"
+"" Set the size of the status bar
+"highlight Normal -append font-size: 10pt;
+""highlight CmdLine -append font-size: 10pt;
+"
+"
+"
+"" Setting for color that is dark
+"highlight Normal -append color: #ffffff; background-color: #000000;
+"
+"" The text that is being typed
+"hi CmdLine background: #000000; color: #ffffff;
+"
+""selected items left
+"hi CompItem[selected]   color: Blue; background: grey;
+""item to the right, always
+"hi CompDesc color: LightBlue;
