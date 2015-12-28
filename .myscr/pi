@@ -1,8 +1,0 @@
-# Log in to raspberry pi, which is connected to the laptop through a lan cable. The laptop is running dhcpd, a dhcp server and the ethernet card enp7s0 is assigned the ip 139.96.30.100. The config file /etc/dhcpd.conf defines the ip that the pi will receive upon connecting to this serve through a lan cable. The pi get 139.96.30.180.
-
-ip link set up dev enp7s0
-ip addr add 139.96.30.100/24 dev enp7s0
-
-systemctl start dhcpd4@enp7s0.service
-
-ssh root@139.96.30.180
