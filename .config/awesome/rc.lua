@@ -56,6 +56,7 @@ run_once("dhcpcd")
 run_once("unclutter")
 run_once("storage")
 run_once("mount /dev/sda3 /small")
+run_once("verizon")
 
 -- temporary for rtorrent coz disk space is low
 run_once("otherlin")
