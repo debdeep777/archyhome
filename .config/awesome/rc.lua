@@ -19,7 +19,7 @@ local vicious =  require("vicious")		-- the package must be installed "pacman -S
 
 -- launching redshift in the beginning
 -- 1 for dim, 0 for not dimmed
-redshift.init(1)
+--redshift.init(1)
 
 -- {{{ Error handling
 if awesome.startup_errors then
