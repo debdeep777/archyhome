@@ -544,6 +544,11 @@ export PATH=$PATH:~/.myscr/
 #export PATH=$PATH:~/.myscr/:/storage/Lenovo/a706/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/build-tools/
 #fi
 
+#Creating a config file for linux calculator bc, which does not support a config file by default
+# we will add scale=5 in this file to make it support decimal divisions
+export BC_ENV_ARGS=~/.bcrc
+
+
 
 # Use bash-completion, if available
 # The package bash-completion is needed
