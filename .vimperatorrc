@@ -50,6 +50,3 @@ set gui=none,tabs,navigation
 ""item to the right, always
 "hi CompDesc color: LightBlue;
 
-
-map <S-q> :js (function(){var href=getBrowser().contentDocument.location.href; io.system('echo "'+href+'" \> ~/queue); commandline.echo(href);})()
-
