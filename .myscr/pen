@@ -2,3 +2,4 @@
 fdisk -l
 read -p "Device to mount in /pen: /dev/sd" modev
 mount /dev/sd$modev /pen
+ranger /pen
