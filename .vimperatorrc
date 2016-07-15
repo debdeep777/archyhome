@@ -33,9 +33,9 @@ set gui=none,tabs,navigation
 "
 "
 "
-"" Set the size of the status bar
-"highlight Normal -append font-size: 10pt;
-""highlight CmdLine -append font-size: 10pt;
+" Set the size of the status bar
+highlight Normal -append font-size: 10pt;
+"highlight CmdLine -append font-size: 10pt;
 "
 "
 "
