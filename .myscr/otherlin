@@ -1,2 +1,2 @@
 # mounting linux mint to /otherlin
-mount /dev/sda5 /otherlin/
+mount /dev/sda7 /otherlin/
