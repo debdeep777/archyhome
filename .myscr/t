@@ -1,7 +1,7 @@
 ## Open the file "TODO new_installation" for occasional editing and consulting
 # TO avoid multiple sessions, we want to jump to the open instance
 # see .myscr/wifire for another interesting example
-# If accessing from a remote location, open in existing terminal
+# If accessing from a remote location, or a tty, open in existing terminal
 
 SESSION_TYPE='local'
 #determine if remote connection
@@ -15,9 +15,10 @@ else
     sshd|*/sshd) SESSION_TYPE='remote'
   esac
 fi
+text=$(tty)
 
 
-if [ "$SESSION_TYPE" == "remote" ] || [ $DISPLAY ] # note the spaces on both sides of == and the quote around the $variable_name
+if [ "$SESSION_TYPE" == "remote" ] || [[ $(tty) == *"/dev/tty"* ]] # note the spaces on both sides of == and the quote around the $variable_name, double bracket fro the second comparison
 then
 	vim -S '/storage/Lenovo/lin/TODOsettings.vim' '/storage/Lenovo/lin/TODO new_installation'
 elif [ $(xdotool search --name "TODO new_installation") ]
