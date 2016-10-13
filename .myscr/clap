@@ -1,0 +1,1 @@
+ while true; do ampli=$(rec -q -n stat trim 0 0.25 2>&1 | awk '/^Maximum amplitude/ { print $3 < 0.15 ? 0 : 1 }'); if [ $ampli -eq 1 ]; then xdotool key j; fi; done
