@@ -95,7 +95,7 @@ fi
 
 function _exit()              # Function to run upon exit of shell.
 {
-    echo -e "${Blue}We'll be back with guns.${NC}"
+    echo -e "${Blue}Bye bye now.${NC}"
 }
 trap _exit EXIT
 
