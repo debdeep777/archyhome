@@ -1,3 +1,4 @@
+# Should NOT be used. Loses vimrc if ran twice
 cd ~
 
 echo "Changing .Xresources. Backup kept."
