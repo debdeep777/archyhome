@@ -743,6 +743,8 @@ globalkeys = awful.util.table.join(
     --awful.key({ modkey }, "l", function () awful.util.spawn("clock") end),
     --using conky. Remember not to run xcompmgr to avoid transparency
     awful.key({ modkey }, "l", function () awful.util.spawn("lockconky") end),
+    -- Opening calendar.vim
+    awful.key({ modkey }, "c", function () awful.util.spawn("xterm -e vim +:Ca") end),
 --    awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
     --awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
     awful.key({ modkey, "Shift" }, "g", function () awful.util.spawn(graphics) end),
