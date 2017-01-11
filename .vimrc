@@ -172,3 +172,7 @@ let g:tex_flavor='latex'
 "the foldtext. Set this to get some kind of lines or visual aid.
  "let g:ledger_fillstring = '    -'
  "let g:ledger_maxwidth = 80
+
+" Calendar requirement
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
