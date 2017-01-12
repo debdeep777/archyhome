@@ -1,5 +1,5 @@
 " suggested by itchyny from github
-set clipboard=unnamed
+"set clipboard=unnamed
 "What are these macros??!
 let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
