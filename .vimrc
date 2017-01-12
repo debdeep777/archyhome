@@ -1,4 +1,5 @@
-
+" suggested by itchyny from github
+set clipboard=unnamed
 "What are these macros??!
 let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
@@ -179,3 +180,4 @@ let g:calendar_google_task = 1
 let g:calendar_date_full_month_name = 1
 let g:calendar_view = 'days'
 "let g:calendar_clock_12hour = 1
+
