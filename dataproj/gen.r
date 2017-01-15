@@ -99,7 +99,10 @@ cats <- setdiff(cats,excludevar)
 cols <- rainbow_hcl(length(cats))
 
 
-
+# According to http://stackoverflow.com/questions/17075529/subset-based-on-variable-column-name
+#subset(data, frame_var == "string") is useless because frame_var cannot be used as a variable.
+# So, use the matrix-like extraction technique, where frame_var is a variable now, maybe a string
+# data[data[,frame_var] == 'string',]
 i = 0
 for (catname in cats){
 	## If a person is specified
