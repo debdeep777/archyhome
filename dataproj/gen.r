@@ -27,6 +27,8 @@ includevar <- vector()
 addline <- FALSE
 # Show number on top of bars
 shownum <- FALSE
+# Single person mode
+singleperson <- FALSE
 
 if(length(args) !=0){
 	#args conditions
@@ -67,6 +69,7 @@ if(length(args) !=0){
 	}
 	if("person" %in% args){
 		personname <- c(args[match("person",args)+1])
+		singleperson <- TRUE
 	}
 	if("2people" %in% args){ 	# Only one category for 2people
 		twopcat <- c(args[match("2people",args)+1])
@@ -103,18 +106,25 @@ cols <- rainbow_hcl(length(cats))
 #subset(data, frame_var == "string") is useless because frame_var cannot be used as a variable.
 # So, use the matrix-like extraction technique, where frame_var is a variable now, maybe a string
 # data[data[,frame_var] == 'string',]
+
+
+# If a person is specified
+if(singleperson){
+	# Change Transaction.Type to Person
+	tran <- subset(tran, Transaction.Type == personname)
+}	
+tran
+
 i = 0
 for (catname in cats){
-	## If a person is specified
-	#if( "oneperson_is_specified"){
-	#tran <- subset(tran, Person == naemoftheperson)
-	#}	
 	# Picking the rows matching the category
 	 tmp <- subset(tran, Category == catname)
 	# Picking the columns matching Amount and Week 
 	 tmp <- tmp[names(tmp) %in% c("Amount","timeS")]
 	# Aggregating the Amount data by Week
-	 tmp <- aggregate(Amount ~ timeS, tmp, sum)
+	 if (nrow(tmp) != 0){
+		 tmp <- aggregate(Amount ~ timeS, tmp, sum)
+	 }
 	# Renaming the last column (Amount) by its category name
 	 names(tmp)[length(tmp)] <- catname
 	# If it is the initial loop, don't do merging
@@ -126,7 +136,7 @@ for (catname in cats){
 	 old <- tmp
 	# Make sure the next iteration is not the initial one
 	 i <- i+1
-	 }
+}
 
 
 # Replace all the NA's by zero
