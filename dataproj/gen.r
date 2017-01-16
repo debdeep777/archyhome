@@ -3,6 +3,7 @@
 # Print several individual graphs
 # Weekly and monthly report (why?)
 # List of transactions
+#Print the main in plot
 
 library(colorspace)
 ## Collect arguments
@@ -27,6 +28,8 @@ addline <- FALSE
 shownum <- FALSE
 # Single person mode
 singleperson <- FALSE
+# Manysum, Change it
+manysum <- TRUE
 
 # many user mode
 manyuser <- FALSE
@@ -75,10 +78,10 @@ if(length(args) !=0){
 	}
 	if("manyuser" %in% args){ 	# Only one category for 2people
 		manypcat <- c(args[match("manyuser",args)+1])
-		if (maypcat == "sum"){
-			manysum <- TRUE
-		}
 		manyuser <- TRUE
+	}
+	if("manysum" %in% args){ 	# Only one category for 2people
+		manysum <- TRUE	
 	}
 	if("number" %in% args){
 		shownum <- TRUE
@@ -178,10 +181,12 @@ if(manysum){
 		#Change here
 		if (k != 0){
 			 # Merge the new with old. The order is important
-			 outertmp <- merge(old, outertmp, by="timeS", all=TRUE)
+			 outertmp <- merge(outerold, outertmp, by="timeS", all=TRUE)
 			 }
+
+		dump <- outertmp
 		# Dump the new into the old
-		 old <- outertmp
+		 outerold <- outertmp
 		# Make sure the next iteration is not the initial one
 		 k <- k+1
 	}
@@ -189,52 +194,52 @@ if(manysum){
 # Replace all the NA's by zero
 outertmp[is.na(outertmp)] <- 0
 
-
-		
-
-
-
+# reverting the name of outertmp to tmp again
+# so that te rest of the code need no change
+tmp <- outertmp
 
 
 
 
-}
+} else {
 
-i = 0
-for (catname in cats){
-	if(manyuser){
-		# Change this to Person
-	 tmp <- subset(tran, Transaction.Type == catname)
-	} else {
-	# Picking the rows matching the category
-	 tmp <- subset(tran, Category == catname)
-	}
-	# Picking the columns matching Amount and Week 
-	 tmp <- tmp[names(tmp) %in% c("Amount","timeS")]
-	# Aggregating the Amount data by Week
-	 if (nrow(tmp) != 0){
-		 # Error occurs trying to aggregate empty matrix
-		 tmp <- aggregate(Amount ~ timeS, tmp, sum)
-	 } else {
-		 tmp <- data.frame(timeS=as.Date(character()), Amount=double())
-	 }
-
-	# Renaming the last column (Amount) by its category name
-	 names(tmp)[length(tmp)] <- catname
-	# If it is the initial loop, don't do merging
-	 if (i != 0){
-		 # Merge the new with old. The order is important
-		 tmp <- merge(old, tmp, by="timeS", all=TRUE)
+	i = 0
+	for (catname in cats){
+		if(manyuser){
+			# Change this to Person
+		 tmp <- subset(tran, Transaction.Type == catname)
+		} else {
+		# Picking the rows matching the category
+		 tmp <- subset(tran, Category == catname)
+		}
+		# Picking the columns matching Amount and Week 
+		 tmp <- tmp[names(tmp) %in% c("Amount","timeS")]
+		# Aggregating the Amount data by Week
+		 if (nrow(tmp) != 0){
+			 # Error occurs trying to aggregate empty matrix
+			 tmp <- aggregate(Amount ~ timeS, tmp, sum)
+		 } else {
+			 tmp <- data.frame(timeS=as.Date(character()), Amount=double())
 		 }
-	# Dump the new into the old
-	 old <- tmp
-	# Make sure the next iteration is not the initial one
-	 i <- i+1
+
+		# Renaming the last column (Amount) by its category name
+		 names(tmp)[length(tmp)] <- catname
+		# If it is the initial loop, don't do merging
+		 if (i != 0){
+			 # Merge the new with old. The order is important
+			 tmp <- merge(old, tmp, by="timeS", all=TRUE)
+			 }
+		# Dump the new into the old
+		 old <- tmp
+		# Make sure the next iteration is not the initial one
+		 i <- i+1
+	}
+
+
+	# Replace all the NA's by zero
+	 tmp[is.na(tmp)] <- 0
 }
 
-
-# Replace all the NA's by zero
- tmp[is.na(tmp)] <- 0
 # Taking all columns except the first one, then take the transpose t(matrix)
 final <- t(tmp[,2:length(tmp)])
 # For legend
