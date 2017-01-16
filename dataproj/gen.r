@@ -133,34 +133,66 @@ if(manyuser){
 if(manysum){
 	# Change Transaction.Type to Person
 	userlist <- levels(tran$Transaction.Type)
-	j = 0
-	for(catname in cats){
-		# create len(userlist) tables, which is 2
-		tmp <- subset(tran, Category == catname)
-		tmp <- subset(tran, Transaction.Type == user)
-		# Picking the columns matching Amount and Week 
-		tmp <- tmp[names(tmp) %in% c("Amount","timeS")]
-		# Aggregating the Amount data by Week
-		 if (nrow(tmp) != 0){
-			 # Error occurs trying to aggregate empty matrix
-			 tmp <- aggregate(Amount ~ timeS, tmp, sum)
-		 } else {
-			 tmp <- data.frame(timeS=as.Date(character()), Amount=double())
-		 }
-		# Renaming the last column (Amount) by its category name
-		 names(tmp)[length(tmp)] <- catname
-		# If it is the initial loop, don't do merging
-		 if (j != 0){
+	k = 0
+	for (user in userlist){
+		j = 0
+		for(catname in cats){
+			# create len(userlist) tables, which is 2
+			tmp <- subset(tran, Category == catname)
+			tmp <- subset(tran, Transaction.Type == user)
+			# Picking the columns matching Amount and Week 
+			tmp <- tmp[names(tmp) %in% c("Amount","timeS")]
+			# Aggregating the Amount data by Week
+			 if (nrow(tmp) != 0){
+				 # Error occurs trying to aggregate empty matrix
+				 tmp <- aggregate(Amount ~ timeS, tmp, sum)
+			 } else {
+				 tmp <- data.frame(timeS=as.Date(character()), Amount=double())
+			 }
+			# Renaming the last column (Amount) by its category name
+			 names(tmp)[length(tmp)] <- catname
+			# If it is the initial loop, don't do merging
+			 if (j != 0){
+				 # Merge the new with old. The order is important
+				 tmp <- merge(old, tmp, by="timeS", all=TRUE)
+				 }
+			# Dump the new into the old
+			 old <- tmp
+			# Make sure the next iteration is not the initial one
+			 j <- j+1
+		}
+		# Replace all the NA's by zero
+		tmp[is.na(tmp)] <- 0
+
+		# Adding all the categories to one
+		tempUserSum <- tmp[,1:2]
+		tempUserSum[,2] <- rowSums(tmp[,2:length(tmp)])
+		# renaming the total column by the user name
+		names(tempUserSum)[2] <- user
+		
+
+		# Now we need to merge these tempUSerSums, same idea
+		# rename the last column by user name
+		outertmp <- tempUserSum
+
+		#Change here
+		if (k != 0){
 			 # Merge the new with old. The order is important
-			 tmp <- merge(old, tmp, by="timeS", all=TRUE)
+			 outertmp <- merge(old, outertmp, by="timeS", all=TRUE)
 			 }
 		# Dump the new into the old
-		 old <- tmp
+		 old <- outertmp
 		# Make sure the next iteration is not the initial one
-		 i <- j+1
+		 k <- k+1
 	}
-	# Replace all the NA's by zero
-	tmp[is.na(tmp)] <- 0
+
+# Replace all the NA's by zero
+outertmp[is.na(outertmp)] <- 0
+
+
+		
+
+
 
 
 
