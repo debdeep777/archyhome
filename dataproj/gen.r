@@ -1,10 +1,8 @@
 # Implement Pi chart
 #Possibly increase categories and create subcatagory
-# Create saving graph
 # Print several individual graphs
 # Weekly and monthly report (why?)
 # List of transactions
-# Write actual amounts
 
 library(colorspace)
 ## Collect arguments
@@ -29,6 +27,9 @@ addline <- FALSE
 shownum <- FALSE
 # Single person mode
 singleperson <- FALSE
+
+# many user mode
+manyuser <- FALSE
 
 if(length(args) !=0){
 	#args conditions
@@ -68,11 +69,16 @@ if(length(args) !=0){
 		includevar <- c(args[which(args %in% "only")+1])
 	}
 	if("person" %in% args){
+		# A category name must follow after person
 		personname <- c(args[match("person",args)+1])
 		singleperson <- TRUE
 	}
-	if("2people" %in% args){ 	# Only one category for 2people
-		twopcat <- c(args[match("2people",args)+1])
+	if("manyuser" %in% args){ 	# Only one category for 2people
+		manypcat <- c(args[match("manyuser",args)+1])
+		if (maypcat == "sum"){
+			manysum <- TRUE
+		}
+		manyuser <- TRUE
 	}
 	if("number" %in% args){
 		shownum <- TRUE
@@ -112,19 +118,75 @@ cols <- rainbow_hcl(length(cats))
 if(singleperson){
 	# Change Transaction.Type to Person
 	tran <- subset(tran, Transaction.Type == personname)
-}	
-tran
+}
+
+# Suspend this functionality for now
+if(manyuser){
+	# reducing the data to a single category
+	tran <- subset(tran, Category == manypcat)
+	# Change Transaction.Type to Person
+	# cats will now contain all the names of users
+	cats <- levels(tran$Transaction.Type)
+}
+
+
+if(manysum){
+	# Change Transaction.Type to Person
+	userlist <- levels(tran$Transaction.Type)
+	j = 0
+	for(catname in cats){
+		# create len(userlist) tables, which is 2
+		tmp <- subset(tran, Category == catname)
+		tmp <- subset(tran, Transaction.Type == user)
+		# Picking the columns matching Amount and Week 
+		tmp <- tmp[names(tmp) %in% c("Amount","timeS")]
+		# Aggregating the Amount data by Week
+		 if (nrow(tmp) != 0){
+			 # Error occurs trying to aggregate empty matrix
+			 tmp <- aggregate(Amount ~ timeS, tmp, sum)
+		 } else {
+			 tmp <- data.frame(timeS=as.Date(character()), Amount=double())
+		 }
+		# Renaming the last column (Amount) by its category name
+		 names(tmp)[length(tmp)] <- catname
+		# If it is the initial loop, don't do merging
+		 if (j != 0){
+			 # Merge the new with old. The order is important
+			 tmp <- merge(old, tmp, by="timeS", all=TRUE)
+			 }
+		# Dump the new into the old
+		 old <- tmp
+		# Make sure the next iteration is not the initial one
+		 i <- j+1
+	}
+	# Replace all the NA's by zero
+	tmp[is.na(tmp)] <- 0
+
+
+
+
+
+}
 
 i = 0
 for (catname in cats){
+	if(manyuser){
+		# Change this to Person
+	 tmp <- subset(tran, Transaction.Type == catname)
+	} else {
 	# Picking the rows matching the category
 	 tmp <- subset(tran, Category == catname)
+	}
 	# Picking the columns matching Amount and Week 
 	 tmp <- tmp[names(tmp) %in% c("Amount","timeS")]
 	# Aggregating the Amount data by Week
 	 if (nrow(tmp) != 0){
+		 # Error occurs trying to aggregate empty matrix
 		 tmp <- aggregate(Amount ~ timeS, tmp, sum)
+	 } else {
+		 tmp <- data.frame(timeS=as.Date(character()), Amount=double())
 	 }
+
 	# Renaming the last column (Amount) by its category name
 	 names(tmp)[length(tmp)] <- catname
 	# If it is the initial loop, don't do merging
