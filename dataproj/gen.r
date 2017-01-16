@@ -4,6 +4,7 @@
 # Weekly and monthly report (why?)
 # List of transactions
 #Print the main in plot
+# What day of week is usual for grocery shopping?
 
 library(colorspace)
 ## Collect arguments
@@ -28,8 +29,13 @@ addline <- FALSE
 shownum <- FALSE
 # Single person mode
 singleperson <- FALSE
-# Manysum, Change it
-manysum <- TRUE
+# Manysum !!
+manysum <- FALSE
+# Current week/month/week
+current <- FALSE
+# From a specific date
+startingdate <- FALSE
+
 
 # many user mode
 manyuser <- FALSE
@@ -86,6 +92,14 @@ if(length(args) !=0){
 	if("number" %in% args){
 		shownum <- TRUE
 	}
+
+	if("this" %in% args){
+		current <- TRUE
+	}
+	if("from" %in% args){
+		startingdate <- TRUE
+	}
+
 
 }
 
