@@ -5,6 +5,8 @@
 # List of transactions
 #Print the main in plot
 # What day of week is usual for grocery shopping?
+# Better png generation, accommodting
+# SHould I order data with date before printing or is it automatic?
 
 library(colorspace)
 ## Collect arguments
@@ -35,6 +37,8 @@ manysum <- FALSE
 current <- FALSE
 # From a specific date
 fromdate <- 0
+# Populate data with empty values
+populate <- FALSE
 
 
 # many user mode
@@ -109,9 +113,15 @@ if(length(args) !=0){
 		} else if ( fromdate == "thisyear"){
 			fromdate <- cut(today, breaks="year")
 		} 
+		# cut gives you a data, not a date, so we need to convert
 		fromdate <- as.Date(fromdate, format="%Y-%m-%d")
 		fromdate
 	}
+	if("populate" %in% args){
+				populate <- TRUE
+	}
+
+
 
 
 }
@@ -273,6 +283,21 @@ tmp <- outertmp
 	# Replace all the NA's by zero
 	 tmp[is.na(tmp)] <- 0
 }
+
+# Polulating data with empty values for consistency
+# Get initial span
+if(populate){
+	if( fromdate == 0){
+		# Get the first span value here
+	}
+	firstspan <- cut(fromdate, breaks=timespan)
+	lastspan  <- cut(Sys.Date(), breaks= timespan)
+	# Create a seq of date
+
+
+	
+}
+
 
 # Taking all columns except the first one, then take the transpose t(matrix)
 final <- t(tmp[,2:length(tmp)])
