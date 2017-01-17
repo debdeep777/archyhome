@@ -115,6 +115,7 @@ if(length(args) !=0){
 		} 
 		# cut gives you a data, not a date, so we need to convert
 		fromdate <- as.Date(fromdate, format="%Y-%m-%d")
+
 		fromdate
 	}
 	if("populate" %in% args){
@@ -125,6 +126,7 @@ if(length(args) !=0){
 
 
 }
+
 
 # Reading csv files
 tran <- read.csv(filename, header=TRUE)
@@ -235,8 +237,6 @@ if(manysum){
 		 k <- k+1
 	}
 
-# Replace all the NA's by zero
-outertmp[is.na(outertmp)] <- 0
 
 # reverting the name of outertmp to tmp again
 # so that te rest of the code need no change
@@ -280,27 +280,38 @@ tmp <- outertmp
 	}
 
 
-	# Replace all the NA's by zero
-	 tmp[is.na(tmp)] <- 0
 }
 
+test <- 0
 # Polulating data with empty values for consistency
 # Get initial span
 if(populate){
 	if( fromdate == 0){
 		# Get the first span value here
 	}
+	# union of these two data will not work because other fields won't be tracked
 	firstspan <- as.Date(cut(fromdate, breaks=timespan))
 	lastspan  <- as.Date(cut(Sys.Date(), breaks= timespan))
 	# Create a seq of date
 	fullseq <- seq.Date(firstspan, lastspan, by=timespan)
+	# converting to char because setdiff function cannot handle dates!!
+	fullseq <- as.character(fullseq)
 	
-	tmp["timeS"]
+	# Must convert the first column of the frame to a vector. This is how
+	tmpvec = as.character(tmp[,1])
 
+	# converting back to date
+	emptycols <- as.Date(setdiff(fullseq, tmpvec))
 
-	
+	# Adding dates with empty values
+	tmp[(nrow(tmp)+1):(nrow(tmp)+length(emptycols)),1] <- emptycols
+	test <- 1
 }
 
+test
+
+# Replace all the NA's by zero
+ tmp[is.na(tmp)] <- 0
 
 # Taking all columns except the first one, then take the transpose t(matrix)
 final <- t(tmp[,2:length(tmp)])
