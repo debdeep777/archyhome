@@ -37,6 +37,8 @@ manysum <- FALSE
 current <- FALSE
 # From a specific date
 fromdate <- 0
+# From a specific date
+todate <- 0
 # Populate data with empty values
 populate <- FALSE
 
@@ -114,8 +116,21 @@ if(length(args) !=0){
 		} 
 		# cut gives you a data, not a date, so we need to convert
 		fromdate <- as.Date(fromdate, format="%Y-%m-%d")
+	}
+	if("to" %in% args){
+		startingdate <- TRUE
+		todate <- c(args[match("to",args)+1])
+		today <- Sys.Date()
+		if(todate == "thisweek"){
+			todate <- cut(today, breaks="week")
+		} else if ( todate == "thismonth"){
+			todate <- cut(today, breaks="month")
+		} else if ( todate == "thisyear"){
+			todate <- cut(today, breaks="year")
+		} 
+		# cut gives you a data, not a date, so we need to convert
+		todate <- as.Date(todate, format="%Y-%m-%d")
 
-		fromdate
 	}
 	if("populate" %in% args){
 				populate <- TRUE
@@ -126,6 +141,7 @@ if(length(args) !=0){
 
 }
 
+sprintf("%s",todate)
 # Reading csv files
 tran <- read.csv(filename, header=TRUE)
 
@@ -154,7 +170,6 @@ if (nrow(tran) == 0){
 
 # Most crucial step: assigning Month, Week etc to the data by crating a new frame variable
 tran$timeS <- as.Date(cut(tran$Date, breaks = timespan))
-sprintf("hi")
 
 # cats is the name of all categories
 cats <- levels(tran$Category)
@@ -304,11 +319,16 @@ if(populate){
 	# so setting a fromdate will add a few
 	if( fromdate == 0){
 		# Get the first span value here
-		firstspan <- min(tmp[,1])
+		fromdate <- min(tmp[,1])
 	}
+	if( todate == 0){
+		# Get the first span value here
+		todate <- max(tmp[,1])
+	}
+	sprinft("%s",fromdate)
 	# union of these two data will not work because other fields won't be tracked
 	firstspan <- as.Date(cut(fromdate, breaks=timespan))
-	lastspan  <- as.Date(cut(Sys.Date(), breaks= timespan))
+	lastspan  <- as.Date(cut(todate, breaks= timespan))
 	# Create a seq of date
 	fullseq <- seq.Date(firstspan, lastspan, by=timespan)
 	# converting to char because setdiff function cannot handle dates!!
@@ -324,6 +344,7 @@ if(populate){
 	tmp[(nrow(tmp)+1):(nrow(tmp)+length(emptycols)),1] <- emptycols
 }
 
+sprintf("hi")
 
 # Replace all the NA's by zero
 tmp[is.na(tmp)] <- 0
