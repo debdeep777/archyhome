@@ -104,7 +104,6 @@ if(length(args) !=0){
 	if("from" %in% args){
 		startingdate <- TRUE
 		fromdate <- c(args[match("from",args)+1])
-
 		today <- Sys.Date()
 		if(fromdate == "thisweek"){
 			fromdate <- cut(today, breaks="week")
@@ -127,7 +126,6 @@ if(length(args) !=0){
 
 }
 
-
 # Reading csv files
 tran <- read.csv(filename, header=TRUE)
 
@@ -141,8 +139,22 @@ if( fromdate > 0){	# works but need a better comparison
 }
 
 
+# handling empty data
+# Might appear somewhere else
+# Need better handling
+if (nrow(tran) == 0){
+	stop("empty dataset")
+	## should be starting date though
+	#tran["Date"][1,1] <- Sys.Date()
+	#tran[is.na(tran)] <- 0
+
+}
+
+
+
 # Most crucial step: assigning Month, Week etc to the data by crating a new frame variable
 tran$timeS <- as.Date(cut(tran$Date, breaks = timespan))
+sprintf("hi")
 
 # cats is the name of all categories
 cats <- levels(tran$Category)
@@ -282,12 +294,17 @@ tmp <- outertmp
 
 }
 
-test <- 0
+
 # Polulating data with empty values for consistency
 # Get initial span
 if(populate){
+	listeddates <- tmp[,1]
+	# populate can be used without from 
+       # and there might be no span values corresponding to few initial spans	
+	# so setting a fromdate will add a few
 	if( fromdate == 0){
 		# Get the first span value here
+		firstspan <- min(tmp[,1])
 	}
 	# union of these two data will not work because other fields won't be tracked
 	firstspan <- as.Date(cut(fromdate, breaks=timespan))
@@ -298,20 +315,21 @@ if(populate){
 	fullseq <- as.character(fullseq)
 	
 	# Must convert the first column of the frame to a vector. This is how
-	tmpvec = as.character(tmp[,1])
+	tmpvec = as.character(listeddates)
 
 	# converting back to date
 	emptycols <- as.Date(setdiff(fullseq, tmpvec))
 
 	# Adding dates with empty values
 	tmp[(nrow(tmp)+1):(nrow(tmp)+length(emptycols)),1] <- emptycols
-	test <- 1
 }
 
-test
 
 # Replace all the NA's by zero
- tmp[is.na(tmp)] <- 0
+tmp[is.na(tmp)] <- 0
+# Ordering the columns by date
+tmp <- tmp[order(tmp$timeS),]
+
 
 # Taking all columns except the first one, then take the transpose t(matrix)
 final <- t(tmp[,2:length(tmp)])
