@@ -1,12 +1,10 @@
 # Implement Pi chart
 #Possibly increase categories and create subcatagory
 # Print several individual graphs
-# Weekly and monthly report (why?)
 # List of transactions
 #Print the main in plot
 # What day of week is usual for grocery shopping?
 # Better png generation, accommodting
-# SHould I order data with date before printing or is it automatic?
 
 library(colorspace)
 ## Collect arguments
@@ -113,6 +111,14 @@ if(length(args) !=0){
 			fromdate <- cut(today, breaks="month")
 		} else if ( fromdate == "thisyear"){
 			fromdate <- cut(today, breaks="year")
+		} else if ( fromdate == "lastweek"){
+			#week of 7 days ago
+			ld <- seq.Date(today,by="-1 week", length=2)[2]
+			fromdate <- cut(ld, breaks="week")
+		} else if ( fromdate == "lastmonth"){
+			#week of 7 days ago
+			ld <- seq.Date(today,by="-1 month", length=2)[2]
+			fromdate <- cut(ld, breaks="month")
 		} 
 		# cut gives you a data, not a date, so we need to convert
 		fromdate <- as.Date(fromdate, format="%Y-%m-%d")
@@ -141,7 +147,6 @@ if(length(args) !=0){
 
 }
 
-sprintf("%s",todate)
 # Reading csv files
 tran <- read.csv(filename, header=TRUE)
 
@@ -152,6 +157,9 @@ tran$Date <- as.Date(tran$Date, format = "%Y-%m-%d")
 # Applying date filter if any
 if( fromdate > 0){	# works but need a better comparison 
 	tran <- subset(tran, Date >= fromdate)
+}
+if( todate > 0){	# works but need a better comparison 
+	tran <- subset(tran, Date <= todate)
 }
 
 
@@ -323,9 +331,8 @@ if(populate){
 	}
 	if( todate == 0){
 		# Get the first span value here
-		todate <- max(tmp[,1])
+		todate <- Sys.Date()
 	}
-	sprinft("%s",fromdate)
 	# union of these two data will not work because other fields won't be tracked
 	firstspan <- as.Date(cut(fromdate, breaks=timespan))
 	lastspan  <- as.Date(cut(todate, breaks= timespan))
@@ -341,16 +348,17 @@ if(populate){
 	emptycols <- as.Date(setdiff(fullseq, tmpvec))
 
 	# Adding dates with empty values
-	tmp[(nrow(tmp)+1):(nrow(tmp)+length(emptycols)),1] <- emptycols
+	# if any
+	if (length(emptycols) !=0){
+		tmp[(nrow(tmp)+1):(nrow(tmp)+length(emptycols)),1] <- emptycols
+	}
 }
-
-sprintf("hi")
-
 # Replace all the NA's by zero
 tmp[is.na(tmp)] <- 0
 # Ordering the columns by date
 tmp <- tmp[order(tmp$timeS),]
 
+tmp
 
 # Taking all columns except the first one, then take the transpose t(matrix)
 final <- t(tmp[,2:length(tmp)])
