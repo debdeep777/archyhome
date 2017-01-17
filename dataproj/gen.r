@@ -16,7 +16,7 @@ filename <- "tran.csv"
 # Weekly data or monthly data
 timespan <- "week"
 # legend format
-legformat <- "%m-%d"
+legformat <- "%b %d"
 # Plot side by side or not
 besideval <- FALSE
 # Exclude variable
@@ -34,7 +34,7 @@ manysum <- FALSE
 # Current week/month/week
 current <- FALSE
 # From a specific date
-startingdate <- FALSE
+fromdate <- 0
 
 
 # many user mode
@@ -44,7 +44,7 @@ if(length(args) !=0){
 	#args conditions
 	if("month" %in% args){
 		timespan <- "month"
-		legformat <- "%y/%m"
+		legformat <- "%y %b"
 	}
 	if("year" %in% args){
 		timespan <- "year"
@@ -52,7 +52,7 @@ if(length(args) !=0){
 	}
 	if("day" %in% args){
 		timespan <- "day"
-		legformat <- "%Y-%m-%d"
+		legformat <- "%b %d"
 	}
 	if("beside" %in% args){
 		besideval <- TRUE
@@ -95,9 +95,22 @@ if(length(args) !=0){
 
 	if("this" %in% args){
 		current <- TRUE
+		thisspan <- c(args[match("this",args)+1])
 	}
 	if("from" %in% args){
 		startingdate <- TRUE
+		fromdate <- c(args[match("from",args)+1])
+
+		today <- Sys.Date()
+		if(fromdate == "thisweek"){
+			fromdate <- cut(today, breaks="week")
+		} else if ( fromdate == "thismonth"){
+			fromdate <- cut(today, breaks="month")
+		} else if ( fromdate == "thisyear"){
+			fromdate <- cut(today, breaks="year")
+		} 
+		fromdate <- as.Date(fromdate, format="%Y-%m-%d")
+		fromdate
 	}
 
 
@@ -107,7 +120,14 @@ if(length(args) !=0){
 tran <- read.csv(filename, header=TRUE)
 
 # Converting strings to dates if the format is known
+# the default format of as.Date is "%Y-%m-%d"
 tran$Date <- as.Date(tran$Date, format = "%Y-%m-%d")
+
+# Applying date filter if any
+if( fromdate > 0){	# works but need a better comparison 
+	tran <- subset(tran, Date >= fromdate)
+}
+
 
 # Most crucial step: assigning Month, Week etc to the data by crating a new frame variable
 tran$timeS <- as.Date(cut(tran$Date, breaks = timespan))
@@ -278,7 +298,8 @@ if(besideval){
 	text(x = xx, y=final+5, label=final, xpd=TRUE)
 } else {
 csum <- colSums(final)
-text(x = xx, y=csum+5, label=csum, xpd=TRUE)
+#text(x = xx, y=csum+5, label=csum, xpd=TRUE)
+text(x = xx, y=csum+1, label=csum, xpd=TRUE)
 }
 }
 
