@@ -290,9 +290,12 @@ if(populate){
 	if( fromdate == 0){
 		# Get the first span value here
 	}
-	firstspan <- cut(fromdate, breaks=timespan)
-	lastspan  <- cut(Sys.Date(), breaks= timespan)
+	firstspan <- as.Date(cut(fromdate, breaks=timespan))
+	lastspan  <- as.Date(cut(Sys.Date(), breaks= timespan))
 	# Create a seq of date
+	fullseq <- seq.Date(firstspan, lastspan, by=timespan)
+	
+	tmp["timeS"]
 
 
 	
