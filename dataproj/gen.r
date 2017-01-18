@@ -11,7 +11,7 @@ library(colorspace)
 args <- commandArgs(TRUE)
  
 
-filename <- "usable.csv"
+filename <- "tran.csv"
 
 # Weekly data or monthly data
 timespan <- "week"
