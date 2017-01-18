@@ -11,7 +11,7 @@ library(colorspace)
 args <- commandArgs(TRUE)
  
 
-filename <- "tran.csv"
+filename <- "usable.csv"
 
 # Weekly data or monthly data
 timespan <- "week"
@@ -358,7 +358,7 @@ tmp[is.na(tmp)] <- 0
 # Ordering the columns by date
 tmp <- tmp[order(tmp$timeS),]
 
-tmp
+write.csv(tmp, "temp.csv", row.names=FALSE)
 
 # Taking all columns except the first one, then take the transpose t(matrix)
 final <- t(tmp[,2:length(tmp)])
