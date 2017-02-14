@@ -1,0 +1,9 @@
+SERVICE='wpa_supplicant'
+
+if ps ax | grep -v grep | grep $SERVICE > /dev/null
+then     
+	echo "$SERVICE service running"
+	ifconfig wlp6s0b1
+else
+	wpa_supplicant -B -i wlp6s0b1 -c /etc/wpa_supplicant/eduroam.conf
+fi
