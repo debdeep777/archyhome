@@ -21,8 +21,7 @@ let g:Tex_ViewRule_pdf = 'zathura'
 let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 
 " Trying to add same for pdfs, hoping that package SynTex is installed
-"let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
-let g:Tex_CompileRule_pdf = 'xelatex -synctex=1 -interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 
 
 " This is for dvi -> tex. Works!, to use it, need to launch vim with --servername sofun
