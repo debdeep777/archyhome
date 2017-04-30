@@ -26,7 +26,7 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
 
 " This is for dvi -> tex. Works!, to use it, need to launch vim with --servername sofun
 let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --remote +\%l \%f" $*.dvi &'
-"let g:Tex_ViewRuleComplete_pdf = 'zathura $*.pdf 2>/dev/nul &'
+"let g:Tex_ViewRuleComplete_pdf = 'zathura $*.pdf 2>/dev/null &'
 
 " Get the correct servername, which should be the filename of the tex file,
 " without the extension
@@ -35,11 +35,11 @@ let g:Tex_ViewRuleComplete_dvi = 'xdvi -editor "vim --servername dvisession --re
 let theuniqueserv = expand("%:t:r")
 
 " Working!!!, when we run vim appropriately
-"let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername '.theuniqueserv.' --remote +\%{line} \%{input}" $*.pdf 2>/dev/nul &'
+"let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername '.theuniqueserv.' --remote +\%{line} \%{input}" $*.pdf 2>/dev/null &'
 "Edit: Jul 2015: This %{input} only gives a relative file path, not useful.
 "So,
 "Here is the correct one.
-let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername '.theuniqueserv.' --remote +\%{line} '.expand('%:p').'" $*.pdf 2>/dev/nul &'
+let g:Tex_ViewRuleComplete_pdf = 'zathura -x "vim --servername '.theuniqueserv.' --remote +\%{line} '.expand('%:p').'" $*.pdf 2>/dev/null &'
 
 " This works in termnal, but not inside vimrc: zathura -x "vim --servername nope --remote +\%{line} \%{input}" db.pdf
 
