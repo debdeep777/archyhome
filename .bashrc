@@ -147,8 +147,8 @@ fi
 # Test user type:
 if [[ ${USER} == "root" ]]; then
     SU=${Red}           # User is root.
-elif [[ ${USER} != $(logname) ]]; then
-    SU=${BRed}          # User is not login user.
+#elif [[ ${USER} != $(logname) ]]; then
+#    SU=${BRed}          # User is not login user.
 else
     SU=${BCyan}         # User is normal (well ... most of us are).
 fi
@@ -557,3 +557,6 @@ export BC_ENV_ARGS=~/.bcrc
 
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH:$GOPATH/bin:$PATH
+
+# For the wacom stylus that does not work from xrog.conf
+xsetwacom --set "Wacom HID 50EE Pen stylus" Threshold "500"
