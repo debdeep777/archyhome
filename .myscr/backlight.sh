@@ -1,3 +1,7 @@
+#!/bin/bash
+# Enable auto-brightness for Lenovo Yoga 720 13"
+# Dependency: iio-sensors-proxy, xbacklight, /etc/X11/xorg.conf.d/24-brighness
+# Rough algorithm is linear, can be improved
 logfile='backlight.log';
 # change brightness if the square of the difference is bigger than thresh
 thresh=16;
@@ -9,13 +13,15 @@ delaytime=500
 #the device acknowledges new value only when it is refreshed, e.g. through cat
 # 4 sec sounds good enough
 # only the accelerometer data, not light (device0)
-watch -n 4 cat /sys/bus/iio/devices/iio\:device0/*raw* > /dev/null 2>&1 &
+watch -n 4 cat /sys/bus/iio/devices/iio\:device*/*intensity*raw* > /dev/null 2>&1 &
 echo $!
 
 #clear the old logfile
-echo '' > $logfile
+rm $logfile
 # Saving the output in a file
-monitor-sensor >> $logfile 2>&1 &
+# buffer issue for grep: use --line-buffered
+# buffer issue for awk : use fflush(stdout) after writing a line
+monitor-sensor | grep --line-buffered 'Light' | awk -F ' ' '{ print $3; fflush(stdout)}' >> $logfile 2>&1 &
 
 #when the file is modified, take action
  while inotifywait -e modify $logfile;
@@ -23,7 +29,7 @@ monitor-sensor >> $logfile 2>&1 &
 	 # to grab accelerator data, filter out the light data
 	 # in that case, have to add | Grep Accel beforehand
 	 # breaking the last line to find the direction
-	 lightval=$(tail -n 1 $logfile | grep Light | awk -F ' ' '{ print $3}');
+	 lightval=$(tail -n 1 $logfile);
 
 	 #add a condition to check if direction in nonempty
 	 if [ -n "$lightval" ];
