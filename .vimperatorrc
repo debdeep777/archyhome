@@ -11,11 +11,11 @@ noremap l gt
 noremap h gT
 
 " Turn off the scrollbars
-set sb=false
+"set sb=false
 
 """""""""""""""""""
 " no gui
-set gui=none,tabs,navigation
+"set gui=none,tabs,navigation
 """"""""""""""""""
 
 " Show tab numbers so that we jump to them like 12gt to go to the 12th tab
@@ -49,4 +49,3 @@ highlight Normal -append font-size: 10pt;
 "hi CompItem[selected]   color: Blue; background: grey;
 ""item to the right, always
 "hi CompDesc color: LightBlue;
-
