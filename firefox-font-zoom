@@ -1,0 +1,2 @@
+Go to about:config and set the following value
+layout.css.devPixelsPerPx = 1.2 (instead of -1.0)
