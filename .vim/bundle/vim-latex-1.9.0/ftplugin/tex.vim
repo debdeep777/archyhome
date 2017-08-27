@@ -10,6 +10,35 @@ set sw=2
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
 set iskeyword+=:
+ 
+" Add this to your vimrc file
+" auto-update "Last update: " if present whenever saving file
+
+autocmd! BufWritePre *.tex :call s:timestamp()
+" to update timestamp when saving if its in the first 5 lines of a file
+function! s:timestamp()
+    let pat = '\(Last Change\s*:\s*\).*'
+    let rep = '\1' . strftime("%a %b %d %I:00 %p %Y")
+    call s:subst(1, 5, pat, rep)
+endfunction
+" subst taken from timestamp.vim
+" {{{1 subst( start, end, pat, rep): substitute on range start - end.
+function! s:subst(start, end, pat, rep)
+    let lineno = a:start
+    while lineno <= a:end
+	let curline = getline(lineno)
+	if match(curline, a:pat) != -1
+	    let newline = substitute( curline, a:pat, a:rep, '' )
+	    if( newline != curline )
+		" Only substitute if we made a change
+		"silent! undojoin
+		keepjumps call setline(lineno, newline)
+	    endif
+	endif
+	let lineno = lineno + 1
+    endwhile
+endfunction
+" }}}1
 
 """"""""""""""""""""""""'
 " Default compiling format
