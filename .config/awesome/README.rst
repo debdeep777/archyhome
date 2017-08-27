@@ -10,15 +10,12 @@ Themes for Awesome WM 4.x
 :License: BY-NC-SA_
 :Source: https://github.com/copycat-killer/awesome-copycats
 
-Warning
-=======
-
-If you still have to use branch 3.5.x, you can refer to the commit b0ab0d7_, but be aware that it's no longer supported.
-
 Description
 ===========
 
-A set of themes for the Awesome_ window manager.
+A set of themes for the Awesome_ window manager, version >= 4.0.
+
+See branches_ for previous versions.
 
 Features
 ========
@@ -27,7 +24,7 @@ Features
 - Autohide widgets
 - Autostart windowless processes
 - Fast MPD and volume shortcuts (first time this trick has been used in Awesome)
-- Shortcuts for copying to the clipboard (no need for clipboard managers), toggle wiboxes, widgets popups, screenshots capture, moving and magnifying clients
+- Shortcuts for copying to the clipboard, toggle wiboxes, widgets popups, screenshots capture, moving and magnifying clients
 - Quake drop-down terminal
 - Calendar with current day highlighted and months switch with a click/scroll
 - Notifications for new mails, current song, volume level, hdd critical state, low battery
@@ -137,7 +134,7 @@ This way, you can safely ``git pull`` anytime.
 Notes
 =====
 
-Complements are provided by lain_.
+Complements are provided by lain_ and freedesktop_.
 
 Fonts are Terminus_ (Multicolor, Powerarrow Darker), Tamzen_ (Copland), Roboto_ (Holo, Vertex) and Tamsyn_ (other ones).
 
@@ -159,6 +156,7 @@ Additional software used: ::
 .. _swordfischer: https://github.com/copycat-killer/awesome-copycats/issues/53
 .. _foozer: http://dotshare.it/dots/499
 .. _lain: https://github.com/copycat-killer/lain
+.. _freedesktop: https://github.com/copycat-killer/freedesktop
 .. _Terminus: http://terminus-font.sourceforge.net
 .. _Tamzen: https://github.com/sunaku/tamzen-font
 .. _Roboto: https://fonts.google.com/specimen/Roboto
@@ -167,3 +165,4 @@ Additional software used: ::
 .. _Icons: https://github.com/copycat-killer/dots/tree/master/.fonts
 .. _Ubuntu: https://wiki.ubuntu.com/Fonts#Enabling_Bitmapped_Fonts
 .. _FontAwesome: https://github.com/FortAwesome/Font-Awesome
+.. _branches: https://github.com/copycat-killer/awesome-copycats/branches

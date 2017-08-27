@@ -10,6 +10,7 @@ local helpers = require("lain.helpers")
 local markup  = require("lain.util").markup
 local awful   = require("awful")
 local naughty = require("naughty")
+local mouse   = mouse
 local string  = { format = string.format, gsub = string.gsub }
 
 -- Taskwarrior notification
@@ -23,7 +24,6 @@ function task.hide()
 end
 
 function task.show(scr)
-    task.hide()
 
     if task.followtag then
         task.notification_preset.screen = awful.screen.focused()
@@ -31,13 +31,28 @@ function task.show(scr)
         task.notification_preset.screen = scr
     end
 
-    helpers.async(task.show_cmd, function(f)
-        task.notification = naughty.notify({
-            preset = task.notification_preset,
-            title  = task.show_cmd,
-            text   = markup.font(task.notification_preset.font,
-                     awful.util.escape(f:gsub("\n*$", "")))
-        })
+    helpers.async({ awful.util.shell, "-c", task.show_cmd }, function(f)
+        local widget_focused = true
+
+        if mouse.current_widgets then
+            widget_focused = false
+            for _,v in ipairs(mouse.current_widgets) do
+                if task.widget == v then
+                    widget_focused = true
+                    break
+                end
+            end
+        end
+
+        if widget_focused then
+            task.hide()
+            task.notification = naughty.notify({
+                    preset = task.notification_preset,
+                    title  = "task next",
+                    text   = markup.font(task.notification_preset.font,
+                        awful.util.escape(f:gsub("\n*$", "")))
+                })
+        end
     end)
 end
 
@@ -49,9 +64,9 @@ function task.prompt()
             helpers.async(t, function(f)
                 naughty.notify {
                     preset = task.notification_preset,
-                    title    = t,
-                    text     = markup.font(task.notification_preset.font,
-                               awful.util.escape(f:gsub("\n*$", "")))
+                    title  = t,
+                    text   = markup.font(task.notification_preset.font,
+                             awful.util.escape(f:gsub("\n*$", "")))
                 }
             end)
         end,
@@ -65,6 +80,7 @@ function task.attach(widget, args)
     task.prompt_text         = args.prompt_text or "Enter task command: "
     task.followtag           = args.followtag or false
     task.notification_preset = args.notification_preset
+    task.widget              = widget
 
     if not task.notification_preset then
         task.notification_preset = {

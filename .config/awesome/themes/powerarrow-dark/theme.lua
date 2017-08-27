@@ -91,13 +91,12 @@ local separators = lain.util.separators
 
 -- Textclock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local clock = lain.widget.watch({
-    timeout  = 60,
-    cmd      = " date +'%a %d %b %R'",
-    settings = function()
-        widget:set_markup(" " .. markup.font(theme.font, output))
+local clock = awful.widget.watch(
+    "date +'%a %d %b %R'", 60,
+    function(widget, stdout)
+        widget:set_markup(" " .. markup.font(theme.font, stdout))
     end
-})
+)
 
 -- Calendar
 theme.cal = lain.widget.calendar({
@@ -131,8 +130,22 @@ local mail = lain.widget.imap({
 --]]
 
 -- MPD
+local musicplr = awful.util.terminal .. " -title Music -g 130x34-320+16 -e ncmpcpp"
 local mpdicon = wibox.widget.imagebox(theme.widget_music)
-mpdicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.spawn_with_shell(musicplr) end)))
+mpdicon:buttons(awful.util.table.join(
+    awful.button({ modkey }, 1, function () awful.spawn.with_shell(musicplr) end),
+    awful.button({ }, 1, function ()
+        awful.spawn.with_shell("mpc prev")
+        theme.mpd.update()
+    end),
+    awful.button({ }, 2, function ()
+        awful.spawn.with_shell("mpc toggle")
+        theme.mpd.update()
+    end),
+    awful.button({ }, 3, function ()
+        awful.spawn.with_shell("mpc next")
+        theme.mpd.update()
+    end)))
 theme.mpd = lain.widget.mpd({
     settings = function()
         if mpd_now.state == "play" then
@@ -320,7 +333,7 @@ function theme.at_screen_connect(s)
             wibox.container.background(neticon, theme.bg_focus),
             wibox.container.background(net.widget, theme.bg_focus),
             arrl_dl,
-            clock.widget,
+            clock,
             spr,
             arrl_ld,
             wibox.container.background(s.mylayoutbox, theme.bg_focus),

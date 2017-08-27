@@ -10,11 +10,11 @@ Every lain widget contains a `wibox.widget`, which is updated by a timed functio
 
 Every `function` may take either a table or a list of variables as input.
 
-If the input is a table, you have to define a function variable called `settings` in it, in order to make your customizations and set `widget`.
+If the input is a table, you must define a function variable called `settings` in it. There you will be able to define `widget` appearance.
 
-If `widget` is a textbox, to markup it call `widget:set_markup(...)` within `settings`.
+For instance, if `widget` is a textbox, to markup it call `widget:set_markup(...)` within `settings`.
 
-`settings` can use predefined arguments, which are specified in the wiki entries.
+In the scope of `settings` you can use predefined arguments, which are specified in the wiki entries.
 
 Example of a lain widget:
 
@@ -49,7 +49,6 @@ If you want to see some applications, check [awesome-copycats](https://github.co
 
 ## Users contributed
 
-- [gpmdp](https://github.com/copycat-killer/lain/wiki/gpmdp)
 - [kbdlayout](https://github.com/copycat-killer/lain/wiki/kbdlayout)
 - [moc](https://github.com/copycat-killer/lain/wiki/moc)
 - [redshift](https://github.com/copycat-killer/lain/wiki/redshift)
