@@ -58,7 +58,6 @@ end
 run_once({ "nm-applet", "unclutter -root","xfce4-power-manager" })
 -- xfsettingd will enable all the keyboard shortcuts from xfce env and mess with the awesome keybindings.
 -- one main problem is it will launch xfce-terminal instead of xterm causing it to break (known bug)
--- Question: why do we need xfsettingd? The lock screen clearly does not work with it. Then what are the benefits?
 --run_once({"xfsettingsd" })
 -- }}}
 
@@ -424,7 +423,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift" }, "f", function () awful.spawn("firefocusl") end),
 
     -- User programs
-    awful.key({ modkey }, "e", function () awful.spawn(gui_editor) end),
+    awful.key({ modkey }, "e", function () awful.spawn("xterm -e ranger") end),
     awful.key({ modkey }, "q", function () awful.spawn(browser) end),
 
     -- Default
