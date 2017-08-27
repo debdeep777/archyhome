@@ -55,8 +55,11 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "urxvtd", "unclutter -root","xfce4-power-manager" })
-run_once({"xfsettingsd" })
+run_once({ "nm-applet", "unclutter -root","xfce4-power-manager" })
+-- xfsettingd will enable all the keyboard shortcuts from xfce env and mess with the awesome keybindings.
+-- one main problem is it will launch xfce-terminal instead of xterm causing it to break (known bug)
+-- Question: why do we need xfsettingd? The lock screen clearly does not work with it. Then what are the benefits?
+--run_once({"xfsettingsd" })
 -- }}}
 
 -- {{{ Variable definitions
