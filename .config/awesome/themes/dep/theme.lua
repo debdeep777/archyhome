@@ -57,7 +57,9 @@ theme.widget_clock                              = theme.confdir .. "/icons/clock
 theme.widget_vol                                = theme.confdir .. "/icons/spkr.png"
 theme.taglist_squares_sel                       = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
-theme.tasklist_plain_task_name                  = true
+-- Found the problem!!
+-- this option removes the characters that precede the tasklist name, in particular, the maximized symbol
+--theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = 0
 theme.layout_tile                               = theme.confdir .. "/icons/tile.png"
@@ -96,8 +98,8 @@ theme.titlebar_maximized_button_focus_active    = theme.confdir .. "/icons/title
 
 
 theme.tasklist_disable_icon         = false
-theme.tasklist_floating             = "#"  --for some reason, this is the symbol for maximized window, the symbol for floating is ^, where is that setting?
-theme.tasklist_maximized_horizontal = ""
+theme.tasklist_floating             = "~"  --for some reason, this is the symbol for maximized window, the symbol for floating is ^, where is that setting?
+theme.tasklist_maximized = "▪"
 
 
 local markup = lain.util.markup
