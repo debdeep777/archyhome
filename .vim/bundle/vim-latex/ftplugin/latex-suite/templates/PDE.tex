@@ -1,0 +1,46 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%:p:t")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: Sun Sep 17 12:00 AM 2017
+
+% Documentclass
+\documentclass[12pt]{article}
+% margin
+\setlength{\topmargin}{0mm} \setlength{\oddsidemargin}{0mm}
+\setlength{\textwidth}{160mm} \setlength{\textheight}{220mm}
+\font\bbc=msbm10 scaled 1200
+
+% amsmath:\text{} inside math mode; amssymb:\lesssim, amsthm:\newtheorem; amsfonts:\mathbb{}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+%to use color
+\usepackage{color}
+
+
+
+% User defined fun
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\br}[1]{\color{red} (#1) \color{black}}
+\newcommand{\bb}[1]{\color{blue} (#1) \color{black}}
+\newcommand{\what}{\bb{??}}
+\newcommand{\uhat}{\hat{u}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\half}{\frac{1}{2}}
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{result}{Result}
+\newtheorem*{notation}{Notation}
+\newtheorem{prob}{Problem}
+\newtheorem{propn}{Proposition}
+% newtheorem{proof}{Proof} is not needed, already available with \begin{proof} .. \end{proof} with nice italic fonts
+
+
+\begin{document}
+\title{<++>}
+\author{<++>}
+\maketitle 
+
+<++>
+
+\end{document}
