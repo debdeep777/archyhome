@@ -1,0 +1,78 @@
+#!/bin/bash
+#
+# rotate_desktop.sh
+#
+# Rotates modern Linux desktop screen and input devices to match. Handy for
+# convertible notebooks. Call this script from panel launchers, keyboard
+# shortcuts, or touch gesture bindings (xSwipe, touchegg, etc.).
+#
+# Using transformation matrix bits taken from:
+#   https://wiki.ubuntu.com/X/InputCoordinateTransformation
+#
+
+# Configure these to match your hardware (names taken from `xinput` output).
+POINTER='Virtual core XTEST pointer'
+TOUCHPAD='MSFT0001:01 06CB:7F8F Touchpad'
+TOUCHPEN='Wacom HID 50EE Pen stylus'
+TOUCHSCREEN='Wacom HID 50EE Finger touch'
+TOUCHERASER='Wacom HID 50EE Pen eraser'
+
+if [ -z "$1" ]; then
+  echo "Missing orientation."
+  echo "Usage: $0 [normal|inverted|left|right] [revert_seconds]"
+  echo
+  exit 1
+fi
+
+function do_rotate
+{
+  xrandr --output $1 --rotate $2
+
+  TRANSFORM='Coordinate Transformation Matrix'
+
+  case "$2" in
+    normal)
+      [ ! -z "$POINTER" ]    && xinput set-prop "$POINTER"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      [ ! -z "$TOUCHSCREEN" ] && xinput set-prop "$TOUCHSCREEN" "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      [ ! -z "$TOUCHPEN" ] && xinput set-prop "$TOUCHPEN" "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      [ ! -z "$TOUCHERASER" ] && xinput set-prop "$TOUCHERASER" "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      ;;
+    inverted)
+      [ ! -z "$POINTER" ]    && xinput set-prop "$POINTER"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      [ ! -z "$TOUCHSCREEN" ] && xinput set-prop "$TOUCHSCREEN" "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      [ ! -z "$TOUCHPEN" ] && xinput set-prop "$TOUCHPEN" "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      [ ! -z "$TOUCHERASER" ] && xinput set-prop "$TOUCHERASER" "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      ;;
+    left)
+      [ ! -z "$POINTER" ]    && xinput set-prop "$POINTER"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      [ ! -z "$TOUCHSCREEN" ] && xinput set-prop "$TOUCHSCREEN" "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      [ ! -z "$TOUCHPEN" ] && xinput set-prop "$TOUCHPEN" "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      [ ! -z "$TOUCHERASER" ] && xinput set-prop "$TOUCHERASER" "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      ;;
+    right)
+      [ ! -z "$POINTER" ]    && xinput set-prop "$POINTER"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      [ ! -z "$TOUCHSCREEN" ] && xinput set-prop "$TOUCHSCREEN" "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      [ ! -z "$TOUCHPEN" ] && xinput set-prop "$TOUCHPEN" "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      [ ! -z "$TOUCHERASER" ] && xinput set-prop "$TOUCHERASER" "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      ;;
+  esac
+}
+
+## For Xubuntu, grep primary does not give anything
+#XDISPLAY=`xrandr --current | grep primary | sed -e 's/ .*//g'`
+# So, changing it to look for the word '\ connected' (to avoid 'disconnected'
+# to avoid multile connected displays and choose the first one (-m1)
+XDISPLAY=`xrandr --current | grep -m1 '\ connected' | sed -e 's/ .*//g'`
+XROT=`xrandr --current --verbose | grep primary | egrep -o ' (normal|left|inverted|right) '`
+
+do_rotate $XDISPLAY $1
+
+if [ ! -z "$2" ]; then
+  sleep $2
+  do_rotate $XDISPLAY $XROT
+  exit 0
+fi
