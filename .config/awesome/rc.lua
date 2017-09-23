@@ -430,7 +430,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "v", function () awful.spawn("xsel -b | xsel") end),
     awful.key({ modkey, "Shift" }, "f", function () awful.spawn("firefocusl") end),
     awful.key({ "Control", altkey }, "Left", function () awful.spawn("rotate left") end),
+    awful.key({ "Control", altkey }, "Right", function () awful.spawn("rotate right") end),
     awful.key({ "Control", altkey }, "Up", function () awful.spawn("rotate normal") end),
+    awful.key({ "Control", altkey }, "Down", function () awful.spawn("rotate inverted") end),
 
     -- User programs
     awful.key({ modkey }, "e", function () awful.spawn("xterm -e ranger") end),
