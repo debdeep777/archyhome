@@ -24,6 +24,12 @@ function markup.monospace(text) return '<tt>'    .. text .. '</tt>'    end
 function markup.big(text)       return '<big>'   .. text .. '</big>'   end
 function markup.small(text)     return '<small>' .. text .. '</small>' end
 
+-- Test for another font, fontawesome 
+-- didn't work
+function markup.fa(text)
+  return '<i class="' .. text .. '"></i>'
+end
+
 -- Set the font.
 function markup.font(font, text)
   return '<span font="'  .. font  .. '">' .. text ..'</span>'
@@ -33,6 +39,7 @@ end
 function markup.fg.color(color, text)
   return '<span foreground="' .. color .. '">' .. text .. '</span>'
 end
+
 
 -- Set the background.
 function markup.bg.color(color, text)

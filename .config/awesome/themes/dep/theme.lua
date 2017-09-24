@@ -16,8 +16,8 @@ local wibox = require("wibox")
 local os    = { getenv = os.getenv, setlocale = os.setlocale }
 
 local theme                                     = {}
-theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
-theme.wallpaper                                 = theme.confdir .. "/wall.png"
+theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/dep"
+theme.wallpaper                                 = theme.confdir .. "/dep.jpg"
 theme.font                                      = "Ubuntu 12"
 theme.monofont					= "UbuntuMono 14"
 theme.menu_bg_normal                            = "#000000"
@@ -107,7 +107,7 @@ local markup = lain.util.markup
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local mytextclock = wibox.widget.textclock(markup("#7788af", "%a %d %B ") .. markup("#de5e1e", " %l:%M "))
+local mytextclock = wibox.widget.textclock(markup("#7788af", "%a %d %b ") .. markup("#de5e1e", " %l:%M "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -252,7 +252,8 @@ local netupinfo = lain.widget.net({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local memory = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#e0da37", mem_now.used .. "M "))
+        --widget:set_markup(markup.fontfg(theme.font, "#e0da37", mem_now.used .. "M "))
+        widget:set_markup(markup.fontfg(theme.font, "#e0da37", mem_now.used .. 'M '))
     end
 })
 
@@ -339,24 +340,25 @@ function theme.at_screen_connect(s)
             --netdowninfo,
 --            netupicon,
  --           netupinfo.widget,
+            ---onboard;
 	    touch,
 	    light,
 	    recdata,
-            volicon,
+            --volicon,
             theme.volume.widget,
-            memicon,
+            --memicon,
             memory.widget,
-            cpuicon,
+            --cpuicon,
             cpu.widget,
-            fsicon,
-            theme.fs.widget,
-            weathericon,
-            theme.weather.widget,
-            tempicon,
+            --fsicon,
+            --theme.fs.widget,
+            --weathericon,
+            --theme.weather.widget,
+            --tempicon,
             temp.widget,
             baticon,
             bat.widget,
-            clockicon,
+            --clockicon,
             mytextclock,
         },
     }

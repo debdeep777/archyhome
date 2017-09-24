@@ -429,6 +429,10 @@ globalkeys = awful.util.table.join(
     -- Copy clipboard to primary (gtk to terminals)
     awful.key({ modkey }, "v", function () awful.spawn("xsel -b | xsel") end),
     awful.key({ modkey, "Shift" }, "f", function () awful.spawn("firefocusl") end),
+    --requires slock
+    awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end),
+    -- for xournal
+    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournal") end),
     awful.key({ "Control", altkey }, "Left", function () awful.spawn("rotate left") end),
     awful.key({ "Control", altkey }, "Right", function () awful.spawn("rotate right") end),
     awful.key({ "Control", altkey }, "Up", function () awful.spawn("rotate normal") end),
