@@ -1,0 +1,25 @@
+xinput gives the list of devices.
+
+Device: Stylus
+
+Button 1: touch the pen on the screen
+Button 2: the upper button
+Note: The lower button is not a part of the stylus
+
+all the devices show that they have 7 buttons. Probably formal. Not changeable. 
+
+Bug: Bring stylus close to the screen, hold button 2 on stylus, move it out of the screen, release button. Not bring the stylus close to the screen. An automatic Button 2 click is detected. It continues for several times unless you disable and enable the device (xinput disable 12, xinput enable 12)
+
+Device: Eraser
+
+This device gets activated when the lower button is pressed.
+Button 1: touch the tip to the screen (while holding the lower button)
+Button 2: ?
+
+It seems that the glitch with button 2 is gone if I disable Hover click property of the stylus in xinput:
+
+xinput set-prop "Wacom Hover Click" 0
+
+Add it to .bashrc along with other calibration options.
+
+Surprisingly, "Wacom Enable Touch" value does not affect the ability to use touchscreen alongside stylus.
