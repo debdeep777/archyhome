@@ -89,9 +89,10 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 #- DISPLAY on ${Red}$DISPLAY${NC}"
 
 
-if [ -x /usr/games/fortune ]; then
-    fortune | cowsay     # Makes our day a bit more fun.... :-)
-fi
+# For fortune
+#if [ -x /usr/games/fortune ]; then
+#    fortune | cowsay     # Makes our day a bit more fun.... :-)
+#fi
 
 function _exit()              # Function to run upon exit of shell.
 {
@@ -559,4 +560,13 @@ export GOPATH=$HOME/gopath
 export PATH=$GOPATH:$GOPATH/bin:$PATH
 
 # For the wacom stylus that does not work from xrog.conf
-xsetwacom --set "Wacom HID 50EE Pen stylus" Threshold "500"
+# Also, copy the file wacom.config in X11/xorg.conf.d/ which basically says
+#  Option "PressCurve" "0,10,90,100"
+# the Threshold option does not work from that file so it has to be in bashrc
+#xsetwacom --set "Wacom HID 50EE Pen stylus" Threshold "500"
+
+# For Wacom stylus 
+# Left out option: xsetwacom "RawSample" 4, which is default anyway
+xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressurecurve" 0 10 90 100
+xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressure Threshold" 500
+xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Hover Click" 0
