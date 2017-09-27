@@ -1,6 +1,7 @@
-# to forece xterm to send copied text to "CLIPBOARD"
-# See https://www.starnet.com/xwin32kb/copying-and-pasting-in-xterm/
-XTerm*selectToClipboard: true
+## to forece xterm to send copied text to "CLIPBOARD"
+## See https://www.starnet.com/xwin32kb/copying-and-pasting-in-xterm/
+#XTerm*selectToClipboard: true
+
 #XTerm*faceName: DejaVu Sans Mono:pixelsize=13
 ## color scheme for xterm
 #xterm*background: grey11
