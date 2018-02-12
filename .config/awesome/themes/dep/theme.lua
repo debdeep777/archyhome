@@ -18,8 +18,8 @@ local os    = { getenv = os.getenv, setlocale = os.setlocale }
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/dep"
 theme.wallpaper                                 = theme.confdir .. "/dep.jpg"
-theme.font                                      = "Ubuntu 12"
-theme.monofont					= "UbuntuMono 14"
+theme.font                                      = "FontAwesome 11"
+theme.monofont					= "Ubuntu Mono 14"
 theme.menu_bg_normal                            = "#000000"
 theme.menu_bg_focus                             = "#000000"
 theme.bg_normal                                 = "#000000"
@@ -107,18 +107,19 @@ local markup = lain.util.markup
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local mytextclock = wibox.widget.textclock(markup("#7788af", "%a %d %b ") .. markup("#de5e1e", " %l:%M "))
+local mytextclock = wibox.widget.textclock(markup("#7788af", "%a") .. markup("#859900","%d") ..markup("#7788af","%b") .. markup("#de5e1e", "%l:%M "))
 mytextclock.font = theme.font
 
--- Calendar
-theme.cal = lain.widget.calendar({
-    attach_to = { mytextclock },
-    notification_preset = {
-        font = theme.monofont, 
-        fg   = theme.fg_normal,
-        bg   = theme.bg_normal
-    }
-})
+---- not using since the highlighted today's date does not show properly
+---- Calendar
+--theme.cal = lain.widget.calendar({
+--    --attach_to = { mytextclock },
+--    notification_preset = {
+--        font = theme.monofont, 
+--        fg   = theme.fg_normal,
+--        bg   = theme.bg_normal
+--    }
+--})
 
 -- Weather
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
@@ -183,18 +184,35 @@ local temp = lain.widget.temp({
 })
 
 -- Battery
-local baticon = wibox.widget.imagebox(theme.widget_batt)
+--local baticon = wibox.widget.imagebox(theme.widget_batt)
 local bat = lain.widget.bat({
     settings = function()
-        local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
+        local perc = bat_now.perc 
+	local batic = "hi"
 
-        if bat_now.ac_status == 1 then
-            perc = perc .. " plug"
-        end
+	if bat_now.ac_status == 1 then
+		batic = ""
+	elseif perc > 75 then
+			batic = ""
+	elseif perc > 50 then
+		batic = ""
+	elseif perc > 25 then
+		batic = ""
+	else
+		batic = ""
+	end
 
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, bat_now.perc .. " "))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, bat_now.perc .. batic ))
     end
 })
+
+--cpuwidget = awful.widget.graph()
+---- Graph properties
+--cpuwidget:set_width(50)
+--cpuwidget:set_background_color("#494B4F")
+--cpuwidget:set_color("#FF5656")
+--cpuwidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
+
 
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
@@ -350,14 +368,15 @@ function theme.at_screen_connect(s)
             memory.widget,
             --cpuicon,
             cpu.widget,
+	    --cpuwidget,
             --fsicon,
             --theme.fs.widget,
             --weathericon,
             --theme.weather.widget,
             --tempicon,
             temp.widget,
-            baticon,
-            bat.widget,
+            --baticon,
+            bat,
             --clockicon,
             mytextclock,
         },

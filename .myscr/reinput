@@ -1,0 +1,12 @@
+#disable and enable the input devices in case of a glitch
+xinput disable 'Wacom HID 50EE Pen stylus'     
+xinput disable 'Wacom HID 50EE Finger touch'   
+xinput disable 'Wacom HID 50EE Pen eraser'   
+xinput disable 'MSFT0001:01 06CB:7F8F Touchpad'
+
+sleep 1
+
+xinput enable 'Wacom HID 50EE Pen stylus'     
+xinput enable 'Wacom HID 50EE Finger touch'   
+xinput enable 'Wacom HID 50EE Pen eraser'   
+xinput enable 'MSFT0001:01 06CB:7F8F Touchpad'

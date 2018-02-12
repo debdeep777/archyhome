@@ -1,0 +1,2 @@
+
+beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
