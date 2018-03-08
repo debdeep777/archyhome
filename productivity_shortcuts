@@ -1,3 +1,22 @@
+Terminal based:
+https://lifehacker.com/5743814/become-a-command-line-ninja-with-these-time-saving-shortcuts
+
+In terminal !! means the last command!!!! And !$ is the argument of the last command.
+For example, if `vim /etc/file` gives you permission error, run sudo !! which is essentially `sudo vim /etc/file`.
+Also, `vim !$` means `vim /etc/file`.
+Useful situation: `mkdir longdirectoryname`. to enter the directory, do `cd !$`.
+
+To search for the last command with `cat` in it from the history, do
+`!cat:p`
+To run the last command with       `cat` in it ffom the history, do `!cat`
+To find commands in the history and run a desired one, do `history | grep cat` and say the command number 455 is the right one that you want to run. Do `!455`.
+
+Array approach for typing less:
+instead of `cp /etc/file /etc/file-old`, do `cp /etc/file{,-old}`
+or, instead of `mv /etc/file.txt /etc/file.pdf` fo ` mv /etc/file.{txt,pdf}`
+So, empty field inside {.,.} means itself.
+
+
 Shortcuts that I should be using but I don't 
 Vim: 
 
@@ -39,7 +58,40 @@ Navigating a multi-line sentence
 :earlier :later, undo branching:
 
 
-Awesomewm related shortcuts
+Awesomewm related shortcuts:
+
+modkey + j/k/h/l = browse by direction
+altkey + j/k = browse by order
+modkey + d = dmenu
+modkey + s = show help (not so helpful)
 
 
-              {description = "swap with previous client by index", group = "client"}),
+Layout manipulation:
+
+modkey + shift + j/k = swap with the next client by index
+modkey + F2 = rename current tag
+
+modkey + shift + h/l = increase/decrease number of master clients
+modkey + ctrl  + h/l = increase/decrease number of columns
+modkey + shift + enter = move to master
+
+The slight issue is: when you do modkey + ctrl + enter to set a client as master, it replaces the first client already set as master. So, if you want to add some client as master, first, move the topmost master client down using modkey + shift + j and then navigate to the client you intend to make master and then hit modkey + ctrl + enter. Downside is: the second master client is not master anymore :( Not sure if there is any shortcut for this.
+Alternatively, move the slave client up until it is the first slave client. Then use Modkey + shift + h to increase the number of master client and automatically the fist slave client will be move to be the last master client.
+
+modkey + u = jump to the urgent client (what is urgent client?)
+
+These two are new and should be used:
+modkey + tab = jump back to the previous client
+modkey + Esc = jump back to the previous taglist
+
+altkey + shift + l/h = increase/decrease master width
+
+
+modkey + ctrl + space = toggle floating
+modkey + t = keep on top
+
+modkey + shift + number = move the focused client to taglist number
+modkey + ctrl + shift + number = copy focussed client to taglist number, toggle
+
+
+

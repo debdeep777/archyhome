@@ -75,6 +75,11 @@ awful.spawn("nm-applet")
 --awful.spawn("redshift")
 awful.spawn("xfce4-power-manager") --brightness keys
 awful.spawn("onboard") --onscreen keyboard --needs options
+-- For some reason pulseaudio does not run at startup, found that out by running xfce4-taskmanager.
+-- So now manually running it.
+awful.spawn("pulseaudio --start --log-target=syslog")
+-- to freeze the mouse while touching
+awful.spawn("mousefreeze")
 
 
 
@@ -180,7 +185,7 @@ mytextclock = wibox.widget.textclock()
 --Use-created widget placements--------------------------
 
    datewidget = wibox.widget.textbox()
-   local datestring = txtcol("%b ", base1) .. txtcol("%d", base1) .. txtcol("%l:%M", base3)
+   local datestring = txtcol("%b", base1) .. txtcol("%d", base3) .. txtcol("%a", base1) .. txtcol("%l:%M", base3)
     vicious.register(datewidget, vicious.widgets.date, datestring)
 
     -- memwidget = wibox.widget.textbox()
@@ -237,6 +242,10 @@ mytextclock = wibox.widget.textclock()
       stops = { { 0, red }, { 0.5, orange }, { 1, green }}})
 
     vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 5)
+
+	cpuwidget:buttons(awful.util.table.join(
+	awful.button({ }, 1, function () awful.spawn("xfce4-taskmanager") end)
+	))
 
 -- volume
  volumewidget = wibox.widget.progressbar()
@@ -306,7 +315,7 @@ recdata:buttons(awful.util.table.join(
  ))       
 
  -- restart the input devices
- reinput = wibox.widget.textbox("△ ")
+ reinput = wibox.widget.textbox(" △ ")
  reinput:buttons(awful.util.table.join(
   awful.button({}, 1, function () awful.spawn("reinput") end)
   ))
@@ -485,6 +494,59 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
 		vicious.force({volumewidget,})
         end), 
 ----------------------------------
+-- dynamic tagging
+-- taken from lain util init.lua, modified: delete function name and put inside qwful.key
+-- renaming a taglist
+awful.key({ modkey,  }, "F2",
+              function ()
+                    awful.prompt.run {
+                      prompt       = "Rename: ",
+                      text         = awful.tag.selected().name,
+                      textbox      = awful.screen.focused().mypromptbox.widget,
+                      exe_callback = function (s) awful.tag.selected().name = s end,
+                  }
+            end,
+            {description = "rename tag", group = "awesome"}),
+
+-- Add a new tag
+awful.key({ modkey, "Shift"  }, "n",
+function ()
+    awful.prompt.run {
+        prompt       = "New tag: ",
+        textbox      = awful.screen.focused().mypromptbox.widget,
+        exe_callback = function(name)
+            if not name or #name == 0 then return end
+            awful.tag.add(name, { screen = awful.screen.focused(), layout = layout or awful.layout.suit.tile }):view_only()
+        end,
+    }
+end,
+            {description = "add new tag", group = "awesome"}),
+
+-- Delete current tag
+-- Any rule set on the tag shall be broken
+awful.key({ modkey, "Shift"  }, "d",
+function ()
+    local t = awful.screen.focused().selected_tag
+    if not t then return end
+    t:delete()
+end,
+
+            {description = "delete current tag", group = "awesome"}),
+-- }}}
+
+
+
+---- Dynamic tagging
+---- requires lain
+--awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end),
+--awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end),
+--awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end),  -- move to previous tag
+--awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end),  -- move to next tag
+--awful.key({ modkey, "Shift" }, "d", function () lain.util.delete_tag() end),
+---------------------------------------
+
+
+
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
@@ -632,6 +694,7 @@ clientkeys = awful.util.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
+
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
@@ -779,6 +842,8 @@ awful.rules.rules = {
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = {} },
+  -- Start windows as slave by default
+  { rule = { }, properties = { }, callback = awful.client.setslave },
 
 }
 -- }}}
