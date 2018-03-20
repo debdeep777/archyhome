@@ -48,6 +48,15 @@ braces and brackets with pinky as well
 * g Ctrl+g to get work/line/char count and just ctrl+g to show the file info (also :%) and number of lines etc. 
 * g- or :earlier to return the buffer to the earlier state, like undo u but does not erase the other undo branch. Similarly g+ and :later. Finally :earlier 1m or 1h or 5f (f for number of save times ago)
 
+Using vim-surround:
+ 
+* cs({ = Change the surrounding () to {} 
+* ds{} = Delete surrounding {} 
+* ys = Add surrounding things. For example, ysiw{} will add {} to current word (iw). For example, 0ys$) will enclose the current sentence with (). Or, yst}) to enclose from current position till the next } with ()
+* To add to a visual selection, use S instead of s
+* While adding or changing, use } instead of { to add spaces 
+* specific use: type anything other than {}()[]'" and it will be considered as a html tag <tag> </tag>
+
 
 Questions:
 Create a new line at the cursor point without going into insert mode
@@ -64,7 +73,6 @@ modkey + j/k/h/l = browse by direction
 altkey + j/k = browse by order
 modkey + d = dmenu
 modkey + s = show help (not so helpful)
-
 
 Layout manipulation:
 
@@ -93,5 +101,11 @@ modkey + t = keep on top
 modkey + shift + number = move the focused client to taglist number
 modkey + ctrl + shift + number = copy focussed client to taglist number, toggle
 
+Added myself: 
+modkey + shift + n = create a new tag
+modkey + shift + d = delete a tag
+modkey + F2 = rename a tag
 
 
+TODO:
+Find out how to restart xinput without restarting, possibly via modprobe.

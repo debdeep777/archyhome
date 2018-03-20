@@ -303,11 +303,15 @@ touch = wibox.widget.textbox("↺ ")
 touch:buttons(awful.util.table.join(
  awful.button({ }, 1, function () awful.spawn("xterm -e toggle-rotate.sh") end)
  ))       
+
 --Auto-change brightness
 light = wibox.widget.textbox("☼ ")
 light:buttons(awful.util.table.join(
- awful.button({ }, 1, function () awful.spawn("lumi") end)
+awful.button({ }, 1, function () awful.spawn("lumi") end),
+awful.button({ }, 4, function () awful.spawn("xbacklight -inc 5")  end),
+awful.button({ }, 5, function () awful.spawn("xbacklight -dec 5")  end)
  ))       
+
 --Record light data
 recdata = wibox.widget.textbox("✎ ")
 recdata:buttons(awful.util.table.join(
@@ -317,7 +321,7 @@ recdata:buttons(awful.util.table.join(
  -- restart the input devices
  reinput = wibox.widget.textbox(" △ ")
  reinput:buttons(awful.util.table.join(
-  awful.button({}, 1, function () awful.spawn("reinput") end)
+  awful.button({}, 1, function () awful.spawn("xterm -e reinput") end)
   ))
 
 --options for restarting the input devices in case they malfunction in convertible mode
