@@ -47,13 +47,14 @@ braces and brackets with pinky as well
 * Ctrl+A, Ctrl+X	Increment, or decrement the first number found after the cursor
 * g Ctrl+g to get work/line/char count and just ctrl+g to show the file info (also :%) and number of lines etc. 
 * g- or :earlier to return the buffer to the earlier state, like undo u but does not erase the other undo branch. Similarly g+ and :later. Finally :earlier 1m or 1h or 5f (f for number of save times ago)
+* matching or unmathed braces: [[ to jump to the previous opening brace. Similarly ]]. Also, [{ [( will take you to the previous unmatched opening brace and parenthesis. Similarly for [} and [).
 
 Using vim-surround:
  
 * cs({ = Change the surrounding () to {} 
 * ds{} = Delete surrounding {} 
 * ys = Add surrounding things. For example, ysiw{} will add {} to current word (iw). For example, 0ys$) will enclose the current sentence with (). Or, yst}) to enclose from current position till the next } with ()
-* To add to a visual selection, use S instead of s
+* To add to a visual selection, use S to add enclosures. For example, do S' to enclose a visual selection with ''.
 * While adding or changing, use } instead of { to add spaces 
 * specific use: type anything other than {}()[]'" and it will be considered as a html tag <tag> </tag>
 
