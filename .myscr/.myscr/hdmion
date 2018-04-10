@@ -1,2 +1,0 @@
-xrandr --output HDMI-0 --auto
-cp .asoundrc.hdmi .asoundrc

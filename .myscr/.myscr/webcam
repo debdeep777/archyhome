@@ -1,3 +1,0 @@
-# To take pictures using mplayer by pressing the s key
-echo 'Press s to take a snap.'
-mplayer -vf screenshot tv://

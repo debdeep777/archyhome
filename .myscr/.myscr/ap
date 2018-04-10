@@ -1,7 +1,0 @@
-# Stopping netctl from managing wlp6s0, auto-connect etc. Will start on reboot
-systemctl stop netctl-auto@wlp6s0b1
-
-# Running the access point
-cd ~/.myscr/create_ap/
-./create_ap --no-virt wlp6s0b1 enp7s0 rope bolbona123
-

@@ -1,2 +1,0 @@
-# Down the wlan
-ifconfig wlp6s0 down

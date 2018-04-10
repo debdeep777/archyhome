@@ -1,1 +1,0 @@
-google-chrome-stable --no-sandbox --user-data-dir=~/.chrome www.netflix.com

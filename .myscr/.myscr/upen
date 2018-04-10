@@ -1,7 +1,0 @@
-currparent='/'$(pwd | awk -F '/' '{printf $2}')
-if [ $currparent == '/pen' ]
-then
-	echo 'You are inside pen. Please cd.'
-else
-	umount /pen
-fi
