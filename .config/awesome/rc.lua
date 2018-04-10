@@ -261,37 +261,37 @@ mytextclock = wibox.widget.textclock()
 --   end, 29, "Master")
 
 
-    volbox = wibox.widget {
-    {
-        widget        = volumewidget,
-      background_color = base00,
-        --color         = green,
-	border_width  = 0.5,
-	border_color  = base2,
-      },
-      --forced_height = 10,
-      forced_width  = 20,
-      direction     = 'east',
-      layout        = wibox.container.rotate,
-    }
-    --membox = wibox.container.margin(membox, 1, 1, 3, 3)
-    -- Register memory widget
-    vicious.register(volumewidget, vicious.widgets.volume, function(widget, args)
-	    if args[2] == "♩" then 
-		    volumewidget:set_color(orange)
-	    else
-		    volumewidget:set_color(green)
-	    end
-	    return args[1]
-    end, 29, "Master")
+volbox = wibox.widget {
+	{
+		widget        = volumewidget,
+		background_color = base00,
+		--color         = green,
+		border_width  = 0.5,
+		border_color  = base2,
+	},
+	--forced_height = 10,
+	forced_width  = 20,
+	direction     = 'east',
+	layout        = wibox.container.rotate,
+}
+--membox = wibox.container.margin(membox, 1, 1, 3, 3)
+-- Register memory widget
+vicious.register(volumewidget, vicious.widgets.volume, function(widget, args)
+	if args[2] == "♩" then 
+		volumewidget:set_color(orange)
+	else
+		volumewidget:set_color(green)
+	end
+	return args[1]
+end, 29, "Master")
 
-
-
+-- volcontrol is a myscr script, check if exists
 volumewidget:buttons(awful.util.table.join(
 --awful.button({ }, 4, function () awful.spawn("amixer -q set Master 5%+") vicious.force({volumewidget})       end),
-awful.button({ }, 4, function () awful.spawn("pactl set-sink-volume 0 +5%") vicious.force({volumewidget})       end),
-awful.button({ }, 5, function () awful.spawn("pactl set-sink-volume 0 -5%") vicious.force({volumewidget})       end),
-awful.button({ }, 1, function () awful.spawn("pactl set-sink-mute 0 toggle") vicious.force({volumewidget}) end),
+awful.button({ }, 4, function () awful.spawn("volcontrol +5%") vicious.force({volumewidget})       end),
+awful.button({ }, 5, function () awful.spawn("volcontrol -5%") vicious.force({volumewidget})       end),
+-- added one more update ( vicious.force ) for the volumewidget so that it captures the muted state properly
+awful.button({ }, 1, function () awful.spawn("volcontrol mute") vicious.force({volumewidget})  vicious.force({volumewidget}) end),
 awful.button({ }, 3, function () awful.spawn("pavucontrol") vicious.force({volumewidget}) end)
 ))       
 

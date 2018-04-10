@@ -1,0 +1,11 @@
+slock
+# To enable suspend on lid
+# Create the directory and file called /etc/acpi/local/lid.post 
+# with the following content:
+# 
+##!/bin/bash
+#if grep -q closed /proc/acpi/button/lid/*/state
+#then
+#	/usr/bin/slock
+#fi
+

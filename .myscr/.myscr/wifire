@@ -1,0 +1,15 @@
+# Reconnect wifi and reload firefox's latest tab
+
+# Reconnect wifi
+wifi
+
+# Sending Firefox the reload command, CTRL+R
+xdotool search --desktop 3 --class "Firefox" key --clearmodifiers "CTRL+R"
+# Here, --desktop 3 is necessary without which xdotools was unable to activate
+# The Number 3 is because firefox is located in the 4th taglist in awesome window manager. The count goes from 0,1,2,3,4,.. etc
+# You can find the desktop number using: xprop | grep WM_DESKTOP
+# and then clicking on the window with mouse
+# Observation: this --desktop 3 is not needed at all, it automatically searches for all windows with --class "Firefox" and finds it.
+
+# Activating the firefox window
+xdotool search --desktop 3 --class "Firefox" windowactivate 

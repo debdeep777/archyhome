@@ -1,0 +1,32 @@
+## Open the file "TODO new_installation" for occasional editing and consulting
+# TO avoid multiple sessions, we want to jump to the open instance
+# see .myscr/wifire for another interesting example
+# If accessing from a remote location, or a tty, open in existing terminal
+
+SESSION_TYPE='local'
+#determine if remote connection
+#code taken from 
+#http://unix.stackexchange.com/questions/9605/how-can-i-detect-if-the-shell-is-controlled-from-ssh
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE='remote'
+# many other tests omitted
+else
+  case $(ps -o comm= -p $PPID) in
+    sshd|*/sshd) SESSION_TYPE='remote'
+  esac
+fi
+text=$(tty)
+
+
+if [ "$SESSION_TYPE" == "remote" ] || [[ $(tty) == *"/dev/tty"* ]] # note the spaces on both sides of == and the quote around the $variable_name, double bracket fro the second comparison
+then
+	vim -S '/storage/Lenovo/lin/TODOsettings.vim' '/storage/Lenovo/lin/TODO new_installation'
+elif [ $(xdotool search --name "TODO new_installation") ]
+then
+	 xdotool search --name "TODO new_installation" windowactivate
+else
+	 xterm -e vim -S '/storage/Lenovo/lin/TODOsettings.vim' '/storage/Lenovo/lin/TODO new_installation' &
+fi
+
+## Wanted to run in server mode and what not, not needed
+#vim --servername TODONEWINSTALLATION --remote '/storage/Lenovo/lin/TODO new_installation'

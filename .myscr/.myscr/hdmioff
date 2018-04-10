@@ -1,0 +1,2 @@
+xrandr --output LVDS-0 --auto --output HDMI-0 --off
+cp .asoundrc.main .asoundrc

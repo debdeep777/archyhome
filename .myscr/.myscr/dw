@@ -1,0 +1,6 @@
+#!/bin/bash
+# Print the first $1 number of downloaded filenames, sorted by latest first
+cd ~/Downloads
+ls -t | head -${1:-5}
+# To indicate that the default value of $1 is 5
+

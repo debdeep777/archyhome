@@ -1,0 +1,22 @@
+# Should NOT be used. Loses vimrc if ran twice
+cd ~
+
+echo "Changing .Xresources. Backup kept."
+
+cp .Xresources .Xresources.backup
+cp .Xresources.sol_blackish.dark .Xresources
+xrdb .Xresources
+
+echo " Changing .vimrc. Backup Kept."
+
+cp .vimrc .vimrc.backup
+cp .vimrc.dark .vimrc
+
+
+echo "Changing theme.lua for awesome. backup kept."
+cd .config/awesome/themes/multicolor/
+cp theme.lua.dark.black theme.lua
+
+
+echo "There is another version, check .myscr scripts in details."
+echo "Press Win+Ctrl+R" to refresh awesome.

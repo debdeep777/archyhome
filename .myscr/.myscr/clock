@@ -1,0 +1,2 @@
+# Clock application with preferable settings to be ran while locking the screen (defined in rc.lua)
+dclock -nobell -nomiltime -tails -noscroll -noblink -nofade -noalarm -bd "black" -bg "black" -fg "red" -led_off "black"

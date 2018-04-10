@@ -1,0 +1,7 @@
+# Disable mouse until some idle time after last keystroke
+# -t to allow mouse movement, but no click or tap, more realistic
+# -K for ignore Ctrl Alt keys etc
+# -d to run in background
+
+#this userscript mousefreeze (which runs syndaemon) is causing issue like depressed Win key while erasing the keyboard because the polling interval of syndaemon makes the key release undetected if presses too quickly
+syndaemon -i 0.75 -t -K -R

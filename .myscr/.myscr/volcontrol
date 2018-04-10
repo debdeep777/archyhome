@@ -1,0 +1,17 @@
+#!/bin/bash
+# controls the volume of the first sink using pactl
+# to be used in awesomerc
+# the sink name keeps changing on attachment of hdmi, so grab the first one
+
+# the index of the first sink available
+sink1=$(pactl list sinks | grep Sink | head | awk -F '#' '{print $2}')
+
+# Usage: if the first argument is anything other than 'mute, interpret it as set-sink-volume $sink1, otherwise, toggle mute
+case "$1" in
+	mute)
+		pactl set-sink-mute $sink1 toggle
+		;;
+	*)
+		pactl set-sink-volume $sink1 $1 $2
+		;;
+esac

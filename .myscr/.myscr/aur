@@ -1,0 +1,28 @@
+# Script to install packages from AUR quickly
+
+# Building the databse
+pacman -Sy
+
+# Making a temporary directory
+mkdir tempo_direct_del
+
+# Extracting the archive in it
+tar -xvf $1 -C tempo_direct_del
+
+# cd into it
+cd tempo_direct_del
+cd *
+
+# Running makepkg
+makepkg -s --asroot
+
+# Installing the package
+pacman -U *.xz
+
+# Coming out of the directory
+cd ../..
+
+# Deleting the temporary directory
+rm -r tempo_direct_del
+
+

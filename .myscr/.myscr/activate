@@ -1,0 +1,14 @@
+# Turn any file into shell script with git support
+# To be ran from anywhere 
+echo 'Making the file executable...'
+chmod +x $1
+echo 'Moving it to .myscr...'
+mv $1 ~/.myscr/
+echo 'Adding to the git list..'
+# Need to run ~'s git
+cd ~
+onlyfile=$(basename $1)
+# Need to extract the file name from a possible path name. basename does that.
+
+git add ~/.myscr/$onlyfile
+echo 'Done.'

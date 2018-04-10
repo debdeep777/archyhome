@@ -1,0 +1,7 @@
+import -window root -resize 25% screencapture.png;
+windowavg=$(convert screencapture.png -colorspace gray -format "%[fx:100*mean]" info:);
+echo $windowavg
+rm screencapture.png;
+brval=$(echo '100 - ' $windowavg | bc -l)
+xbacklight -set $brval
+
