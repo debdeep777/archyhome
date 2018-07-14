@@ -11,7 +11,9 @@
 #
 
 # display from xrandr
-Display='eDP1'
+#Display='eDP1'
+# get automatically
+Display=$(xrandr -q | head -2 | grep connected | awk -F ' ' '{print $1}');
 
 # Configure these to match your hardware (names taken from `xinput` output).
 TOUCHPAD='MSFT0001:01 06CB:7F8F Touchpad'
