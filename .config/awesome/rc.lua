@@ -185,12 +185,13 @@ mytextclock = wibox.widget.textclock()
 --Use-created widget placements--------------------------
 
    datewidget = wibox.widget.textbox()
-   local datestring = txtcol("%b", base1) .. txtcol("%d", base3) .. txtcol("%a", base1) .. txtcol("%l:%M", base3)
+   local datestring = txtcol("%b", base1) .. txtcol("%d", base3) .. txtcol("%a", base1) .. txtcol("%I:%M", base3)
     vicious.register(datewidget, vicious.widgets.date, datestring)
 
-    -- memwidget = wibox.widget.textbox()
-    --vicious.cache(vicious.widgets.mem)
-    --vicious.register(memwidget, vicious.widgets.mem, "$1%", 5)
+
+--    -- memwidget = wibox.widget.textbox()
+--    --vicious.cache(vicious.widgets.mem)
+--    --vicious.register(memwidget, vicious.widgets.mem, "$1%", 5)
 
    -- -- Create memory wibox 
     memwidget = wibox.widget.progressbar()
@@ -467,6 +468,8 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
     awful.key({ altkey, }, "c", function () awful.spawn(terminal .. " -e vim +Calendar") end),
     -- for xournal
     awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournal") end),
+    -- for Write, a xournal alternative, not open source but free, development stopped, not a good path
+    awful.key({ modkey, "Shift" }, "w", function () awful.spawn("/home/debdeep/Downloads/Write/Write") end),
 -- screen rotation
     awful.key({ "Control", altkey }, "Left", function () awful.spawn("rotate left") end),
     awful.key({ "Control", altkey }, "Right", function () awful.spawn("rotate right") end),
