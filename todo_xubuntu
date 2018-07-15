@@ -1,6 +1,9 @@
 install the new kernel 4.10.8
 supply .myscr, config files
-modify: in rotate script, set the display name e.g. 'eDP-1' from xrandr
+
+modify: in rotate script, set the display name e.g. 'eDP-1' from xrandr, if needed
+
+Install xournal from the patched version from xournal-patches by following the INSTALL file from the source code, satisfying the dependencies (see lin/TODO new installation), make and sudo make install
 
 xbacklight cannot find the right hardware: write in /etc/X11/xorg.conf
  Section "Device"
