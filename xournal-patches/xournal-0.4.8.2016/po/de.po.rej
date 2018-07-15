@@ -1,0 +1,27 @@
+--- po/de.po	2012-08-06 02:38:13.000000000 +0200
++++ po/de.po	2015-10-16 11:54:21.000000000 +0200
+@@ -704,6 +704,14 @@ msgstr ""
+ msgid "A4 (landscape)"
+ msgstr "A4 (Querformat)"
+ 
++#: src/xo-interface.c:2898
++msgid "A5"
++msgstr ""
++
++#: src/xo-interface.c:2899
++msgid "A5 (landscape)"
++msgstr "A5 (Querformat)"
++
+ #: src/xo-interface.c:2900
+ msgid "US Letter"
+ msgstr ""
+@@ -1261,3 +1269,9 @@ msgstr "Grafik-Dateien"
+ #, c-format
+ msgid "Error opening image '%s'"
+ msgstr "Fehler beim Öffnen der Grafik '%s'"
++
++
++# ../src/xo-interface.c:1588
++#, c-format
++msgid "New page after"
++msgstr "Neue Seite danach"

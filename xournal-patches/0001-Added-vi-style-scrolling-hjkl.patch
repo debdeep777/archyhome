@@ -1,0 +1,214 @@
+From 63bd4a8c20a3410d8795bede20e2a8e8511102e5 Mon Sep 17 00:00:00 2001
+From: francium <francium@francium.cc>
+Date: Thu, 13 Apr 2017 00:11:45 -0400
+Subject: [PATCH] Added vi style scrolling (hjkl).
+
+---
+ src/main.c         |  2 ++
+ src/xo-callbacks.c | 10 ++++++++++
+ src/xo-callbacks.h |  4 ++++
+ src/xo-file.c      |  4 ++++
+ src/xo-interface.c |  9 +++++++++
+ src/xo-misc.c      | 40 ++++++++++++++++++++++++++++++++++++++++
+ src/xo-misc.h      |  2 ++
+ src/xournal.h      |  1 +
+ 8 files changed, 72 insertions(+)
+
+diff --git a/src/main.c b/src/main.c
+index 7d4e057..24d20f2 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -253,6 +253,8 @@ void init_stuff (int argc, char *argv[])
+     GTK_CHECK_MENU_ITEM(GET_COMPONENT("optionsAutosaveXoj")), ui.autosave_enabled);
+   gtk_check_menu_item_set_active(
+     GTK_CHECK_MENU_ITEM(GET_COMPONENT("optionsLeftHanded")), ui.left_handed);
++  gtk_check_menu_item_set_active(
++    GTK_CHECK_MENU_ITEM(GET_COMPONENT("optionsViMovement")), ui.vi_movement);
+   gtk_check_menu_item_set_active(
+     GTK_CHECK_MENU_ITEM(GET_COMPONENT("optionsShortenMenus")), ui.shorten_menus);
+   gtk_check_menu_item_set_active(
+diff --git a/src/xo-callbacks.c b/src/xo-callbacks.c
+index efceffe..b0b083f 100644
+--- a/src/xo-callbacks.c
++++ b/src/xo-callbacks.c
+@@ -3704,6 +3704,16 @@ on_optionsLeftHanded_activate          (GtkMenuItem     *menuitem,
+     ui.left_handed?GTK_CORNER_TOP_RIGHT:GTK_CORNER_TOP_LEFT);
+ }
+ 
++void
++on_optionsViMovement_activate          (GtkMenuItem     *menuitem,
++                                        gpointer         user_data)
++{
++  ui.vi_movement = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM (menuitem));
++
++  if (ui.vi_movement) add_vi_scroll_bindings();
++  else remove_vi_scroll_bindings();
++}
++
+ void
+ on_optionsShortenMenus_activate        (GtkMenuItem     *menuitem,  
+                                         gpointer         user_data)
+diff --git a/src/xo-callbacks.h b/src/xo-callbacks.h
+index 17c0dfa..e65245c 100644
+--- a/src/xo-callbacks.h
++++ b/src/xo-callbacks.h
+@@ -638,6 +638,10 @@ void
+ on_optionsLeftHanded_activate          (GtkMenuItem     *menuitem,
+                                         gpointer         user_data);
+ 
++void
++on_optionsViMovement_activate          (GtkMenuItem     *menuitem,
++                                        gpointer         user_data);
++
+ void
+ on_optionsShortenMenus_activate        (GtkMenuItem     *menuitem,
+                                         gpointer         user_data);
+diff --git a/src/xo-file.c b/src/xo-file.c
+index 0285b2b..dcca956 100644
+--- a/src/xo-file.c
++++ b/src/xo-file.c
+@@ -1950,6 +1950,9 @@ void save_config_to_file(void)
+   update_keyval("general", "interface_lefthanded",
+     _(" interface has left-handed scrollbar (true/false)"),
+     g_strdup(ui.left_handed?"true":"false"));
++  update_keyval("general", "interface_viMovement",
++    _(" enable Vi style movement (hjkl)"),
++    g_strdup(ui.vi_movement?"true":"false"));
+   update_keyval("general", "shorten_menus",
+     _(" hide some unwanted menu or toolbar items (true/false)"),
+     g_strdup(ui.shorten_menus?"true":"false"));
+@@ -2349,6 +2352,7 @@ void load_config_from_file(void)
+   parse_keyval_vorderlist("general", "interface_order", ui.vertical_order[0]);
+   parse_keyval_vorderlist("general", "interface_fullscreen", ui.vertical_order[1]);
+   parse_keyval_boolean("general", "interface_lefthanded", &ui.left_handed);
++  parse_keyval_boolean("general", "interface_viMovement", &ui.vi_movement);
+   parse_keyval_boolean("general", "shorten_menus", &ui.shorten_menus);
+   if (parse_keyval_string("general", "shorten_menu_items", &str))
+     if (str!=NULL) { g_free(ui.shorten_menu_items); ui.shorten_menu_items = str; }
+diff --git a/src/xo-interface.c b/src/xo-interface.c
+index 9a05776..78965c2 100644
+--- a/src/xo-interface.c
++++ b/src/xo-interface.c
+@@ -259,6 +259,7 @@ create_winMain (void)
+   GtkWidget *optionsAutoloadPdfXoj;
+   GtkWidget *optionsAutosaveXoj;
+   GtkWidget *optionsLeftHanded;
++  GtkWidget *optionsViMovement;
+   GtkWidget *optionsShortenMenus;
+   GtkWidget *optionsPenCursor;
+   GtkWidget *separator21;
+@@ -1450,6 +1451,10 @@ create_winMain (void)
+   gtk_widget_show (optionsLeftHanded);
+   gtk_container_add (GTK_CONTAINER (menuOptions_menu), optionsLeftHanded);
+ 
++  optionsViMovement = gtk_check_menu_item_new_with_mnemonic (_("Vi Movement"));
++  gtk_widget_show (optionsViMovement);
++  gtk_container_add (GTK_CONTAINER (menuOptions_menu), optionsViMovement);
++
+   optionsShortenMenus = gtk_check_menu_item_new_with_mnemonic (_("Shorten _Menus"));
+   gtk_widget_show (optionsShortenMenus);
+   gtk_container_add (GTK_CONTAINER (menuOptions_menu), optionsShortenMenus);
+@@ -2470,6 +2475,9 @@ create_winMain (void)
+   g_signal_connect ((gpointer) optionsLeftHanded, "toggled",
+                     G_CALLBACK (on_optionsLeftHanded_activate),
+                     NULL);
++  g_signal_connect ((gpointer) optionsViMovement, "toggled",
++                    G_CALLBACK (on_optionsViMovement_activate),
++                    NULL);
+   g_signal_connect ((gpointer) optionsShortenMenus, "toggled",
+                     G_CALLBACK (on_optionsShortenMenus_activate),
+                     NULL);
+@@ -2854,6 +2862,7 @@ create_winMain (void)
+   GLADE_HOOKUP_OBJECT (winMain, optionsAutoloadPdfXoj, "optionsAutoloadPdfXoj");
+   GLADE_HOOKUP_OBJECT (winMain, optionsAutosaveXoj, "optionsAutosaveXoj");
+   GLADE_HOOKUP_OBJECT (winMain, optionsLeftHanded, "optionsLeftHanded");
++  GLADE_HOOKUP_OBJECT (winMain, optionsViMovement, "optionsViMovement");
+   GLADE_HOOKUP_OBJECT (winMain, optionsShortenMenus, "optionsShortenMenus");
+   GLADE_HOOKUP_OBJECT (winMain, optionsPenCursor, "optionsPenCursor");
+   GLADE_HOOKUP_OBJECT (winMain, separator21, "separator21");
+diff --git a/src/xo-misc.c b/src/xo-misc.c
+index 330d5ee..6f98e71 100644
+--- a/src/xo-misc.c
++++ b/src/xo-misc.c
+@@ -2233,6 +2233,44 @@ void allow_all_accels(void)
+       "can-activate-accel", G_CALLBACK(can_accel), NULL);
+ }
+ 
++void add_vi_scroll_bindings(void)
++{
++  GtkBindingSet *binding_set = gtk_binding_set_by_class(
++     G_OBJECT_GET_CLASS(GET_COMPONENT("scrolledwindowMain")));
++
++  // up
++  gtk_binding_entry_add_signal(binding_set, GDK_k, 0,
++    "scroll_child", 2, GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_BACKWARD,
++    G_TYPE_BOOLEAN, FALSE);
++  // down
++  gtk_binding_entry_add_signal(binding_set, GDK_j, 0,
++    "scroll_child", 2, GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_FORWARD,
++    G_TYPE_BOOLEAN, FALSE);
++  // left
++  gtk_binding_entry_add_signal(binding_set, GDK_h, 0,
++    "scroll_child", 2, GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_BACKWARD,
++    G_TYPE_BOOLEAN, TRUE);
++  // right
++  gtk_binding_entry_add_signal(binding_set, GDK_l, 0,
++    "scroll_child", 2, GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_STEP_FORWARD,
++    G_TYPE_BOOLEAN, TRUE);
++}
++
++void remove_vi_scroll_bindings(void)
++{
++  GtkBindingSet *binding_set = gtk_binding_set_by_class(
++     G_OBJECT_GET_CLASS(GET_COMPONENT("scrolledwindowMain")));
++
++  // up
++  gtk_binding_entry_remove(binding_set, GDK_k, 0);
++  // down
++  gtk_binding_entry_remove(binding_set, GDK_j, 0);
++  // left
++  gtk_binding_entry_remove(binding_set, GDK_h, 0);
++  // right
++  gtk_binding_entry_remove(binding_set, GDK_l, 0);
++}
++
+ void add_scroll_bindings(void)
+ {
+   GtkBindingSet *binding_set;
+@@ -2270,6 +2308,8 @@ void add_scroll_bindings(void)
+   gtk_binding_entry_add_signal(binding_set, GDK_space, GDK_SHIFT_MASK,
+     "scroll_child", 2, GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_PAGE_UP, 
+     G_TYPE_BOOLEAN, TRUE);  
++
++  if (ui.vi_movement) add_vi_scroll_bindings();
+ }
+ 
+ gboolean is_event_within_textview(GdkEventButton *event)
+diff --git a/src/xo-misc.h b/src/xo-misc.h
+index 177ab36..9562c1e 100644
+--- a/src/xo-misc.h
++++ b/src/xo-misc.h
+@@ -112,6 +112,8 @@ void process_mapping_activate(GtkMenuItem *menuitem, int m, int tool);
+ void allow_all_accels(void);
+ gboolean can_accel(GtkWidget *widget, guint id, gpointer data);
+ void add_scroll_bindings(void);
++void add_vi_scroll_bindings(void);
++void remove_vi_scroll_bindings(void);
+ 
+ gboolean is_event_within_textview(GdkEventButton *event);
+ 
+diff --git a/src/xournal.h b/src/xournal.h
+index 3599e77..d51b8c1 100644
+--- a/src/xournal.h
++++ b/src/xournal.h
+@@ -339,6 +339,7 @@ typedef struct UIData {
+   gdouble hiliter_opacity;
+   guint hiliter_alpha_mask;
+   gboolean left_handed; // left-handed mode?
++  gboolean vi_movement; // vi movement mode?
+   gboolean auto_save_prefs; // auto-save preferences ?
+   gboolean shorten_menus; // shorten menus ?
+   gchar *shorten_menu_items; // which items to hide
+-- 
+2.17.1
+

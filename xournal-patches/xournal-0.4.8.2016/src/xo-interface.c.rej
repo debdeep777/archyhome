@@ -1,0 +1,15 @@
+--- src/xo-interface.c	2014-06-28 21:55:28.000000000 +0200
++++ src/xo-interface.c	2015-10-16 11:54:50.000000000 +0200
+@@ -3001,9 +3023,11 @@ create_papersizeDialog (void)
+ 
+   comboStdSizes = gtk_combo_box_new_text ();
+   gtk_widget_show (comboStdSizes);
+-  gtk_box_pack_start (GTK_BOX (hbox2), comboStdSizes, TRUE, TRUE, 5);
++  gtk_box_pack_start (GTK_BOX (hbox2), comboStdSizes, TRUE, TRUE, 7);
+   gtk_combo_box_append_text (GTK_COMBO_BOX (comboStdSizes), _("A4"));
+   gtk_combo_box_append_text (GTK_COMBO_BOX (comboStdSizes), _("A4 (landscape)"));
++  gtk_combo_box_append_text (GTK_COMBO_BOX (comboStdSizes), _("A5"));
++  gtk_combo_box_append_text (GTK_COMBO_BOX (comboStdSizes), _("A5 (landscape)"));
+   gtk_combo_box_append_text (GTK_COMBO_BOX (comboStdSizes), _("US Letter"));
+   gtk_combo_box_append_text (GTK_COMBO_BOX (comboStdSizes), _("US Letter (landscape)"));
+   gtk_combo_box_append_text (GTK_COMBO_BOX (comboStdSizes), _("Custom"));

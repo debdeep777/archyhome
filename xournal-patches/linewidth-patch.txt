@@ -1,0 +1,507 @@
+diff --git a/src/xo-clipboard.c b/src/xo-clipboard.c
+index 7b8c43d..9c17d67 100644
+--- a/src/xo-clipboard.c
++++ b/src/xo-clipboard.c
+@@ -100,7 +100,7 @@ void selection_to_clip(void)
+             + sizeof(int) // num_points
+             + 2*item->path->num_points*sizeof(double); // the points
+       if (item->brush.variable_width)
+-        bufsz += (item->path->num_points-1)*sizeof(double); // the widths
++        bufsz += (item->path->num_points)*sizeof(double); // the widths
+     }
+     else if (item->type == ITEM_TEXT) {
+       bufsz+= sizeof(int) // type
+@@ -148,8 +148,8 @@ void selection_to_clip(void)
+       g_memmove(p, item->path->coords, 2*item->path->num_points*sizeof(double));
+       p+= 2*item->path->num_points*sizeof(double);
+       if (item->brush.variable_width) {
+-        g_memmove(p, item->widths, (item->path->num_points-1)*sizeof(double));
+-        p+= (item->path->num_points-1)*sizeof(double);
++        g_memmove(p, item->widths, (item->path->num_points)*sizeof(double));
++        p+= (item->path->num_points)*sizeof(double);
+       }
+     }
+     if (item->type == ITEM_TEXT) {
+@@ -258,8 +258,8 @@ void clipboard_paste_from_xournal(GtkSelectionData *sel_data)
+       }
+       p+= 2*item->path->num_points*sizeof(double);
+       if (item->brush.variable_width) {
+-        item->widths = g_memdup(p, (item->path->num_points-1)*sizeof(double));
+-        p+= (item->path->num_points-1)*sizeof(double);
++        item->widths = g_memdup(p, (item->path->num_points)*sizeof(double));
++        p+= (item->path->num_points)*sizeof(double);
+       }
+       else item->widths = NULL;
+       update_item_bbox(item);
+diff --git a/src/xo-file.c b/src/xo-file.c
+index 5c00f17..8566d59 100644
+--- a/src/xo-file.c
++++ b/src/xo-file.c
+@@ -259,11 +259,14 @@ gboolean save_journal(const char *filename, gboolean is_auto)
+             gzputs(f, color_names[item->brush.color_no]);
+           else
+             gzprintf(f, "#%08x", item->brush.color_rgba);
+-          gzprintf(f, "\" width=\"%.2f", item->brush.thickness);
+-          if (item->brush.variable_width)
+-            for (i=0;i<item->path->num_points-1;i++)
+-              gzprintf(f, " %.2f", item->widths[i]);
+-          gzprintf(f, "\">\n");
++          gzprintf(f, "\" width=\"%.2f\"", item->brush.thickness);
++          if (item->brush.variable_width) {
++            gzprintf(f, " widths=\"");
++            for (i=0;i<item->path->num_points;i++)
++              gzprintf(f, " %.2f"+(i==0), item->widths[i]);  // greetings from the IOCCC ;-)
++            gzprintf(f, "\"");
++          }
++          gzprintf(f, ">\n");
+           for (i=0;i<2*item->path->num_points;i++)
+             gzprintf(f, "%.2f ", item->path->coords[i]);
+           gzprintf(f, "\n</stroke>\n");
+@@ -718,6 +721,7 @@ void xoj_parser_start_element(GMarkupParseContext *context,
+     tmpItem->path = NULL;
+     tmpItem->canvas_item = NULL;
+     tmpItem->widths = NULL;
++    tmpItem->brush.variable_width = FALSE;
+     tmpLayer->items = g_list_append(tmpLayer->items, tmpItem);
+     tmpLayer->nitems++;
+     // scan for tool, color, and width attributes
+@@ -728,7 +732,8 @@ void xoj_parser_start_element(GMarkupParseContext *context,
+         cleanup_numeric((gchar *)*attribute_values);
+         tmpItem->brush.thickness = g_ascii_strtod(*attribute_values, &ptr);
+         if (ptr == *attribute_values) *error = xoj_invalid();
+-        i = 0;
++        /* The following is only neede to read old xoj files */
++        i = 1;
+         while (*ptr!=0) {
+           realloc_cur_widths(i+1);
+           ui.cur_widths[i] = g_ascii_strtod(ptr, &tmpptr);
+@@ -736,16 +741,36 @@ void xoj_parser_start_element(GMarkupParseContext *context,
+           ptr = tmpptr;
+           i++;
+         }
+-        tmpItem->brush.variable_width = (i>0);
+-        if (i>0) {
++        if (i>1) {
++          if (tmpItem->brush.variable_width) *error = xoj_invalid();
+           tmpItem->brush.variable_width = TRUE;
++          ui.cur_widths[0] = ui.cur_widths[1];
++          ui.cur_widths[i-1] = ui.cur_widths[i-2]; // last width seems to be invalid
+           tmpItem->widths = (gdouble *) g_memdup(ui.cur_widths, i*sizeof(gdouble));
+-          ui.cur_path.num_points =  i+1;
++          ui.cur_path.num_points = i;
+         }
+         has_attr |= 1;
+       }
+-      else if (!strcmp(*attribute_names, "color")) {
++      else if (!strcmp(*attribute_names, "widths")) {
+         if (has_attr & 2) *error = xoj_invalid();
++        if (tmpItem->brush.variable_width) *error = xoj_invalid();
++        tmpItem->brush.variable_width = TRUE;
++        cleanup_numeric((gchar *)*attribute_values);
++        i = 0;
++        ptr = *attribute_values;
++        while (*ptr!=0) {
++          realloc_cur_widths(i+1);
++          ui.cur_widths[i] = g_ascii_strtod(ptr, &tmpptr);
++          if (tmpptr == ptr) break;
++          ptr = tmpptr;
++          i++;
++        }
++        tmpItem->widths = (gdouble *) g_memdup(ui.cur_widths, i*sizeof(gdouble));
++        ui.cur_path.num_points = i;
++        has_attr |= 2;
++      }
++      else if (!strcmp(*attribute_names, "color")) {
++        if (has_attr & 4) *error = xoj_invalid();
+         tmpItem->brush.color_no = COLOR_OTHER;
+         for (i=0; i<COLOR_MAX; i++)
+           if (!strcmp(*attribute_values, color_names[i])) {
+@@ -757,23 +782,23 @@ void xoj_parser_start_element(GMarkupParseContext *context,
+           tmpItem->brush.color_rgba = strtoul(*attribute_values + 1, &ptr, 16);
+           if (*ptr!=0) *error = xoj_invalid();
+         }
+-        has_attr |= 2;
++        has_attr |= 4;
+       }
+       else if (!strcmp(*attribute_names, "tool")) {
+-        if (has_attr & 4) *error = xoj_invalid();
++        if (has_attr & 8) *error = xoj_invalid();
+         tmpItem->brush.tool_type = -1;
+         for (i=0; i<NUM_STROKE_TOOLS; i++)
+           if (!strcmp(*attribute_values, tool_names[i])) {
+             tmpItem->brush.tool_type = i;
+           }
+         if (tmpItem->brush.tool_type == -1) *error = xoj_invalid();
+-        has_attr |= 4;
++        has_attr |= 8;
+       }
+       else *error = xoj_invalid();
+       attribute_names++;
+       attribute_values++;
+     }
+-    if (has_attr!=7) *error = xoj_invalid();
++    if ((has_attr|2)!=15) *error = xoj_invalid();
+     // finish filling the brush info
+     tmpItem->brush.thickness_no = 0;  // who cares ?
+     tmpItem->brush.tool_options = 0;  // who cares ?
+diff --git a/src/xo-misc.c b/src/xo-misc.c
+index 7895a64..49d16a2 100644
+--- a/src/xo-misc.c
++++ b/src/xo-misc.c
+@@ -625,12 +625,44 @@ void make_page_clipbox(struct Page *pg)
+   gnome_canvas_path_def_unref(pg_clip);
+ }
+ 
++void make_canvas_stroke_disc(struct Item *item, double * pt, double * w)
++{
++  gnome_canvas_item_new((GnomeCanvasGroup *) item->canvas_item,
++     gnome_canvas_ellipse_get_type(),
++     "x1", pt[0]-w[0]/2, "y1", pt[1]-w[0]/2,
++     "x2", pt[0]+w[0]/2, "y2", pt[1]+w[0]/2,
++     "fill-color-rgba", item->brush.color_rgba, NULL);
++}
++
++void make_canvas_stroke_trapeze(struct Item *item, double * pt, double * w)
++{
++  GnomeCanvasPoints poly;
++  double polypt[8];
++
++  poly.coords = polypt;
++  poly.num_points = 4;
++  poly.ref_count = 1;
++  gnome_canvas_get_butt_points(pt[0], pt[1], pt[2], pt[3], w[1], 0,
++    polypt+0, polypt+1, polypt+2, polypt+3);
++  gnome_canvas_get_butt_points(pt[2], pt[3], pt[0], pt[1], w[0], 0,
++    polypt+4, polypt+5, polypt+6, polypt+7);
++
++  gnome_canvas_item_new((GnomeCanvasGroup *) item->canvas_item,
++     gnome_canvas_polygon_get_type(), "points", &poly,
++     "fill-color-rgba", item->brush.color_rgba, NULL);
++
++}
++
++//int CNTP, CNTS, CNTT; // profiling...
++
+ void make_canvas_item_one(GnomeCanvasGroup *group, struct Item *item)
+ {
+   PangoFontDescription *font_desc;
+   GnomeCanvasPoints points;
+   GtkWidget *dialog;
+-  int j;
++  int j0, j;
++  gboolean disc_done;
++  double wmin, wmax;
+ 
+   if (item->type == ITEM_STROKE) {
+     if (!item->brush.variable_width)
+@@ -642,16 +674,49 @@ void make_canvas_item_one(GnomeCanvasGroup *group, struct Item *item)
+     else {
+       item->canvas_item = gnome_canvas_item_new(group,
+             gnome_canvas_group_get_type(), NULL);
+-      points.num_points = 2;
++
+       points.ref_count = 1;
+-      for (j = 0; j < item->path->num_points-1; j++) {
+-        points.coords = item->path->coords+2*j;
+-        gnome_canvas_item_new((GnomeCanvasGroup *) item->canvas_item,
++      disc_done = FALSE;
++      j0 = 0;
++
++      //CNTP += item->path->num_points - 1; // profiling...
++
++      while (j0 < item->path->num_points - 1) {
++          
++        wmin = wmax = item->widths[j0];
++        
++        j = j0 + 1;
++        while (j < item->path->num_points &&
++               item->widths[j] < wmin * LINE_WIDTH_PRECISION &&
++               item->widths[j] * LINE_WIDTH_PRECISION > wmax) {
++          if (item->widths[j] < wmin) wmin = item->widths[j];
++          if (item->widths[j] > wmax) wmax = item->widths[j];
++          j++;
++        }
++        
++        if (j0 < j - 1) {
++          /* draw from j0 to j-1 */
++          points.num_points = j - j0;
++          points.coords = item->path->coords+2*j0;   
++          gnome_canvas_item_new((GnomeCanvasGroup *) item->canvas_item,
+               gnome_canvas_line_get_type(), "points", &points, 
+               "cap-style", GDK_CAP_ROUND, "join-style", GDK_JOIN_ROUND, 
+               "fill-color-rgba", item->brush.color_rgba,
+-              "width-units", item->widths[j], NULL);
++              "width-units", (wmin + wmax) / 2, NULL);
++          disc_done = TRUE; //CNTS++; // profiling...
++          j0 = j - 1;
++        } else { /* j == j0+1; draw trapeze from j0 to j */
++          if (!disc_done) {
++            make_canvas_stroke_disc(item, item->path->coords+2*j0, item->widths+j0);
++          }
++          make_canvas_stroke_trapeze(item, item->path->coords+2*j0, item->widths+j0);
++          disc_done = FALSE; //CNTT++; // profiling...
++          j0 = j;
++        }
+       }
++      if (!disc_done)
++        make_canvas_stroke_disc(item, item->path->coords+2*(item->path->num_points-1),
++                                    item->widths+item->path->num_points-1);
+     }
+   }
+   if (item->type == ITEM_TEXT) {
+@@ -700,6 +765,10 @@ void make_canvas_items(void)
+   struct Item *item;
+   GList *pagelist, *layerlist, *itemlist;
+   
++  //int ti; // profiling...
++  //ti = clock(); // profiling...
++  //CNTP=CNTS=CNTT=0; // profiling...
++  
+   for (pagelist = journal.pages; pagelist!=NULL; pagelist = pagelist->next) {
+     pg = (struct Page *)pagelist->data;
+     if (pg->group == NULL) {
+@@ -720,6 +789,8 @@ void make_canvas_items(void)
+       }
+     }
+   }
++  
++  //printf("Cnts: P=%d, S=%d, T=%d; Time: %d\n", CNTP, CNTS, CNTT, (int)(clock() - ti)); // profiling...
+ }
+ 
+ void update_canvas_bg(struct Page *pg)
+@@ -2012,7 +2083,7 @@ void resize_journal_items_by(GList *itemlist, double scaling_x, double scaling_y
+         pt[1] = pt[1]*scaling_y + offset_y;
+       }
+       if (item->brush.variable_width)
+-        for (i=0, wid=item->widths; i<item->path->num_points-1; i++, wid++)
++        for (i=0, wid=item->widths; i<item->path->num_points; i++, wid++)
+           *wid = *wid * mean_scaling;
+ 
+       item->bbox.left = item->bbox.left*scaling_x + offset_x;
+diff --git a/src/xo-misc.h b/src/xo-misc.h
+index 177ab36..ac523bb 100644
+--- a/src/xo-misc.h
++++ b/src/xo-misc.h
+@@ -48,6 +48,8 @@ void update_item_bbox(struct Item *item);
+ void make_page_clipbox(struct Page *pg);
+ void make_canvas_items(void);
+ void make_canvas_item_one(GnomeCanvasGroup *group, struct Item *item);
++void make_canvas_stroke_disc(struct Item *item, double * pt, double * w);
++void make_canvas_stroke_trapeze(struct Item *item, double * pt, double * w);
+ void update_canvas_bg(struct Page *pg);
+ gboolean is_visible(struct Page *pg);
+ void rescale_bg_pixmaps(void);
+diff --git a/src/xo-paint.c b/src/xo-paint.c
+index 2331ff7..c381331 100644
+--- a/src/xo-paint.c
++++ b/src/xo-paint.c
+@@ -232,7 +232,7 @@ void create_new_stroke(GdkEvent *event)
+   realloc_cur_path(2);
+   ui.cur_path.num_points = 1;
+   get_pointer_coords(event, ui.cur_path.coords);
+-  
++
+   if (ui.cur_brush->ruler) {
+     ui.cur_item->canvas_item = gnome_canvas_item_new(ui.cur_layer->group,
+       gnome_canvas_line_get_type(),
+@@ -240,14 +240,22 @@ void create_new_stroke(GdkEvent *event)
+       "fill-color-rgba", ui.cur_item->brush.color_rgba,
+       "width-units", ui.cur_item->brush.thickness, NULL);
+     ui.cur_item->brush.variable_width = FALSE;
+-  } else
++  } else {
++    double current_width;
+     ui.cur_item->canvas_item = gnome_canvas_item_new(
+       ui.cur_layer->group, gnome_canvas_group_get_type(), NULL);
++
++    if (ui.cur_item->brush.variable_width) {
++      realloc_cur_widths(1);
++      current_width = ui.cur_item->brush.thickness*get_pressure_multiplier(event);
++      ui.cur_widths[0] = current_width;
++      make_canvas_stroke_disc(ui.cur_item, ui.cur_path.coords, ui.cur_widths);
++    } else current_width = ui.cur_item->brush.thickness;
++  }
+ }
+ 
+ void continue_stroke(GdkEvent *event)
+ {
+-  GnomeCanvasPoints seg;
+   double *pt, current_width, pressure;
+ 
+   if (ui.cur_brush->ruler) {
+@@ -258,17 +266,17 @@ void continue_stroke(GdkEvent *event)
+   } 
+   
+   get_pointer_coords(event, pt+2);
+-  
++    
+   if (ui.cur_item->brush.variable_width) {
+-    realloc_cur_widths(ui.cur_path.num_points);
++    realloc_cur_widths(ui.cur_path.num_points+1);
+     pressure = get_pressure_multiplier(event);
+-    if (pressure > ui.width_minimum_multiplier) 
++    //if (pressure > ui.width_minimum_multiplier) 
+       current_width = ui.cur_item->brush.thickness*get_pressure_multiplier(event);
+-    else { // reported pressure is 0.
+-      if (ui.cur_path.num_points >= 2) current_width = ui.cur_widths[ui.cur_path.num_points-2];
+-      else current_width = ui.cur_item->brush.thickness;
+-    }
+-    ui.cur_widths[ui.cur_path.num_points-1] = current_width;
++    //else { // reported pressure is 0.
++    //  if (ui.cur_path.num_points >= 2) current_width = ui.cur_widths[ui.cur_path.num_points-2];
++    //  else current_width = ui.cur_item->brush.thickness;
++    //}
++    ui.cur_widths[ui.cur_path.num_points] = current_width;
+   }
+   else current_width = ui.cur_item->brush.thickness;
+   
+@@ -279,23 +287,42 @@ void continue_stroke(GdkEvent *event)
+       return;  // not a meaningful motion
+     ui.cur_path.num_points++;
+   }
+-
+-  seg.coords = pt; 
+-  seg.num_points = 2;
+-  seg.ref_count = 1;
+   
+   /* note: we're using a piece of the cur_path array. This is ok because
+      upon creation the line just copies the contents of the GnomeCanvasPoints
+      into an internal structure */
+ 
+-  if (ui.cur_brush->ruler)
+-    gnome_canvas_item_set(ui.cur_item->canvas_item, "points", &seg, NULL);
+-  else
+-    gnome_canvas_item_new((GnomeCanvasGroup *)ui.cur_item->canvas_item,
+-       gnome_canvas_line_get_type(), "points", &seg,
+-       "cap-style", GDK_CAP_ROUND, "join-style", GDK_JOIN_ROUND,
+-       "fill-color-rgba", ui.cur_item->brush.color_rgba,
+-       "width-units", current_width, NULL);
++  if (ui.cur_item->brush.variable_width) {
++    if (ui.cur_widths[ui.cur_path.num_points-1] < ui.cur_widths[ui.cur_path.num_points-2] * LINE_WIDTH_PRECISION &&
++        ui.cur_widths[ui.cur_path.num_points-2] < ui.cur_widths[ui.cur_path.num_points-1] * LINE_WIDTH_PRECISION) {
++      GnomeCanvasPoints seg;
++      seg.coords = pt; 
++      seg.num_points = 2;
++      seg.ref_count = 1;
++      gnome_canvas_item_new((GnomeCanvasGroup *)ui.cur_item->canvas_item,
++         gnome_canvas_line_get_type(), "points", &seg,
++         "cap-style", GDK_CAP_ROUND, "join-style", GDK_JOIN_ROUND,
++         "fill-color-rgba", ui.cur_item->brush.color_rgba,
++         "width-units", (ui.cur_widths[ui.cur_path.num_points-2] + ui.cur_widths[ui.cur_path.num_points-1]) / 2, NULL);      
++    } else {
++      make_canvas_stroke_trapeze(ui.cur_item, pt, ui.cur_widths+ui.cur_path.num_points-2);
++      make_canvas_stroke_disc(ui.cur_item, pt + 2, ui.cur_widths+ui.cur_path.num_points-1);
++   }
++  } else {
++    GnomeCanvasPoints seg;
++    seg.coords = pt; 
++    seg.num_points = 2;
++    seg.ref_count = 1;
++    if (ui.cur_brush->ruler) {
++      gnome_canvas_item_set(ui.cur_item->canvas_item, "points", &seg, NULL);
++    } else {
++      gnome_canvas_item_new((GnomeCanvasGroup *)ui.cur_item->canvas_item,
++         gnome_canvas_line_get_type(), "points", &seg,
++         "cap-style", GDK_CAP_ROUND, "join-style", GDK_JOIN_ROUND,
++         "fill-color-rgba", ui.cur_item->brush.color_rgba,
++         "width-units", current_width, NULL);      
++    }
++  }
+ }
+ 
+ void abort_stroke(void)
+@@ -325,7 +352,7 @@ void finalize_stroke(void)
+       2*ui.cur_path.num_points*sizeof(double));
+   if (ui.cur_item->brush.variable_width)
+     ui.cur_item->widths = (gdouble *)g_memdup(ui.cur_widths, 
+-                            (ui.cur_path.num_points-1)*sizeof(gdouble));
++                            (ui.cur_path.num_points)*sizeof(gdouble));
+   else ui.cur_item->widths = NULL;
+   update_item_bbox(ui.cur_item);
+   ui.cur_path.num_points = 0;
+@@ -385,7 +412,7 @@ void erase_stroke_portions(struct Item *item, double x, double y, double radius,
+           newhead->path = gnome_canvas_points_new(i);
+           g_memmove(newhead->path->coords, item->path->coords, 2*i*sizeof(double));
+           if (newhead->brush.variable_width)
+-            newhead->widths = (gdouble *)g_memdup(item->widths, (i-1)*sizeof(gdouble));
++            newhead->widths = (gdouble *)g_memdup(item->widths, i*sizeof(gdouble));
+           else newhead->widths = NULL;
+         }
+         while (++i < item->path->num_points) {
+@@ -401,7 +428,7 @@ void erase_stroke_portions(struct Item *item, double x, double y, double radius,
+                            2*(item->path->num_points-i)*sizeof(double));
+           if (newtail->brush.variable_width)
+             newtail->widths = (gdouble *)g_memdup(item->widths+i, 
+-              (item->path->num_points-i-1)*sizeof(gdouble));
++              (item->path->num_points-i)*sizeof(gdouble));
+           else newtail->widths = NULL;
+           newtail->canvas_item = NULL;
+         }
+diff --git a/src/xo-print.c b/src/xo-print.c
+index 3be1843..0102130 100644
+--- a/src/xo-print.c
++++ b/src/xo-print.c
+@@ -24,6 +24,7 @@
+ #include <libgnomecanvas/libgnomecanvas.h>
+ #include <zlib.h>
+ #include <string.h>
++#include <math.h>
+ #include <locale.h>
+ #include <pango/pango.h>
+ #include <pango/pangofc-font.h>
+@@ -1682,11 +1683,38 @@ void print_page_to_cairo(cairo_t *cr, struct Page *pg, gdouble width, gdouble he
+           cairo_stroke(cr);
+           old_thickness = item->brush.thickness;
+         } else {
+-          for (i=0; i<item->path->num_points-1; i++, pt+=2) {
+-            cairo_move_to(cr, pt[0], pt[1]);
+-            cairo_set_line_width(cr, item->widths[i]);
+-            cairo_line_to(cr, pt[2], pt[3]);
+-            cairo_stroke(cr);
++          double wmin, wmax;
++          int j, j0;
++          j0 = 0;
++
++          while (j0 < item->path->num_points - 1) {
++            wmin = wmax = item->widths[j0];
++            j = j0 + 1;
++            while (j < item->path->num_points &&
++                   item->widths[j] < wmin * LINE_WIDTH_PRECISION &&
++                   item->widths[j] * LINE_WIDTH_PRECISION > wmax) {
++              if (item->widths[j] < wmin) wmin = item->widths[j];
++              if (item->widths[j] > wmax) wmax = item->widths[j];
++              j++;
++            }
++
++            if (j0 < j - 1) {
++              /* draw from j0 to j-1 */
++              cairo_set_line_width(cr, (wmin + wmax) / 2);
++              cairo_move_to(cr, pt[2*j0], pt[2*j0+1]);
++              for (i = j0 + 1; i <= j - 1; i++) {
++                cairo_line_to(cr, pt[2*i], pt[2*i+1]);
++              }
++              cairo_stroke(cr);
++              j0 = j - 1;
++            } else { /* j == j0+1; draw trapeze from j0 to j... including the discs */
++              double angle = atan2(pt[2*j+1]-pt[2*j0+1], pt[2*j]-pt[2*j0]);
++              /* The following it not perfect if the two line widths differ a lot... */
++              cairo_arc(cr, pt[2*j0], pt[2*j0 + 1], item->widths[j0]/2, angle + M_PI / 2, angle - M_PI / 2);
++              cairo_arc(cr, pt[2*j], pt[2*j + 1], item->widths[j]/2, angle - M_PI / 2, angle + M_PI / 2);
++              cairo_fill(cr);
++              j0 = j;
++            }
+           }
+           old_thickness = 0.0;
+         }
+diff --git a/src/xournal.h b/src/xournal.h
+index 0443857..2c3d5a1 100644
+--- a/src/xournal.h
++++ b/src/xournal.h
+@@ -63,6 +63,7 @@
+ #define MIN_ZOOM 0.2
+ #define RESIZE_MARGIN 6.0
+ #define MAX_SAFE_RENDER_DPI 720 // max dpi at which PDF bg's get rendered
++#define LINE_WIDTH_PRECISION 1.2 // segments whose widths differ by that factor are rendered together
+ 
+ #define VBOX_MAIN_NITEMS 5 // number of interface items in vboxMain
+ 

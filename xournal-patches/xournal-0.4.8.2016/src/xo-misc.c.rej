@@ -1,0 +1,11 @@
+--- src/xo-misc.c
++++ src/xo-misc.c
+@@ -1635,7 +1635,7 @@ void update_file_name(char *filename)
+     return;
+   }
+   p = xo_basename(filename, FALSE);
+-  g_snprintf(tmp, 100, _("Xournal - %s"), p);
++  g_snprintf(tmp, 100, _("%s - Xournal"), p);
+   gtk_window_set_title(GTK_WINDOW (winMain), tmp);
+   new_mru_entry(filename);
+ 
