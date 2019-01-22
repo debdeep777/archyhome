@@ -63,24 +63,43 @@ beautiful.init("/home/debdeep/.config/awesome/themes/default/theme.lua")
 -- what can be removed with size_hints_honor=false but it breaks the xfce4-terminal windows
 -- sad, I like the Ctrl++ for zoom in in xfce4-terminals, but xterm is too primitive, and does not have nice right click options either
 ---terminal = "x-terminal-emulator"
-terminal = 'xterm'
+--terminal = 'xterm'
+terminal = 'xfce4-terminal'
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
 
--- startup applications
+------------ startup applications ---------------------------
+-- For appearance related perks
+-- e.g. Dark theme, nice gtk-based save-as boxes, print dialog
+-- Issue: Winkey+numbers shortcuts interfere with xfce shortcuts
+-- Fixed: Go to keyboard settings (Alt+F3 > Keyboard) > Shortcuts 
+-- and remove all shortcuts with Super+. in it (or, just restore to default will remove most)
+-- then Restart (very important) to take effect
+-- Issue: Sometimes the touchpad tap and scroll do not work
+-- Fixed: Worked after restart
+-- Fixed (if restart does not work): 
+-- add the line:	Option "Tapping" "True"
+-- in the section: Identifier "libinput touchpad catchall"
+-- of the file /usr/share/X11/xorg.conf.d/40-libinput.conf
+-- Issue: touchpad picks up touch a bit late after staying idle for some time
+-- Fixed: after restart
+awful.spawn("xfsettingsd")	-- Alt+F3 for apps, 
+-- For some reason pulseaudio does not run at startup, found that out by running xfce4-taskmanager.
+-- So now manually running it.
+-- Fixed: seems that running xfsettingsd fixes this issue
+-- Keeping it turned off for now
+--awful.spawn("pulseaudio --start --log-target=syslog")
+awful.spawn("xfce4-power-manager") --brightness keys
+
 awful.spawn("nm-applet")
 -- multiple redshift are slowing down cpu every 5 seconds
 -- turn off to see if improves xournal performance over suspend
---awful.spawn("redshift")
-awful.spawn("xfce4-power-manager") --brightness keys
+awful.spawn("redshift")
 awful.spawn("onboard") --onscreen keyboard --needs options
--- For some reason pulseaudio does not run at startup, found that out by running xfce4-taskmanager.
--- So now manually running it.
-awful.spawn("pulseaudio --start --log-target=syslog")
 -- to freeze the mouse while touching
 awful.spawn("mousefreeze")
-
+------------------------------------------------------------
 
 
 -- Default modkey.
@@ -309,8 +328,8 @@ touch:buttons(awful.util.table.join(
 light = wibox.widget.textbox("☼ ")
 light:buttons(awful.util.table.join(
 awful.button({ }, 1, function () awful.spawn("lumi") end),
-awful.button({ }, 4, function () awful.spawn("xbacklight -inc 5")  end),
-awful.button({ }, 5, function () awful.spawn("xbacklight -dec 5")  end)
+awful.button({ }, 4, function () awful.spawn("xbacklight -inc 3")  end),
+awful.button({ }, 5, function () awful.spawn("xbacklight -dec 3")  end)
  ))       
 
 --Record light data
