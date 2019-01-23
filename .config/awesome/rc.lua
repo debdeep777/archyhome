@@ -206,6 +206,9 @@ mytextclock = wibox.widget.textclock()
    datewidget = wibox.widget.textbox()
    local datestring = txtcol("%b", base1) .. txtcol("%d", base3) .. txtcol("%a", base1) .. txtcol("%I:%M", base3)
     vicious.register(datewidget, vicious.widgets.date, datestring)
+	datewidget:buttons(awful.util.table.join(
+	awful.button({ }, 1, function () awful.spawn("zenity --calendar --text=") end)
+	))
 
 
 --    -- memwidget = wibox.widget.textbox()
