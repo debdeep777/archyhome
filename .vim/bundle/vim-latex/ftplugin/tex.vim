@@ -3,17 +3,19 @@
 "Editing elsewhere is not advised because it will be re-written after an update 
 """"""""""""""""""""""
 "As suggested, this portion can be in ~/.vimrc as well
+"
 "this is mostly a matter of taste. but LaTeX looks good with just a bit
 " of indentation.
 set sw=2
+
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
 set iskeyword+=:
  
-" Add this to your vimrc file
-" auto-update "Last update: " if present whenever saving file
-
+""""""""""""""""""""""""""""""""""""""""
+""""auto-update "Last Change:" if present in the first 5 lines  whenever saving file
+" Call the function s:timestamp() in tex files while writing to buffer
 autocmd! BufWritePre *.tex :call s:timestamp()
 " to update timestamp when saving if its in the first 5 lines of a file
 function! s:timestamp()
@@ -55,6 +57,9 @@ let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 
 " Trying to add same for pdfs, hoping that package SynTex is installed
 let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
+" `temporaty for compiling cv in xelatex
+"let g:Tex_CompileRule_pdf = 'xelatex -synctex=1 -interaction=nonstopmode $*'
+
 
 
 " This is for dvi -> tex. Works!, to use it, need to launch vim with --servername sofun

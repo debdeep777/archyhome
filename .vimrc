@@ -1,4 +1,7 @@
+noremap qq :q!<CR>
 " suggested by itchyny from github
+" "to alias unnamed register to the + register, which is the X Window
+" clipboard
 "set clipboard=unnamed
 "What are these macros??!
 let @w = 'maF>vf<yGop`an'
@@ -10,12 +13,20 @@ let @i = '0x$xj'
 
 " Using the solarized color scheme, must have 
 syntax enable
-let g:solarized_termcolors=256
+
+
+"colorscheme solarized
+"let g:solarized_termcolors=256
+set background=dark
 "let g:solarized_diffmode="low"
 "let g:solarized_contrast = "high"
 
-colorscheme solarized
-set background=dark
+colorscheme gruvbox
+"colorscheme blayu
+" solarized colorscheme does not underline bad spelling
+" you can change in colorscheme/solarized.vim  the option SpellBad to fmt_undr from fmt_curl
+hi SpellBad cterm=underline
+
 " color scheme for a dark terminal setup,
 " an alternative is pablo, but spellcheck highlight is ugly in that one
 " although, tex files look nice in that one
@@ -37,15 +48,18 @@ set background=dark
 
 " Searching
 """""""""""
+" making the choice to go ignore-case option
+" to be case specific, use :set noic on demand
+set ic
+
 " Experimental since I do not know if I need to get used to the original
 " searching conventions
 " search as characters are entered
-"set incsearch
+set incsearch
 " Tired of clearing highlighted searches?
 " pressing ,/ clears the previous highlights
 "set hlsearch
 "nmap <silent> ,/ :nohlsearch<CR>
-
 
 
 " Really cool cursor-location-highlighting feature
@@ -70,6 +84,9 @@ set linebreak
 set spell
 
 " mouse
+" To copy from vim as you would copy from terminal
+" hold down the Shift key while selecting text
+" without entering visual mode
 set mouse=a
 
 " Make sure that there are always 3 lines above and below the cursor
@@ -91,6 +108,13 @@ inoremap <left>  <ESC>:echom 'USE H TO GO LEFT'<CR>
 " Ctrl+ L to spellcheck while typing
 imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
+
+" Not working, don't know why
+" Add blank lines before and after
+"imap <C-j> <Esc>m`O<Esc>``i<CR>
+"imap <C-k> <Esc>m`o<Esc>``i<CR>
+"
+"
 " Press F6 in normal mode or in insert mode to insert the current datestamp
 " %F gives te ISO format which is useful is ledger, task warrior etc
 nnoremap <F6> "=strftime("%F")<CR>P
@@ -118,6 +142,7 @@ inoremap <F6> <C-R>=strftime("%F")<CR>
 
 " The drop-down for autocomplete
 set wildmenu
+
 
 "" Smooth scrolling for Ctrl+D/U
 "function SmoothScroll(up)
@@ -156,7 +181,9 @@ execute pathogen#infect()
 filetype plugin indent on
 
 
-" Vim-latex requirements
+
+"""""""""""""""""""""""""""""""""""""""
+" Vim-latex requirements 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
@@ -167,6 +194,11 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
+"" for bibtex compilation
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf,bibtex,pdf'
+
+""""""""""""""""""""""""""""""""""""""
 
 "vim-ledger requirement
 "String that will be used to fill the space between account name and amount in
@@ -178,6 +210,6 @@ let g:tex_flavor='latex'
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 let g:calendar_date_full_month_name = 1
-let g:calendar_view = 'days'
+let g:calendar_view = 'months'
 "let g:calendar_clock_12hour = 1
 
