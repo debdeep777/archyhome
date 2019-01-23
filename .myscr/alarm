@@ -1,4 +1,6 @@
 ## simple alarm with zenity
 sleep $1;
+# to pop up at every window
 zenity --notification --text=$2
+# pulsate to attract attention
 zenity --progress --pulsate --text=$2
