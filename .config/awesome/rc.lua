@@ -98,7 +98,7 @@ awful.spawn("nm-applet")
 awful.spawn("redshift")
 awful.spawn("onboard") --onscreen keyboard --needs options
 -- to freeze the mouse while touching
-awful.spawn("mousefreeze")
+--awful.spawn("mousefreeze")
 ------------------------------------------------------------
 
 

@@ -1,0 +1,28 @@
+#! /bin/bash
+
+if [ $1 = "dark" ]; then
+	Term='gruvbox-dark'
+	GUI='gruvbox-gtk'	#GTK3 theme location: /usr/share/themes, downloaded from git
+fi
+if [ $1 = "light" ]; then
+	Term='gruvbox-light'
+	GUI='Numix'	#GTK3 theme location: /usr/share/themes
+fi
+
+# local (in .local/share/themes) themes do not work well, not sure why
+
+if ! [[ -f $HOME/.local/share/xfce4/terminal/colorschemes/$Term.theme ]]
+then
+    echo "No such colorscheme: $Term"
+    exit 1
+fi
+cd ~/.config/xfce4/terminal
+# strip settings from any themes
+grep -Fxvf <(cat /usr/share/xfce4/terminal/colorschemes/*.theme) terminalrc > .terminalrc.tmp
+grep -v -e Name -e Scheme "$HOME/.local/share/xfce4/terminal/colorschemes/$Term.theme" >> .terminalrc.tmp
+cp terminalrc terminalrc.bak
+mv .terminalrc.tmp terminalrc
+
+## setting the dark GUI theme
+xfconf-query -c xsettings -p /Net/ThemeName -s $GUI
+
