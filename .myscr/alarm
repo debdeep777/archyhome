@@ -1,0 +1,4 @@
+## simple alarm with zenity
+sleep $1;
+zenity --notification --text=$2
+zenity --progress --pulsate --text=$2
