@@ -1,18 +1,7 @@
-supply .myscr, config files
+#supply .myscr, config files
 
 ### Install packages
 sudo apt-get install $(cat packages)
-
-#### Firefox ##############
-### Bigger Firefox font
-about:config > devPixelsPerPx to 1.2
-
-### Firefox plugins
-Ublock origin
-Vim vixen
-Dark Mode (WebExtension) by Bernard > Customize > select 'coffee
-dark' or 'classy dark'
-##########################
 
 ###### Appearance #############
 ## Install gruvbox-gtk theme from git to use `themeset dark`
@@ -20,13 +9,24 @@ git clone https://github.com/3ximus/gruvbox-gtk
 sudo cp -r gruvbox-gtk /usr/share/themes/
 
 ## xfce4-terminal menubar
-Open Preference of xfce4-terminal
-General > Scrolling  > Scrollbar is > Disabled
-Appearance > Display menubar in new windows
+# Open Preference of xfce4-terminal
+# General > Scrolling  > Scrollbar is > Disabled
+# Appearance > Display menubar in new windows
 
-## Clear xubuntu shortcut to work with awesome
-Alt+F3 to open search application menu > Keyboard > Shortcuts >  Remove all with 'Super' except possibly this interesting shortcut: Super  + F1
+## Clear xubuntu keyboard shortcut to work with awesome
+# Alt+F3 to open search application menu > Keyboard > Shortcuts >  Remove all with 'Super' except possibly this interesting shortcut: Super  + F1
 
+
+#### Firefox ##############
+### Bigger Firefox font
+# about:config > devPixelsPerPx to 1.2
+
+### Firefox plugins
+# Ublock origin
+# Vim vixen
+# Dark Mode (WebExtension) by Bernard > Customize > select 'coffee
+# dark' or 'classy dark'
+##########################
 
 #### Jupyter Lab and octave kernel
 ## the following code installs the python packages locally
@@ -35,9 +35,14 @@ Alt+F3 to open search application menu > Keyboard > Shortcuts >  Remove all with
 ## To install it globally and save space in the home directory 
 ## use `sudo -H`. That way, it installs in /usr/share/ 
 sudo -H pip3 install jupyterlab octave_kernel pandas numpy scipy matplotlib  scikit-learn
-# (Optional) to fix an warning by jupyter lab
-sudo apt-get install nodejs
-
+# vim keybiniding (a long installation process)
+# dependency
+sudo apt-get install nodejs npm
+# the vim externsion
+sudo jupyter labextension install jupyterlab_vim
+### Tip: to plot nice plots in octave_kernel, use
+# %plot -f svg
+# in the beginning of the notebook
 
 ### Xournal patches
 
@@ -50,7 +55,8 @@ In the patched source code directory,  (archyhome/xournal-patches/xournal-0.4.8.
 	make
 	sudo make install
 	sudo make desktop-install
-############# Now automatic ###################3
+
+############# Now automatic ###################
 ### Rotate script
 # modify: in rotate script, set the display name e.g. 'eDP-1' from xrandr, if needed
 #
