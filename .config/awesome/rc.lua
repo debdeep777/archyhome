@@ -99,6 +99,18 @@ awful.spawn("redshift")
 awful.spawn("onboard") --onscreen keyboard --needs options
 -- to freeze the mouse while touching
 --awful.spawn("mousefreeze")
+--
+-- Polkit authenticator
+-- This is a fix for certain applications crashing while an
+-- authenticator is supposed to pop up and ask for password
+-- Turns out, you have to run the following service all the time in
+-- the background and wait for the moment when that happend
+-- Strangely, it cannot be run by the name alone, has to be called by
+-- the whole path.
+-- See: https://wiki.archlinux.org/index.php/Polkit#Authentication_agents
+-- for the location
+--/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+awful.spawn("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
 ------------------------------------------------------------
 
 

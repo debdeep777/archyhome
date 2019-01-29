@@ -40,8 +40,16 @@ sudo apt-get install nodejs
 
 
 ### Xournal patches
+
 Install xournal from the patched version from xournal-patches by following the INSTALL file from the source code, satisfying the dependencies (see lin/TODO new installation), make and sudo make install
 
+Open "Software & Update" app and check the "source codes" box, password and reload
+Install build-dependencies for xournal using: sudo apt-get build-dep xournal
+In the patched source code directory,  (archyhome/xournal-patches/xournal-0.4.8.2016)
+	./autogen.sh
+	make
+	sudo make install
+	sudo make desktop-install
 ############# Now automatic ###################3
 ### Rotate script
 # modify: in rotate script, set the display name e.g. 'eDP-1' from xrandr, if needed
