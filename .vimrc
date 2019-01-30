@@ -17,11 +17,20 @@ syntax enable
 
 "colorscheme solarized
 "let g:solarized_termcolors=256
-set background=dark
 "let g:solarized_diffmode="low"
 "let g:solarized_contrast = "high"
 
+" Abandoing solarized and welcoming gruvbox
 colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_dark='medium'
+" To change the contrast inside vim, you need to set
+" the contrast variable and then reload the colorsheme
+" e.g. :let g:gruvbox_constrast_light='soft'
+"	:colorscheme gruvbox
+
+
 "colorscheme blayu
 " solarized colorscheme does not underline bad spelling
 " you can change in colorscheme/solarized.vim  the option SpellBad to fmt_undr from fmt_curl
@@ -92,6 +101,19 @@ set mouse=a
 " Make sure that there are always 3 lines above and below the cursor
 set scrolloff=3
 
+" Set a line break after 80 chars
+" Caution: adds a new line to the line itself when the number of characters exceed the limit
+set textwidth=69 	" word wrap after this, set this to zero to disable
+""" set a colorcolumn
+"set colorcolumn =+1
+"highlight ColorColumn ctermbg=lightgrey
+
+
+" Let us try to write some text here. First, we try to write the following text
+" for the rest of the text. then, we do the following. We carefully try to
+" manage the thi
+
+
 " Keymaps
 """"""""""""""""""""
 " Killing the arrow keys to force the habit of using hjkl
@@ -144,28 +166,6 @@ inoremap <F6> <C-R>=strftime("%F")<CR>
 set wildmenu
 
 
-"" Smooth scrolling for Ctrl+D/U
-"function SmoothScroll(up)
-"    if a:up
-"        let scrollaction=""
-"    else
-"        let scrollaction=""
-"    endif
-"    exec "normal " . scrollaction
-"    redraw
-"    let counter=1
-"    while counter<&scroll
-"        let counter+=1
-"        sleep 10m
-"        redraw
-"        exec "normal " . scrollaction
-"    endwhile
-"endfunction
-"
-"nnoremap <C-U> :call SmoothScroll(1)<Enter>
-"nnoremap <C-D> :call SmoothScroll(0)<Enter>
-"inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
-"inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
 
 " Remapping i,j to relative
 "nnoremap i gi
@@ -213,3 +213,44 @@ let g:calendar_date_full_month_name = 1
 let g:calendar_view = 'months'
 "let g:calendar_clock_12hour = 1
 
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set up vertical vs block cursor for insert/normal mode
+"" Other options (replace the number after \e[):
+"
+"    Ps = 0  -> blinking block.
+"    Ps = 1  -> blinking block (default).
+"    Ps = 2  -> steady block.
+"    Ps = 3  -> blinking underline.
+"    Ps = 4  -> steady underline.
+"    Ps = 5  -> blinking bar (xterm).
+"    Ps = 6  -> steady bar (xterm).
+"
+"    t_SI = Start Insert mode
+"    t_EI = End insert mode
+"    t_SR, r_ER = start and end replace mode
+"
+"if &term =~ "screen."
+"    let &t_ti.="\eP\e[1 q\e\\"
+"    let &t_SI.="\eP\e[5 q\e\\"
+"    let &t_EI.="\eP\e[1 q\e\\"
+"    let &t_te.="\eP\e[0 q\e\\"
+"else
+"    let &t_ti.="\<Esc>[1 q"
+"    let &t_SI.="\<Esc>[5 q"
+"    let &t_EI.="\<Esc>[1 q"
+"    let &t_te.="\<Esc>[0 q"
+"endif
+
+" Usually there is a wait time set by ttimeoutlen and timeoutlen
+" variables for which vim waits after <Esc> is pressed 
+"" This is a great remap to avoid the waiting time after <Esc>
+inoremap <Esc> <Esc>
+"" Here is another one
+"inoremap <Esc> <Esc><Esc>
+
+" This is responsible for changing cursor shape
+let &t_SI.="\e[6 q"
+let &t_EI.="\e[2 q"
+let &t_SR.="\e[4 q"
