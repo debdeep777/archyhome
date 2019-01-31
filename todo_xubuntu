@@ -1,7 +1,12 @@
 #supply .myscr, config files
 
+## Update the system
+sudo apt-get update 
+sudo apt-get -y upgrade
+#
+
 ### Install packages
-sudo apt-get install $(cat packages)
+sudo apt-get --assume-yes install $(cat packages)
 
 ###### Appearance #############
 ## Install gruvbox-gtk theme from git to use `themeset dark`
@@ -15,20 +20,16 @@ sudo cp -r gruvbox-gtk /usr/share/themes/
 # pip3 install jupyterlab octave_kernel
 ## To install it globally and save space in the home directory 
 ## use `sudo -H`. That way, it installs in /usr/share/ 
-sudo -H pip3 install jupyterlab octave_kernel pandas numpy scipy matplotlib  scikit-learn
+yes | sudo -H pip3 install jupyterlab octave_kernel pandas numpy scipy matplotlib  scikit-learn
 # vim keybiniding (a long installation process)
 # dependency
-sudo apt-get install nodejs npm
+sudo apt-get --assume-yes install nodejs npm
 # the vim externsion
 sudo jupyter labextension install jupyterlab_vim
 ### Tip: to plot nice plots in octave_kernel, use
 # %plot -f svg
 # in the beginning of the notebook
 
-## Update the system
-sudo apt-get update 
-sudo apt-get upgrade
-#
 #### Firefox ##############
 ### Bigger Firefox font
 # about:config > devPixelsPerPx to 1.2
