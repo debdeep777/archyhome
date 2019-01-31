@@ -1,6 +1,6 @@
 ## Usage
 
-[Read here.](https://github.com/copycat-killer/lain/wiki/Widgets#usage)
+[Read here.](https://github.com/lcpz/lain/wiki/Widgets#usage)
 
 ### Description
 
@@ -16,7 +16,7 @@ Variable | Meaning | Type | Default
 --- | --- | --- | ---
 `timeout` | Refresh timeout seconds | number | 5
 `devicetype | PulseAudio device type | string ("sink", "source") | "sink"
-`cmd` | PulseAudio command | string | [link](https://github.com/copycat-killer/lain/blob/master/widget/pulseaudio.lua#L28)
+`cmd` | PulseAudio command | string | [link](https://github.com/lcpz/lain/blob/master/widget/pulseaudio.lua#L28)
 `scallback` | PulseAudio sink callback | function | `nil`
 `settings` | User settings | function | empty function
 
@@ -31,7 +31,7 @@ Variable | Meaning | Type | Default
 
 **Note:** you can set PulseAudio default sink like this: `pacmd set-default-sink #sink`.
 
-If [`sed`](https://github.com/copycat-killer/lain/blob/master/widget/pulseaudio.lua#L28) doesn't work, you can try with `grep`:
+If [`sed`](https://github.com/lcpz/lain/blob/master/widget/pulseaudio.lua#L28) doesn't work, you can try with `grep`:
 
 ```shell
 pacmd list-sinks | grep -e $(pactl info | grep -e 'ink' | cut -d' ' -f3) -e 'volume: front' -e 'muted'
@@ -106,17 +106,17 @@ You can control the widget with key bindings like these:
 -- PulseAudio volume control
 awful.key({ altkey }, "Up",
     function ()
-        os.execute(string.format("pactl set-sink-volume %d +1%%", volume.sink))
+        os.execute(string.format("pactl set-sink-volume %d +1%%", volumewidget.sink))
         volume.update()
     end),
 awful.key({ altkey }, "Down",
     function ()
-        os.execute(string.format("pactl set-sink-volume %d -1%%", volume.sink))
+        os.execute(string.format("pactl set-sink-volume %d -1%%", volumewidget.sink))
         volume.update()
     end),
 awful.key({ altkey }, "m",
     function ()
-        os.execute(string.format("pactl set-sink-mute %d toggle", volume.sink))
+        os.execute(string.format("pactl set-sink-mute %d toggle", volumewidget.sink))
         volume.update()
     end),
 awful.key({ altkey, "Control" }, "m",

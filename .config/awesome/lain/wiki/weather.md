@@ -1,12 +1,12 @@
 ## Usage
 
-[Read here.](https://github.com/copycat-killer/lain/wiki/Widgets#usage)
+[Read here.](https://github.com/lcpz/lain/wiki/Widgets#usage)
 
 ### Description
 
 Provides current weather status widgets and X-days forecast popup notifications.
 
-Uses [OpenWeatherMap](http://openweathermap.org/api) API.
+Powered by [OpenWeatherMap](http://openweathermap.org/api) API.
 
 By default, it uses [current](http://openweathermap.org/current) for current weather data and [forecast16](http://openweathermap.org/forecast16) for forecasts.
 
@@ -23,14 +23,14 @@ Variable | Meaning | Type | Default
 `current_call` | Command to fetch weather status data from the API | string | see `default_current_call`
 `forecast_call` | Command to fetch forecast data from the API | string | see `default_forecast_call`
 `city_id` | API city code | number | not set
-`utc_offset` | UTC time offset | function | see [here](https://github.com/copycat-killer/lain/blob/master/widget/weather.lua#L35-L39)
+`utc_offset` | UTC time offset | function | see [here](https://github.com/lcpz/lain/blob/master/widget/weather.lua#L35-L39)
 `units` | Temperature units system | string | "metric"
 `lang` | API data localization | string | "en"
-`cnt` | Forecast days interval | number | 5
+`cnt` | Forecast days interval | integer | 5
 `date_cmd` | Forecast notification format style | string | "date -u -d @%d +'%%a %%d'"
 `icons_path` | Icons path | string | `lain/icons/openweathermap`
 `notification_preset` | Preset for notifications | table | empty table
-`notification_text_fun` | Function to format forecast notifications | function | see `notification_text_fun`
+`notification_text_fun` | Function to format forecast notifications | function | see `notification_text_fun` below
 `weather_na_markup` | Markup to be used when weather textbox is not available | text | " N/A "
 `followtag` | Display the notification on currently focused screen | boolean | false
 `showpopup` | Display popups with mouse hovering | string, possible values: "on", "off" | "on"
@@ -62,13 +62,6 @@ Variable | Meaning | Type | Default
         http://openweathermap.org/city/2643743
 
     your `city_id` is the number at the end.
-
-
-- ``utc_offset``
-
-    Since OWM provides data in UTC time, we have to adjust the weather icons in order to respect the local timezone day/night cycle.
-
-    If you need to set this function, you can check [here](https://en.wikipedia.org/wiki/List_of_UTC_time_offsets) to know your UTC offset. Note that it must return a number.
 
 - ``units``
 
@@ -111,11 +104,11 @@ Variable | Meaning | Type | Default
        return string.format("<b>%s</b>: %s, %d - %d ", day, desc, tmin, tmax)
    end
    ```
-   See [here](https://github.com/copycat-killer/lain/issues/186#issuecomment-203400918) for a complete customization example.
+   See [here](https://github.com/lcpz/lain/issues/186#issuecomment-203400918) for a complete customization example.
 
 - ``followtag``
 
-   In multiple screen setups, the default behaviour is to show a visual notification pop-up window on the first screen. By setting `followtag` to `true` it will be shown on the currently focused tag screen.
+   With multiple screens, the default behaviour is to show a visual notification pop-up window on the first screen. By setting `followtag` to `true` it will be shown on the currently focused tag screen.
 
 - ``settings``
 

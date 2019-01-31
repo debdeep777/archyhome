@@ -1,21 +1,19 @@
-
 --[[
-                                                  
-     Licensed under GNU General Public License v2 
-      * (c) 2013, Luke Bonham                     
-      * (c) 2013, Rman                            
-                                                  
+
+     Licensed under GNU General Public License v2
+      * (c) 2013, Luca CPZ
+      * (c) 2013, Rman
+
 --]]
 
-local helpers        = require("lain.helpers")
-local awful          = require("awful")
-local naughty        = require("naughty")
-local wibox          = require("wibox")
-local math           = { modf   = math.modf }
-local string         = { format = string.format,
-                         match  = string.match,
-                         rep    = string.rep }
-local type, tonumber = type, tonumber
+local helpers  = require("lain.helpers")
+local awful    = require("awful")
+local naughty  = require("naughty")
+local wibox    = require("wibox")
+local math     = math
+local string   = string
+local type     = type
+local tonumber = tonumber
 
 -- ALSA volume bar
 -- lain.widget.alsabar
@@ -37,6 +35,8 @@ local function factory(args)
     local settings   = args.settings or function() end
     local width      = args.width or 63
     local height     = args.height or 1
+    local margins    = args.margins or 1
+    local paddings   = args.paddings or 1
     local ticks      = args.ticks or false
     local ticks_size = args.ticks_size or 7
 
@@ -60,12 +60,12 @@ local function factory(args)
     end
 
     alsabar.bar = wibox.widget {
-        forced_height    = height,
-        forced_width     = width,
         color            = alsabar.colors.unmute,
         background_color = alsabar.colors.background,
-        margins          = 1,
-        paddings         = 1,
+        forced_height    = height,
+        forced_width     = width,
+        margins          = margins,
+        paddings         = margins,
         ticks            = ticks,
         ticks_size       = ticks_size,
         widget           = wibox.widget.progressbar
@@ -108,15 +108,29 @@ local function factory(args)
         alsabar.update(function()
             local preset = alsabar.notification_preset
 
+            preset.title = string.format("%s - %s%%", alsabar.channel, alsabar._current_level)
+
             if alsabar._playback == "off" then
-                preset.title = string.format("%s - Muted", alsabar.channel)
-            else
-                preset.title = string.format("%s - %s%%", alsabar.channel, alsabar._current_level)
+                preset.title = preset.title .. " Muted"
             end
 
-            int = math.modf((alsabar._current_level / 100) * awful.screen.focused().mywibox.height)
+            -- tot is the maximum number of ticks to display in the notification
+            -- fallback: default horizontal wibox height
+            local wib, tot = awful.screen.focused().mywibox, 20
+
+            -- if we can grab mywibox, tot is defined as its height if
+            -- horizontal, or width otherwise
+            if wib then
+                if wib.position == "left" or wib.position == "right" then
+                    tot = wib.width
+                else
+                    tot = wib.height
+                end
+            end
+
+            int = math.modf((alsabar._current_level / 100) * tot)
             preset.text = string.format("[%s%s]", string.rep("|", int),
-                          string.rep(" ", awful.screen.focused().mywibox.height - int))
+                          string.rep(" ", tot - int))
 
             if alsabar.followtag then preset.screen = awful.screen.focused() end
 

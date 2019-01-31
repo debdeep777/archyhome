@@ -1,16 +1,17 @@
-
 --[[
-                                    
-     Steamburn Awesome WM theme 3.0 
-     github.com/copycat-killer      
-                                    
+
+     Steamburn Awesome WM theme 3.0
+     github.com/lcpz
+
 --]]
 
 local gears = require("gears")
 local lain  = require("lain")
 local awful = require("awful")
 local wibox = require("wibox")
-local os    = { getenv = os.getenv }
+
+local os = os
+local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.zenburn_dir                               = require("awful.util").get_themes_dir() .. "zenburn"
@@ -84,7 +85,7 @@ local mytextclock = wibox.widget.textclock(" %H:%M ")
 mytextclock.font = theme.font
 
 -- Calendar
-lain.widget.calendar({
+theme.cal = lain.widget.cal({
     attach_to = { mytextclock },
     notification_preset = {
         font = "Misc Tamsyn 11",
@@ -93,9 +94,9 @@ lain.widget.calendar({
     }
 })
 
---[[ Mail IMAP check
--- commented because it needs to be set before use
-local mail = lain.widget.imap({
+-- Mail IMAP check
+--[[ commented because it needs to be set before use
+theme.mail = lain.widget.imap({
     timeout  = 180,
     server   = "server",
     mail     = "mail",
@@ -147,17 +148,18 @@ local mem = lain.widget.mem({
 })
 
 -- /home fs
+--[[ commented because it needs Gio/Glib >= 2.54
 theme.fs = lain.widget.fs({
-    options = "--exclude-type=tmpfs",
     partition = "/home",
     notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "Misc Tamsyn 10.5" },
 })
+--]]
 
 -- Battery
 local bat = lain.widget.bat({
     settings = function()
         local perc = bat_now.perc
-        if bat_now.ac_status == 1 then perc = "Plug" end
+        if bat_now.ac_status == 1 then perc = perc .. " Plug" end
         widget:set_markup(markup.font(theme.font, markup(gray, " Bat ") .. perc .. " "))
     end
 })
@@ -223,8 +225,9 @@ function theme.at_screen_connect(s)
     s.mytxtlayoutbox = wibox.widget.textbox(theme["layout_txt_" .. awful.layout.getname(awful.layout.get(s))])
     awful.tag.attached_connect_signal(s, "property::selected", function () update_txt_layoutbox(s) end)
     awful.tag.attached_connect_signal(s, "property::layout", function () update_txt_layoutbox(s) end)
-    s.mytxtlayoutbox:buttons(awful.util.table.join(
+    s.mytxtlayoutbox:buttons(my_table.join(
                            awful.button({}, 1, function() awful.layout.inc(1) end),
+                           awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
                            awful.button({}, 3, function() awful.layout.inc(-1) end),
                            awful.button({}, 4, function() awful.layout.inc(1) end),
                            awful.button({}, 5, function() awful.layout.inc(-1) end)))
@@ -257,7 +260,7 @@ function theme.at_screen_connect(s)
             wibox.widget.systray(),
             spr,
             theme.mpd.widget,
-            --mail.widget,
+            --theme.mail.widget,
             cpu.widget,
             mem.widget,
             bat.widget,
