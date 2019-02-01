@@ -473,7 +473,7 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
               {description = "show filesystem", group = "widgets"}),
     awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
               {description = "show weather", group = "widgets"}),
----- To make brightness work with xbacklight, add the following to /usr/share/X11/xorg.conf.d/20-intel.conf 
+---- To make brightness work with xbacklight, install xbacklight, add the following to /usr/share/X11/xorg.conf.d/20-intel.conf 
 --Section "Device"
 --        Identifier  "card0"
 --        Driver      "intel"

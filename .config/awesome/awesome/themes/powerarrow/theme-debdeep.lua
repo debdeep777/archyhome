@@ -21,6 +21,8 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 -- Debdeep
 theme.font                                      = "DejaVu 12"
+theme.font_small                                      = "DejaVu 10"
+theme.font_mono                                 = "DejaVu Sans Mono 12"
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
 theme.fg_urgent                                 = "#C83F11"
@@ -123,13 +125,17 @@ local binclock = require("themes.powerarrow.binclock"){
   local clockicon = wibox.widget.imagebox(theme.widget_clock)
   local clock = awful.widget.watch(
        "date +'%b%d%a %I:%M'", 60,
-       --"date +'%a %d %b %R'", 60,
        function(widget, stdout)
 	       widget:set_markup(" " .. markup.font(theme.font, stdout))
        end
 	)  
-clock:buttons(awful.util.table.join(awful.button({}, 1, function () awful.spawn.with_shell("zenity --calendar --text=") end )))
 
+-- My Textclock
+local datestring = markup.font(theme.font_small, markup("#002b36", " %b ")) .. markup.font(theme.font, markup("#FFFFFF","%d "))  
+local timestring = markup.font(theme.font_small, markup("#DB856B", "%a ")) .. markup.font(theme.font, markup("#FFFFFF", "%I:%M" ))
+local mydate = wibox.widget.textclock(datestring)
+local mytime = wibox.widget.textclock(timestring)
+mydate:buttons(awful.util.table.join(awful.button({}, 1, function () awful.spawn.with_shell("zenity --calendar --text=") end )))
 
 
 
@@ -178,13 +184,15 @@ theme.mail = lain.widget.imap({
 --]]
 
 -- ALSA volume
+-- Consider using pulsebar from lain library
+-- Uses pactl as mine be has better control
 theme.volumebar = lain.widget.alsabar({
- width = 30,
+ width = 40,
+margins = 2,
 --margins = 0,
---margins = -1,
     --togglechannel = "IEC958,3",
 	--default width=63
-    notification_preset = { font = theme.font, fg = theme.fg_normal, bg=theme.bf_normal },
+    ---notification_preset = { font = theme.font, fg = theme.fg_normal, bg=theme.bf_normal },
 })
 
 local volume = wibox.container.background(theme.volumebar.bar)
@@ -195,6 +203,27 @@ theme.volumebar.bar:buttons(awful.util.table.join(
  awful.button({ }, 1, function () awful.spawn("pactl set-sink-mute 0 toggle")  theme.volumebar.update() end),
  awful.button({ }, 3, function () awful.spawn("pavucontrol")      end)   
  ))  
+
+-- Weather                                                                                                                                                                                 
+   theme.weather = lain.widget.weather({
+	-- Taken from https://openweathermap.org/
+	-- Search for city, click on the city and look at the address bar the code
+	city_id = 4366164,  -- washington, DC
+       --city_id = 2643743, -- placeholder (London)
+       notification_preset = { font = theme.font },
+       settings = function()
+           units = math.floor(weather_now["main"]["temp"])
+           --widget:set_markup(" " .. markup.font(theme.font_mono, units .. "°C") .. " ")
+           widget:set_markup(" " .. markup.font(theme.font_small, units) .. " ")
+       end
+   })
+-- Attaching the weather widget
+-- Decided not to
+-- theme.weather.attach(clock)
+
+
+-- Downloaded CPU widget
+local cpu_widget = require("awesome-wm-widgets.cpu-widget")
 
 
 -- MPD
@@ -245,7 +274,7 @@ local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
         --widget:set_markup(markup.font(theme.font, " " .. cpu_now.usage .. "% "))
-        widget:set_markup(markup.font(theme.font, " " .. cpu_now.usage .." "))
+        widget:set_markup(markup.font(theme.font_small, " " .. cpu_now.usage .." "))
     end
 })
 --cpu:buttons(awful.util.table.join(
@@ -302,7 +331,7 @@ local bat = lain.widget.bat({
                 baticon:set_image(theme.widget_battery)
             end
             --widget:set_markup(markup.font(theme.font, " " .. bat_now.perc .. "% "))
-            widget:set_markup(markup.font(theme.font, " " .. bat_now.perc))
+            widget:set_markup(markup.font(theme.font_small, bat_now.perc .. " "))
         else
             widget:set_markup()
             baticon:set_image(theme.widget_ac)
@@ -353,7 +382,8 @@ end
 
 function theme.at_screen_connect(s)
     -- Quake application
-    s.quake = lain.util.quake({ app = awful.util.terminal })
+    --s.quake = lain.util.quake({ app = awful.util.terminal })
+    s.quake = lain.util.quake({ app = "xfce4-terminal", argname = "--name %s" })
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper
@@ -422,6 +452,7 @@ function theme.at_screen_connect(s)
             --wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, 3, 6), theme.bg_focus),
 	--volume
 	--volume,
+	cpu_widget,
 	theme.volumebar.bar,
             --wibox.container.background(wibox.container.margin(wibox.widget { theme.volumebar.bar, layout = wibox.layout.align.horizontal }, 3, 6), theme.bg_focus),
 	--volumebar,
@@ -440,20 +471,26 @@ function theme.at_screen_connect(s)
             --arrow("#4B696D", "#4B3B51"),
             --wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, 4, 4), "#4B3B51"),
 	    -- filesystem
-            -- arrow("#4B3B51", "#CB755B"),
             --wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#CB755B"),
 	    -- bat
-           arrow("#777e76", "#4b696d"),
+           arrow("#777e76", "#CB755B"),
             --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#4b696d"),
           -- wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
-           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
+           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#CB755B"),
+
+	--weather
+            arrow("#CB755B", "#4b696d"),
+           wibox.container.background(wibox.container.margin(wibox.widget {  theme.weather.widget, theme.weather.icon, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
+
 	    -- data
             --arrow("#8DAA9A", "#C0C0A2"),
             --wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#C0C0A2"),
 	    -- clock
-            arrow("#4b696d", "#4B3B51"),
+            arrow("#4b696d", "#777e76"),
+            wibox.container.background(wibox.container.margin(wibox.widget {mydate, layout = wibox.layout.align.horizontal }, 0, 0), "#777e76"),
+            arrow("#777e76", "#4B3B51"),
             --wibox.container.background(wibox.container.margin(binclock.widget, 4, 8), "#777E76"),
-            wibox.container.background(wibox.container.margin(clock, 1, 1), "#4B3B51"),
+            wibox.container.background(wibox.container.margin(mytime, 1, 1), "#4B3B51"),
             --]]
         },
     }
