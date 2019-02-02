@@ -30,6 +30,14 @@ sudo jupyter labextension install jupyterlab_vim
 # %plot -f svg
 # in the beginning of the notebook
 
+## I moved to jupyter notebook for its RISE support
+# Moreover, the only reason to use jupter lab was vim keybinding,
+# which is available now with
+# https://github.com/lambdalisue/jupyter-vim-binding
+# Even better, now file edits can be done in new firefox tabs, 
+# not in tabs inside the tab of jupyter lab
+### Install RISE by following the instruction from RISE git
+
 #### Firefox ##############
 ### Bigger Firefox font
 # about:config > devPixelsPerPx to 1.2
