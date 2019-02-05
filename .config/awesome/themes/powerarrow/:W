@@ -21,8 +21,6 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 -- Debdeep
 theme.font                                      = "DejaVu 12"
-theme.font_small                                      = "DejaVu 10"
-theme.font_mono                                 = "DejaVu Sans Mono 12"
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
 theme.fg_urgent                                 = "#C83F11"
@@ -59,14 +57,6 @@ theme.layout_max                                = theme.dir .. "/icons/max.png"
 theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
 theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
 theme.layout_floating                           = theme.dir .. "/icons/floating.png"
-
--- Replaced powerarrow-darker/icons by powerarrow/icons
-theme.layout_centerwork                           = theme.dir .. "/icons/centerwork.png"
-theme.layout_centerworkh                           = theme.dir .. "/icons/centerworkh.png"
-theme.layout_centerfair                           = theme.dir .. "/icons/centerfair.png"
-theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
-theme.layout_cascadetile                           = theme.dir .. "/icons/floating.png"
-
 theme.widget_ac                                 = theme.dir .. "/icons/ac.png"
 theme.widget_battery                            = theme.dir .. "/icons/battery.png"
 theme.widget_battery_low                        = theme.dir .. "/icons/battery_low.png"
@@ -133,17 +123,13 @@ local binclock = require("themes.powerarrow.binclock"){
   local clockicon = wibox.widget.imagebox(theme.widget_clock)
   local clock = awful.widget.watch(
        "date +'%b%d%a %I:%M'", 60,
+       --"date +'%a %d %b %R'", 60,
        function(widget, stdout)
 	       widget:set_markup(" " .. markup.font(theme.font, stdout))
        end
 	)  
+clock:buttons(awful.util.table.join(awful.button({}, 1, function () awful.spawn.with_shell("zenity --calendar --text=") end )))
 
--- My Textclock
-local datestring = markup.font(theme.font_small, markup("#002b36", " %b ")) .. markup.font(theme.font, markup("#FFFFFF","%d "))  
-local timestring = markup.font(theme.font_small, markup("#DB856B", "%a ")) .. markup.font(theme.font, markup("#FFFFFF", "%I:%M" ))
-local mydate = wibox.widget.textclock(datestring)
-local mytime = wibox.widget.textclock(timestring)
-mydate:buttons(awful.util.table.join(awful.button({}, 1, function () awful.spawn.with_shell("zenity --calendar --text=") end )))
 
 
 
@@ -191,56 +177,74 @@ theme.mail = lain.widget.imap({
 })
 --]]
 
--- pulse volume
--- Consider using pulsebar from lain library
--- Uses pactl as mine be has better control
-theme.volumebar = lain.widget.pulsebar({
- width = 40,
-margins = 2,
---colors = {
---background = "#343434", 
-	--unmute = '#ffffff', 
-	--mute = '#CB755B',
---},
-ticks_size = 5,
-paddings = 0,
-ticks = true,
---margins = 0,
+-- ALSA volume
+local volumebar = lain.widget.alsabar({
+margin= 5,
+ width = 30,
+padding=0,
     --togglechannel = "IEC958,3",
 	--default width=63
-    --notification_preset = { font = theme.font, fg = theme.fg_normal, bg=theme.bf_normal },
+    notification_preset = { font = theme.font, fg = theme.fg_normal },
 })
 
-local volume = wibox.container.background(theme.volumebar.bar)
-theme.volumebar.bar:buttons(awful.util.table.join(                                                
--- myscr script volcontrol, uses pactl, chooses the main sound card
- awful.button({ }, 4, function () awful.spawn("pactl set-sink-volume 0 +5%") theme.volumebar.update()       end),
- awful.button({ }, 5, function () awful.spawn("pactl set-sink-volume 0 -5%")  theme.volumebar.update()      end),
- awful.button({ }, 1, function () awful.spawn("pactl set-sink-mute 0 toggle")  theme.volumebar.update() end),
+local volume = wibox.container.background(volumebar.bar)
+volumebar.bar:buttons(awful.util.table.join(                                                
+-- myscr script volcontrol, uses pactl
+ awful.button({ }, 4, function () awful.spawn("volcontrol +5%") volumebar.update()       end),
+ awful.button({ }, 5, function () awful.spawn("volcontrol -5%")  volumebar.update()      end),
+ -- added one more update ( vicious.force ) for the volumewidget
+ awful.button({ }, 1, function () awful.spawn("pactl set-sink-mute 0 toggle")  volumebar.update() end),
  awful.button({ }, 3, function () awful.spawn("pavucontrol")      end)   
  ))  
 
--- Weather                                                                                                                                                                                 
-   theme.weather = lain.widget.weather({
-	-- Taken from https://openweathermap.org/
-	-- Search for city, click on the city and look at the address bar the code
-	city_id = 4366164,  -- washington, DC
-       --city_id = 2643743, -- placeholder (London)
-       notification_preset = { font = theme.font },
-       settings = function()
-           units = math.floor(weather_now["main"]["temp"])
-           --widget:set_markup(" " .. markup.font(theme.font_mono, units .. "°C") .. " ")
-           widget:set_markup(" " .. markup.font(theme.font_small, units) .. " ")
-       end
-   })
--- Attaching the weather widget
--- Decided not to
--- theme.weather.attach(clock)
+---- ALSA volume                                                                             
 
+--local volicon = wibox.widget.imagebox(theme.widget_vol)
+--local volume = lain.widget.alsa({
+--    settings = function()
+--        if volume_now.status == "off" then
+--            volume_now.level = volume_now.level .. "M"
+--        end
+--	-- computing out of 10 to save space
+--        --widget:set_markup(markup.fontfg(theme.font, "#7493d2", math.floor(volume_now.level/10) ))
+--        --widget:set_markup(markup.fontfg(theme.font, "#7493d2", volume_now.level .. "% "))
+--        widget:set_markup(markup.fontfg(theme.font, "#7493d2", volume_now.level ))
+--
+--
+--    end
+--})
+--
+--volume.widget:buttons(awful.util.table.join(                                                
+-- --awful.button({ }, 4, function () awful.spawn("amixer -q set Master 5%+") vicious.            force({volumewidget})       end),
+-- awful.button({ }, 4, function () awful.spawn("volcontrol +5%") volume.update()       end),
+-- awful.button({ }, 5, function () awful.spawn("volcontrol -5%")  volume.update()      end),
+-- -- added one more update ( vicious.force ) for the volumewidget
+-- awful.button({ }, 1, function () awful.spawn("volcontrol mute")   end),
+-- awful.button({ }, 3, function () awful.spawn("pavucontrol")      end)   
+-- ))  
 
--- Downloaded CPU widget
-local cpu_widget = require("awesome-wm-widgets.cpu-widget")
-
+--	volume.widget:buttons(awful.util.table.join(
+--    awful.button({}, 1, function() -- left click
+--        awful.spawn(string.format("%s -e alsamixer", terminal))
+--    end),
+--    awful.button({}, 2, function() -- middle click
+--        os.execute(string.format("%s set %s 100%%", volume.cmd, volume.channel))
+--        volume.update()
+--    end),
+--    awful.button({}, 3, function() -- right click
+--        os.execute(string.format("%s set %s toggle", volume.cmd, volume.togglechannel or volume.channel))
+--        volume.update()
+--    end),
+--    awful.button({}, 4, function() -- scroll up
+--        os.execute(string.format("%s set %s 1%%+", volume.cmd, volume.channel))
+--        volume.update()
+--    end),
+--    awful.button({}, 5, function() -- scroll down
+--        os.execute(string.format("%s set %s 1%%-", volume.cmd, volume.channel))
+--        volume.update()
+--    end)
+--))
+---- volcontrol is a myscr script, check if exists                                           
 
 -- MPD
 local musicplr = awful.util.terminal .. " -title Music -g 130x34-320+16 -e ncmpcpp"
@@ -259,7 +263,6 @@ mpdicon:buttons(my_table.join(
         os.execute("mpc next")
         theme.mpd.update()
     end)))
---
 theme.mpd = lain.widget.mpd({
     settings = function()
         if mpd_now.state == "play" then
@@ -290,7 +293,7 @@ local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
         --widget:set_markup(markup.font(theme.font, " " .. cpu_now.usage .. "% "))
-        widget:set_markup(markup.font(theme.font_small, " " .. cpu_now.usage .." "))
+        widget:set_markup(markup.font(theme.font, " " .. cpu_now.usage .." "))
     end
 })
 --cpu:buttons(awful.util.table.join(
@@ -347,7 +350,7 @@ local bat = lain.widget.bat({
                 baticon:set_image(theme.widget_battery)
             end
             --widget:set_markup(markup.font(theme.font, " " .. bat_now.perc .. "% "))
-            widget:set_markup(markup.font(theme.font_small, bat_now.perc .. " "))
+            widget:set_markup(markup.font(theme.font, " " .. bat_now.perc))
         else
             widget:set_markup()
             baticon:set_image(theme.widget_ac)
@@ -398,8 +401,7 @@ end
 
 function theme.at_screen_connect(s)
     -- Quake application
-    --s.quake = lain.util.quake({ app = awful.util.terminal })
-    s.quake = lain.util.quake({ app = "xfce4-terminal", argname = "--name %s" })
+    s.quake = lain.util.quake({ app = awful.util.terminal })
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper
@@ -437,7 +439,7 @@ function theme.at_screen_connect(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             --spr,
-            wibox.container.background(wibox.container.margin(s.mylayoutbox, 0, 0),"#4b696B"),
+            wibox.container.background(wibox.container.margin(s.mylayoutbox, 0, 0),"#CB755B"),
             s.mytaglist,
             s.mypromptbox,
             spr,
@@ -466,15 +468,9 @@ function theme.at_screen_connect(s)
 	    -- MPD
             --arrow("#343434", theme.bg_normal),
             --wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, 3, 6), theme.bg_focus),
-	--volume
-	--volume,
-	cpu_widget,
 	    -- task 
-            --arrow(theme.bg_normal, "#343434"),
+            arrow(theme.bg_normal, "#343434"),
             wibox.container.background(wibox.container.margin(task, 3, 7), "#343434"),
-	--volumebar,
-            wibox.container.background(wibox.container.margin(theme.volumebar.bar, 3, 7), "#343434"),
-            --wibox.container.background(wibox.container.margin(wibox.widget { theme.volumebar.bar, layout = wibox.layout.align.horizontal }, 3, 6), theme.bg_focus),
 	    -- memory
             --arrow("#343434", "#777E76"),
             --wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, 2, 3), "#777E76"),
@@ -483,30 +479,27 @@ function theme.at_screen_connect(s)
             wibox.container.background(wibox.container.margin(wibox.widget {cpu.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#777e76"),
 
 
+	--volume
+	volume,
+	--volumebar,
 	    -- temp
             --arrow("#4B696D", "#4B3B51"),
             --wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, 4, 4), "#4B3B51"),
 	    -- filesystem
+            -- arrow("#4B3B51", "#CB755B"),
             --wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#CB755B"),
 	    -- bat
-           arrow("#777e76", "#CB755B"),
+           -- --arrow("#CB755B", "#8DAA9A"),
             --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#4b696d"),
           -- wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
-           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#CB755B"),
-
-	--weather
-            arrow("#CB755B", "#4b696d"),
-           wibox.container.background(wibox.container.margin(wibox.widget {  theme.weather.widget, theme.weather.icon, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
-
+           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
 	    -- data
             --arrow("#8DAA9A", "#C0C0A2"),
             --wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#C0C0A2"),
 	    -- clock
-            arrow("#4b696d", "#777e76"),
-            wibox.container.background(wibox.container.margin(wibox.widget {mydate, layout = wibox.layout.align.horizontal }, 0, 0), "#777e76"),
-            arrow("#777e76", "#4B3B51"),
+            arrow("#4b696d", "#4B3B51"),
             --wibox.container.background(wibox.container.margin(binclock.widget, 4, 8), "#777E76"),
-            wibox.container.background(wibox.container.margin(mytime, 1, 1), "#4B3B51"),
+            wibox.container.background(wibox.container.margin(clock, 1, 1), "#4B3B51"),
             --]]
         },
     }

@@ -4,6 +4,16 @@
      github.com/lcpz
 
 --]]
+--[[
+	Few main issues:
+	How to join mousebutton to a text widget, but just an icon?
+	What would be a ready-made applit for volume control?
+	Increase the height of the statusbar or have a central alignment of hte text in the bar
+	better icon for the template of the workspace
+	Make brightness buttons work without xbacklight as before
+	Edit widgets to make more color-coded
+	Change the color of the date text
+--]]
 
 -- {{{ Required libraries
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
@@ -59,7 +69,7 @@ end
 
 --- Startup applications
 --run_once({ "urxvtd", "unclutter -root" }) -- entries must be separated by commas
-run_once({"nm-applet", "onboard", "xfsettingsd","redshift", "xfce4-power-manager" }) -- entries must be separated by commas
+run_once({"nm-applet", "onboard", "xfsettingsd", "redshift", "xfce4-power-manager" }) -- entries must be separated by commas
 --run_once({ "nm-applet", "onboard" }) -- entries must be separated by commas
 --
 ---- run_once deosn't run it system wide
@@ -110,11 +120,11 @@ local scrlocker    = "slock"
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
-    awful.layout.suit.floating,
+    --awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
@@ -127,11 +137,11 @@ awful.layout.layouts = {
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.corner.se,
     --lain.layout.cascade,
-    --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
-    --lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center,
+    lain.layout.cascade.tile,
+    lain.layout.centerwork,
+    lain.layout.centerwork.horizontal,
+    lain.layout.termfair,
+    lain.layout.termfair.center,
 }
 
 awful.util.taglist_buttons = my_table.join(
@@ -191,9 +201,13 @@ lain.layout.termfair.nmaster           = 3
 lain.layout.termfair.ncol              = 1
 lain.layout.termfair.center.nmaster    = 3
 lain.layout.termfair.center.ncol       = 1
-lain.layout.cascade.tile.offset_x      = 2
-lain.layout.cascade.tile.offset_y      = 32
-lain.layout.cascade.tile.extra_padding = 5
+-- Debdeep, I'll use this layout for maybe 3-4 total windows, so don't need offsets
+lain.layout.cascade.tile.offset_x      = 0
+-- Don't want y-offset to begin with either. 
+-- Will just navigate using Alt+j/k
+lain.layout.cascade.tile.offset_y      = 0
+lain.layout.cascade.tile.extra_padding = 32
+-- This does not do anything
 lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
@@ -387,23 +401,28 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
     awful.key({ altkey }, "Up",
         function ()
             os.execute("pactl set-sink-volume 0 +5%")
-		vicious.force({volumewidget,})
+	    beautiful.volumebar.update()
+		--vicious.force({volumewidget,})
         end),
     awful.key({ altkey }, "Down",
         function ()
             os.execute("pactl set-sink-volume 0 -5%")
-		vicious.force({volumewidget,})
+	    beautiful.volumebar.update()
+            --beautiful.mpd.update()
+		--vicious.force({volumewidget,})
         end),
     awful.key({ altkey }, "m",
         function ()
             os.execute("pactl set-sink-mute 0 toggle")
-		vicious.force({volumewidget,})
+	    beautiful.volumebar.update()
+		--vicious.force({volumewidget,})
         end), 
 ----------------------------------
     -- Dynamic tagging
     awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end,
               {description = "add new tag", group = "tag"}),
-    awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end,
+-- Debdeep
+    awful.key({ modkey, }, "F2", function () lain.util.rename_tag() end,
               {description = "rename tag", group = "tag"}),
     awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end,
               {description = "move tag to the left", group = "tag"}),
@@ -459,7 +478,7 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
               {description = "show filesystem", group = "widgets"}),
     awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
               {description = "show weather", group = "widgets"}),
----- To make brightness work with xbacklight, add the following to /usr/share/X11/xorg.conf.d/20-intel.conf 
+---- To make brightness work with xbacklight, install xbacklight, add the following to /usr/share/X11/xorg.conf.d/20-intel.conf 
 --Section "Device"
 --        Identifier  "card0"
 --        Driver      "intel"
@@ -467,42 +486,11 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
 --        BusID       "PCI:0:2:0"
 --EndSection
     -- Brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 3") end,
+    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 5") end,
               {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 3") end,
+    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 5") end,
               {description = "-10%", group = "hotkeys"}),
 
-    -- ALSA volume control
-    awful.key({ altkey }, "Up",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume up", group = "hotkeys"}),
-    awful.key({ altkey }, "Down",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume down", group = "hotkeys"}),
-    awful.key({ altkey }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "toggle mute", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 100%", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "0",
-        function ()
-            os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 0%", group = "hotkeys"}),
 
     -- MPD control
     awful.key({ altkey, "Control" }, "Up",
@@ -730,7 +718,7 @@ awful.rules.rules = {
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
-    -- if not awesome.startup then awful.client.setslave(c) end
+     if not awesome.startup then awful.client.setslave(c) end
 
     if awesome.startup and
       not c.size_hints.user_position
