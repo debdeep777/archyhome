@@ -30,6 +30,15 @@ sudo jupyter labextension install jupyterlab_vim
 # %plot -f svg
 # in the beginning of the notebook
 
+## Install git-like drive for google
+cd gdrive
+sudo snap install drive
+
+### For RISE, I have done
+#sudo -H pip3 install RISE
+#sudo -H jupyter-nbextension install rise --py --sys-prefix
+### However, it is malfunctioning and the close button is missing
+
 ## I moved to jupyter notebook for its RISE support
 # Moreover, the only reason to use jupter lab was vim keybinding,
 # which is available now with

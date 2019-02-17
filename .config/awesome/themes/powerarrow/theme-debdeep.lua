@@ -121,6 +121,11 @@ theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/
 local markup = lain.util.markup
 local separators = lain.util.separators
 
+-- quake 
+--
+local quake = lain.util.quake({ app = awful.util.terminal})
+
+
 -- Binary clock
 local binclock = require("themes.powerarrow.binclock"){
     height = 16,
@@ -162,9 +167,11 @@ theme.cal = lain.widget.cal({
 local task = wibox.widget.imagebox(theme.widget_task)
 lain.widget.contrib.task.attach(task, {
     -- do not colorize output
-    show_cmd = "task | sed -r 's/\\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g'"
+    --show_cmd = "task | sed -r 's/\\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g'"
+    show_cmd = "cat .todo"
 })
 task:buttons(my_table.join(awful.button({}, 1, lain.widget.contrib.task.prompt)))
+
 
 -- Scissors (xsel copy and paste)
 local scissors = wibox.widget.imagebox(theme.widget_scissors)
@@ -399,7 +406,8 @@ end
 function theme.at_screen_connect(s)
     -- Quake application
     --s.quake = lain.util.quake({ app = awful.util.terminal })
-    s.quake = lain.util.quake({ app = "xfce4-terminal", argname = "--name %s" })
+    --s.quake = lain.util.quake({ app = "xfce4-terminal", argname = "--name %s" })
+    s.quake = lain.util.quake()
 
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper

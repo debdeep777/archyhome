@@ -69,7 +69,20 @@ end
 
 --- Startup applications
 --run_once({ "urxvtd", "unclutter -root" }) -- entries must be separated by commas
-run_once({"nm-applet", "onboard", "xfsettingsd", "redshift", "xfce4-power-manager" }) -- entries must be separated by commas
+run_once({"nm-applet", "onboard", "xfsettingsd", "redshift", "xfce4-power-manager", "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1" }) -- entries must be separated by commas
+
+
+-- Polkit authenticator
+-- This is a fix for certain applications crashing while an
+-- authenticator is supposed to pop up and ask for password
+-- Turns out, you have to run the following service all the time in
+-- the background and wait for the moment when that happend
+-- Strangely, it cannot be run by the name alone, has to be called by
+-- the whole path.
+-- See: https://wiki.archlinux.org/index.php/Polkit#Authentication_agents
+-- for the location
+--/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+--
 --run_once({ "nm-applet", "onboard" }) -- entries must be separated by commas
 --
 ---- run_once deosn't run it system wide
