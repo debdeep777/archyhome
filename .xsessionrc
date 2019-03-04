@@ -1,0 +1,4 @@
+# For awesome window manager to access
+# No need to add this path to .bashrc, .bash_profile or .xinitrc
+export PATH=$PATH:$HOME/.myscr/
+

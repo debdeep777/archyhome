@@ -1,4 +1,4 @@
-# This ia another fiel
+#This ia another fiel
 # =============================================================== #
 #
 # PERSONAL $HOME/.bashrc FILE for bash-3.0 (or later)
@@ -219,27 +219,6 @@ function job_color()
 # Adds some text in the terminal frame (if applicable).
 
 
-# Now we construct the prompt.
-#PROMPT_COMMAND="history -a"
-#case ${TERM} in
-#  *term | rxvt | linux)
-#        # Time of day (with load info):
-#        PS1="\[\$(load_color)\][\A\[${NC}\] "
-#        # User@Host (with connection type info):
-#        PS1=${PS1}"\[${SU}\]\u\[${NC}\]@\[${CNX}\]\h\[${NC}\] "
-#        # PWD (with 'disk space' info):
-#        PS1=${PS1}"\[\$(disk_color)\]\W]\[${NC}\] "
-#        # Prompt (with 'job' info):
-##        PS1=${PS1}"\[\$(job_color)\]>\[${NC}\] "
-#        # Set title of current xterm:
-##        PS1=${PS1}"\[\e]0;[\u@\h] \w\a\]"
-#        ;;
-#    *)
-##        PS1="(\A \u@\h \W) > " # --> PS1="(\A \u@\h \w) > "
-#                               # --> Shows full pathname of current dir.
-#        ;;
-#esac
-
 
 
 PROMPT_COMMAND="history -a"
@@ -299,6 +278,7 @@ export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 #-------------------------------------------------------------
 # Add colors for filetype and  human-readable sizes by default on 'ls':
 alias ls='ls -h --color'
+alias gtypist='gtypist -b'
 
 function cd_
 {
@@ -321,17 +301,17 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 ## Decided not to use it
 #alias sxiv='sxiv -a'
 
-# For colour output in cat
-
-alias ccat='vimcat'
-
-# Added by me for a custom lock screen comand
-
-alias lscr='cmatrix -a -b -u 5; vlock -a'
-
-# A quick shortcut to my favourite working directory
-
-alias Lenovo='cd /storage/Lenovo/'
+## For colour output in cat
+#
+#alias ccat='vimcat'
+#
+## Added by me for a custom lock screen comand
+#
+#alias lscr='cmatrix -a -b -u 5; vlock -a'
+#
+## A quick shortcut to my favourite working directory
+#
+#alias Lenovo='cd /storage/Lenovo/'
 
 # An alias needed by .myscr called dwz to change to the tempo directory after extracting the latest zip file
 
@@ -500,7 +480,7 @@ function ii()   # Get current host related info.
     echo -e "\n${BRed}Current date :$NC " ; date
     echo -e "\n${BRed}Machine stats :$NC " ; uptime
     echo -e "\n${BRed}Memory stats :$NC " ; free
-    echo -e "\n${BRed}Diskspace :$NC " ; mydf / /storage
+    echo -e "\n${BRed}Diskspace :$NC " ; mydf / /home
 #    echo -e "\n${BRed}Local IP Address :$NC" ; my_ip
 #    echo -e "\n${BRed}Local IP Address :$NC" ; ip addr
 #    echo -e "\n${BRed}Open connections :$NC "; netstat-nat -pan --inet;
@@ -541,7 +521,9 @@ function corename()   # Get name of app that created a corefile.
 # Script to include abd paths if /sda2 in mounted
 #if mount | grep /mnt;
 #then
-export PATH=$PATH:~/.myscr/
+# Moving this to .xsessionrc so that awesome can access this path (as
+# opposed to .bash_profile, which does not work)
+#export PATH=$PATH:~/.myscr/
 #export PATH=$PATH:~/.myscr/:/storage/Lenovo/a706/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/build-tools/
 #fi
 
@@ -556,8 +538,8 @@ export BC_ENV_ARGS=~/.bcrc
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-export GOPATH=$HOME/gopath
-export PATH=$GOPATH:$GOPATH/bin:$PATH
+#export GOPATH=$HOME/gopath
+#export PATH=$GOPATH:$GOPATH/bin:$PATH
 
 # For the wacom stylus that does not work from xrog.conf
 # Also, copy the file wacom.config in X11/xorg.conf.d/ which basically says
@@ -569,4 +551,29 @@ export PATH=$GOPATH:$GOPATH/bin:$PATH
 # Left out option: xsetwacom "RawSample" 4, which is default anyway
 xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressurecurve" 0 10 90 100
 xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressure Threshold" 500
+# Workaround for the bug
 xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Hover Click" 0
+
+##################################
+## env variables for UH-anita
+#
+## so that root is detectable
+## this updates the env variable LD_LIBRARY_PATH
+### use per needed basis, as it is messing up my ldp script
+### this sh file must be calling a cd command every time 
+#alias thisroot='. /home/debdeeproot/bin/thisroot.sh'
+## to include the header files while compiling the cpp files
+#export CPATH=/home/debdeep/root/include/
+#export ANITA_UTIL_INSTALL_DIR=/home/debdeep/anitaUtil
+#export ANITA_UTIL_INC_DIR=/home/debdeep/anitaUtil/include
+# then you run your cpp files with: g++ filename `root-config --libs`
+export LD_LIBRARY_PATH=/home/debdeep/libWTools/lib
+
+#################################
+#xrdb ~/.Xresources
+
+### Trello secrets for 3llo
+### we install locally using: gem install --user-install 3llo
+#export PATH=$PATH:~/.gem/ruby/2.5.0/bin
+### Add the user, key and token to a file called .3llo and source it
+#source .3llo
