@@ -21,9 +21,15 @@ syntax enable
 "let g:solarized_contrast = "high"
 
 " Abandoing solarized and welcoming gruvbox
+
+" this is essential for correct reproduction of colors based on
+" already set terminal colors. In my case, it is via a colorscheme
+" for xfce4-terminal
+set termguicolors
+""""""""""""""""
 colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_light='hard'
+set background=light
+let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='medium'
 " To change the contrast inside vim, you need to set
 " the contrast variable and then reload the colorsheme
@@ -246,7 +252,7 @@ let g:calendar_view = 'months'
 " Usually there is a wait time set by ttimeoutlen and timeoutlen
 " variables for which vim waits after <Esc> is pressed 
 "" This is a great remap to avoid the waiting time after <Esc>
-inoremap <Esc> <Esc>
+"inoremap <Esc> <Esc>
 "" Here is another one
 "inoremap <Esc> <Esc><Esc>
 
