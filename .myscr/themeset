@@ -1,12 +1,17 @@
 #! /bin/bash
 
+## downloaded dark gruvbox-gtk3 theme from
+## https://github.com/bennetthardwick/gruvbox-gtk
+## and move it to /usr/share/themes
+
+
 if [ $1 = "dark" ]; then
 	Term='gruvbox-dark'
-	GUI='gruvbox-gtk'	#GTK3 theme location: /usr/share/themes, downloaded from git
+	GUI='oomox-gruvbox-dark'	#GTK3 theme location: /usr/share/themes, downloaded from git
 fi
 if [ $1 = "light" ]; then
 	Term='gruvbox-light'
-	GUI='Numix'	#GTK3 theme location: /usr/share/themes
+	GUI='oomox-gruvbox-light'	# Using already install Numix for light theme
 fi
 
 # local (in .local/share/themes) themes do not work well, not sure why
