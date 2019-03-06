@@ -31,3 +31,11 @@ mv .terminalrc.tmp terminalrc
 ## setting the dark GUI theme
 xfconf-query -c xsettings -p /Net/ThemeName -s $GUI
 
+
+# if request for full update, i.e. awesome restart
+if [ $2 = "full" ]; then
+	## restart awesome after swapping the files
+	awmtheme=$HOME/.config/awesome/themes/powerarrow/
+	cp $awmtheme/theme-debdeep-$1.lua $awmtheme/theme-debdeep.lua
+	echo 'awesome.restart()' | awesome-client 
+fi
