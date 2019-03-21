@@ -69,7 +69,14 @@ end
 
 --- Startup applications
 --run_once({ "urxvtd", "unclutter -root" }) -- entries must be separated by commas
-run_once({"nm-applet", "onboard", "xfsettingsd", "redshift", "xfce4-power-manager", "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1" }) -- entries must be separated by commas
+run_once({
+	"nm-applet", 
+	"onboard",
+	"xfsettingsd",
+--	"redshift",
+	"xfce4-power-manager",
+	"/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1",
+}) -- entries must be separated by commas
 
 
 -- Polkit authenticator
@@ -90,7 +97,7 @@ run_once({"nm-applet", "onboard", "xfsettingsd", "redshift", "xfce4-power-manage
 --awful.spawn('xfsettingsd')
 ---- for brightness keys and auto-turn of screen etc
 --awful.spawn('xfce4-power-manager')	 
---awful.spawn('redshift')
+awful.spawn('redshift')
 
 
 -- This function implements the XDG autostart specification
@@ -393,7 +400,7 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
     --calendar.vim
     awful.key({ altkey, }, "c", function () awful.spawn(terminal .. " -e vim +Calendar") end),
     -- for xournal
-    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournal") end),
+    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournalpp") end),
     -- for Write, a xournal alternative, not open source but free, development stopped, not a good path
     awful.key({ modkey, "Shift" }, "w", function () awful.spawn("/home/debdeep/Downloads/Write/Write") end),
 -- screen rotation
@@ -680,7 +687,12 @@ end
 
 clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c)
-        c:emit_signal("request::activate", "mouse_click", {raise = true})
+	    -- left click sets focus on the client except when it is
+	    -- onboard
+	    if c.class ~= "Onboard"
+		then c:emit_signal("request::activate", "mouse_click", {raise = true})
+		end
+
     end),
     awful.button({ modkey }, 1, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
@@ -794,7 +806,10 @@ client.connect_signal("mouse::enter", function(c)
     --c:emit_signal("request::activate", "mouse_enter", {raise = true})
 -- Disable this
 -- Debdeep
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
+-- 	-- Mouse hover sets focus all clients except onboard
+	if c.class ~= "Onboard"
+	   then c:emit_signal("request::activate", "mouse_enter", {raise = false})
+	end
 end)
 
 -- No border for maximized clients
