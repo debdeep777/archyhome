@@ -28,8 +28,7 @@ set completion-highlight-fg \#d5c4a1
 set default-fg \#3c3836
 set default-bg \#ebdbb2
 set font Space\ Mono\ 10
-"set guioptions cs
-set guioptions s
+set guioptions cs
 set inputbar-fg \#3c3836
 set inputbar-bg \#fbf1c7
 set notification-bg \#fbf1c7
@@ -55,8 +54,8 @@ set recolor-reverse-video false
 set render-loading-bg \#fbf1c7
 set render-loading-fg \#3c3836
 set statusbar-home-tilde true
-# set selection-clipboard primary
-set selection-clipboard clipboard 
+#set selection-clipboard primary
+set selection-clipboard clipboard
 set index-bg \#fbf1c7
 set index-fg \#98971a
 set index-active-bg \#ebdbb2
