@@ -16,6 +16,76 @@ local wibox = require("wibox")
 local math, string, os = math, string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
+
+-- gruvbox colors
+
+-- Dark Background
+gd_bg0 = "#282828"
+gd_bg0_hard = "#1d2021"
+gd_bg0_soft = "#32302f"
+gd_bg1 = "#3c3836"
+gd_bg2 = "#504945"
+gd_bg3 = "#665c54"
+gd_bg4 = "#7c6f64"
+gd_fg0 = "#fbf1c7"
+gd_fg1 = "#ebdbb2"
+gd_fg2 = "#d5c4a1"
+gd_fg3 = "#bdae93"
+gd_fg4 = "#a89984"
+gd_dark_red = "#cc241d"
+gd_dark_green = "#98971a"
+gd_dark_yellow = "#d79921"
+gd_dark_blue = "#458588"
+gd_dark_purple = "#b16286"
+gd_dark_aqua = "#689d6a"
+gd_dark_orange = "#d65d0e"
+gd_dark_gray = "#928374"
+gd_light_red = "#fb4934"
+gd_light_green = "#b8bb26"
+gd_light_yellow = "#fabd2f"
+gd_light_blue = "#83a598"
+gd_light_purple = "#d3869b"
+gd_light_aqua = "#8ec07c"
+gd_light_orange = "#f38019"
+gd_light_gray = "#a89984"
+
+
+-- LIght Background
+gl_bg0 = "#fbf1c7"
+gl_bg0_hard = "#f9f5d7"
+gl_bg0_soft = "#f2e5bc"
+gl_bg1 = "#ebdbb2"
+gl_bg2 = "#d5c4a1"
+gl_bg3 = "#bdae93"
+gl_bg4 = "#a89984"
+gl_fg0 = "#282828"
+gl_fg1 = "#3c3836"
+gl_fg2 = "#504945"
+gl_fg3 = "#665c54"
+gl_fg4 = "#7c6f64"
+gl_dark_red = "#cc241d"
+gl_dark_green = "#98971a"
+gl_dark_yellow = "#d79921"
+gl_dark_blue = "#458588"
+gl_dark_purple = "#b16286"
+gl_dark_aqua = "#689d6a"
+gl_dark_orange = "#d65d0e"
+gl_dark_gray = "#928374"
+gl_light_red = "#9d0006"
+gl_light_green = "#79740e"
+gl_light_yellow = "#b57614"
+gl_light_blue = "#076678"
+gl_light_purple = "#8f3f71"
+gl_light_aqua = "#427b58"
+gl_light_orange = "#af3a03"
+gl_light_gray = "#7c6f64"
+----------------
+
+
+
+
+
+
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
@@ -23,25 +93,27 @@ theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "DejaVu 12"
 theme.font_small                                      = "DejaVu 10"
 theme.font_mono                                 = "DejaVu Sans Mono 12"
-theme.fg_normal                                 = "#FEFEFE"
-theme.fg_focus                                  = "#32D6FF"
-theme.fg_urgent                                 = "#C83F11"
-theme.bg_normal                                 = "#222222"
-theme.bg_focus                                  = "#3F4522"
-theme.bg_urgent                                 = "#CB755B"
-theme.taglist_fg_focus                          = "#00CCFF"
-theme.tasklist_bg_focus                         = "#222222"
-theme.tasklist_fg_focus                         = "#00CCFF"
+theme.fg_normal                                 = gd_fg2 
+theme.fg_focus                                  = gd_fg0 
+theme.fg_urgent                                 = gd_light_yellow
+theme.bg_normal                                 = gd_bg1
+theme.bg_focus                                  = gd_dark_aqua
+theme.bg_urgent                                 = gd_dark_orange
+
+theme.taglist_fg_focus                          = gd_fg0
+theme.taglist_bg_focus                          = gd_dark_green
+
+theme.tasklist_bg_focus                         = gd_dark_blue
+theme.tasklist_fg_focus                         = gd_fg0
+
 theme.border_width                              = 1
-theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = "#6F6F6F"
-theme.border_marked                             = "#CC9393"
-theme.titlebar_bg_focus                         = "#3F3F3F"
-theme.titlebar_bg_normal                        = "#3F3F3F"
-theme.titlebar_bg_focus                         = theme.bg_focus
-theme.titlebar_bg_normal                        = theme.bg_normal
-theme.titlebar_fg_focus                         = theme.fg_focus
-theme.menu_height                               = 18
+theme.border_normal                             = gd_bg2
+theme.border_focus                              = gd_dark_orange
+theme.border_marked                             = gd_light_purple
+theme.titlebar_bg_focus                         = gd_bg2
+theme.titlebar_bg_normal                        = gd_bg0
+theme.titlebar_fg_focus                         = gd_fg0
+theme.menu_height                               = 20
 theme.menu_width                                = 140
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
 theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
@@ -144,8 +216,8 @@ local binclock = require("themes.powerarrow.binclock"){
 	)  
 
 -- My Textclock
-local datestring = markup.font(theme.font_small, markup("#002b36", " %b ")) .. markup.font(theme.font, markup("#FFFFFF","%d "))  
-local timestring = markup.font(theme.font_small, markup("#DB856B", "%a ")) .. markup.font(theme.font, markup("#FFFFFF", "%I:%M" ))
+local datestring = markup.font(theme.font_small, markup(gd_bg0, " %b ")) .. markup.font(theme.font, markup(gd_fg0,"%d "))  
+local timestring = markup.font(theme.font_small, markup(gd_bg0, "%a ")) .. markup.font(theme.font, markup(gd_fg0, "%I:%M" ))
 local mydate = wibox.widget.textclock(datestring)
 local mytime = wibox.widget.textclock(timestring)
 mydate:buttons(awful.util.table.join(awful.button({}, 1, function () awful.spawn.with_shell("zenity --calendar --text=") end )))
@@ -167,8 +239,9 @@ theme.cal = lain.widget.cal({
 local task = wibox.widget.imagebox(theme.widget_task)
 lain.widget.contrib.task.attach(task, {
     -- do not colorize output
-    --show_cmd = "task | sed -r 's/\\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g'"
-    show_cmd = "cat .todo"
+    show_cmd = "task | sed -r 's/\\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g'"
+    -- Debdeep, my own todo list
+    --show_cmd = "cat .todo"
 })
 task:buttons(my_table.join(awful.button({}, 1, lain.widget.contrib.task.prompt)))
 
@@ -237,7 +310,7 @@ theme.volumebar.bar:buttons(awful.util.table.join(
        settings = function()
            units = math.floor(weather_now["main"]["temp"])
            --widget:set_markup(" " .. markup.font(theme.font_mono, units .. "°C") .. " ")
-           widget:set_markup(" " .. markup.font(theme.font_small, units) .. " ")
+           widget:set_markup(" " .. markup.font(theme.font_small, markup ( gd_fg0, units) ) .. " ")
        end
    })
 -- Attaching the weather widget
@@ -288,7 +361,15 @@ theme.mpd = lain.widget.mpd({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local mem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.font(theme.font, " " .. mem_now.used .. "MB "))
+	    -- implementing rounding off
+	    numDecimalPlaces = 1
+	    mult = 10^(numDecimalPlaces or 0)
+	mem_text =  math.floor(mem_now.used/1000 * 10^(numDecimalPlaces or 0) + 0.5) / mult
+	---------------
+        widget:set_markup(markup.font(theme.font, markup( gl_bg0,  " " .. mem_text .. " " )) )
+
+--        widget:set_markup(markup.font(theme.font, markup( gd_bg0,  " " .. mem_now.used )) )
+        --widget:set_markup(markup.font(theme.font, markup( gd_bg0,  " " .. mem_now.used .. "MB ")) )
     end
 })
 
@@ -354,7 +435,8 @@ local bat = lain.widget.bat({
                 baticon:set_image(theme.widget_battery)
             end
             --widget:set_markup(markup.font(theme.font, " " .. bat_now.perc .. "% "))
-            widget:set_markup(markup.font(theme.font_small, bat_now.perc .. " "))
+            widget:set_markup(markup.font(theme.font_small, markup(gd_bg0, bat_now.perc .. " ") ))
+            --widget:set_markup(markup.font(theme.font_small, bat_now.perc .. " "))
         else
             widget:set_markup()
             baticon:set_image(theme.widget_ac)
@@ -436,6 +518,14 @@ function theme.at_screen_connect(s)
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
+---------------------------------------------
+---------------------------------------------
+--   Removing the wibox in favor of xfce4-panel
+--   ----------------------------------------
+   ----------------------------------------
+   -- Stopped using xfce4-due to weird handling of multiple screens
+
+
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = 16, bg = theme.bg_normal, fg = theme.fg_normal })
 
@@ -487,8 +577,8 @@ function theme.at_screen_connect(s)
             --arrow("#343434", "#777E76"),
             --wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, 2, 3), "#777E76"),
 	    -- cpu
-            arrow("#343434", "#777e76"),
-            wibox.container.background(wibox.container.margin(wibox.widget {cpu.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#777e76"),
+            arrow("#343434", gd_dark_yellow),
+            wibox.container.background(wibox.container.margin(wibox.widget {mem, layout = wibox.layout.align.horizontal }, 0, 0), gd_dark_yellow),
 
 
 	    -- temp
@@ -497,27 +587,32 @@ function theme.at_screen_connect(s)
 	    -- filesystem
             --wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#CB755B"),
 	    -- bat
-           arrow("#777e76", "#CB755B"),
+           arrow(gd_dark_yellow, gd_light_aqua),
             --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#4b696d"),
           -- wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
-           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#CB755B"),
+           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), gd_light_aqua),
 
 	--weather
-            arrow("#CB755B", "#4b696d"),
-           wibox.container.background(wibox.container.margin(wibox.widget {  theme.weather.widget, theme.weather.icon, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
+            arrow(gd_light_aqua, gd_dark_blue),
+           wibox.container.background(wibox.container.margin(wibox.widget {  theme.weather.widget, theme.weather.icon, layout = wibox.layout.align.horizontal }, 0, 0), gd_dark_blue),
 
 	    -- data
             --arrow("#8DAA9A", "#C0C0A2"),
             --wibox.container.background(wibox.container.margin(wibox.widget { nil, neticon, net.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#C0C0A2"),
 	    -- clock
-            arrow("#4b696d", "#777e76"),
-            wibox.container.background(wibox.container.margin(wibox.widget {mydate, layout = wibox.layout.align.horizontal }, 0, 0), "#777e76"),
-            arrow("#777e76", "#4B3B51"),
+            arrow(gd_dark_blue, gd_dark_gray),
+            wibox.container.background(wibox.container.margin(wibox.widget {mydate, layout = wibox.layout.align.horizontal }, 0, 0), gd_dark_gray),
+            arrow(gd_dark_gray, gd_dark_purple),
             --wibox.container.background(wibox.container.margin(binclock.widget, 4, 8), "#777E76"),
-            wibox.container.background(wibox.container.margin(mytime, 1, 1), "#4B3B51"),
+            wibox.container.background(wibox.container.margin(mytime, 1, 1), gd_dark_purple),
             --]]
         },
     }
+---------------------------------------------------
+---------------------------------------------------
+-- End of wibox removal
+-- ------------------------------------------------
+-- ------------------------------------------------
 end
 
 return theme
