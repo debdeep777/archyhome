@@ -73,10 +73,11 @@ run_once({
 	"nm-applet", 
 	"onboard",
 	"xfsettingsd",
---	"redshift",
+	"redshift",	-- run_once checks for running instances of process using `pgrep redshift` first. Also `ps -A | grep redshift` for a search
 	"xfce4-power-manager",
 	"/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1",
 }) -- entries must be separated by commas
+
 
 
 -- Polkit authenticator
@@ -97,7 +98,6 @@ run_once({
 --awful.spawn('xfsettingsd')
 ---- for brightness keys and auto-turn of screen etc
 --awful.spawn('xfce4-power-manager')	 
-awful.spawn('redshift')
 
 
 -- This function implements the XDG autostart specification

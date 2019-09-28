@@ -18,6 +18,8 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 
 -- gruvbox colors
+local colors = "dark"
+
 
 -- Dark Background
 gd_bg0 = "#282828"
@@ -93,26 +95,51 @@ theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "DejaVu 12"
 theme.font_small                                      = "DejaVu 10"
 theme.font_mono                                 = "DejaVu Sans Mono 12"
-theme.fg_normal                                 = gd_fg2 
-theme.fg_focus                                  = gd_fg0 
-theme.fg_urgent                                 = gd_light_yellow
-theme.bg_normal                                 = gd_bg1
-theme.bg_focus                                  = gd_dark_aqua
-theme.bg_urgent                                 = gd_dark_orange
 
-theme.taglist_fg_focus                          = gd_fg0
-theme.taglist_bg_focus                          = gd_dark_green
+if colors == "dark" then
+	theme.fg_normal                                 = gd_fg2 
+	theme.fg_focus                                  = gd_fg0 
+	theme.fg_urgent                                 = gd_light_yellow
+	theme.bg_normal                                 = gd_bg1
+	theme.bg_focus                                  = gd_dark_aqua
+	theme.bg_urgent                                 = gd_dark_orange
 
-theme.tasklist_bg_focus                         = gd_dark_blue
-theme.tasklist_fg_focus                         = gd_fg0
+	theme.taglist_fg_focus                          = gd_fg0
+	theme.taglist_bg_focus                          = gd_dark_green
 
-theme.border_width                              = 1
-theme.border_normal                             = gd_bg2
-theme.border_focus                              = gd_dark_orange
-theme.border_marked                             = gd_light_purple
-theme.titlebar_bg_focus                         = gd_bg2
-theme.titlebar_bg_normal                        = gd_bg0
-theme.titlebar_fg_focus                         = gd_fg0
+	theme.tasklist_bg_focus                         = gd_dark_blue
+	theme.tasklist_fg_focus                         = gd_fg0
+
+	theme.border_width                              = 1
+	theme.border_normal                             = gd_bg2
+	theme.border_focus                              = gd_dark_orange
+	theme.border_marked                             = gd_light_purple
+	theme.titlebar_bg_focus                         = gd_bg2
+	theme.titlebar_bg_normal                        = gd_bg0
+	theme.titlebar_fg_focus                         = gd_fg0
+elseif colors == "light" then
+	theme.fg_normal                                 = gl_fg2 
+	theme.fg_focus                                  = gl_fg0 
+	theme.fg_urgent                                 = gl_light_yellow
+	theme.bg_normal                                 = gl_bg1
+	theme.bg_focus                                  = gl_dark_aqua
+	theme.bg_urgent                                 = gl_dark_orange
+
+	theme.taglist_fg_focus                          = gl_fg0
+	theme.taglist_bg_focus                          = gl_dark_green
+
+	theme.tasklist_bg_focus                         = gl_dark_blue
+	theme.tasklist_fg_focus                         = gl_fg0
+
+	theme.border_width                              = 1
+	theme.border_normal                             = gl_bg2
+	theme.border_focus                              = gl_dark_orange
+	theme.border_marked                             = gl_light_purple
+	theme.titlebar_bg_focus                         = gl_bg2
+	theme.titlebar_bg_normal                        = gl_bg0
+	theme.titlebar_fg_focus                         = gl_fg0
+end
+
 theme.menu_height                               = 20
 theme.menu_width                                = 140
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
