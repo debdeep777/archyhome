@@ -441,10 +441,10 @@ local bat = lain.widget.bat({
     end
 })
 -- brightness and power manager
-bat.widget:buttons(awful.util.table.join(
+mem.widget:buttons(awful.util.table.join(
 awful.button({ }, 1, function () awful.spawn("xfce4-power-manager-settings") end),
-awful.button({ }, 4, function () awful.spawn("xbacklight -inc 3")  end),
-awful.button({ }, 5, function () awful.spawn("xbacklight -dec 3")  end)
+awful.button({ }, 4, function () awful.spawn("xbacklight -inc 5")  end),
+awful.button({ }, 5, function () awful.spawn("xbacklight -dec 5")  end)
  ))       
 
 
