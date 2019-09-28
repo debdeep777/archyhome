@@ -1,8 +1,15 @@
 
-" sourcing .vimrc after editing
+" source .vimrc after editing
 " without restarting vim
 " Not sure if I'll ever use it though
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Automatically source vimrc in this file only on save.
+if has ('autocmd') " Remain compatible with earlier versions
+ augroup vimrc     " Source vim configuration upon save
+    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+  augroup END
+endif " has autocmd
 
 "exit vim 
 noremap qq :q!<CR>
@@ -38,7 +45,7 @@ syntax enable
 set termguicolors
 """"""""""""""""
 colorscheme gruvbox
-set background=dark
+set background=light
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='medium'
 " To change the contrast inside vim, you need to set

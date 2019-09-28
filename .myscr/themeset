@@ -4,16 +4,12 @@
 ## https://github.com/bennetthardwick/gruvbox-gtk
 ## and move it to /usr/share/themes
 
+## The first argument should be dark or light
+## I have named the required files accordingly
 
-if [ $1 = "dark" ]; then
-	Term='gruvbox-dark'
-	GUI='oomox-gruvbox-dark'	#GTK3 theme location: /usr/share/themes, downloaded from git
-fi
-if [ $1 = "light" ]; then
-	Term='gruvbox-light'
-	GUI='oomox-gruvbox-light'	# Using already install Numix for light theme
-fi
-
+## setting up the theme name and term color name
+	Term="gruvbox-$1"
+	GUI="oomox-gruvbox-$1"	#GTK3 theme location: /usr/share/themes, downloaded from git
 # local (in .local/share/themes) themes do not work well, not sure why
 
 if ! [[ -f $HOME/.local/share/xfce4/terminal/colorschemes/$Term.theme ]]
@@ -22,18 +18,21 @@ then
     exit 1
 fi
 cd ~/.config/xfce4/terminal
-# strip settings from any themes
+# strip settings from any theme
 grep -Fxvf <(cat /usr/share/xfce4/terminal/colorschemes/*.theme) terminalrc > .terminalrc.tmp
 grep -v -e Name -e Scheme "$HOME/.local/share/xfce4/terminal/colorschemes/$Term.theme" >> .terminalrc.tmp
 cp terminalrc terminalrc.bak
+
+## Applying xfce4-terminal settings on the fly
 mv .terminalrc.tmp terminalrc
 
-## setting the dark GUI theme
+## Applying the GUI theme on the fly
 xfconf-query -c xsettings -p /Net/ThemeName -s $GUI
 
 
 # if request for full update, i.e. awesome restart
-if [ $2 = "full" ]; then
+if [ "$2" == "full" ]
+then
 	## restart awesome after swapping the files
 	awmtheme=$HOME/.config/awesome/themes/powerarrow/
 	cp $awmtheme/theme-debdeep-$1.lua $awmtheme/theme-debdeep.lua

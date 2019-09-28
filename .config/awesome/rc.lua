@@ -231,7 +231,14 @@ lain.layout.cascade.tile.extra_padding = 32
 lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
-beautiful.init(string.format("%s/.config/awesome/themes/%s/theme-debdeep.lua", os.getenv("HOME"), chosen_theme))
+-- converting the process of loading theme file into a function so that I can call it later
+-- Made it into a global function (i.e. not `local function loadtheme()` so that I can run it from
+-- the lua prompt with Modkey + x with `loadtheme()`
+function loadtheme()
+	beautiful.init(string.format("%s/.config/awesome/themes/%s/theme-debdeep.lua", os.getenv("HOME"), chosen_theme))
+end
+loadtheme()
+
 -- }}}
 
 -- {{{ Menu
@@ -262,8 +269,9 @@ local myawesomemenu = {
 -- }}}
 
 -- {{{ Screen
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", function(s)
+
+-- A function to set wallpaper
+local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
         local wallpaper = beautiful.wallpaper
@@ -273,7 +281,11 @@ screen.connect_signal("property::geometry", function(s)
         end
         gears.wallpaper.maximized(wallpaper, s, true)
     end
-end)
+end
+-- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+screen.connect_signal("property::geometry", set_wallpaper)
+
+
 -- Create a wibox for each screen and add it
 awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
 -- }}}
@@ -401,8 +413,8 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
     awful.key({ altkey, }, "c", function () awful.spawn(terminal .. " -e vim +Calendar") end),
     -- for xournal
     awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournalpp") end),
-    -- for Write, a xournal alternative, not open source but free, development stopped, not a good path
-    awful.key({ modkey, "Shift" }, "w", function () awful.spawn("/home/debdeep/Downloads/Write/Write") end),
+    -- Loads the wallpaper that was located in the wallpaper path
+    awful.key({ modkey, "Shift" }, "w", set_wallpaper),
 -- screen rotation
     awful.key({ "Control", altkey }, "Left", function () awful.spawn("rotate left") end),
     awful.key({ "Control", altkey }, "Right", function () awful.spawn("rotate right") end),
@@ -560,7 +572,7 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
 
     -- User programs
     awful.key({ modkey }, "q", function () awful.spawn(browser) end,
-              {description = "run browser", group = "launcher"}),
+             {description = "run browser", group = "launcher"}),
     awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
               {description = "run gui editor", group = "launcher"}),
 
