@@ -4,6 +4,7 @@
 #sudo apt-get update 
 #sudo apt-get -y upgrade
 #
+#test
 
 ### Install packages
 sudo apt-get --assume-yes install $(cat packages)
