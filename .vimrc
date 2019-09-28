@@ -1,8 +1,17 @@
+
+" sourcing .vimrc after editing
+" without restarting vim
+" Not sure if I'll ever use it though
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+"exit vim 
 noremap qq :q!<CR>
-" suggested by itchyny from github
-" "to alias unnamed register to the + register, which is the X Window
-" clipboard
-"set clipboard=unnamed
+" "to alias unnamed register to the + register, which is the clipboard
+" Without this, you need to use "+y to copy text to clipboard to paste in
+" firefox, for example. With the clipboard being plus, the copied text
+" directly goes to +
+set clipboard=unnamedplus
+
 "What are these macros??!
 let @w = 'maF>vf<yGop`an'
 let @e = '10@wGV9ky'
@@ -10,8 +19,9 @@ let @i = '0x$xj'
 
 " This one overrides the settings and restores defaults
 "syntax on
+"
 
-" Using the solarized color scheme, must have 
+" Using some color scheme, must have 
 syntax enable
 
 
@@ -28,7 +38,7 @@ syntax enable
 set termguicolors
 """"""""""""""""
 colorscheme gruvbox
-set background=light
+set background=dark
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='medium'
 " To change the contrast inside vim, you need to set
@@ -65,7 +75,7 @@ hi SpellBad cterm=underline
 """""""""""
 " making the choice to go ignore-case option
 " to be case specific, use :set noic on demand
-set ic
+"set ic
 
 " Experimental since I do not know if I need to get used to the original
 " searching conventions
@@ -105,14 +115,18 @@ set spell
 set mouse=a
 
 " Make sure that there are always 3 lines above and below the cursor
-set scrolloff=3
+" set scrolloff=3
+set scrolloff=999 " this will set the cursor in the middle of the screen
+
 
 " Set a line break after 80 chars
 " Caution: adds a new line to the line itself when the number of characters exceed the limit
-set textwidth=69 	" word wrap after this, set this to zero to disable
+"set textwidth=69 	" word wrap after this, set this to zero to disable
 """ set a colorcolumn
 "set colorcolumn =+1
 "highlight ColorColumn ctermbg=lightgrey
+
+
 
 
 " Let us try to write some text here. First, we try to write the following text
@@ -173,7 +187,8 @@ set wildmenu
 
 
 
-" Remapping i,j to relative
+"" Remapping i,j to relative
+"" Messes with block selection
 "nnoremap i gi
 "nnoremap j gj
 
