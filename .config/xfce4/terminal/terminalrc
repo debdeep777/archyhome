@@ -35,4 +35,5 @@ DropdownWidth=100
 DropdownHeight=30
 DropdownAlwaysShowTabs=FALSE
 DropdownPositionVertical=3
+DropdownToggleFocus=FALSE
 
