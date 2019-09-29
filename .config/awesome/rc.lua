@@ -34,6 +34,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
 -- }}}
 
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -500,7 +501,8 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
               {description = "restore minimized", group = "client"}),
 
     -- Dropdown application
-    awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
+    awful.key({ modkey, }, "z", function () os.execute("xfce4-terminal --drop-down") end,
+    --awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
               {description = "dropdown application", group = "launcher"}),
 
     -- Widgets popups
@@ -744,6 +746,9 @@ awful.rules.rules = {
     -- Set Firefox to always map on the first tag on screen 1.
     { rule = { class = "Firefox" },
       properties = { screen = 1, tag = awful.util.tagnames[4] } },
+
+    { rule = { class = "Xfce4-terminal", role = "xfce4-terminal-dropdown" },
+          properties = { floating = true } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
