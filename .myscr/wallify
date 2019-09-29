@@ -2,14 +2,14 @@
 
 if [ $1 ]
 then
-	rm /root/.config/awesome/themes/multicolor/min.jpg.bak
+	rm ~/.config/awesome/themes/powerarrow/wall.png.bak
 
-	ln -s -T $(pwd)/$1 /root/.config/awesome/themes/multicolor/min.jpg.bak 
+	ln -s -T $(pwd)/$1 ~/.config/awesome/themes/powerarrow/wall.png.bak
 
 fi
-cd /root/.config/awesome/themes/multicolor/
-cp min.jpg tmp
-mv min.jpg.bak min.jpg
-mv tmp min.jpg.bak
+cd /root/.config/awesome/themes/powerarrow/
+cp wall.png tmp
+mv wall.png.bak wall.png
+mv tmp wall.png.bak
 
-echo "Symlink created and old pic backed up. Press Mod4+Ctrl+W to change wallpaper"
+echo "Symlink created and old pic backed up. Press Mod4+Shift+W to change wallpaper"

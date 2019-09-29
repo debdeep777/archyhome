@@ -280,7 +280,8 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+	-- the last boolean false is for `ignore_aspect`
+        gears.wallpaper.maximized(wallpaper, s, false)
     end
 end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)

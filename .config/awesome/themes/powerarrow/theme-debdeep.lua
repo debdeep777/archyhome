@@ -17,9 +17,11 @@ local math, string, os = math, string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 
--- gruvbox colors
-local colors = "dark"
+colortheme = "dark"
 
+--local colors = "dark"
+
+-- gruvbox colors
 
 -- Dark Background
 gd_bg0 = "#282828"
@@ -96,7 +98,7 @@ theme.font                                      = "DejaVu 12"
 theme.font_small                                      = "DejaVu 10"
 theme.font_mono                                 = "DejaVu Sans Mono 12"
 
-if colors == "dark" then
+if colortheme == "dark" then
 	theme.fg_normal                                 = gd_fg2 
 	theme.fg_focus                                  = gd_fg0 
 	theme.fg_urgent                                 = gd_light_yellow
@@ -117,7 +119,7 @@ if colors == "dark" then
 	theme.titlebar_bg_focus                         = gd_bg2
 	theme.titlebar_bg_normal                        = gd_bg0
 	theme.titlebar_fg_focus                         = gd_fg0
-elseif colors == "light" then
+elseif colortheme == "light" then
 	theme.fg_normal                                 = gl_fg2 
 	theme.fg_focus                                  = gl_fg0 
 	theme.fg_urgent                                 = gl_light_yellow
@@ -222,7 +224,7 @@ local separators = lain.util.separators
 
 -- quake 
 --
-local quake = lain.util.quake({ app = awful.util.terminal})
+--local quake = lain.util.quake({ app = awful.util.terminal})
 
 
 -- Binary clock
@@ -516,14 +518,15 @@ function theme.at_screen_connect(s)
     -- Quake application
     --s.quake = lain.util.quake({ app = awful.util.terminal })
     --s.quake = lain.util.quake({ app = "xfce4-terminal", argname = "--name %s" })
-    s.quake = lain.util.quake()
+    --s.quake = lain.util.quake()
 
-    -- If wallpaper is a function, call it with the screen
-    local wallpaper = theme.wallpaper
-    if type(wallpaper) == "function" then
-        wallpaper = wallpaper(s)
-    end
-    gears.wallpaper.maximized(wallpaper, s, true)
+   -- wallpaper setting will be handled by rc.lua
+   -- -- If wallpaper is a function, call it with the screen
+   -- local wallpaper = theme.wallpaper
+   -- if type(wallpaper) == "function" then
+   --     wallpaper = wallpaper(s)
+   -- end
+   -- gears.wallpaper.maximized(wallpaper, s, true)
 
     -- Tags
     awful.tag(awful.util.tagnames, s, awful.layout.layouts)
@@ -613,14 +616,19 @@ function theme.at_screen_connect(s)
             --wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, 4, 4), "#4B3B51"),
 	    -- filesystem
             --wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#CB755B"),
-	    -- bat
-           arrow(gd_dark_yellow, gd_light_aqua),
-            --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#4b696d"),
-          -- wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
-           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), gd_light_aqua),
+    ------- bat
+       ------ Removing battery widget in favour of xfce4-power-manager's tray icon. Settings are in ~/.config/xfce4/xfconf/
+       ------    arrow(gd_dark_yellow, gd_light_aqua),
+       ------     --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#4b696d"),
+       ------   -- wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
+       ------    wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), gd_light_aqua),
 
-	--weather
-            arrow(gd_light_aqua, gd_dark_blue),
+       ------ --weather
+       ------     arrow(gd_light_aqua, gd_dark_blue),
+    ------ end bat
+    -- new arrow
+            arrow(gd_dark_yellow, gd_dark_blue),
+
            wibox.container.background(wibox.container.margin(wibox.widget {  theme.weather.widget, theme.weather.icon, layout = wibox.layout.align.horizontal }, 0, 0), gd_dark_blue),
 
 	    -- data
