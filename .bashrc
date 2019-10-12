@@ -290,12 +290,40 @@ function cd_
 # Renamed cd to cd and export the directory path we are entering
 alias cd='cd_'
 
+## Big decision: run vim in servermode always
+## This way, I can source new vimrc automatically
+## Will it get slow if I run too many instances?
+alias vim='vim --servername VIM'
+## Note that the default servername is VIM
+## Running this command many times creates servers like VIM1, VIM2,...
+## Running `vim --servername this --servername that` runs only THAT
+## So, we can connect to preciously connected servers
+## And, it does not interfere with my vtex .myscript either!
+## Weird win-win situation
+
 # Optional alias
 alias lx='ls -lXB'         #  Sort by extension.
 alias lk='ls -lSr'         #  Sort by size, biggest last.
 alias lt='ls -ltr'         #  Sort by date, most recent last.
 alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
+
+## countdown and stopwatch for terminal
+
+function countdown(){
+   date1=$((`date +%s` + $1)); 
+   while [ "$date1" -ge `date +%s` ]; do 
+     echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+     sleep 0.1
+   done
+}
+function stopwatch(){
+  date1=`date +%s`; 
+   while true; do 
+    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
+    sleep 0.1
+   done
+}
 
 ## Making sxiv capable of opening .gifs
 ## Decided not to use it
@@ -552,7 +580,7 @@ export BC_ENV_ARGS=~/.bcrc
 xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressurecurve" 0 10 90 100
 xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressure Threshold" 500
 # Workaround for the bug
-xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Hover Click" 0
+#xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Hover Click" 0
 
 ##################################
 ## env variables for UH-anita
@@ -577,3 +605,6 @@ export LD_LIBRARY_PATH=/home/debdeep/libWTools/lib
 #export PATH=$PATH:~/.gem/ruby/2.5.0/bin
 ### Add the user, key and token to a file called .3llo and source it
 #source .3llo
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
