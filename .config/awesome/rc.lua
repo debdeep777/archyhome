@@ -73,9 +73,9 @@ end
 run_once({
 	"nm-applet", 
 	"onboard",
-	"xfsettingsd",
+	"xfsettingsd",	-- gui theme and other options
 	"redshift",	-- run_once checks for running instances of process using `pgrep redshift` first. Also `ps -A | grep redshift` for a search
-	"xfce4-power-manager",
+	--"xfce4-power-manager",	-- this one is probably messing with the suspend-resumed awesome redraw issue
 	"/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1",
 }) -- entries must be separated by commas
 
@@ -271,7 +271,7 @@ local myawesomemenu = {
 
 -- {{{ Screen
 
--- A function to set wallpaper
+---- A function to set wallpaper
 local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
@@ -285,6 +285,7 @@ local function set_wallpaper(s)
     end
 end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+-- There is another wallpaper setting command in the theme file
 screen.connect_signal("property::geometry", set_wallpaper)
 
 
@@ -501,8 +502,13 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
               end,
               {description = "restore minimized", group = "client"}),
 
+
     -- Dropdown application
-    awful.key({ modkey, }, "z", function () os.execute("xfce4-terminal --drop-down") end,
+    -- os.execute freezes awesome when there is no instance of
+    -- termianl running but modkey+z is presses. So, using
+    -- awful.spawn instead
+    --awful.key({ modkey, }, "z", function () os.execute("xfce4-terminal --drop-down") end,
+    awful.key({ modkey, }, "z", function () awful.spawn("xfce4-terminal --drop-down") end,
     --awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
               {description = "dropdown application", group = "launcher"}),
 
