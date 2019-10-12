@@ -29,8 +29,14 @@ mv .terminalrc.tmp terminalrc
 ## Applying the GUI theme on the fly
 xfconf-query -c xsettings -p /Net/ThemeName -s $GUI
 
+## Editing vim settings
+echo "set background=$1" > $HOME/.vim/vimtheme
+
 
 # if request for full update, i.e. awesome restart
+## Doesn't work now
+##  * We need to find better ways to change color without restarting awesome
+##  * We need to find a way to dynamically change the variable colortheme in theme-debdeep.lua
 if [ "$2" == "full" ]
 then
 	## restart awesome after swapping the files

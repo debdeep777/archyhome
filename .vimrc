@@ -11,6 +11,14 @@ if has ('autocmd') " Remain compatible with earlier versions
   augroup END
 endif " has autocmd
 
+
+" Thesaurus location to use with the plugin thesaurus_query
+" Need mythes: `sudo apt-get install mythes-en-us` 
+let g:tq_openoffice_en_file="/usr/share/mythes"
+" downloaded form http://www.gutenberg.org/files/3202/files/
+" old and had useless synomyms
+let g:tq_mthesaur_file="~/Downloads/mthes/mthesaur.txt"
+
 "exit vim 
 noremap qq :q!<CR>
 " "to alias unnamed register to the + register, which is the clipboard
@@ -45,7 +53,12 @@ syntax enable
 set termguicolors
 """"""""""""""""
 colorscheme gruvbox
-set background=light
+
+" moving this option to another file so that I can source it using
+" a .myscript called themeset
+"set background=dark
+source ~/.vim/vimtheme
+
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='medium'
 " To change the contrast inside vim, you need to set
@@ -123,12 +136,12 @@ set mouse=a
 
 " Make sure that there are always 3 lines above and below the cursor
 " set scrolloff=3
-set scrolloff=999 " this will set the cursor in the middle of the screen
+"set scrolloff=999 " this will set the cursor in the middle of the screen
 
 
 " Set a line break after 80 chars
 " Caution: adds a new line to the line itself when the number of characters exceed the limit
-"set textwidth=69 	" word wrap after this, set this to zero to disable
+set textwidth=69 	" word wrap after this, set this to zero to disable
 """ set a colorcolumn
 "set colorcolumn =+1
 "highlight ColorColumn ctermbg=lightgrey
