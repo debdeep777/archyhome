@@ -62,13 +62,26 @@ Using vim-surround:
 * specific use: type anything other than {}()[]'" and it will be considered as a html tag <tag> </tag>
 
 
+Using vim-easymotion:
+
+Probably the most necessary plugin is here. 
+Following the keybinding of my .vimrc, here are the most useful motions.
+
+* \w or \b to jump forward and backward to words. Also, \W, \B, \E, \ge, \gE 
+* s or t to search for two-character search string to jump to (remaped less used s, remapping t does not cause any conflict so far)
+* / with searching will now show links to jump to. Without hitting Enter after entering the search string will give you and opportunity to press Tab to scroll forward and backward (with Shift+Tab) to look for other matching strings
+* L will show links to line numbers
+* Probably the most useful option is the use of these motions with v (and V and Ctrl+v) and d. After entering the visual mode, use \w, \b, \s, L, \B, \W etc to quickly make selections. This was one of the cases where keyboard-only paradigm was painful. But not anymore.
+
+
 Questions:
-Create a new line at the cursor point without going into insert mode
-Delete backward when the cursor is on the last letter of the word (dB does not work)
-Copy-pasting with firefox and terminal
+Create a new line at the cursor point without going into insert mode: mapped oo and OO for that reason, but this also makes o and O very slow
+Delete backward when the cursor is on the last letter of the word (dB does not work): done with dge and dgE
+Copy-pasting with firefox and terminal: done with clipboard=unnamedplus
 Navigating a multi-line sentence
 :tag and how to use them: need to use ctags to create a tag file with limited scope.
 :earlier :later, undo branching:
+
 
 
 Awesomewm related shortcuts:
