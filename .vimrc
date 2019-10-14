@@ -130,6 +130,7 @@ set cursorcolumn
 set relativenumber 
 set number 
 
+
 " The paste mode toggle
 set pastetoggle=<F2>
 
@@ -327,4 +328,46 @@ nmap t <plug>(easymotion-s2)
 "nmap <Leader>L <Plug>(easymotion-overwin-line)
 map L <Plug>(easymotion-bd-jk)
 nmap L <Plug>(easymotion-overwin-line)
+
+""""""""""""""""""""""""""""""""""
+"" for lightline plugin
+""""""""""""""""""""""""""""""""""
+set laststatus=2
+"let g:lightline = {
+"      \ 'colorscheme': 'gruvbox',
+"      \ }
+"
+"" From lightline-gruvbox.vim
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
+
+""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""
+"" ranger.vim
+""""""""""""""""""""""""""""""""""""
+let g:ranger_map_keys = 0
+"map <leader>r :Ranger<CR>
+map <leader>r :RangerCurrentFileNewTab<CR>
+"map <leader>r :RangerCurrentFileNewTab<CR>
+
+" this is great! Ranger in the place of vim browser
+let g:NERDTreeHijackNetrw = 0 "add this line if you use NERDTree
+let g:ranger_replace_netrw = 1  "open ranger when vim open a directory
+
+" show hidden files (zh) in the ranger instances automatically
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
+
+
+"""""""" vim-ranger
+""let g:ranger_executable = 'ranger'
+""let g:ranger_open_mode = 'tabe'
+
+""""""""""""""""""""""""
+"" gitgutter, shows unstaged changes at current file
+""""""""""""""""""""""""""
+" If there is any unstaged changes, the signcolumn pops up
+" automatically when you open the file
+"  so no need to do 
+"set signcolumn=yes
 
