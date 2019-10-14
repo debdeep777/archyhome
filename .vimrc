@@ -12,6 +12,7 @@ if has ('autocmd') " Remain compatible with earlier versions
 endif " has autocmd
 
 
+
 " Thesaurus location to use with the plugin thesaurus_query
 " Need mythes: `sudo apt-get install mythes-en-us` 
 let g:tq_openoffice_en_file="/usr/share/mythes"
@@ -21,6 +22,16 @@ let g:tq_mthesaur_file="~/Downloads/mthes/mthesaur.txt"
 
 "exit vim 
 noremap qq :q!<CR>
+
+
+" Adding gaps before and after the current line
+" for better formatting
+"map <Leader>o o<Esc>k
+"map <Leader>O O<Esc>j
+map oo o<Esc>k
+map OO O<Esc>j
+
+
 " "to alias unnamed register to the + register, which is the clipboard
 " Without this, you need to use "+y to copy text to clipboard to paste in
 " firefox, for example. With the clipboard being plus, the copied text
