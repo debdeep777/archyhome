@@ -24,7 +24,8 @@ Esc key with the pinky finger
 Backspace with pinky as well
 braces and brackets with pinky as well
 
-* S (substitute) deletes the current sentence and goes into the edit
+* S (substitute) deletes the current sentence and goes into the edit (compared to DD where the current line vanishes)
+* :set textwidth=69 and :set colorcolumn=+1 breaks the line after 69 characters. (`linebreak` makes sure that that words do not break in the middle). However, after editing for a while in this mode, lines will have different width. It can be fixed with `gq` command: gqap (here, ap is `a paragraph`)
 * mode. Also, s is a better alternative to r to edit strings
 * W, E, B instead of w,e,b to avoid special characters. So, dW, dE, dB etc
 * Crtrl+E/Y to  move page without moving the cursor so that I don't have to look at the bottom of the screen all the time; Even better: zz adjust the screen  so that the cursor is at the middle of the screen. zb and zt to place it in the top and bottom.

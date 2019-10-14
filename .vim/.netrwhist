@@ -1,10 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/debdeep/debdeepbh.github.io/_layouts'
-let g:netrw_dirhist_2='/home/debdeep/debdeepbh.github.io'
-let g:netrw_dirhist_3='/home/debdeep/debdeepbh.github.io/_sass'
-let g:netrw_dirhist_4='/home/debdeep/ML/datasets'
-let g:netrw_dirhist_5='/home/debdeep/.myscr'
-let g:netrw_dirhist_6='/home/debdeep/.local/share/themes/Numix'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/debdeep/.vim/bundle'
+let g:netrw_dirhist_2='/home/debdeep/.vim/bundle/vim-easymotion'
+let g:netrw_dirhist_3='/home/debdeep/.vim/bundle/vim-easymotion/autoload'
+let g:netrw_dirhist_4='/home/debdeep/.vim/bundle/vim-easymotion'
+let g:netrw_dirhist_5='/home/debdeep/.vim'
+let g:netrw_dirhist_6='/home/debdeep/.vim/plugin'
 let g:netrw_dirhist_7='/home/debdeep/.vim/bundle'
-let g:netrw_dirhist_8='/home/debdeep/test'

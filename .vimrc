@@ -139,10 +139,10 @@ set mouse=a
 "set scrolloff=999 " this will set the cursor in the middle of the screen
 
 
-" Set a line break after 80 chars
-" Caution: adds a new line to the line itself when the number of characters exceed the limit
-set textwidth=69 	" word wrap after this, set this to zero to disable
+""" Set a line break after 80 chars
+""" Caution: adds a new line to the line itself when the number of characters exceed the limit
 """ set a colorcolumn
+"set textwidth=69 	" word wrap after this, set this to zero to disable
 "set colorcolumn =+1
 "highlight ColorColumn ctermbg=lightgrey
 
@@ -295,3 +295,25 @@ let g:calendar_view = 'months'
 let &t_SI.="\e[6 q"
 let &t_EI.="\e[2 q"
 let &t_SR.="\e[4 q"
+
+"""""""""""""""""""""""""""""""""""
+"" easymotion settings
+
+" mapping <Leader> instead of <Leader><Leader> as the trigger keystroke
+map <Leader> <Plug>(easymotion-prefix)
+
+
+" incsearch with links, press tab to scroll page
+map  / <plug>(easymotion-sn)
+omap / <plug>(easymotion-tn)
+
+" added 
+nmap s <plug>(easymotion-s2)
+nmap t <plug>(easymotion-s2)
+
+" Move to line
+"map <Leader>L <Plug>(easymotion-bd-jk)
+"nmap <Leader>L <Plug>(easymotion-overwin-line)
+map L <Plug>(easymotion-bd-jk)
+nmap L <Plug>(easymotion-overwin-line)
+

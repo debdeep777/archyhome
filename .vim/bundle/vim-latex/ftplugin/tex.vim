@@ -12,6 +12,7 @@ set sw=2
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
 set iskeyword+=:
+
  
 """"""""""""""""""""""""""""""""""""""""
 """"auto-update "Last Change:" if present in the first 5 lines  whenever saving file
@@ -92,6 +93,8 @@ let g:Tex_Com_cup = "\\bigcup\\limits\_{<++>}\^{<++>}<++>"
 let g:Tex_Com_lim = "\\lim\\limits\_{<++>\\to<++>}<++>"
 let g:Tex_Com_int = "\\int\\limits\_{<++>}^{<++>}<++>"
 let g:Tex_Com_hat = "\\widehat{<++>}<++>"
+let g:Tex_Com_min = "\\min\\limits\_{<++>}\^{<++>}\\left\\{<++> \\right\\}"
+let g:Tex_Com_max = "\\max\\limits\_{<++>}\^{<++>}\\left\\{<++> \\right\\}"
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
