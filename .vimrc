@@ -26,10 +26,10 @@ noremap qq :q!<CR>
 
 " Adding gaps before and after the current line
 " for better formatting
-"map <Leader>o o<Esc>k
-"map <Leader>O O<Esc>j
-map oo o<Esc>k
-map OO O<Esc>j
+map <Leader>o o<Esc>k
+map <Leader>O O<Esc>j
+"map oo o<Esc>k
+"map OO O<Esc>j
 
 
 " "to alias unnamed register to the + register, which is the clipboard
