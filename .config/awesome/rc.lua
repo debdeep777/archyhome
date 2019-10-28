@@ -852,23 +852,24 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- To avoid client disappearance on suspend, update to awesome version 4.3 from github
 
+-- Update: the following doesn't do anything that the default awesome 4.3 cannot do
 -- possible workaround for tag preservation when switching back to default screen:
 -- After disconnecting the external screen, the laptop screen will be weird and flicker
 -- Need to either reset the resolution in xfce4-display-settings or 
 -- select the Laptop mode in the display configuring popup
-tag.connect_signal("request::screen", function(t)
-    for s in screen do
-	if s ~= t.screen then
-	    local t2 = awful.tag.find_by_name(s, t.name)
-	    if t2 then
-	        t:swap(t2)
-	    else
-	      t.screen = s
-	    end
-	  return
-	end
-    end
-end)
+--tag.connect_signal("request::screen", function(t)
+--    for s in screen do
+--	if s ~= t.screen then
+--	    local t2 = awful.tag.find_by_name(s, t.name)
+--	    if t2 then
+--	        t:swap(t2)
+--	    else
+--	      t.screen = s
+--	    end
+--	  return
+--	end
+--    end
+--end)
 --tag.connect_signal("request::screen", function(t)
     --for s in screen do
         --if s ~= t.screen then
