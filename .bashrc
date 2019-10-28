@@ -193,7 +193,7 @@ function disk_color()
     elif [ -s "${PWD}" ] ; then
         local used=$(command df -P "$PWD" |
                    awk 'END {print $5} {sub(/%/,"")}')
-        if [ ${used} -gt 95 ]; then
+        if [ ${used} -gt 98 ]; then
             echo -en ${ALERT}           # Disk almost full (>95%).
         elif [ ${used} -gt 90 ]; then
             echo -en ${BRed}            # Free disk space almost gone.

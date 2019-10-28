@@ -12,6 +12,9 @@ if has ('autocmd') " Remain compatible with earlier versions
 endif " has autocmd
 
 
+" Ctrl+Backspace for deleting
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
 
 " Thesaurus location to use with the plugin thesaurus_query
 " Need mythes: `sudo apt-get install mythes-en-us` 
