@@ -1,0 +1,11 @@
+snippet test
+Enter ${1:choice}
+Output: 
+`!p if t[1] == 'orange': 	# t[1] is the python version of $1
+	snip.rv = 'I am an orange'	# snip.rv output of this python script
+elif t[1] == 'apple':
+	snip.rv = 'Who like apples?'`
+endsnippet
+
+
+	

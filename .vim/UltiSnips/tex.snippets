@@ -1,0 +1,200 @@
+snippet sum
+\sum_{${1:i} ${2:=0}}^{${3:n}}
+endsnippet
+
+#snippet title "Title transformation"
+#${1:a text}
+#${1/\w+\s*/\u$0/}
+#endsnippet
+
+############# Template job Application #####
+snippet cover "Cover letter" b
+%        File: research_statement.tex
+%     Created: Sun Sep 29 04:00 PM 2019 E
+% Last Change: Mon Nov 11 11:00 PM 2019
+% snippet date: `date +%m/%d/%y`
+
+% Documentclass
+\documentclass[12pt]{amsart}
+
+% marginratio keeps amsart package from using different margins
+% in odd and even pages while using the package geometry
+%\usepackage[marginratio=1:1, top=2cm, left=3cm, right=3cm]{geometry}
+%\usepackage[marginratio=1:1, top=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=2cm]{geometry}
+% margin
+%\setlength{\topmargin}{0mm} \setlength{\oddsidemargin}{0mm}
+%\setlength{\textwidth}{160mm} \setlength{\textheight}{220mm}
+%\font\bbc=msbm10 scaled 1200
+
+% amsmath:\text{} inside math mode; amssymb:\lesssim, amsthm:\newtheorem; amsfonts:\mathbb{}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+%to use color
+\usepackage{color}
+
+\usepackage{hyperref}
+
+% reduce spacing between references
+\usepackage{natbib}
+\setlength{\bibsep}{0.0pt}
+% smaller bibliography fonts
+\renewcommand*{\bibfont}{\small}
+
+% set gap after paragraph
+\setlength{\parskip}{1em}
+
+% quotes
+\usepackage{csquotes}
+
+% User defined fun
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\br}[1]{\color{red} (#1) \color{black}}
+\newcommand{\bb}[1]{\color{blue} (#1) \color{black}}
+\newcommand{\what}{\bb{??}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\jap}[1]{\left\langle #1 \right\rangle}
+\newcommand{\inn}[1]{\left\langle #1 \right\rangle}
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{rem}{Remark}
+\newtheorem{result}{Result}
+\newtheorem*{notation}{Notation}
+\newtheorem{prob}{Problem}
+\newtheorem{propn}{Proposition}
+% newtheorem{proof}{Proof} is not needed, already available with \begin{proof} .. \end{proof} with nice italic fonts
+
+%% define bold letters
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\rr}{\mathbf{r}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\ff}{\mathbf{f}}
+\newcommand{\Bb}{\mathbf{b}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\TT}{\mathbf{T}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\varepsilonB}{\pmb{\varepsilon}}
+\newcommand{\sigmaB}{\pmb{\sigma}}
+\newcommand{\xiB}{\pmb{\xi}}
+\newcommand{\etaB}{\pmb{\eta}}
+
+
+
+\begin{document}
+\title{}
+\date{}
+\author{}
+%\maketitle 
+
+To the hiring committee,
+
+I am Debdeep Bhattacharya, a PhD candidate at the George Washington University, Washington, D.C., under the supervision of Prof. Frank Baginski and Prof. Svetlana Roudenko. I expect to complete my degree in May 2020. I would like to apply for the
+%% <+Position+>
+${1:postdoctoral research position}
+in the 
+%% <+Department+>
+${2:Department of Mathematics}
+at 
+%% <+University+>
+${3:the Michigan State University}.
+
+
+%%% <+Choice+>: (pure/inter)?${4:pure}
+
+%%% Interdisciplinary
+`!p if t[4] == 'inter':	# if not inter, comment out
+	snip.rv = ''
+else:
+	snip.rv = '%'` My research interests are mainly interdisciplinary, and involve the study of nonlinear partial differential equations, signal processing and continuum mechanics. Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma and optics. Using Fourier and Wavelet techniques, I have worked on the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events caused by the Antarctic ice shield. I have also worked on the peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems.
+
+%%%  Pure
+`!p if t[4] == 'pure':	# if not pure, comment out
+	snip.rv = ''
+else:
+	snip.rv = '%'` My main research interest is the study of nonlinear dispersive equations.  Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma, and optics. I have also worked on several problems with interdisciplinary flavor. Using Fourier and Wavelet techniques, I have developed algorithms to solve the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events in the Antarctic region. I have also worked on the nonlocal peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems.
+
+
+%% <+grammar+>
+The research group${6:s} on 
+%% <+groups+>
+${5:Partial Differential Equations}
+at the 
+%% <+department or group+>
+$2
+%% <+is/are+>
+`!p if t[6]=='s':
+	snip.rv = 'are'
+else:
+	snip.rv = 'is'`
+particularly appealing to me.
+I am eager to collaborate with 
+%% <+Profs+>
+${7:Prof. }
+as well as other faculty members and postdoctoral fellows in the 
+%% <+dept/group+>
+${8:department}. % or research group
+I strongly believe that I can learn from their expertise while complementing their lines of research
+with my background in 
+%% <+nonlinear PDEs,Harmonic,numerical+>
+${9:nonlinear PDEs},
+as described in my research statement.
+
+I have enclosed my 
+curriculum vitae, 
+research statement, 
+teaching statement,
+%% <+pub_list+>
+and ${10:publication list}. 
+In addition, there are 
+%% <+five+>
+${11:five}
+letters of recommendations attached. The research recommendations letters are from 
+%%% <+recommenders+>
+Prof. Frank Baginski, 
+Prof. Svetlana Roudenko, 
+Prof. Luiz Farah,
+and Dr. Pablo Seleson
+%% <+teaching_reco+>
+${12:, and the teaching recommendation letter is from Prof. Alexander Shumakovitch}.
+%%% 
+Please let me know if I can provide additional information or material to help you evaluate my application. Thank you for considering my application, and I look forward to hearing from you. \\\\
+\\\\
+Sincerely,\\\\
+\\\\
+Debdeep Bhattacharya\\\\
+PhD Candidate\\\\
+Department of Mathematics\\\\
+The George Washinton University\\\\
+Washington, D.C.\\\\
+\\\\
+Email: debdeepbh@gwu.edu\\\\
+Webpage: \url{https://debdeepbh.github.io}
+
+\end{document}
+
+%% Ends $0
+%%%%%%%%%%% Overview %%%%%%%%%%%%%%%%%%%%% $18
+%% Position:	$1
+%% Department:	$2
+%% University:	$3
+%% My research:	$4
+%% Group:	$5
+%% Profs:	$7
+%% Background:	$9
+%% Reco#:	$11
+%%%%%%%%%%%% ${17:Reached the end!} %%%%%%%
+endsnippet

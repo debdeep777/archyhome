@@ -109,7 +109,7 @@ hi SpellBad cterm=underline
 """""""""""
 " making the choice to go ignore-case option
 " to be case specific, use :set noic on demand
-set ic
+"set ic
 
 " Experimental since I do not know if I need to get used to the original
 " searching conventions
@@ -251,8 +251,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 "" for bibtex compilation
-"let g:Tex_DefaultTargetFormat='pdf' "redundant since already included in
-"tex.vim
+let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf,bibtex,pdf'
 
 """"""""""""""""""""""""""""""""""""""
@@ -312,28 +311,26 @@ let &t_SI.="\e[6 q"
 let &t_EI.="\e[2 q"
 let &t_SR.="\e[4 q"
 
-"" Shutting down easymotion due to the conflict with vim-latex
-"" """""""""""""""""""""""""""""""""""
-"" "" easymotion settings
-"" 
-"" " mapping <Leader> instead of <Leader><Leader> as the trigger keystroke
- map <Leader> <plug>(easymotion-prefix)
-"" "map <Tab> <plug>(easymotion-prefix)
-"" 
-"" 
-"" " incsearch with links, press tab to scroll page
-"" "map  / <plug>(easymotion-sn)
-"" "omap / <plug>(easymotion-tn)
-"" 
-"" " added 
+"""""""""""""""""""""""""""""""""""
+"" easymotion settings
+
+" mapping <Leader> instead of <Leader><Leader> as the trigger keystroke
+map <Leader> <Plug>(easymotion-prefix)
+
+
+" incsearch with links, press tab to scroll page
+map  / <plug>(easymotion-sn)
+omap / <plug>(easymotion-tn)
+
+" added 
 nmap s <plug>(easymotion-s2)
-"" nmap t <plug>(easymotion-s2)
-"" 
-"" " Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-"map L <Plug>(easymotion-bd-jk)
-"nmap L <Plug>(easymotion-overwin-line)
+nmap t <plug>(easymotion-s2)
+
+" Move to line
+"map <Leader>L <Plug>(easymotion-bd-jk)
+"nmap <Leader>L <Plug>(easymotion-overwin-line)
+map L <Plug>(easymotion-bd-jk)
+nmap L <Plug>(easymotion-overwin-line)
 
 """"""""""""""""""""""""""""""""""
 "" for lightline plugin
@@ -365,7 +362,6 @@ let g:ranger_replace_netrw = 1  "open ranger when vim open a directory
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 
 
-
 """""""" vim-ranger
 ""let g:ranger_executable = 'ranger'
 ""let g:ranger_open_mode = 'tabe'
@@ -378,77 +374,3 @@ let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 "  so no need to do 
 "set signcolumn=yes
 
-""""""""""""""""""""""""""""""""""
-" For ultisnips
-"
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"
-" To use tab to both trigger and move forward
-"let g:UltiSnips#ExpandSnippetOrJump="<tab>"
-"
-"" Set ultisnips triggers
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-"
-" Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-"
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsEditSplit="context"
-
-" Weird: To override the snippets defined in
-" .vim/bundle/vim-snippets/UltiSnips
-" and in .vim/bundle/vim-snipets/snippets
-" I define my own using :UltiSnipsEdit. However, the location of this file
-" is .vim/UltiSnips/, not any of the default files!
-" Moreover, changing this parameter to another Directory causes the default
-" snips to load. 
-" I want to use all the default ones and then want my own snippets to have
-" priority, in case of it is defined repeatedly.
-" I guess two bugs together makes my purpose successful
-" 'UltiSnips' = .vim/UltiSnips, not .vim/bundle/ultisnips!
-let g:UltiSnipsSnippetDirectories = ['UltiSnips']
-
-
-""""""""""""""""""""""""""
-" vimtex
-""""""""""""""""""""""""""
-
-" To turn it off in emergency 
-"let g:vimtex_enabled = 1
-
-let g:vimtex_view_method = 'zathura'
-
-"let g:vimtex_view_forward_search_on_start = 0
-"let g:vimtex_quickfix_method = 'pplatex'
-"
-" syntax folding
-let g:vimtex_fold_enabled = 1
-set fillchars=fold:\ 
-
-" Turning off some warning messages
-   let g:vimtex_quickfix_latexlog = {
-          \ 'default' : 1,
-          \ 'ignore_filters' : [],
-          \ 'general' : 1,
-          \ 'references' : 1,
-          \ 'overfull' : 0,
-          \ 'underfull' : 0,
-          \ 'font' : 1,
-          \ 'packages' : {
-          \   'default' : 1,
-          \   'general' : 1,
-          \   'babel' : 1,
-          \   'biblatex' : 1,
-          \   'fixltx2e' : 1,
-          \   'hyperref' : 1,
-          \   'natbib' : 1,
-          \   'scrreprt' : 1,
-          \   'titlesec' : 1,
-          \ },
-          \}
