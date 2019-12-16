@@ -2,13 +2,59 @@ snippet sum
 \sum_{${1:i} ${2:=0}}^{${3:n}}
 endsnippet
 
+snippet int "integration" i
+\int\limits_{$1}^{$2}$0
+endsnippet
+
+snippet sq "Square root" i
+\sqrt{$1}$0
+endsnippet
+
+snippet ^ "Description" i
+^{$1}$0
+endsnippet
+
+snippet _ "Description" i
+_{$1}$0
+endsnippet
+
+snippet / "frac" i
+\frac{$1}{$2}$0
+endsnippet
+
+snippet al* "align*" b
+\begin{align*}
+$0
+\end{align*}	
+endsnippet
+
+snippet cols "Columns - plural env" b
+\begin{columns}
+$0
+\end{columns}
+endsnippet
+
+snippet col "Column inside columns env" b
+\begin{column}{${1:0.5}\textwidth}
+$0
+\end{column}
+endsnippet
+
+snippet abs "abs" i
+\abs{$1}$0
+endsnippet
+
+snippet norm "norm" i
+\norm{$1}$0
+endsnippet
+
 #snippet title "Title transformation"
 #${1:a text}
 #${1/\w+\s*/\u$0/}
 #endsnippet
 
 ############# Template job Application #####
-snippet cover "Cover letter" b
+snippet _cover "cover letter" b
 %        File: research_statement.tex
 %     Created: Sun Sep 29 04:00 PM 2019 E
 % Last Change: Mon Nov 11 11:00 PM 2019
@@ -119,13 +165,15 @@ ${3:the Michigan State University}.
 `!p if t[4] == 'inter':	# if not inter, comment out
 	snip.rv = ''
 else:
-	snip.rv = '%'` My research interests are mainly interdisciplinary, and involve the study of nonlinear partial differential equations, signal processing and continuum mechanics. Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma and optics. Using Fourier and Wavelet techniques, I have worked on the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events caused by the Antarctic ice shield. I have also worked on the peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems.
+	snip.rv = '%'` My research interests are mainly interdisciplinary, and involve the study of nonlinear partial differential equations, signal processing and continuum mechanics. Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma and optics. Using Fourier and Wavelet techniques, I have worked on the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events caused by the Antarctic ice shield. I have also worked on the peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems. I am also interested in the mathematics of machine learning and am working on a permutation-invariant encoding of data in Euclidean domain.
+
 
 %%%  Pure
 `!p if t[4] == 'pure':	# if not pure, comment out
 	snip.rv = ''
 else:
-	snip.rv = '%'` My main research interest is the study of nonlinear dispersive equations.  Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma, and optics. I have also worked on several problems with interdisciplinary flavor. Using Fourier and Wavelet techniques, I have developed algorithms to solve the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events in the Antarctic region. I have also worked on the nonlocal peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems.
+	snip.rv = '%'` My main research interest is the study of nonlinear dispersive equations.  Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma, and optics. I have also worked on several problems with interdisciplinary flavor. Using Fourier and Wavelet techniques, I have developed algorithms to solve the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events in the Antarctic region. I have also worked on the nonlocal peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems. I am also interested in the mathematics of machine learning and am working on a permutation-invariant encoding of data in Euclidean domain.
+
 
 
 %% <+grammar+>
@@ -197,4 +245,60 @@ Webpage: \url{https://debdeepbh.github.io}
 %% Background:	$9
 %% Reco#:	$11
 %%%%%%%%%%%% ${17:Reached the end!} %%%%%%%
+endsnippet
+
+snippet _pde "Template PDEs" b
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Created: `date +%b %d %Y`
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage[top=3cm, bottom=2cm, right=2.5cm]{geometry}
+% margin
+%\setlength{\topmargin}{0mm} \setlength{\oddsidemargin}{0mm}
+%\setlength{\textwidth}{160mm} \setlength{\textheight}{220mm}
+%\font\bbc=msbm10 scaled 1200
+
+% amsmath:\text{} inside math mode; amssymb:\lesssim, amsthm:\newtheorem; amsfonts:\mathbb{}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+%to use color
+\usepackage{color}
+
+% User defined functions
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\br}[1]{\color{red} (#1) \color{black}}
+\newcommand{\bb}[1]{\color{blue} (#1) \color{black}}
+\newcommand{\what}{\bb{??}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\jap}[1]{\left\langle #1 \right\rangle}
+\newcommand{\inn}[1]{\left\langle #1 \right\rangle}
+
+% User defined environments
+\newtheorem{thm}{Theorem} \newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{rem}{Remark}
+\newtheorem{result}{Result}
+\newtheorem*{notation}{Notation}
+\newtheorem{prob}{Problem}
+\newtheorem{propn}{Proposition}
+% newtheorem{proof}{Proof} is not needed, already available with \begin{proof} .. \end{proof} with nice italic fonts
+
+
+\begin{document}
+\title{$1}
+\author{$2}
+% empty date
+%\date{}
+\maketitle 
+
+$0
+
+\end{document}
 endsnippet
