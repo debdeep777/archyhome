@@ -560,6 +560,11 @@ function corename()   # Get name of app that created a corefile.
 export BC_ENV_ARGS=~/.bcrc
 
 
+#######################################################################
+#           setting the editor for ranger to use clipboard            #
+#######################################################################
+
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
 # Use bash-completion, if available
 # The package bash-completion is needed
@@ -597,6 +602,7 @@ xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressure Threshold" 500
 # then you run your cpp files with: g++ filename `root-config --libs`
 export LD_LIBRARY_PATH=/home/debdeep/libWTools/lib
 
+
 #################################
 #xrdb ~/.Xresources
 
@@ -608,3 +614,5 @@ export LD_LIBRARY_PATH=/home/debdeep/libWTools/lib
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
