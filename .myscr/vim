@@ -1,2 +1,5 @@
 #!/bin/sh
-exec /usr/bin/vim --servername vim "$@"
+# Launching each vim instance in servermode
+# Make sure the path /usr/bin/vim is replaced by the current vim installion
+vimpath='/usr/bin/vim'
+exec $vimpath --servername vim "$@"

@@ -31,6 +31,8 @@
 #
 # =============================================================== #
 
+
+
 # --> Comments added by HOWTO author.
 
 # If not running interactively, don't do anything
@@ -547,14 +549,14 @@ function corename()   # Get name of app that created a corefile.
 }
 
 
-# Script to include abd paths if /sda2 in mounted
-#if mount | grep /mnt;
-#then
+
+#######################################################################
+#                     Adding path for my scripts                      #
+#######################################################################
 # Moving this to .xsessionrc so that awesome can access this path (as
 # opposed to .bash_profile, which does not work)
 #export PATH=$PATH:~/.myscr/
-#export PATH=$PATH:~/.myscr/:/storage/Lenovo/a706/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/:/mnt/home/debdeep/adt-bundle-linux-x86_64-20131030/sdk/build-tools/
-#fi
+
 
 #Creating a config file for linux calculator bc, which does not support a config file by default
 # we will add scale=5 in this file to make it support decimal divisions
@@ -564,7 +566,6 @@ export BC_ENV_ARGS=~/.bcrc
 #######################################################################
 #           setting the editor for ranger to use clipboard            #
 #######################################################################
-
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
 # Use bash-completion, if available
@@ -614,6 +615,6 @@ export LD_LIBRARY_PATH=/home/debdeep/libWTools/lib
 #source .3llo
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+export PATH="$PATH:$HOME/gems/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

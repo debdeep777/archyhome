@@ -1,1 +1,4 @@
+# adding path here so that awesome can access this dir
+# Note: I use .myscr/vim to launch each vim instance in a servermode
+# So, adding .myscr before $PATH makes sure we load vim from .myscr/vim before /usr/bin/vim
 export PATH=$HOME/.myscr:$PATH
