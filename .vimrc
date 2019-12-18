@@ -424,7 +424,8 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 
 let g:vimtex_view_method = 'zathura'
 
-"let g:vimtex_view_forward_search_on_start = 0
+" stop the selecting text in the first run
+let g:vimtex_view_forward_search_on_start = 0
 "let g:vimtex_quickfix_method = 'pplatex'
 "
 " syntax folding
@@ -434,12 +435,12 @@ set fillchars=fold:\
 " Turning off some warning messages
    let g:vimtex_quickfix_latexlog = {
           \ 'default' : 1,
-          \ 'ignore_filters' : [],
+          \ 'ignore_filters' : ['Fira fonts', 'snakes', 'Unused'],
           \ 'general' : 1,
           \ 'references' : 1,
           \ 'overfull' : 0,
           \ 'underfull' : 0,
-          \ 'font' : 1,
+          \ 'font' : 0,
           \ 'packages' : {
           \   'default' : 1,
           \   'general' : 1,
@@ -452,3 +453,36 @@ set fillchars=fold:\
           \   'titlesec' : 1,
           \ },
           \}
+
+" Stops from launching two instances of zathura in the beginning. Also the
+" lag in compilation
+let g:vimtex_view_automatic=0
+
+" an alternate is to do the following
+" but stops all the error and warning window, so it is useless
+"let g:vimtex_compiler_latexmk = { 
+"      \  'callback' : 0,
+"      \}
+
+
+" Turning off ALL warning messages
+"let g:vimtex_quickfix_latexlog = {'default' : 0}
+
+
+" disable opening quickfix window on warnings only 
+"let g:vimtex_quickfix_open_on_warning = 0
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                    fzf                                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
