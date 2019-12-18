@@ -290,10 +290,11 @@ function cd_
 # Renamed cd to cd and export the directory path we are entering
 alias cd='cd_'
 
+## Update: moved this part to .myscr/vim so that scripts (like ranger) could access it
 ## Big decision: run vim in servermode always
 ## This way, I can source new vimrc automatically
 ## Will it get slow if I run too many instances?
-alias vim='vim --servername VIM'
+##alias vim='vim --servername VIM'
 ## Note that the default servername is VIM
 ## Running this command many times creates servers like VIM1, VIM2,...
 ## Running `vim --servername this --servername that` runs only THAT
