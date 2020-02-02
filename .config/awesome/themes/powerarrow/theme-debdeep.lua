@@ -339,7 +339,8 @@ theme.volumebar.bar:buttons(awful.util.table.join(
        settings = function()
            units = math.floor(weather_now["main"]["temp"])
            --widget:set_markup(" " .. markup.font(theme.font_mono, units .. "°C") .. " ")
-           widget:set_markup(" " .. markup.font(theme.font_small, markup ( gd_fg0, units) ) .. " ")
+           widget:set_markup(" " .. markup.font(theme.font_small, markup ( gd_fg0, units .. "°") ) .. "")
+           -- widget:set_markup(" " .. markup.font(theme.font_small, markup ( gd_fg0, units ) ) .. " ")
        end
    })
 -- Attaching the weather widget
@@ -522,11 +523,11 @@ function theme.at_screen_connect(s)
 
    -- wallpaper setting will be handled by rc.lua
    -- -- If wallpaper is a function, call it with the screen
-   -- local wallpaper = theme.wallpaper
-   -- if type(wallpaper) == "function" then
-   --     wallpaper = wallpaper(s)
-   -- end
-   -- gears.wallpaper.maximized(wallpaper, s, true)
+   local wallpaper = theme.wallpaper
+   if type(wallpaper) == "function" then
+       wallpaper = wallpaper(s)
+   end
+   gears.wallpaper.maximized(wallpaper, s, false)
 
     -- Tags
     awful.tag(awful.util.tagnames, s, awful.layout.layouts)
@@ -618,16 +619,16 @@ function theme.at_screen_connect(s)
             --wibox.container.background(wibox.container.margin(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#CB755B"),
     ------- bat
        ------ Removing battery widget in favour of xfce4-power-manager's tray icon. Settings are in ~/.config/xfce4/xfconf/
-       ------    arrow(gd_dark_yellow, gd_light_aqua),
-       ------     --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#4b696d"),
-       ------   -- wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
-       ------    wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), gd_light_aqua),
+           arrow(gd_dark_yellow, gd_light_aqua),
+           --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#4b696d"),
+           --wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), "#4b696d"),
+           wibox.container.background(wibox.container.margin(wibox.widget { bat.widget, layout = wibox.layout.align.horizontal }, 0, 0), gd_light_aqua),
 
-       ------ --weather
-       ------     arrow(gd_light_aqua, gd_dark_blue),
+        --weather
+            arrow(gd_light_aqua, gd_dark_blue),
     ------ end bat
-    -- new arrow
-            arrow(gd_dark_yellow, gd_dark_blue),
+    ---- new arrow
+    --        arrow(gd_dark_yellow, gd_dark_blue),
 
            wibox.container.background(wibox.container.margin(wibox.widget {  theme.weather.widget, theme.weather.icon, layout = wibox.layout.align.horizontal }, 0, 0), gd_dark_blue),
 
