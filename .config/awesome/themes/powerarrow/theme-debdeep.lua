@@ -344,8 +344,11 @@ theme.volumebar.bar:buttons(awful.util.table.join(
        end
    })
 -- Attaching the weather widget
--- Decided not to
--- theme.weather.attach(clock)
+-- Attaching Esc keypress to the weather widget, which can be useful in tablet mode when accidental Mod4+r key is pressed
+theme.weather.widget:buttons(awful.util.table.join(                                                
+ awful.button({ }, 1, function () awful.spawn("xdotool key Escape")  end)
+ ))  
+
 
 
 -- Downloaded CPU widget
