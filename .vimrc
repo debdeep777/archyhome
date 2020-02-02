@@ -1,8 +1,15 @@
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            mapping the Esc key                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap jk <Esc>
+
+
 " source .vimrc after editing
 " without restarting vim
 " Not sure if I'll ever use it though
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <Leader>ev :tabe $MYVIMRC<CR>
 " Automatically source vimrc in this file only on save.
 if has ('autocmd') " Remain compatible with earlier versions
  augroup vimrc     " Source vim configuration upon save
@@ -11,6 +18,12 @@ if has ('autocmd') " Remain compatible with earlier versions
   augroup END
 endif " has autocmd
 
+" persistent undo, even after saving and closing
+set undodir=~/.vimundo/ " a place to store the undo files, you need to create
+                              " this directory: `mkdir -p ~/.vim/tmp/undo`
+set undofile                  " turn of the feature
+set undolevels=500           " maximum number of changes that can be undone
+set undoreload=5000          " maximum number lines to save for undo on a buffer reload
 
 " Ctrl+Backspace for deleting
 noremap! <C-BS> <C-w>
@@ -123,7 +136,7 @@ set incsearch
 
 " Really cool cursor-location-highlighting feature
 " Makes my tex files very slow to navigate so i'm stopping them
-" Works as a great chick-magnet though
+" Looks cool though 
 " Can be underlined or highlighted, see help
 set cursorline
 " Used for keeping codes lined up
@@ -435,7 +448,7 @@ set fillchars=fold:\
 " Turning off some warning messages
    let g:vimtex_quickfix_latexlog = {
           \ 'default' : 1,
-          \ 'ignore_filters' : ['Fira fonts', 'snakes', 'Unused'],
+          \ 'ignore_filters' : ['Fira fonts', 'snakes', 'Unused', 'Token not allowed'],
           \ 'general' : 1,
           \ 'references' : 1,
           \ 'overfull' : 0,
@@ -486,3 +499,14 @@ let g:fzf_tags_command = 'ctags -R'
 
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               vim-easy-align                               "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

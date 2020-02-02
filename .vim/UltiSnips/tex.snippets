@@ -1,25 +1,60 @@
+# i = expand anywhere
+# w = expand only if a word (or leave blank)
+# b = expand on a new line
+
 snippet sum
 \sum_{${1:i} ${2:=0}}^{${3:n}}
 endsnippet
 
-snippet int "integration" i
-\int\limits_{$1}^{$2}$0
+snippet pf "Proof and qed" b
+\proof
+$1
+\qed
+$0
 endsnippet
 
-snippet sq "Square root" i
-\sqrt{$1}$0
+snippet abs "abs"
+\abs{$1} $0
+endsnippet
+
+snippet norm "norm"
+\norm{$1} $0
+endsnippet
+
+snippet jap "Japanese brack"
+\jap{$1} $0
+endsnippet
+
+snippet hat "wide hat"
+\widehat{$1} $0
+endsnippet
+
+snippet tilde "wide tilde"
+\widetilde{$1} $0
+endsnippet
+
+snippet bar "overline"
+\overline{$1} $0
+endsnippet
+
+snippet int "integration"
+\int\limits_{$1}^{$2} $0
+endsnippet
+
+snippet sq "Square root"
+\sqrt{$1} $0
 endsnippet
 
 snippet ^ "Description" i
-^{$1}$0
+^{$1} $0
 endsnippet
 
 snippet _ "Description" i
-_{$1}$0
+_{$1} $0
 endsnippet
 
 snippet / "frac" i
-\frac{$1}{$2}$0
+\frac{$1}{$2} $0
 endsnippet
 
 snippet al* "align*" b
@@ -38,14 +73,6 @@ snippet col "Column inside columns env" b
 \begin{column}{${1:0.5}\textwidth}
 $0
 \end{column}
-endsnippet
-
-snippet abs "abs" i
-\abs{$1}$0
-endsnippet
-
-snippet norm "norm" i
-\norm{$1}$0
 endsnippet
 
 #snippet title "Title transformation"

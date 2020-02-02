@@ -293,6 +293,7 @@ function cd_
 alias cd='cd_'
 
 ## Update: moved this part to .myscr/vim so that scripts (like ranger) could access it
+## For this to work, $HOME/.myscr has to be in the first part of the $PATH variable
 ## Big decision: run vim in servermode always
 ## This way, I can source new vimrc automatically
 ## Will it get slow if I run too many instances?
@@ -602,7 +603,7 @@ xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressure Threshold" 500
 #export ANITA_UTIL_INSTALL_DIR=/home/debdeep/anitaUtil
 #export ANITA_UTIL_INC_DIR=/home/debdeep/anitaUtil/include
 # then you run your cpp files with: g++ filename `root-config --libs`
-export LD_LIBRARY_PATH=/home/debdeep/libWTools/lib
+export LD_LIBRARY_PATH=$HOME/libWTools/lib
 
 
 #################################
