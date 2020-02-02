@@ -1,0 +1,50 @@
+search n.tex
+shell u
+search slo
+search ucsb
+search stoffi
+search staffi
+search staff
+search mit
+rename super-resolution
+mkdir Dual-deconvolution
+rename 
+rename deconvolution
+search deconvo
+search schiske
+search schi
+rename Schiske-MultichannelDeconvolution.pdf
+search schis
+redraw_window 
+rename schiske-multichannel.pdf
+delete
+search georgia
+search reflist
+search latex
+search cv
+search pdf
+open_with sxi
+shell sxiv -o %s
+search dual
+find ju
+find gra
+search /jj
+open_with xournalpp
+
+touch 
+search ornl
+rename ORNL-Cory
+;
+search multi
+search walnut
+find 
+find .vim
+search repeat
+search wor
+search axis
+shell h
+search snipp
+search tex
+open_with vim
+search todo
+open_with 
