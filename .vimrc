@@ -1,4 +1,6 @@
 
+"" Turn off a plugin
+"set runtimepath-=~/.vim/bundle/ultisnips
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            mapping the Esc key                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -431,6 +433,18 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 """"""""""""""""""""""""""
 " vimtex
 """"""""""""""""""""""""""
+"" syntax folding enabled
+let g:vimtex_fold_enabled = 1
+
+"" Turn off automatic folding to speed up insert mode
+let g:vimtex_fold_manual=1
+"" Cleaner folding
+set fillchars=fold:\ 
+" Note: The |fold-expr| method of folding is well known to be slow, e.g. for
+" long lines and large files. To speed things up, the user may want to
+" enable the |g:vimtex_fold_manual| option. An alternative is to add
+" a dedicated plugin that improves folding speed for the slow fold
+" methods, e.g. https://github.com/Konfekt/FastFold.
 
 " To turn it off in emergency 
 "let g:vimtex_enabled = 1
@@ -441,14 +455,11 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_forward_search_on_start = 0
 "let g:vimtex_quickfix_method = 'pplatex'
 "
-" syntax folding
-let g:vimtex_fold_enabled = 1
-set fillchars=fold:\ 
 
 " Turning off some warning messages
    let g:vimtex_quickfix_latexlog = {
           \ 'default' : 1,
-          \ 'ignore_filters' : ['Fira fonts', 'snakes', 'Unused', 'Token not allowed'],
+          \ 'ignore_filters' : ['Package nag Warning:', 'Package glossaries Warning:', 'Fira fonts' , 'snakes', 'Unused', 'contains only floats.', 'Token not allowed'],
           \ 'general' : 1,
           \ 'references' : 1,
           \ 'overfull' : 0,
@@ -510,3 +521,4 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
