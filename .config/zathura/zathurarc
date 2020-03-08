@@ -1,6 +1,10 @@
 set pages-per-row 1
 set window-title-basename true
 
+# Open  the current file with xournalpp
+map <C-x> focus_inputbar ":exec xournalpp $FILE"
+
+
 map = zoom in
 map - zoom out
 # map + zoom 0.0
