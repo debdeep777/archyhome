@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 #
 # rotate_desktop.sh
 #
@@ -22,6 +22,13 @@ WacomPen='Wacom HID 50EE Pen stylus'
 WacomFinger='Wacom HID 50EE Finger'
 WacomEraser='Wacom HID 50EE Pen eraser'
 
+#######################################################################
+#                            One by Wacom                             #
+#######################################################################
+WacomOnePen='Wacom One by Wacom M Pen stylus'
+WacomOneEraser='Wacom One by Wacom M Pen eraser'
+
+# If the first argument does not exit
 if [ -z "$1" ]; then
   echo "Missing orientation."
   echo "Usage: $0 [normal|inverted|left|right]"
@@ -30,40 +37,80 @@ if [ -z "$1" ]; then
 fi
 
 
-  xrandr --output $Display --rotate $1
 
   TRANSFORM='Coordinate Transformation Matrix'
 
+  #case "$1" in
+    #normal)
+      #[ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      #[ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+      ## xsetwacom set "$WacomFinger" Rotate none	# This does not work anymore, after certain kernel update, so using the old-fashioned way to rotate
+      #xsetwacom set "$WacomPen" Rotate none
+      #xsetwacom set "$WacomEraser" Rotate none
+      #;;
+    #inverted)
+      #[ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      #[ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+      ##xsetwacom set "$WacomFinger" Rotate half
+      #xsetwacom set "$WacomPen" Rotate half
+      #xsetwacom set "$WacomEraser" Rotate half
+      #;;
+    #left)
+      #[ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      #[ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+      ##xsetwacom set "$WacomFinger" Rotate ccw
+      #xsetwacom set "$WacomPen" Rotate ccw
+      #xsetwacom set "$WacomEraser" Rotate ccw
+      #;;
+    #right)
+      #[ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      #[ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+      ##xsetwacom set "$WacomFinger" Rotate cw
+      #xsetwacom set "$WacomPen" Rotate cw
+      #xsetwacom set "$WacomEraser" Rotate cw
+      #;;
+  #esac
+
   case "$1" in
     normal)
-      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
-      xsetwacom set "$WacomPen" Rotate none
-      # xsetwacom set "$WacomFinger" Rotate none	# This does not work anymore, after certain kernel update, so using the old-fashioned way to rotate
-      [ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
-      xsetwacom set "$WacomEraser" Rotate none
+      ROT_MAT='1 0 0 0 1 0 0 0 1'
+      ROT_KEY='none'
       ;;
     inverted)
-      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
-      xsetwacom set "$WacomPen" Rotate half
-      #xsetwacom set "$WacomFinger" Rotate half
-      [ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
-      xsetwacom set "$WacomEraser" Rotate half
+      ROT_MAT='-1 0 1 0 -1 1 0 0 1'
+      ROT_KEY='half'
       ;;
     left)
-      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
-      xsetwacom set "$WacomPen" Rotate ccw
-      #xsetwacom set "$WacomFinger" Rotate ccw
-      [ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
-      xsetwacom set "$WacomEraser" Rotate ccw
+      ROT_MAT='0 -1 1 1 0 0 0 0 1'
+      ROT_KEY='ccw'
       ;;
     right)
-      [ ! -z "$TOUCHPAD" ]    && xinput set-prop "$TOUCHPAD"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
-      xsetwacom set "$WacomPen" Rotate cw
-      #xsetwacom set "$WacomFinger" Rotate cw
-      [ ! -z "$WacomFinger" ]    && xinput set-prop "$WacomFinger"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
-      xsetwacom set "$WacomEraser" Rotate cw
+      ROT_MAT='0 1 0 -1 0 1 0 0 1'
+      ROT_KEY='cw'
       ;;
   esac
+
+#######################################################################
+#                       Do the actual rotation                        #
+#######################################################################
+
+#Display
+xrandr --output $Display --rotate $1
+# Touchpad
+xinput set-prop "$TOUCHPAD" "$TRANSFORM" $ROT_MAT 
+# Finger touch
+xinput set-prop "$WacomFinger" "$TRANSFORM" $ROT_MAT 
+# Stylus pen and eraser
+xsetwacom set "$WacomPen" Rotate ROT_KEY
+xsetwacom set "$WacomEraser" Rotate ROT_KEY 
+
+#######################################################################
+#                            One by Wacom                             #
+#######################################################################
+xsetwacom set "$WacomOnePen" Rotate ROT_KEY
+xsetwacom set "$WacomOneEraser" Rotate ROT_KEY 
+
+
 
 ## For Xubuntu, grep primary does not give anything
 #XDISPLAY=`xrandr --current | grep primary | sed -e 's/ .*//g'`

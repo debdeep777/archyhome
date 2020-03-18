@@ -312,6 +312,9 @@ alias lt='ls -ltr'         #  Sort by date, most recent last.
 alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 
+# Sort by size, biggest last, add the contents of each directory
+alias ls_size='du -sch .[!.]* * | sort -h'
+
 ## countdown and stopwatch for terminal
 
 function countdown(){
@@ -619,3 +622,8 @@ export GEM_HOME="$HOME/gems"
 export PATH="$PATH:$HOME/gems/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#######################################################################
+#            Disabling Touchpad Forever for stealing mouse            #
+#######################################################################
+xinput disable "Wacom HID 50EE Finger"
