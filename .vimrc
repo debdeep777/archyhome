@@ -6,6 +6,63 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap jk <Esc>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               Tab navigation                               "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" open the file under the cursor to edit in a new tab
+nnoremap gf <C-W>gf
+
+"" jump to the last activated tab
+"if !exists('g:lasttab')
+"  let g:lasttab = 1
+"endif
+"nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+"au TabLeave * let g:lasttab = tabpagenr()
+
+" Alt
+" Go to last active tab 
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+
+"" Switching buffer opens a new tab
+" doesn't work
+"set switchbuf=usetab,newtab
+"nnoremap <F8> :sbnext<CR>
+"nnoremap <S-F8> :sbprevious<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   Combine multiple blank lines into one                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> dc :<C-u>call <SID>CleanupBlanks()<CR>
+fun! s:CleanupBlanks() abort
+    if !empty(getline('.'))
+        return
+    endif
+    let l:curr = line('.')
+
+    let l:start = l:curr
+    while l:start > 1 && empty(getline(l:start - 1))
+        let l:start -= 1
+    endwhile
+
+    let l:end = l:curr
+    let l:last_line_num = line('$')
+    while l:end < l:last_line_num && empty(getline(l:end + 1))
+        let l:end += 1
+    endwhile
+
+    if l:end >= l:start + v:count1
+        exe l:start . '+' . v:count1 . ',' . l:end . 'd_'
+    else
+        call append(l:end, repeat([''], v:count1 - (l:end - l:start) - 1))
+    endif
+    call cursor(l:start, 1)
+endfun
+
+
 
 " source .vimrc after editing
 " without restarting vim

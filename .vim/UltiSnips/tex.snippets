@@ -1,56 +1,165 @@
 # i = expand anywhere
-# w = expand only if a word (or leave blank)
+# w = expand only if a word (has word boundary)
 # b = expand on a new line
+# r = expand based on the regex provided
 
-snippet sum
-\sum_{${1:i} ${2:=0}}^{${3:n}}
+#######################################################################
+#                          for peridynamics                           #
+#######################################################################
+snippet ddot "ddot" w
+\ddot{${1:u}}$0
 endsnippet
 
-snippet pf "Proof and qed" b
+snippet ee "Tensor basis elements" w
+\ee_{$1} \otimes \ee_{$2} $0
+endsnippet
+
+snippet lam "Description" w
+\lambda(\norm{\xiB})
+endsnippet
+
+snippet defn "Description" b
+\begin{defn}
+$0
+\end{defn}
+endsnippet
+
+snippet propn "Description" b
+\begin{propn}
+$0
+\end{propn}
+endsnippet
+#######################################################################
+#                             for thesis                              #
+#######################################################################
+
+snippet l2 "Description" w
+l^2(\Z_N)$0
+endsnippet
+
+snippet _n "n from 1 to infinity" w
+_{${1:n} = ${2:1}}^${3:\infty}$0
+endsnippet
+
+snippet dp "Description" w
+\partial_{${1:x}'}
+endsnippet
+
+snippet limsup "Description" w
+\limsup_{${1:n} \to \infty} $0
+endsnippet
+
+
+snippet L2 "H^1 space" w
+L^2(\R^{${1:2}})$0
+endsnippet
+
+snippet L4 "H^1 space" w
+L^4(\R^{${1:2}})$0
+endsnippet
+
+snippet H1 "H^1 space" w
+H^1(\R^{${1:2}})$0
+endsnippet
+
+snippet Hdot "H dot space" w
+\dot{H}^${1:2}(\R^{${2:2}})$0
+endsnippet
+
+snippet Hs "H^s space" w
+H^s(\R^{${1:2}})$0
+endsnippet
+
+snippet Xsb "H^s space" w
+X_{${1:s}, ${2:b}}$0
+endsnippet
+#######################################################################
+#                        end of specific snips                        #
+#######################################################################
+
+snippet rem "Description" b
+\begin{rem}
+$0
+\end{rem}
+endsnippet
+
+snippet cite "Description" w
+\cite{$1}$0
+endsnippet
+
+snippet ... "dots" w
+\dots$0
+endsnippet
+
+snippet text "Description" w
+\text{ $1 } $0
+endsnippet
+
+snippet sum
+\sum_{${1:i}=${2:0}}^{${3:n}}
+endsnippet
+
+snippet "(pf|proof)" "Proof and qed" br
 \proof
 $1
 \qed
 $0
 endsnippet
 
-snippet abs "abs"
+snippet eqref "(eq)ref" w
+\eqref{$1} $0
+endsnippet
+
+snippet ref "(eq)ref" w
+\ref{$1} $0
+endsnippet
+
+#snippet ref "(eq)ref" w
+#\\${1:eq}ref{$2} $0
+#endsnippet
+
+snippet abs "abs" w
 \abs{$1} $0
 endsnippet
 
-snippet norm "norm"
+snippet norm "norm" w
 \norm{$1} $0
 endsnippet
 
-snippet jap "Japanese brack"
+snippet jap "Japanese brack" w
 \jap{$1} $0
 endsnippet
 
-snippet hat "wide hat"
+snippet hat "wide hat" w
 \widehat{$1} $0
 endsnippet
 
-snippet tilde "wide tilde"
+snippet tilde "wide tilde" w
 \widetilde{$1} $0
 endsnippet
 
-snippet bar "overline"
+snippet bar "overline" w
 \overline{$1} $0
 endsnippet
 
-snippet int "integration"
+snippet int "integration" w
 \int\limits_{$1}^{$2} $0
 endsnippet
 
-snippet sq "Square root"
+snippet "sq(rt)?" "Square root" wr
 \sqrt{$1} $0
 endsnippet
 
+snippet $$ "dollar" w
+$ $1 $$0
+endsnippet
+
 snippet ^ "Description" i
-^{$1} $0
+^{$1}$0
 endsnippet
 
 snippet _ "Description" i
-_{$1} $0
+_{$1}$0
 endsnippet
 
 snippet / "frac" i
@@ -79,6 +188,11 @@ endsnippet
 #${1:a text}
 #${1/\w+\s*/\u$0/}
 #endsnippet
+
+#######################################################################
+#                              Templates                              #
+#######################################################################
+
 
 ############# Template job Application #####
 snippet _cover "cover letter" b
@@ -329,3 +443,11 @@ $0
 
 \end{document}
 endsnippet
+
+
+#######################################################################
+#                           Clear Snippets                            #
+#######################################################################
+
+#  removing to avoid expanding \(eq)ref when \ is present
+clearsnippets \
