@@ -101,14 +101,14 @@ xinput set-prop "$TOUCHPAD" "$TRANSFORM" $ROT_MAT
 # Finger touch
 xinput set-prop "$WacomFinger" "$TRANSFORM" $ROT_MAT 
 # Stylus pen and eraser
-xsetwacom set "$WacomPen" Rotate ROT_KEY
-xsetwacom set "$WacomEraser" Rotate ROT_KEY 
+xsetwacom set "$WacomPen" Rotate $ROT_KEY
+xsetwacom set "$WacomEraser" Rotate $ROT_KEY 
 
 #######################################################################
 #                            One by Wacom                             #
 #######################################################################
-xsetwacom set "$WacomOnePen" Rotate ROT_KEY
-xsetwacom set "$WacomOneEraser" Rotate ROT_KEY 
+xsetwacom set "$WacomOnePen" Rotate $jROT_KEY
+xsetwacom set "$WacomOneEraser" Rotate $ROT_KEY 
 
 
 
