@@ -236,6 +236,8 @@ lain.layout.cascade.tile.ncol          = 2
 -- Made it into a global function (i.e. not `local function loadtheme()` so that I can run it from
 -- the lua prompt with Modkey + x with `loadtheme()`
 function loadtheme()
+	-- In vim, you can press gf to move to the file
+	-- $HOME/.config/awesome/themes/powerarrow/theme-debdeep.lua
 	beautiful.init(string.format("%s/.config/awesome/themes/%s/theme-debdeep.lua", os.getenv("HOME"), chosen_theme))
 end
 loadtheme()
@@ -415,7 +417,8 @@ awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end)
     --calendar.vim
     awful.key({ altkey, }, "c", function () awful.spawn(terminal .. " -e vim +Calendar") end),
     -- for xournal
-    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournalpp") end),
+    --awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournalpp") end),
+    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xournal") end),
     -- Loads the wallpaper that was located in the wallpaper path
     awful.key({ modkey, "Shift" }, "w", set_wallpaper),
 -- screen rotation
