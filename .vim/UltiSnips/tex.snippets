@@ -77,6 +77,21 @@ endsnippet
 #                        end of specific snips                        #
 #######################################################################
 
+#snippet it "item in itemize" w
+#\item
+#endsnippet
+global !p
+def fix_indent(snip):
+    vim.eval('feedkeys("\<c-f>")')
+endglobal
+
+post_expand "fix_indent(snip)"
+snippet it "Individual item" b
+\item $0
+endsnippet
+###########
+
+
 snippet rem "Description" b
 \begin{rem}
 $0

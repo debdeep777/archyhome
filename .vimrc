@@ -62,6 +62,8 @@ fun! s:CleanupBlanks() abort
     call cursor(l:start, 1)
 endfun
 
+" Copy the most recently pasted section
+nnoremap gp `[v`]
 
 
 " source .vimrc after editing
@@ -505,6 +507,10 @@ set fillchars=fold:\
 
 " To turn it off in emergency 
 "let g:vimtex_enabled = 1
+
+" indentation for tex
+let g:vimtex_indent_enabled = 0 
+
 
 let g:vimtex_view_method = 'zathura'
 
