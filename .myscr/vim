@@ -1,5 +1,21 @@
 #!/bin/sh
 # Launching each vim instance in servermode
 # Make sure the path /usr/bin/vim is replaced by the current vim installion
-vimpath='/usr/bin/vim'
-exec $vimpath --servername vim "$@"
+
+choice='vim'
+
+case $choice in
+	'vim' )
+		path='/usr/bin/vim'
+		## Launch vim in server mode
+		exec $path --servername vim "$@"
+		;;
+	'nvim' )
+		path='/usr/bin/nvim'
+		## Launch neovim in servermode
+		#exec $nvimpath --listen /tmp/nvimserver "$@"
+
+		## No need to start in servermode since it already runs in servermode
+		exec $path "$@"
+		;;
+esac
