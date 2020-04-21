@@ -81,6 +81,8 @@ endsnippet
 #\item
 #endsnippet
 global !p
+
+# fix the alignment of \item while using vimtex
 def fix_indent(snip):
     vim.eval('feedkeys("\<c-f>")')
 endglobal
