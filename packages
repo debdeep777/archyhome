@@ -1,3 +1,6 @@
-vim zathura ranger texlive-latex-recommended texlive-pictures xdotool git gimp openssh-server powertop awesome awesome-extra unclutter vim vim-gtk3
-redshift mplayer octave sxiv python3-pip texlive-xetex pandoc calibre
+vim vim-gtk3 zathura ranger xdotool git gimp openssh-server powertop awesome awesome-extra unclutter redshift mplayer sxiv
+texlive-latex-recommended texlive-pictures texlive-xetex latexdraw
+python3-pip pandoc
+octave
 suckless-tools
+calibre
