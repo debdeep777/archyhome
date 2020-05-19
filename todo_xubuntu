@@ -1,34 +1,25 @@
 #supply .myscr, config files
 
-## Update the system
-#sudo apt-get update 
-#sudo apt-get -y upgrade
 #
 
 ### Install packages
 sudo apt-get --assume-yes install $(cat packages)
+
+# sudo apt-cache depends octave | grep '[ |]Depends: [^<]' | cut -d: -f2 | tr -d ' ' | xargs sudo apt-get --reinstall install -y
+
+## google-chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+## skype
+wget https://go.skype.com/skypeforlinux-64.deb
+sudo dpkg -i skypeforlinux-64.deb 
 
 ###### Appearance #############
 ## Install gruvbox-gtk theme from git to use `themeset dark`
 git clone https://github.com/3ximus/gruvbox-gtk
 sudo cp -r gruvbox-gtk /usr/share/themes/
 
-
-#### Jupyter Lab and octave kernel
-## the following code installs the python packages locally
-## i.e. in $HOME/.local/share/ 
-# pip3 install jupyterlab octave_kernel
-## To install it globally and save space in the home directory 
-## use `sudo -H`. That way, it installs in /usr/share/ 
-yes | sudo -H pip3 install jupyterlab octave_kernel pandas numpy scipy matplotlib  scikit-learn
-# vim keybiniding (a long installation process)
-# dependency
-
-# the vim externsion
-sudo jupyter labextension install jupyterlab_vim
-### Tip: to plot nice plots in octave_kernel, use
-# %plot -f svg
-# in the beginning of the notebook
 
 ## Install git-like drive for google
 cd gdrive
@@ -47,14 +38,32 @@ EOF
 # move the file
 sudo mv 20-intel.conf /usr/share/X11/xorg.conf.d/
 
+#### Jupyter Lab and octave kernel
+## the following code installs the python packages locally
+## i.e. in $HOME/.local/share/ 
+# pip3 install jupyterlab octave_kernel
+## To install it globally and save space in the home directory 
+## use `sudo -H`. That way, it installs in /usr/share/ 
+yes | sudo -H pip3 install jupyterlab octave_kernel pandas numpy scipy matplotlib  scikit-learn
+# vim keybiniding (a long installation process)
+# dependency
+
+# the vim externsion
+sudo jupyter labextension install jupyterlab_vim
+### Tip: to plot nice plots in octave_kernel, use
+# %plot -f svg
+# in the beginning of the notebook
 
 ## Install cocalc
 sudo docker run --name=cocalc -d -v ~/cocalc:/projects -p 443:443 sagemathinc/cocalc
 
 
+## Update the system
+sudo apt-get update 
+sudo apt-get -y upgrade
+
 ## fix-broken
 sudo apt-get -f install
-
 
 ### For RISE, I have done
 #sudo -H pip3 install RISE
