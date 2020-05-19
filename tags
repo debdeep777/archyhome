@@ -6971,13 +6971,6 @@ fsub 	.config/awesome/lain/util/dkjson.lua	/^local function fsub (str, pattern, 
 ft	.vim/bundle/ultisnips/pythonx/UltiSnips/text_objects/python_code.py	/^    def ft(self):  # pylint:disable=invalid-name$/;"	m	class:SnippetUtil
 ft2ps	xournal-patches/xournal-0.4.8.2016/src/xo-print.h	/^  gdouble ft2ps;$/;"	m	struct:PdfFont
 fullscreen	xournal-patches/xournal-0.4.8.2016/src/xournal.h	/^  gboolean fullscreen, maximize_at_start;$/;"	m	struct:UIData
-func_at_file	xournal-patches/xournal-0.4.8.2016/ar-lib	/^func_at_file ()$/;"	f
-func_cl_dashL	xournal-patches/xournal-0.4.8.2016/compile	/^func_cl_dashL ()$/;"	f
-func_cl_dashl	xournal-patches/xournal-0.4.8.2016/compile	/^func_cl_dashl ()$/;"	f
-func_cl_wrapper	xournal-patches/xournal-0.4.8.2016/compile	/^func_cl_wrapper ()$/;"	f
-func_error	xournal-patches/xournal-0.4.8.2016/ar-lib	/^func_error ()$/;"	f
-func_file_conv	xournal-patches/xournal-0.4.8.2016/ar-lib	/^func_file_conv ()$/;"	f
-func_file_conv	xournal-patches/xournal-0.4.8.2016/compile	/^func_file_conv ()$/;"	f
 fuzzy_lu	.vim/bundle/vim-easy-align/autoload/easy_align.vim	/^function! s:fuzzy_lu(key)$/;"	f
 fxa	.vim.old/bundle/vim-easymotion/t/easymotion_spec.vim	/^        normal fxa$/;"	m
 fxa	.vim/bundle/vim-easymotion/t/easymotion_spec.vim	/^        normal fxa$/;"	m
