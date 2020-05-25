@@ -411,7 +411,8 @@ globalkeys = my_table.join(
               {description = "decrement useless gaps", group = "tag"}),
 
 -----User defined keys----------
-    awful.key({ modkey, "Shift" }, "f", function () awful.spawn("firefocusl") end),
+-- Awesome rule: taglist associated with firefox is 4, so the desktop is 3
+    awful.key({ modkey, "Shift" }, "f", function () awful.spawn("firefocusl 3") end),
 --requires slock
 awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end),
     --calendar.vim
