@@ -9,6 +9,15 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# startup 
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-panel
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id xfsettings
+exec --no-startup-id redshift
+exec --no-startup-id onboard
+exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -92,6 +101,7 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+bindsym $mod+c focus child
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -153,13 +163,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
+## Start i3bar to display a workspace bar (plus the system information i3status
+## finds out, if available)
+#bar {
+#        status_command i3status
+#}
 
 
+#######################################################################
+#                                extra                                #
+#######################################################################
 
 
 #for_window [class="^.*"] floating_border pixel 0
@@ -175,3 +188,35 @@ assign [class="^Firefox$"] 1
 # Shortcuts to start application
 # Rule to bind firefox is 1, so the desktop number will be 0
 bindsym $mod+Shift+f exec firefocusl 0
+
+
+# brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+bindsym $mod+Escape workspace back_and_forth
+
+
+# Don’t focus window upon opening
+no_focus [window_role="pop-up"]
+
+
+####################
+# Doesn't work, find workaround
+# ##################
+# alt-tab hack from
+# https://gist.github.com/olivierlemoal/bff45ab69925e702691d0797fd303fcb
+#See also: https://github.com/i3/i3/issues/838
+exec --no-startup-id "python $HOME/.config/i3/event_listener.py"
+bindsym $mod+Tab exec echo "swap_focus" | ncat --send-only -U "$XDG_RUNTIME_DIR/i3/event-listener.sock"
+
+#######################################################################
+#                           Issues with i3                            #
+#######################################################################
+# * No native alt+tab support, workaround hasn't been working
+# * No native maximize (not fullscreen) support
+# * Moving windows through containers is unpredictable
+# * No window border between xfce4-terminal windows
+# * Wasting screen space for title text even when the status bar is present. It is possible to remove the title text, but then the information of the containers is not easy to guess.
+# * Using xfce4-panel is possible instead of limited i3 panel. However, the workspace number is added on a as-needed basis, which confuses xfce4-panel's workspace numbering system. So, it is impossible to use xfce4-terminal with i3 workspaces. It is possible to install a i3 applet for xfce4-terminal, but the ppa is non-responsive and compiling from source is  too complicated.
+# * Otherwise, it is very functional wm and not buggy. I like the simple configuration options.
