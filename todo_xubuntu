@@ -5,6 +5,8 @@
 ### Install packages
 sudo apt-get --assume-yes install $(cat packages)
 
+sudo snap install pdftk
+
 # sudo apt-cache depends octave | grep '[ |]Depends: [^<]' | cut -d: -f2 | tr -d ' ' | xargs sudo apt-get --reinstall install -y
 
 ## google-chrome
