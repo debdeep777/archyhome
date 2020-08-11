@@ -16,9 +16,6 @@ set shiftwidth=4
 "                               Tab navigation                               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-
-
 " open the file under the cursor to edit in a new tab
 nnoremap gf <C-W>gf
 
@@ -109,6 +106,10 @@ let g:tq_mthesaur_file="~/Downloads/mthes/mthesaur.txt"
 "exit vim 
 noremap qq :q!<CR>
 
+"When a file has been detected to have been changed outside of Vim and
+"it has not been changed inside of Vim, automatically read it again.
+"When the file has been deleted this is not done.
+set autoread
 
 " Adding gaps before and after the current line
 " for better formatting
@@ -224,8 +225,8 @@ set spell
 " without entering visual mode
 set mouse=a
 
-" Make sure that there are always 3 lines above and below the cursor
-" set scrolloff=3
+" Make sure that there are always some lines above and below the cursor
+"set scrolloff=1
 "set scrolloff=999 " this will set the cursor in the middle of the screen
 
 
@@ -302,16 +303,81 @@ set wildmenu
 "nnoremap i gi
 "nnoremap j gj
 
-""""""""""""""""""""""""""""""""""""""""
-" Plugin requirements
-" Pathogen requirement
-execute pathogen#infect()
-"syntax on
-filetype plugin indent on
+"""""""""""""""""""""""""""""""""""""""""
+"" Plugin requirements
+""
+"" Pathogen requirement
+"execute pathogen#infect()
+""syntax on
+"filetype plugin indent on
+"
+" Required for vim-matlab to use % to jump between for ... end
+"runtime macros/matchit.vim
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
-" matchit
-runtime macros/matchit.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-plug
+" Specify a directory for plugins
+" - For Neovim: std path('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
+"" Plugins
+"Plug 'tpope/vim-sensible'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/goyo.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-eunuch'
+Plug 'airblade/vim-gitgutter'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'etdev/vim-hexcolor'
+Plug 'tpope/vim-repeat'
+Plug 'machakann/vim-sandwich'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'lervag/vimtex'
+Plug 'andymass/vim-matlab',  { 'for': 'matlab' }
+
+
+"" Make sure you use single quotes
+"
+"" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+"Plug 'junegunn/vim-easy-align'
+"
+"" Any valid git URL is allowed
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+"
+"" Multiple Plug commands can be written in a single line using | separators
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"
+"" On-demand loading
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"
+"" Using a non-master branch
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"
+"" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+"Plug 'fatih/vim-go', { 'tag': '*' }
+"
+"" Plugin options
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"
+"" Plugin outside ~/.vim/plugged with post-update hook
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"
+"" Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'
+
+" Initialize plugin system
+call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -414,6 +480,7 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 """"""""""""""""""""""""""""""""""
 "" for lightline plugin
 """"""""""""""""""""""""""""""""""
+"set laststatus=1
 set laststatus=2
 "let g:lightline = {
 "      \ 'colorscheme': 'gruvbox',
@@ -591,6 +658,9 @@ nmap ga <Plug>(EasyAlign)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                  coc.nvim                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" disable annoying warning
+let g:coc_disable_startup_warning = 1
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -767,3 +837,17 @@ let g:slime_target = "vimterminal"
 "                                vim-fugitive                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "statusline+=%{FugitiveStatusline()}
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 vim-matlab                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Apply to filetype .m only: autocmd BufEnter *.m
+" There should another easy way to make them apply to a particular filetype.
+" One way is to include commands inside `ftplugin` directory of the plugin.
+" Set the compiler
+" Create a soft link in `/usr/local/bin/` of `mlint` using
+" sudo ln -s /usr/local/MATLAB/R2020a/bin/glnxa64/mlint /usr/local/bin/mlint
+autocmd BufEnter *.m    compiler mlint 
+"Now, after opening a .m file, we can issue `:make` and then `:copen` to see error messages. We can combine these options together and another line to the file `ftplugin/matlab.vim`
+"This launches the errors when we press `\ll`, to be consistent with latex shortcut.
+autocmd BufEnter *.m     map <silent> <Leader>ll :make<CR>:copen<CR>
