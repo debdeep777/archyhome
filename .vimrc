@@ -17,7 +17,30 @@ set shiftwidth=4
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " open the file under the cursor to edit in a new tab
-nnoremap gf <C-W>gf
+"nnoremap gf <C-W>gf
+"" switch to tab if already open
+nnoremap gf <C-w>gf:call FavorExistingTabPage()<CR>
+function! FavorExistingTabPage()
+    let l:bufNr = bufnr('')
+    for l:i in range(1, tabpagenr('$'))
+        if l:i == tabpagenr()
+            continue    " Skip current.
+        endif
+        let l:winIndex = index(tabpagebuflist(l:i), l:bufNr)
+        if l:winIndex != -1
+            " We found the buffer elsewhere.
+            if l:i >= tabpagenr()
+                let l:i -= 1 " Adapt to removal of tab page before the current.
+            endif
+
+            close!
+
+            execute l:i . 'tabnext'
+            execute (l:winIndex + 1) . 'wincmd w'
+            break
+        endif
+    endfor
+endfunction
 
 "" jump to the last activated tab
 "if !exists('g:lasttab')
