@@ -366,7 +366,7 @@ Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
-Plug 'andymass/vim-matlab',  { 'for': 'matlab' }
+Plug 'debdeepbh/vim-matlab',  { 'for': 'matlab' }
 
 
 "" Make sure you use single quotes
