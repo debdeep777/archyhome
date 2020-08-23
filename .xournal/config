@@ -7,15 +7,15 @@
 # the display resolution, in pixels per inch
 display_dpi=96.00
 # the initial zoom level, in percent
-initial_zoom=132.35
+initial_zoom=217.13
 # maximize the window at startup (true/false)
-window_maximize=true
+window_maximize=false
 # start in full screen mode (true/false)
 window_fullscreen=false
 # the window width in pixels (when not maximized)
-window_width=1000
+window_width=956
 # the window height in pixels
-window_height=700
+window_height=1060
 # scrollbar step increment (in pixels)
 scrollbar_speed=30
 # the step increment in the zoom dialog box
@@ -33,23 +33,25 @@ ignore_other_devices=true
 # do not worry if device reports button isn't pressed while drawing (true/false)
 ignore_btn_reported_up=true
 # always map eraser tip to eraser (true/false)
-use_erasertip=true
+use_erasertip=false
 # always map touchscreen device to hand tool (true/false) (requires separate pen and touch devices)
-touchscreen_as_hand_tool=true
+touchscreen_as_hand_tool=false
 # disable touchscreen device when pen is in proximity (true/false) (requires separate pen and touch devices)
-pen_disables_touch=true
+pen_disables_touch=false
 # name of touchscreen device for touchscreen_as_hand_tool
-touchscreen_device_name=Wacom HID 50EE Finger touch
+touchscreen_device_name=Touchscr
 # buttons 2 and 3 switch mappings instead of drawing (useful for some tablets) (true/false)
 buttons_switch_mappings=false
 # automatically load filename.pdf.xoj instead of filename.pdf (true/false)
 autoload_pdf_xoj=false
+# when attempting to open a non-existent file, treat it as a new file (true/false)
+autocreate_new_xoj=false
 # enable periodic autosaves (true/false)
 autosave_enabled=false
 # delay for periodic autosaves (in seconds)
 autosave_delay=5
 # default path for open/save (leave blank for current directory)
-default_path=/home/debdeep
+default_path=/home/debdeep/gdrive/xournals
 # use pressure sensitivity to control pen stroke width (true/false)
 pressure_sensitivity=true
 # minimum width multiplier
@@ -62,7 +64,9 @@ interface_order=menu main_toolbar pen_toolbar drawarea statusbar
 # interface components in fullscreen mode, from top to bottom
 interface_fullscreen=main_toolbar pen_toolbar drawarea
 # interface has left-handed scrollbar (true/false)
-interface_lefthanded=true
+interface_lefthanded=false
+# enable Vi style movement (hjkl)
+interface_viMovement=true
 # hide some unwanted menu or toolbar items (true/false)
 shorten_menus=false
 # interface items to hide (customize at your own risk!)
@@ -77,6 +81,8 @@ autosave_prefs=false
 poppler_force_cairo=false
 # prefer xournal's own PDF code for exporting PDFs (true/false)
 exportpdf_prefer_legacy=false
+# export successive layers on separate pages in PDFs (true/false)
+exportpdf_layers=false
 
 [paper]
 # the default page width, in points (1/72 in)
@@ -108,7 +114,7 @@ startup_tool=pen
 # Use the pencil from cursor theme instead of a color dot (true/false)
 pen_cursor=false
 # default pen color
-pen_color=black
+pen_color=blue
 # default pen thickness (fine = 1, medium = 2, thick = 3)
 pen_thickness=2
 # default pen is in ruler mode (true/false)
@@ -134,13 +140,13 @@ btn2_linked=true
 # button 2 brush color (for pen or highlighter only)
 btn2_color=white
 # button 2 brush thickness (pen, eraser, or highlighter only)
-btn2_thickness=0
+btn2_thickness=2
 # button 2 ruler mode (true/false) (for pen or highlighter only)
 btn2_ruler=false
 # button 2 shape recognizer mode (true/false) (pen or highlighter only)
 btn2_recognizer=false
 # button 2 eraser mode (eraser only)
-btn2_erasermode=0
+btn2_erasermode=2
 # button 3 tool (pen, eraser, highlighter, text, selectregion, selectrect, vertspace, hand, image)
 btn3_tool=eraser
 # button 3 brush linked to primary brush (true/false) (overrides all other settings)
@@ -154,7 +160,7 @@ btn3_ruler=false
 # button 3 shape recognizer mode (true/false) (pen or highlighter only)
 btn3_recognizer=false
 # button 3 eraser mode (eraser only)
-btn3_erasermode=0
+btn3_erasermode=2
 # thickness of the various pens (in points, 1 pt = 1/72 in)
 pen_thicknesses=0.42;0.85;1.41;2.26;5.67
 # thickness of the various erasers (in points, 1 pt = 1/72 in)
