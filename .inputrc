@@ -14,6 +14,8 @@ set completion-ignore-case on
 set menu-complete-display-prefix on
 
 $if mode=vi
+    ####
+    # Keys in the normal mode
 	set keymap vi-command
 	# these are for vi-command mode
 	# Left and right arrow keys
@@ -21,13 +23,28 @@ $if mode=vi
 	"\e[B": history-search-forward
 	j: history-search-forward
 	k: history-search-backward
+	# Insert the arguments from the last command
+	"p": "i !!*\r"
+	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
+	"\C-o": "\e-0eli "
+
+    ####
+    # Keys in the insert mode
 	set keymap vi-insert
 	# these are for vi-insert mode, left and right arrow
 	"\e[A": history-search-backward
 	"\e[B": history-search-forward
 	# taken from another
 	TAB: menu-complete
+	# Needed because binding 'p' in command mode above wipes its insert mode
+	# function, too. This fixes that, and will insert 'p' when you type 'p'.
+	"p": self-insert
+	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
+	"\C-o": "\e-0eli "
+
+
 $endif
+
 
 # filetype color
 set colored-stats On
@@ -46,3 +63,4 @@ set colored-stats On
 
 # Ctrl-Backspace
 "\C-H": backward-kill-word
+
