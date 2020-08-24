@@ -24,9 +24,10 @@ $if mode=vi
 	j: history-search-forward
 	k: history-search-backward
 	# Insert the arguments from the last command
-	"p": "i !!*\r"
+	#"p": "i !!*\r"
+	
 	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
-	"\C-o": "\e-0eli "
+	"\C-o": "0ea "
 
     ####
     # Keys in the insert mode
@@ -38,9 +39,11 @@ $if mode=vi
 	TAB: menu-complete
 	# Needed because binding 'p' in command mode above wipes its insert mode
 	# function, too. This fixes that, and will insert 'p' when you type 'p'.
-	"p": self-insert
+	#"p": self-insert
+	
 	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
-	"\C-o": "\e-0eli "
+	# Hint: \e stands for Esc, C- stands for Ctrl
+	"\C-o": "\e0ea "
 
 
 $endif
