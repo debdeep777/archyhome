@@ -119,6 +119,13 @@ set undoreload=5000          " maximum number lines to save for undo on a buffer
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
+" Jump to insert after the first word in the sentence, note the trailing space
+nmap <C-o> 0Ea 
+imap <C-o> <Esc>0Ea 
+" Jump to insert after the second to last word in the sentence, note the trailing space
+nmap <C-a> $bi 
+imap <C-a> <Esc>$bi 
+
 " Thesaurus location to use with the plugin thesaurus_query
 " Need mythes: `sudo apt-get install mythes-en-us` 
 let g:tq_openoffice_en_file="/usr/share/mythes"
