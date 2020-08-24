@@ -27,7 +27,7 @@ $if mode=vi
 	#"p": "i !!*\r"
 	
 	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
-	"\C-o": "0ea "
+	"\C-o": "0Ea "
 
     ####
     # Keys in the insert mode
@@ -43,7 +43,7 @@ $if mode=vi
 	
 	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
 	# Hint: \e stands for Esc, C- stands for Ctrl
-	"\C-o": "\e0ea "
+	"\C-o": "\e0Ea "
 
 
 $endif
