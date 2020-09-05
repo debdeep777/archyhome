@@ -754,9 +754,18 @@ awful.rules.rules = {
     { rule_any = { type = { "dialog", "normal" } },
       properties = { titlebars_enabled = false } },
 
+    ------
+    -- To find the window class, run `xprop` and click of the window
+    -- Then look for WM_ClASS(STRING) value--
+    ------
+    
     -- Set Firefox to always map on the first tag on screen 1.
     { rule = { class = "Firefox" },
       properties = { screen = 1, tag = awful.util.tagnames[4] } },
+
+    -- For flickering matlab saving image window
+    { rule = { class = "MATLAB R2020a - academic use" },
+      properties = { screen = 1, tag = awful.util.tagnames[5] } },
 
     { rule = { class = "Xfce4-terminal", role = "xfce4-terminal-dropdown" },
           properties = { floating = true } },
