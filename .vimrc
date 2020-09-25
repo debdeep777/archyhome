@@ -120,8 +120,8 @@ noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
 " Jump to insert after the first word in the sentence, note the trailing space
-nmap <C-o> 0Ea 
-imap <C-o> <Esc>0Ea 
+nmap <C-x> 0Ea 
+imap <C-x> <Esc>0Ea 
 " Jump to insert after the second to last word in the sentence, note the trailing space
 nmap <C-a> $bi 
 imap <C-a> <Esc>$bi 
@@ -375,6 +375,14 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'debdeepbh/vim-matlab',  { 'for': 'matlab' }
 
+Plug 'vim-pandoc/vim-pandoc-syntax'
+" Don't like syntax folding, don't use conversion of markdown to other formats
+"Plug 'vim-pandoc/vim-pandoc'
+
+"Plug 'godlygeek/tabular'
+"Plug 'plasticboy/vim-markdown'
+
+Plug 'tpope/vim-obsession'
 
 "" Make sure you use single quotes
 "
@@ -619,27 +627,34 @@ let g:vimtex_view_forward_search_on_start = 0
 "let g:vimtex_quickfix_method = 'pplatex'
 "
 
-" Turning off some warning messages
-   let g:vimtex_quickfix_latexlog = {
-          \ 'default' : 1,
-          \ 'ignore_filters' : ['Package nag Warning:', 'Package glossaries Warning:', 'Fira fonts' , 'snakes', 'Unused', 'contains only floats.', 'Token not allowed'],
-          \ 'general' : 1,
-          \ 'references' : 1,
-          \ 'overfull' : 0,
-          \ 'underfull' : 0,
-          \ 'font' : 0,
-          \ 'packages' : {
-          \   'default' : 1,
-          \   'general' : 1,
-          \   'babel' : 1,
-          \   'biblatex' : 1,
-          \   'fixltx2e' : 1,
-          \   'hyperref' : 1,
-          \   'natbib' : 1,
-          \   'scrreprt' : 1,
-          \   'titlesec' : 1,
-          \ },
-          \}
+"" [deprecated]
+"" Turning off some warning messages
+"   let g:vimtex_quickfix_latexlog = {
+"          \ 'default' : 1,
+"          \ 'ignore_filters' : ['Package nag Warning:', 'Package glossaries Warning:', 'Fira fonts' , 'snakes', 'Unused', 'contains only floats.', 'Token not allowed'],
+"          \ 'general' : 1,
+"          \ 'references' : 1,
+"          \ 'overfull' : 0,
+"          \ 'underfull' : 0,
+"          \ 'font' : 0,
+"          \ 'packages' : {
+"          \   'default' : 1,
+"          \   'general' : 1,
+"          \   'babel' : 1,
+"          \   'biblatex' : 1,
+"          \   'fixltx2e' : 1,
+"          \   'hyperref' : 1,
+"          \   'natbib' : 1,
+"          \   'scrreprt' : 1,
+"          \   'titlesec' : 1,
+"          \ },
+"          \}
+
+    " Disable custom warnings based on regexp
+    let g:vimtex_quickfix_ignore_filters = [
+	  \ 'Package nag Warning:', 'Package glossaries Warning:', 'Fira fonts' , 'snakes', 'Unused', 'contains only floats.', 'Token not allowed'
+          \]
+
 
 " Stops from launching two instances of zathura in the beginning. Also the
 " lag in compilation
@@ -881,3 +896,31 @@ autocmd BufEnter *.m    compiler mlint
 "Now, after opening a .m file, we can issue `:make` and then `:copen` to see error messages. We can combine these options together and another line to the file `ftplugin/matlab.vim`
 "This launches the errors when we press `\ll`, to be consistent with latex shortcut.
 autocmd BufEnter *.m     map <silent> <Leader>ll :make<CR>:copen<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             vim-pandoc-syntax                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use :set cole=0 to disable concealing the markdown elements
+" Use :PanddocHighlight python to highlight all codeblocks that are specified
+" as python blocks that start with python
+"
+"" No need to use this when using vim-pandoc
+augroup pandoc_syntax
+    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        Zotero better-bibtex plugin                         "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! ZoteroCite()
+  " pick a format based on the filetype (customize at will)
+  let format = &filetype =~ '.*tex' ? 'cite' : 'pandoc'
+  let api_call = 'http://127.0.0.1:23119/better-bibtex/cayw?format='.format.'&brackets=1'
+  let ref = system('curl -s '.shellescape(api_call))
+  return ref
+endfunction
+
+noremap <leader>z "=ZoteroCite()<CR>p
+inoremap <C-z> <C-r>=ZoteroCite()<CR>

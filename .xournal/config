@@ -7,9 +7,9 @@
 # the display resolution, in pixels per inch
 display_dpi=96.00
 # the initial zoom level, in percent
-initial_zoom=217.13
+initial_zoom=144.75
 # maximize the window at startup (true/false)
-window_maximize=false
+window_maximize=true
 # start in full screen mode (true/false)
 window_fullscreen=false
 # the window width in pixels (when not maximized)
@@ -51,7 +51,7 @@ autosave_enabled=false
 # delay for periodic autosaves (in seconds)
 autosave_delay=5
 # default path for open/save (leave blank for current directory)
-default_path=/home/debdeep/gdrive/xournals
+default_path=/home/debdeep/gdrive/paper-org/Material/Peridynamics
 # use pressure sensitivity to control pen stroke width (true/false)
 pressure_sensitivity=true
 # minimum width multiplier
@@ -74,7 +74,8 @@ shorten_menus=false
 shorten_menu_items=optionsProgressiveBG optionsLeftHanded optionsButtonSwitchMapping
 # highlighter opacity (0 to 1, default 0.5)
 # warning: opacity level is not saved in xoj files!
-highlighter_opacity=0.50
+#highlighter_opacity=0.50
+highlighter_opacity=0.19
 # auto-save preferences on exit (true/false)
 autosave_prefs=false
 # force PDF rendering through cairo (slower but nicer) (true/false)
@@ -134,11 +135,11 @@ highlighter_ruler=false
 # default highlighter is in shape recognizer mode (true/false)
 highlighter_recognizer=false
 # button 2 tool (pen, eraser, highlighter, text, selectregion, selectrect, vertspace, hand, image)
-btn2_tool=selectregion
+btn2_tool=highlighter
 # button 2 brush linked to primary brush (true/false) (overrides all other settings)
 btn2_linked=true
 # button 2 brush color (for pen or highlighter only)
-btn2_color=white
+btn2_color=#ffff0032
 # button 2 brush thickness (pen, eraser, or highlighter only)
 btn2_thickness=2
 # button 2 ruler mode (true/false) (for pen or highlighter only)
