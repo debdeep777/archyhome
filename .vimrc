@@ -99,13 +99,14 @@ nnoremap gp `[v`]
 " Not sure if I'll ever use it though
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <Leader>ev :tabe $MYVIMRC<CR>
-" Automatically source vimrc in this file only on save.
-if has ('autocmd') " Remain compatible with earlier versions
- augroup vimrc     " Source vim configuration upon save
-    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
-    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
-  augroup END
-endif " has autocmd
+
+"" Automatically source vimrc in this file only on save.
+"if has ('autocmd') " Remain compatible with earlier versions
+" augroup vimrc     " Source vim configuration upon save
+"    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+"    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+"  augroup END
+"endif " has autocmd
 
 " persistent undo, even after saving and closing
 set undodir=~/.vimundo/ " a place to store the undo files, you need to create
@@ -525,8 +526,17 @@ set laststatus=2
 "      \ }
 "
 "" From lightline-gruvbox.vim
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
+"let g:lightline.colorscheme = 'gruvbox'
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component_function': {
+	\   'cocstatus': 'coc#status'
+	\ },
+	\ }
 
 """"""""""""""""""""""""""""""""""
 
@@ -764,6 +774,7 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 "
 " GoTo code navigation.
+"nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -785,7 +796,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 " interferes with <leader>r to launch ranger
-"nmap <leader>rn <Plug>(coc-rename)
+nmap <leader><S-R> <Plug>(coc-rename)
 nmap <leader><f2> <Plug>(coc-rename)
 
 " Formatting selected code.
@@ -837,9 +848,13 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+  " Use auocmd to force lightline update.
+  autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+"nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>ll  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
@@ -923,4 +938,6 @@ function! ZoteroCite()
 endfunction
 
 noremap <leader>z "=ZoteroCite()<CR>p
+
+
 inoremap <C-z> <C-r>=ZoteroCite()<CR>
