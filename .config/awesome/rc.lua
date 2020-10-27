@@ -413,6 +413,8 @@ globalkeys = my_table.join(
 -----User defined keys----------
 -- Awesome rule: taglist associated with firefox is 4, so the desktop is 3
     awful.key({ modkey, "Shift" }, "f", function () awful.spawn("firefocusl 3") end),
+    --- Capture part of the screen
+    awful.key({ "Shift" }, "Print", function () awful.spawn("xfce4-screenshooter -r") end),
 --requires slock
 awful.key({ "Control", altkey }, "l", function () awful.spawn("lockscreen") end),
     --calendar.vim
