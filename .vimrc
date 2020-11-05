@@ -4,13 +4,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            mapping the Esc key                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap jk <Esc>
+"inoremap jk <Esc>
 
 " vim default terminal, launch with :term or :terminal
 
 " set the size of the indenting of code (e.g. while using <, >, = etc)
 set shiftwidth=4
 
+" Disable getting into ex mode with Shift-Q (type visual to go back)
+nnoremap Q <Nop>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Tab navigation                               "
@@ -853,8 +855,8 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings using CoCList:
 " Show all diagnostics.
-"nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent> <leader>ll  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+"nnoremap <silent> <leader>ll  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
@@ -870,6 +872,8 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" json comment character // matching in :CocConfig
+autocmd FileType json syntax match Comment +\/\/.\+$+
 ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            :terminal tab change                            "

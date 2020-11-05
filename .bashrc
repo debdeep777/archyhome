@@ -292,6 +292,9 @@ function cd_
 # Renamed cd to cd and export the directory path we are entering
 alias cd='cd_'
 
+# accidental deletion
+alias rm='rm -I'
+
 ## Update: moved this part to .myscr/vim so that scripts (like ranger) could access it
 ## For this to work, $HOME/.myscr has to be in the first part of the $PATH variable
 ## Big decision: run vim in servermode always
@@ -588,6 +591,7 @@ VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
 # For Wacom stylus 
 # Left out option: xsetwacom "RawSample" 4, which is default anyway
+## turning off for wacom one
 xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressurecurve" 0 10 90 100
 xinput --set-prop "Wacom HID 50EE Pen stylus" "Wacom Pressure Threshold" 500
 # Workaround for the bug
@@ -626,4 +630,10 @@ export PATH="$PATH:$HOME/gems/bin"
 #######################################################################
 #            Disabling Touchpad Forever for stealing mouse            #
 #######################################################################
-xinput disable "Wacom HID 50EE Finger"
+#xinput disable "Wacom HID 50EE Finger"
+xinput disable "Wacom HID 50EE Finger touch"
+
+
+# For matlab curl usage
+#export DYLD_LIBRARY_PATH="/usr/bin"
+export BROWSER=/usr/bin/firefox
