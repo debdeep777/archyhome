@@ -100,7 +100,7 @@ nnoremap gp `[v`]
 " without restarting vim
 " Not sure if I'll ever use it though
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-nnoremap <Leader>ev :tabe $MYVIMRC<CR>
+nnoremap <Leader>ev :tab drop $MYVIMRC<CR>
 
 "" Automatically source vimrc in this file only on save.
 "if has ('autocmd') " Remain compatible with earlier versions
@@ -122,12 +122,12 @@ set undoreload=5000          " maximum number lines to save for undo on a buffer
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
-" Jump to insert after the first word in the sentence, note the trailing space
-nmap <C-x> 0Ea 
-imap <C-x> <Esc>0Ea 
-" Jump to insert after the second to last word in the sentence, note the trailing space
-nmap <C-a> $bi 
-imap <C-a> <Esc>$bi 
+"" Jump to insert after the first word in the sentence, note the trailing space
+"nmap <C-x> 0Ea 
+"imap <C-x> <Esc>0Ea 
+"" Jump to insert after the second to last word in the sentence, note the trailing space
+"nmap <C-a> $bi 
+"imap <C-a> <Esc>$bi 
 
 " Thesaurus location to use with the plugin thesaurus_query
 " Need mythes: `sudo apt-get install mythes-en-us` 
@@ -413,6 +413,9 @@ Plug 'tpope/vim-obsession'
 "
 "" Plugin outside ~/.vim/plugged with post-update hook
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "
 "" Unmanaged plugin (manually installed and updated)
 "Plug '~/my-prototype-plugin'
@@ -689,6 +692,15 @@ let g:vimtex_view_automatic=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    fzf                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <leader><space> :Files<CR>
+
+" modify default actions
+let g:fzf_action = {
+      \ 'enter': 'tab drop',
+      \ 'ctrl-t': 'tab drop',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit' }
+
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 
@@ -701,7 +713,30 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
+"" Hide statusline
+"autocmd! FileType fzf set laststatus=0 noshowmode noruler
+"  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+"
+"" Custom statusline
+"function! s:fzf_statusline()
+"  " Override statusline as you like
+"  highlight fzf1 ctermfg=161 ctermbg=251
+"  highlight fzf2 ctermfg=23 ctermbg=251
+"  highlight fzf3 ctermfg=237 ctermbg=251
+"  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+"endfunction
+"autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
+
+""" Mapping selecting mappings
+"nmap <leader><tab> <plug>(fzf-maps-n)
+"xmap <leader><tab> <plug>(fzf-maps-x)
+"omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               vim-easy-align                               "

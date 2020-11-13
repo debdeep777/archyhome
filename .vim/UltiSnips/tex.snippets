@@ -6,6 +6,8 @@
 #######################################################################
 #                          for peridynamics                           #
 #######################################################################
+
+
 snippet ddot "ddot" w
 \ddot{${1:u}}$0
 endsnippet
@@ -205,6 +207,13 @@ endsnippet
 #${1:a text}
 #${1/\w+\s*/\u$0/}
 #endsnippet
+
+
+snippet bib "bibliography" b
+\bibliographystyle{${1:abbrv}}
+\bibliography{$2}
+$0
+endsnippet
 
 #######################################################################
 #                              Templates                              #
