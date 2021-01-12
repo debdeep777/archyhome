@@ -471,7 +471,7 @@ let g:calendar_view = 'months'
 "    t_EI = End insert mode
 "    t_SR, r_ER = start and end replace mode
 "
-"if &term =~ "screen."
+"if &term =~ 'screen.'
 "    let &t_ti.="\eP\e[1 q\e\\"
 "    let &t_SI.="\eP\e[5 q\e\\"
 "    let &t_EI.="\eP\e[1 q\e\\"
@@ -698,7 +698,7 @@ let g:vimtex_view_forward_search_on_start = 0
 "          \}
 
     " Disable custom warnings based on regexp
-    let g:vimtex_quickfix_ignore_filters = [
+let g:vimtex_quickfix_ignore_filters = [
 	  \ 'Package nag Warning:', 'Package glossaries Warning:', 'Fira fonts' , 'snakes', 'Unused', 'contains only floats.', 'Token not allowed'
           \]
 
@@ -844,8 +844,8 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 "
 " GoTo code navigation.
-"nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
-nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
+"nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
