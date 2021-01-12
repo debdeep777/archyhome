@@ -1,6 +1,6 @@
 {
 //    "coc.preferences.jumpCommand": "drop"
- "coc.preferences.jumpCommand": "drop",
+// "coc.preferences.jumpCommand": "drop",
     "languageserver": {
         "ccls": {
             "command": "ccls",
