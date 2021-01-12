@@ -363,6 +363,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/goyo.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
@@ -377,6 +378,12 @@ Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'debdeepbh/vim-matlab',  { 'for': 'matlab' }
+Plug 'jeetsukumaran/vim-indentwise'
+" F8 to toggle, ? to see help
+Plug 'preservim/tagbar'
+"Plug 'sjl/gundo.vim'
+"Plug 'mbbill/undotree'
+Plug 'simnalamburt/vim-mundo'
 
 Plug 'vim-pandoc/vim-pandoc-syntax'
 " Don't like syntax folding, don't use conversion of markdown to other formats
@@ -385,6 +392,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'godlygeek/tabular'
 "Plug 'plasticboy/vim-markdown'
 
+" Automatic management of sessions using :Obsession instead of :mksession.
+" (load sessions using vim -S Session.vim)
 Plug 'tpope/vim-obsession'
 
 "" Make sure you use single quotes
@@ -536,10 +545,21 @@ let g:lightline = {
 	\ 'colorscheme': 'wombat',
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+	\             [ 'gitbranch', 'cocstatus', 'readonly'],
+	\		[ 'filename', 'modified' ],
+	\     	    ],
+	\   'right': [
+	\		['lineinfo'],
+	\		['percent'],
+	\		['tagbar', 'fileencoding', 'filetype'],
+	\     ],
 	\ },
 	\ 'component_function': {
-	\   'cocstatus': 'coc#status'
+	\   'cocstatus': 'coc#status',
+	\   'gitbranch': 'gitbranch#name',
+	\ },
+	\ 'component': {
+	\   'tagbar': '%{tagbar#currenttag("[%s]", "", "f")}',
 	\ },
 	\ }
 
@@ -882,7 +902,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
+" provide custom statusline: lightline.vim, vim-airline.)
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
   " Use auocmd to force lightline update.
@@ -980,3 +1000,20 @@ noremap <leader>z "=ZoteroCite()<CR>p
 
 
 inoremap <C-z> <C-r>=ZoteroCite()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   tagbar                                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   gundo                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"nnoremap <F5> :GundoToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  undotree                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"nnoremap <F5> :UndotreeToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   mundo                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F5> :MundoToggle<CR>

@@ -7,14 +7,28 @@
 #                          for peridynamics                           #
 #######################################################################
 
+snippet br "red" w
+\br{${1:u}}$0
+endsnippet
+snippet bb "blue" w
+\bb{${1:u}}$0
+endsnippet
+
+snippet dot "dot" w
+\dot{${1:u}}$0
+endsnippet
 
 snippet ddot "ddot" w
 \ddot{${1:u}}$0
 endsnippet
 
-snippet ee "Tensor basis elements" w
-\ee_{$1} \otimes \ee_{$2} $0
+snippet . "cot" w
+\cdot $0
 endsnippet
+
+#snippet ee "Tensor basis elements" w
+#\ee_{$1} \otimes \ee_{$2} $0
+#endsnippet
 
 snippet lam "Description" w
 \lambda(\norm{\xiB})
@@ -138,27 +152,27 @@ endsnippet
 #endsnippet
 
 snippet abs "abs" w
-\abs{$1} $0
+\abs{$1}$0
 endsnippet
 
 snippet norm "norm" w
-\norm{$1} $0
+\norm{$1}$0
 endsnippet
 
 snippet jap "Japanese brack" w
-\jap{$1} $0
+\jap{$1}$0
 endsnippet
 
 snippet hat "wide hat" w
-\widehat{$1} $0
+\widehat{$1}$0
 endsnippet
 
 snippet tilde "wide tilde" w
-\widetilde{$1} $0
+\widetilde{$1}$0
 endsnippet
 
 snippet bar "overline" w
-\overline{$1} $0
+\overline{$1}$0
 endsnippet
 
 snippet int "integration" w
@@ -166,7 +180,7 @@ snippet int "integration" w
 endsnippet
 
 snippet "sq(rt)?" "Square root" wr
-\sqrt{$1} $0
+\sqrt{$1}$0
 endsnippet
 
 snippet $$ "dollar" w
@@ -182,7 +196,7 @@ _{$1}$0
 endsnippet
 
 snippet / "frac" i
-\frac{$1}{$2} $0
+\frac{$1}{$2}$0
 endsnippet
 
 snippet al* "align*" b
@@ -213,6 +227,20 @@ snippet bib "bibliography" b
 \bibliographystyle{${1:abbrv}}
 \bibliography{$2}
 $0
+endsnippet
+
+snippet subfig "multiple figures with subfig pkg" b
+\begin{figure}[htpb]
+\centering
+    \subfloat[]{\label{fig:$1}
+        \includegraphics[width=0.5\linewidth]{${1:path}}
+    }
+    \subfloat[]{\label{fig:$2}
+	 \includegraphics[width=0.5\linewidth]{${2:path}}
+    }\\
+\caption{${3:full caption}}%
+\label{fig:$3}
+\end{figure}
 endsnippet
 
 #######################################################################
