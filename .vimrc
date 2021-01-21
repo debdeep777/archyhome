@@ -1,7 +1,4 @@
 
-"" Turn off a plugin
-"set runtimepath-=~/.vim/bundle/ultisnips
-
 " Weird garbage character on vim 8.2 launch
 " https://vimhelp.org/map.txt.html#modifyOtherKeys
 let &t_TI = ""
@@ -11,18 +8,18 @@ let &t_TE = ""
 " a .myscript called themeset
 "set background=dark
 source ~/.vim/vimtheme
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                            mapping the Esc key                             "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"inoremap jk <Esc>
 
-" vim default terminal, launch with :term or :terminal
+" mapping the Esc key
+"inoremap jk <Esc>
 
 " set the size of the indenting of code (e.g. while using <, >, = etc)
 set shiftwidth=4
 
 " Disable getting into ex mode with Shift-Q (type visual to go back)
 nnoremap Q <Nop>
+
+"exit vim 
+noremap qq :q!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Tab navigation                               "
@@ -105,20 +102,11 @@ endfun
 " Copy the most recently pasted section
 nnoremap gp `[v`]
 
-
 " source .vimrc after editing
 " without restarting vim
 " Not sure if I'll ever use it though
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader>ev :tab drop $MYVIMRC<CR>
-
-"" Automatically source vimrc in this file only on save.
-"if has ('autocmd') " Remain compatible with earlier versions
-" augroup vimrc     " Source vim configuration upon save
-"    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
-"    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
-"  augroup END
-"endif " has autocmd
 
 " persistent undo, even after saving and closing
 set undodir=~/.vimundo/ " a place to store the undo files, you need to create
@@ -139,15 +127,6 @@ noremap! <C-h> <C-w>
 "nmap <C-a> $bi 
 "imap <C-a> <Esc>$bi 
 
-" Thesaurus location to use with the plugin thesaurus_query
-" Need mythes: `sudo apt-get install mythes-en-us` 
-let g:tq_openoffice_en_file="/usr/share/mythes"
-" downloaded form http://www.gutenberg.org/files/3202/files/
-" old and had useless synomyms
-let g:tq_mthesaur_file="~/Downloads/mthes/mthesaur.txt"
-
-"exit vim 
-noremap qq :q!<CR>
 
 "When a file has been detected to have been changed outside of Vim and
 "it has not been changed inside of Vim, automatically read it again.
@@ -161,17 +140,11 @@ map <Leader>O O<Esc>j
 "map oo o<Esc>k
 "map OO O<Esc>j
 
-
 " "to alias unnamed register to the + register, which is the clipboard
 " Without this, you need to use "+y to copy text to clipboard to paste in
 " firefox, for example. With the clipboard being plus, the copied text
 " directly goes to +
 set clipboard=unnamedplus
-
-"What are these macros??!
-let @w = 'maF>vf<yGop`an'
-let @e = '10@wGV9ky'
-let @i = '0x$xj'
 
 " This one overrides the settings and restores defaults
 "syntax on
@@ -180,30 +153,13 @@ let @i = '0x$xj'
 " Using some color scheme, must have 
 syntax enable
 
-"colorscheme solarized
-"let g:solarized_termcolors=256
-"let g:solarized_diffmode="low"
-"let g:solarized_contrast = "high"
-
-" solarized colorscheme does not underline bad spelling
-" you can change in colorscheme/solarized.vim  the option SpellBad to fmt_undr from fmt_curl
 hi SpellBad cterm=underline
-
-" gt, gT to navigate through tabs
-" :qa to quit all, :wqa to save and quit all, :qa! to quit all without saving 
-" Most important of all:
-" :tabo to close all other tabs except the current one
-" Find out more for tab navigation
-" set hidden actually lets you open another buffer by :o, :e etc even when the
-" current file has unmodified changes. Fun!
-
-"set hidden
-":au BufAdd,BufNewFile * nested tab sball
 
 " Searching
 """""""""""
 " making the choice to go ignore-case option
-" to be case specific, use :set noic on demand
+" to be case specific, use :set noic on demand or use \C after the search
+" string
 set ic
 
 " Experimental since I do not know if I need to get used to the original
@@ -228,7 +184,6 @@ set cursorcolumn
 set relativenumber 
 set number 
 
-
 " The paste mode toggle
 set pastetoggle=<F2>
 
@@ -248,7 +203,6 @@ set mouse=a
 "set scrolloff=1
 "set scrolloff=999 " this will set the cursor in the middle of the screen
 
-
 """ Set a line break after 80 chars
 """ Caution: adds a new line to the line itself when the number of characters exceed the limit
 """ set a colorcolumn
@@ -256,15 +210,6 @@ set mouse=a
 "set colorcolumn =+1
 "highlight ColorColumn ctermbg=lightgrey
 
-
-
-
-" Let us try to write some text here. First, we try to write the following text
-" for the rest of the text. then, we do the following. We carefully try to
-" manage the thi
-
-
-" Keymaps
 """"""""""""""""""""
 " Killing the arrow keys to force the habit of using hjkl
 noremap <up>    :echoerr 'USE K TO GO UP'<CR>
@@ -280,17 +225,10 @@ inoremap <left>  <ESC>:echom 'USE H TO GO LEFT'<CR>
 " Ctrl+ L to spellcheck while typing
 imap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-
-" Not working, don't know why
-" Add blank lines before and after
-"imap <C-j> <Esc>m`O<Esc>``i<CR>
-"imap <C-k> <Esc>m`o<Esc>``i<CR>
-"
-"
 " Press F6 in normal mode or in insert mode to insert the current datestamp
 " %F gives te ISO format which is useful is ledger, task warrior etc
-nnoremap <F6> "=strftime("%F")<CR>P
-inoremap <F6> <C-R>=strftime("%F")<CR>
+"nnoremap <F6> "=strftime("%F")<CR>P
+"inoremap <F6> <C-R>=strftime("%F")<CR>
 " Here is the list of desired date time formats
 " Format String              Example output
 " -------------              --------------
@@ -315,21 +253,7 @@ inoremap <F6> <C-R>=strftime("%F")<CR>
 " The drop-down for autocomplete
 set wildmenu
 
-
-
-"" Remapping i,j to relative
-"" Messes with block selection
-"nnoremap i gi
-"nnoremap j gj
-
 """""""""""""""""""""""""""""""""""""""""
-"" Plugin requirements
-""
-"" Pathogen requirement
-"execute pathogen#infect()
-""syntax on
-"filetype plugin indent on
-"
 " Required for vim-matlab to use % to jump between for ... end
 "runtime macros/matchit.vim
 " Load matchit.vim, but only if the user hasn't installed a newer version.
@@ -356,7 +280,7 @@ Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-eunuch'
 Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
@@ -641,7 +565,7 @@ let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_italic=1
 
 "Color scheme  needs to be set _after_ setting the options
-colorscheme gruvbox
+colorscheme gruvbox8
 "colorscheme blayu
 
 """"""""""""""""""""""""""
@@ -725,13 +649,18 @@ let g:vimtex_view_automatic=0
 "                                    fzf                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>t :Buffers<CR>
+nnoremap <silent> <Leader>g :GFiles?
+nnoremap <silent> <Leader>]  :Tags<CR>
+nnoremap <silent> <Leader>b] :BTags<CR>
 
+" Moving to buffer-based project management from tabs
 " modify default actions
-let g:fzf_action = {
-      \ 'enter': 'tab drop',
-      \ 'ctrl-t': 'tab drop',
-      \ 'ctrl-x': 'split',
-      \ 'ctrl-v': 'vsplit' }
+"let g:fzf_action = {
+      "\ 'enter': 'tab drop',
+      "\ 'ctrl-t': 'tab drop',
+      "\ 'ctrl-x': 'split',
+      "\ 'ctrl-v': 'vsplit' }
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
@@ -745,19 +674,19 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
-"" Hide statusline
-"autocmd! FileType fzf set laststatus=0 noshowmode noruler
-"  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-"
-"" Custom statusline
-"function! s:fzf_statusline()
-"  " Override statusline as you like
-"  highlight fzf1 ctermfg=161 ctermbg=251
-"  highlight fzf2 ctermfg=23 ctermbg=251
-"  highlight fzf3 ctermfg=237 ctermbg=251
-"  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-"endfunction
-"autocmd! User FzfStatusLine call <SID>fzf_statusline()
+" Hide statusline
+autocmd! FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+" Custom statusline
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 
 """ Mapping selecting mappings
@@ -844,8 +773,8 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 "
 " GoTo code navigation.
-nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
-"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gd :call CocAction('jumpDefinition', 'tab drop')<CR>
+nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -1049,3 +978,12 @@ nmap <F8> :TagbarToggle<CR>
 "                                   mundo                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> :MundoToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            Fixing broken things                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Who killed my ctrl-i? (:verbose nmap <c-i> does not show anything)
+:nnoremap <C-i> <C-i>
+
