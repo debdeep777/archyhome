@@ -18,13 +18,12 @@
         <value type="int" value="4"/>
         <value type="int" value="5"/>
         <value type="int" value="6"/>
-        <value type="int" value="13"/>
         <value type="int" value="7"/>
-        <value type="int" value="15"/>
         <value type="int" value="8"/>
-        <value type="int" value="16"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
+        <value type="int" value="13"/>
+        <value type="int" value="15"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
       </property>
@@ -41,7 +40,7 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="enable-mpris" type="bool" value="true"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
-      <property name="mpris-players" type="string" value="parole"/>
+      <property name="mpris-players" type="string" value="firefox.instance38363;parole"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
@@ -49,16 +48,15 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-12" type="string" value="clock">
-      <property name="digital-format" type="string" value="%I:%M %p"/>
+      <property name="digital-format" type="string" value="%a %d %b | %R"/>
       <property name="mode" type="uint" value="2"/>
+      <property name="timezone" type="string" value=""/>
     </property>
-    <property name="plugin-13" type="string" value="cpugraph"/>
     <property name="plugin-14" type="string" value="pager">
-      <property name="miniature-view" type="bool" value="true"/>
-      <property name="rows" type="uint" value="2"/>
-      <property name="workspace-scrolling" type="bool" value="true"/>
+      <property name="miniature-view" type="bool" value="false"/>
+      <property name="rows" type="uint" value="1"/>
+      <property name="workspace-scrolling" type="bool" value="false"/>
     </property>
-    <property name="plugin-15" type="string" value="systemload"/>
     <property name="plugin-16" type="string" value="weather"/>
     <property name="plugin-2" type="string" value="separator">
       <property name="expand" type="bool" value="false"/>
@@ -74,6 +72,7 @@
     </property>
     <property name="plugin-5" type="string" value="systray">
       <property name="names-ordered" type="array">
+        <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="task manager"/>
         <value type="string" value="update-notifier"/>
         <value type="string" value="blueman-applet"/>
@@ -82,6 +81,8 @@
       </property>
       <property name="names-visible" type="array">
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="task manager"/>
         <value type="string" value="blueman-applet"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
@@ -104,6 +105,7 @@
     <property name="plugin-8" type="string" value="statusnotifier">
       <property name="icon-size" type="uint" value="22"/>
       <property name="known-items" type="array">
+        <value type="string" value="Microsoft Teams - Preview1"/>
         <value type="string" value="Skype1"/>
         <value type="string" value="Onboard"/>
         <value type="string" value="blueman"/>
@@ -116,5 +118,7 @@
       <property name="symbolic-icons" type="bool" value="true"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-13" type="string" value="cpugraph"/>
+    <property name="plugin-15" type="string" value="weather"/>
   </property>
 </channel>

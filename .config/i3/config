@@ -11,12 +11,14 @@
 
 # startup 
 exec --no-startup-id nm-applet
-#exec --no-startup-id xfce4-panel
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id xfsettings
+exec --no-startup-id xfsettingsd
+exec --no-startup-id xfce4-panel
+# to use with notify-send
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
+#exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id redshift
-exec --no-startup-id onboard
-exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
+#exec --no-startup-id onboard
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
 
 # set modifier
 set $mod Mod4
@@ -27,7 +29,6 @@ set $alt Mod1
 # is used in the bar {} block below.
 #font pango:monospace 10
 #font pango: Noto Sans 10
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: DejaVu Sans Mono 10
@@ -43,8 +44,6 @@ font pango: DejaVu Sans Mono 10
 floating_modifier $mod
 
 ## Launching applications
-# start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xfce4-terminal
 bindsym $alt+Control+l exec i3lock -c 000000
 bindsym Shift+Print exec xfce4-screenshooter -r
@@ -54,7 +53,6 @@ bindsym Shift+Print exec xfce4-screenshooter -r
 
 # Get me to the next open instance
 #bindsym $mod+shift+z [class="^Zathura$"] focus
-
 bindsym $mod+shift+z [class="Zathura"] focus
 bindsym $mod+shift+v [class="Xfce4-terminal" title=" - VIM"] focus
 bindsym $mod+shift+f [class="Firefox"] focus
@@ -62,7 +60,6 @@ bindsym $mod+shift+f [class="Firefox"] focus
 # brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -79,11 +76,6 @@ bindsym $mod+Tab exec rofi -show window
 
 # Only works for toggling between tiling and floating windows
 bindsym $alt+Tab focus mode_toggle
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -117,15 +109,31 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 #bindsym $mod+m focus parent; fullscreen; focus child
 
-bindsym $mod+Shift+m floating toggle; resize set height 100 ppt; resize set width 100 ppt; move absolute position center
+bindsym $mod+m floating toggle; resize set height 100 ppt; resize set width 100 ppt; move absolute position center
 
 ## Marks
-## read 1 character and mark the current window with this character
-bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
- # exec notify-send "Mark set"
-#bindsym $mod+a exec "notify-send \\"Hello, i3; from $USER\\""
 # read 1 character and go to the window with the character
-bindsym $mod+apostrophe exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+#bindsym $mod+apostrophe exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bindsym $mod+apostrophe exec i3-msg [con_mark="%s"] focus' -l 1 -P 'Goto: '
+
+bindsym $mod+Shift+m mode "mark"
+mode "mark" {
+	## read 1 character and mark the current window with this character
+	#bindsym m exec i3-input -F 'mark %s' -l 1 -P 'mark: ' -font 'pango: DejaVu Sans Mono 10' 
+	bindsym m exec i3-msg mark $(rofi -dmenu -lines 0 -p 'set mark')
+	# exec notify-send "Mark set"
+	#bindsym $mod+a exec "notify-send \\"Hello, i3; from $USER\\""
+	
+	# move window to [goto] mark
+	#bindsym g exec i3-input -F 'move window to mark %s' -l 1 -P 'Mark: '
+	bindsym g exec i3-msg move window to mark $(rofi -dmenu -lines 0 -p 'move window to mark')
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -180,7 +188,8 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+b restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes' 'i3-msg exit'"
+#bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes' 'i3-msg exit'"
+bindsym $mod+Shift+q exec i3-msg exit
 
 # absolute scaling of a floating window to make it small
 set $scale_h_1 30
@@ -367,6 +376,10 @@ new_float normal $my_width
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
+## Doesn't work
+for_window [class="Xfce4-notifyd"] floating enable; border normal; focus mode_toggle
+
+
 # Assign application to start on a specific workspace xprop
 # Shortcuts to start application
 # Rule to bind firefox is 1, so the desktop number will be 0
@@ -381,16 +394,6 @@ no_focus [window_role="pop-up"]
 # To prevent cyclic scrolling though the windows
 focus_wrapping no
 
-
-####################
-# Doesn't work, find workaround
-# ##################
-# alt-tab hack from
-# https://gist.github.com/olivierlemoal/bff45ab69925e702691d0797fd303fcb
-#See also: https://github.com/i3/i3/issues/838
-#exec --no-startup-id "python $HOME/.config/i3/event_listener.py"
-#bindsym $mod+Tab exec echo "swap_focus" | ncat --send-only -U "$XDG_RUNTIME_DIR/i3/event-listener.sock"
-
 #######################################3
 ## Scratchpad window
 # Make the currently focused window a scratchpad
@@ -402,19 +405,28 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Show the sup-mail scratchpad window, if any.
-bindsym mod4+s [title="^Sup ::"] scratchpad show
+#bindsym mod4+s [title="^Sup ::"] scratchpad show
+
 #######################################################################
 #                           Issues with i3                            #
 #######################################################################
 # Here are the issues. Otherwise, it is very functional wm and not buggy. I like the simple configuration options.
+# * [ ] DBus notifications stay too long
+# * [ ] Font for i3 input prompt
 # * [ ] No native alt+tab support, workaround hasn't been working
 # * [ ] No native maximize (for firefox at least) (not fullscreen) support
-# * [ ] Maximizing any manpage on terminal does not re-arrange the text
-# * [ ] Mod+hjkl should stop when scrolling through window (should not cycle)
-# * [ ] Shift+Print does not work as intended
-# * [ ] Moving windows through containers is unpredictable
-# * [ ] After changing to firefox with rofi window mode, new window loses focus and goes back to where the mouse pointer is located
-# * [ ] Wasting screen space for title text even when the status bar is present. It is possible to remove the title text, but then the information of the containers is not easy to guess.
-# * [ ] Urgent windows looking for attention that show up in another workplace is invisible in xfce4-panel
-# * [ ] [Couldn't reproduce, seems like xfce4-panel works fine] Using xfce4-panel is possible instead of limited i3 panel. However, the workspace number is added on a as-needed basis, which confuses xfce4-panel's workspace numbering system. So, it is impossible to use xfce4-terminal with i3 workspaces. It is possible to install a i3 applet for xfce4-terminal, but the ppa is non-responsive and compiling from source is  too complicated.
+# * [ ] [critical window color needed for xfce4 panel] Urgent windows looking for attention that show up in another workplace is invisible in xfce4-panel
+#
+# * [ ] Cycle through all windows of a particular kind
+# * [ ] Save current window layout and load it (?)
+#
+# * [?] [probably that is the expected behavior] Maximizing any manpage on terminal does not re-arrange the text
+# * [x] [can't reproduce] After changing to firefox with rofi window mode, new window loses focus and goes back to where the mouse pointer is located
+# * [x] [xfsettingsd] xfce4-panel colorscheme is not same as xfce4
+# * [x] [xfsettingsd] Shift+Print does not work as intended
+# * [x] [xfsettingsd] External monitor connection
+# * [x] Wasting screen space for title text even when the status bar is present. It is possible to remove the title text, but then the information of the containers is not easy to guess.
+# * [x] Moving windows through containers is unpredictable
+# * [x] [Couldn't reproduce, seems like xfce4-panel works fine] Using xfce4-panel is possible instead of limited i3 panel. However, the workspace number is added on a as-needed basis, which confuses xfce4-panel's workspace numbering system. So, it is impossible to use xfce4-terminal with i3 workspaces. It is possible to install a i3 applet for xfce4-terminal, but the ppa is non-responsive and compiling from source is  too complicated.
 # * [x] No window border between xfce4-terminal windows (turn on 'Pref > Appearances > Border on new window)
+# * [x] Mod+hjkl should stop when scrolling through window (should not cycle)
