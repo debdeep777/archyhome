@@ -1,0 +1,15 @@
+#!/bin/bash
+old=$HOME/.config/i3/old_window
+new=$HOME/.config/i3/new_window
+temp=$HOME/.config/i3/temp_window
+
+i3-msg [con_id="$(cat $old)"] focus
+
+# swap old and new
+mv $old $temp
+mv $new $old
+mv $temp $new
+rm $temp
+
+
+
