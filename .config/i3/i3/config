@@ -76,11 +76,12 @@ bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show combi
 
 # Only works for toggling between tiling and floating windows
 #bindsym $alt+Tab focus mode_toggle
-bindsym $mod+y focus mode_toggle
+bindsym $mod+y focus mode_toggle; exec $update_file
 
 
 # Jump between windows
 #bindsym $mod+Tab exec rofi -show window  
+bindsym $mod+space exec rofi -show window  
 
 #bindsym $alt+Tab exec i3-alt-tab --next
 #bindsym $alt+Shift+Tab exec i3-alt-tab --prev
@@ -160,7 +161,7 @@ bindsym $mod+t floating toggle
 bindsym $mod+shift+s sticky toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle; exec $update_file
+#bindsym $mod+space focus mode_toggle; exec $update_file
 
 # rename workspace
 bindsym $mod+F2 exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
