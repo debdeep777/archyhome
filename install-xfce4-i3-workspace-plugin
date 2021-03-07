@@ -1,0 +1,18 @@
+# Install dependencies
+
+sudo apt install xfce4-dev-tools gcc build-essential autotools-dev libxcb1 libxcb1-dev xcb-proto libglib2.0-0 libglib2.0-dev gobject-introspection libjson-glib-dev gtk-doc-tools pkg-config libgtk2.0-dev libxfce4ui-1-dev xfce4-panel-dev libxfce4ui-2-dev libxfce4panel-2.0-dev
+
+
+git clone https://github.com/altdesktop/i3ipc-glib
+cd i3ipc-glib.git
+./autogen.sh --prefix=/usr
+make
+sudo make install
+rm -rf i3ipc-glib
+
+git clone https://github.com/denesb/xfce4-i3-workspaces-plugin.git
+cd xfce4-i3-workspaces-plugin
+./autogen.sh --prefix=/usr
+make
+sudo make install
+rm -rf xfce4-i3-workspaces-plugin

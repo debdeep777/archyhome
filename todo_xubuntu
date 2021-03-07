@@ -8,6 +8,9 @@ sudo apt-get --assume-yes install $(cat packages)
 sudo snap install pdftk
 
 # sudo apt-cache depends octave | grep '[ |]Depends: [^<]' | cut -d: -f2 | tr -d ' ' | xargs sudo apt-get --reinstall install -y
+#
+
+./install-xfce4-i3-workspace-plugin
 
 ## google-chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

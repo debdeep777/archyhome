@@ -27,7 +27,7 @@ $if mode=vi
 	#"p": "i !!*\r"
 	
 	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
-	"\C-o": "0Ea "
+	#"\C-o": "0Ea "
 
     ####
     # Keys in the insert mode
@@ -43,7 +43,7 @@ $if mode=vi
 	
 	# (Ctrl-o) Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
 	# Hint: \e stands for Esc, C- stands for Ctrl
-	"\C-o": "\e0Ea "
+	#"\C-o": "\e0Ea "
 
 
 $endif
@@ -66,4 +66,9 @@ set colored-stats On
 
 # Ctrl-Backspace
 "\C-H": backward-kill-word
+
+# Escape with jk  
+"jk": "\e"
+
+
 

@@ -54,8 +54,10 @@ floating_modifier $mod
 
 ## Launching applications
 bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+z exec xfce4-terminal --drop-down
 bindsym $alt+Control+l exec i3lock -c 000000
 bindsym Shift+Print exec xfce4-screenshooter -r
+bindsym $mod+shift+x exec xournal
 
 # brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
@@ -72,18 +74,20 @@ bindsym $mod+Shift+c kill
 bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show combi -modi combi  -sidebar-mode -columns 2 -show-icons
  #-font 'Noto Sans 12'
 
-# Jump between windows
-bindsym $mod+Tab exec rofi -show window  
-
 # Only works for toggling between tiling and floating windows
 #bindsym $alt+Tab focus mode_toggle
 bindsym $mod+y focus mode_toggle
+
+
+# Jump between windows
+#bindsym $mod+Tab exec rofi -show window  
 
 #bindsym $alt+Tab exec i3-alt-tab --next
 #bindsym $alt+Shift+Tab exec i3-alt-tab --prev
 
 #bindsym $alt+s exec $i3get c > $lst_f
-bindsym $alt+Tab exec $focus_swap
+#bindsym $alt+Tab exec $focus_swap
+bindsym $mod+Tab exec $focus_swap
 
 # change focus
 bindsym $mod+h focus left;  exec $update_file
@@ -99,6 +103,7 @@ bindsym $mod+l focus right; exec $update_file
 bindsym $mod+shift+z [class="Zathura"] focus	; exec $update_file
 bindsym $mod+shift+v [class="Xfce4-terminal" title=" - VIM"] focus	; exec $update_file
 bindsym $mod+shift+f [class="Firefox"] focus	; exec $update_file
+
 
 # window navigation
 bindsym $mod+Right workspace next; exec $update_file
@@ -265,23 +270,23 @@ bindsym $mod+r mode "resize"
 
 ## Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 ## panel
-#bar {
-        #colors {
+bar {
+	colors {
 
-	#background #2f343f
+	background #2f343f
 
-	### Turns background text unreadable
-	##statusline #2f343f
-	##separator #4b5262
+	## Turns background text unreadable
+	#statusline #2f343f
+	#separator #4b5262
 
-        ## colour of border, background, and text
-        #focused_workspace       #2f343f #bf616a #d8dee8
-        #active_workspace        #2f343f #2f343f #d8dee8
-        #inactive_workspace      #2f343f #2f343f #d8dee8
-        #urgent_workspacei       #2f343f #ebcb8b #2f343f
-    #}
-        #status_command i3status
-#}
+	# colour of border, background, and text
+	focused_workspace       #2f343f #bf616a #d8dee8
+	active_workspace        #2f343f #2f343f #d8dee8
+	inactive_workspace      #2f343f #2f343f #d8dee8
+	urgent_workspacei       #2f343f #ebcb8b #2f343f
+    }
+	status_command i3status
+}
 
 ## color of border, background, text, indicator, and child_border
 #client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
@@ -405,12 +410,12 @@ bindsym $mod+minus scratchpad show
 # * [ ] No native maximize (for firefox at least) (not fullscreen) support
 # * [ ] [critical window color needed for xfce4 panel] Urgent windows looking for attention that show up in another workplace is invisible in xfce4-panel
 #
-# * [ ] No native alt+tab support, workaround hasn't been working
-# * [ ] Keep the current mode ('goto' etc) printed while we are on the mode
-# * [ ] Cycle through all windows of a particular kind
-# * [ ] Save current window layout and load it (?)
+# * [ ] [still ok] Keep the current mode ('resize' etc) printed while we are on the mode
+# * [ ] [would be nice] Cycle through all windows of a particular kind (e.g. zathura)
+# * [ ] [what would be use really?] Save current window layout and load it (?)
 #
 # * [?] [Not ideal, turning off mouse_focus] Focus jumps to mouse location after using rofi's window shift
+# * [x] [wrote my own with i3get] No native alt+tab support, workaround hasn't been working
 # * [x] [use rofi] Font for i3 input prompt
 # * [x] [xfce4-notifyd settings] DBus notifications stay too long
 # * [?] [probably that is the expected behavior] Maximizing any manpage on terminal does not re-arrange the text

@@ -3,6 +3,9 @@
 " https://vimhelp.org/map.txt.html#modifyOtherKeys
 let &t_TI = ""
 let &t_TE = ""
+" gx to launch urls in browser
+" Doesn't work
+"let g:netrw_browsex_viewer= "xdg-open"
 
 " moving this option to another file so that I can source it using
 " a .myscript called themeset
@@ -10,7 +13,8 @@ let &t_TE = ""
 source ~/.vim/vimtheme
 
 " mapping the Esc key
-"inoremap jk <Esc>
+inoremap jk <Esc>
+cmap jk <Esc>
 
 " set the size of the indenting of code (e.g. while using <, >, = etc)
 set shiftwidth=4
@@ -28,28 +32,29 @@ noremap qq :q!<CR>
 " open the file under the cursor to edit in a new tab
 "nnoremap gf <C-W>gf
 "" switch to tab if already open
-nnoremap gf <C-w>gf:call FavorExistingTabPage()<CR>
-function! FavorExistingTabPage()
-    let l:bufNr = bufnr('')
-    for l:i in range(1, tabpagenr('$'))
-        if l:i == tabpagenr()
-            continue    " Skip current.
-        endif
-        let l:winIndex = index(tabpagebuflist(l:i), l:bufNr)
-        if l:winIndex != -1
-            " We found the buffer elsewhere.
-            if l:i >= tabpagenr()
-                let l:i -= 1 " Adapt to removal of tab page before the current.
-            endif
-
-            close!
-
-            execute l:i . 'tabnext'
-            execute (l:winIndex + 1) . 'wincmd w'
-            break
-        endif
-    endfor
-endfunction
+"nnoremap gf <C-w>gf:call FavorExistingTabPage()<CR>
+"
+"function! FavorExistingTabPage()
+"    let l:bufNr = bufnr('')
+"    for l:i in range(1, tabpagenr('$'))
+"        if l:i == tabpagenr()
+"            continue    " Skip current.
+"        endif
+"        let l:winIndex = index(tabpagebuflist(l:i), l:bufNr)
+"        if l:winIndex != -1
+"            " We found the buffer elsewhere.
+"            if l:i >= tabpagenr()
+"                let l:i -= 1 " Adapt to removal of tab page before the current.
+"            endif
+"
+"            close!
+"
+"            execute l:i . 'tabnext'
+"            execute (l:winIndex + 1) . 'wincmd w'
+"            break
+"        endif
+"    endfor
+"endfunction
 
 "" jump to the last activated tab
 "if !exists('g:lasttab')
@@ -285,13 +290,13 @@ Plug 'tpope/vim-eunuch'
 Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'etdev/vim-hexcolor'
+"Plug 'gko/vim-coloresque'
 Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-sandwich'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'debdeepbh/vim-matlab',  { 'for': 'matlab' }
 Plug 'jeetsukumaran/vim-indentwise'
-" F8 to toggle, ? to see help
 Plug 'preservim/tagbar'
 "Plug 'sjl/gundo.vim'
 "Plug 'mbbill/undotree'
@@ -307,6 +312,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " Automatic management of sessions using :Obsession instead of :mksession.
 " (load sessions using vim -S Session.vim)
 Plug 'tpope/vim-obsession'
+
+Plug 'preservim/vimux'
 
 "" Make sure you use single quotes
 "
@@ -549,10 +556,9 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Abandoing solarized and welcoming gruvbox
 
-" this is essential for correct reproduction of colors based on
-" already set terminal colors. In my case, it is via a colorscheme
-" for xfce4-terminal
-set termguicolors
+" this is essential for correct reproduction of colors based on already set terminal colors. In my case, it is via a colorscheme for xfce4-terminal
+" Tuning this off since it causes tmux to produce black and white text only
+"set termguicolors
 """"""""""""""""
 
 
@@ -978,6 +984,19 @@ nmap <F8> :TagbarToggle<CR>
 "                                   mundo                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> :MundoToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   vimux                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Prompt for a command to run
+map <leader>vp :VimuxPromptCommand<cr>
+" Run last command executed by VimuxRunCommand
+map <leader>vl :VimuxRunLastCommand<cr>
+" Inspect runner pane
+map <leader>vi :VimuxInspectRunner<cr>
+" Zoom the tmux runner pane
+map <leader>vz :VimuxZoomRunner<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
