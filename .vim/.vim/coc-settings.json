@@ -1,0 +1,32 @@
+{
+	//    "coc.preferences.jumpCommand": "drop"
+	// "coc.preferences.jumpCommand": "drop",
+	// for numpy issue
+	"python.formatting.autopep8Path": "~/.local/bin/autopep8",
+	//"python.linting.enabled": false,
+	// "python.analysis.useLibraryCodeForTypes": false,
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+				"c",
+				"cpp",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls",
+				"makefile",
+				"compile_commands.json",
+				".vim/",
+				".git/",
+				".hg/"
+			],
+			"initializationOptions": {
+				"cache": {
+					"directory": "/tmp/ccls"
+				}
+			}
+		}
+	}
+}

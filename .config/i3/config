@@ -25,6 +25,15 @@ set $mod Mod4
 #set $super Mod4
 set $alt Mod1
 
+# script path
+## select a mark from available ones
+set $scr_mark_sel $HOME/.config/i3/my_scr/mark-select
+set $i3get $HOME/.config/i3/my_scr/i3get
+# script to update current and last focus
+set $update_file $HOME/.config/i3/my_scr/update_window
+# script swap focus and swap old and new
+set $focus_swap $HOME/.config/i3/my_scr/focus_last
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 10
@@ -45,17 +54,10 @@ floating_modifier $mod
 
 ## Launching applications
 bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+z exec xfce4-terminal --drop-down
 bindsym $alt+Control+l exec i3lock -c 000000
 bindsym Shift+Print exec xfce4-screenshooter -r
-
-# Jump to the open instance of firefox or open
-#bindsym $mod+Shift+f exec firefocusl 0
-
-# Get me to the next open instance
-#bindsym $mod+shift+z [class="^Zathura$"] focus
-bindsym $mod+shift+z [class="Zathura"] focus
-bindsym $mod+shift+v [class="Xfce4-terminal" title=" - VIM"] focus
-bindsym $mod+shift+f [class="Firefox"] focus
+bindsym $mod+shift+x exec xournal
 
 # brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
@@ -64,6 +66,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 # kill focused window
 bindsym $mod+Shift+c kill
 
+
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 ## Rofi
@@ -71,33 +74,56 @@ bindsym $mod+Shift+c kill
 bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show combi -modi combi  -sidebar-mode -columns 2 -show-icons
  #-font 'Noto Sans 12'
 
-# Jump between windows
-bindsym $mod+Tab exec rofi -show window  
-
 # Only works for toggling between tiling and floating windows
-bindsym $alt+Tab focus mode_toggle
+#bindsym $alt+Tab focus mode_toggle
+bindsym $mod+y focus mode_toggle; exec $update_file
+
+
+# Jump between windows
+#bindsym $mod+Tab exec rofi -show window  
+bindsym $mod+space exec rofi -show window  
+
+#bindsym $alt+Tab exec i3-alt-tab --next
+#bindsym $alt+Shift+Tab exec i3-alt-tab --prev
+
+#bindsym $alt+s exec $i3get c > $lst_f
+#bindsym $alt+Tab exec $focus_swap
+bindsym $mod+Tab exec $focus_swap
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h focus left;  exec $update_file
+bindsym $mod+j focus down;  exec $update_file
+bindsym $mod+k focus up;    exec $update_file
+bindsym $mod+l focus right; exec $update_file
+
+# Jump to the open instance of firefox or open
+#bindsym $mod+Shift+f exec firefocusl 0
+
+# Get me to the next open instance
+#bindsym $mod+shift+z [class="^Zathura$"] focus
+bindsym $mod+shift+z [class="Zathura"] focus	; exec $update_file
+bindsym $mod+shift+v [class="Xfce4-terminal" title=" - VIM"] focus	; exec $update_file
+bindsym $mod+shift+f [class="Firefox"] focus	; exec $update_file
 
 # window navigation
-bindsym $mod+Right workspace next
-bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next; exec $update_file
+bindsym $mod+Left workspace prev; exec $update_file
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left; exec $update_file
+bindsym $mod+Shift+j move down; exec $update_file
+bindsym $mod+Shift+k move up; exec $update_file
+bindsym $mod+Shift+l move right; exec $update_file
+
+# special: move into an previously unsplit window by direction
+bindsym $mod+Control+Shift+h focus left; split v; focus right; move left; layout stacking; exec $update_file
+bindsym $mod+Control+Shift+l focus right; split v; focus left; move right; layout stacking; exec $update_file
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left; exec $update_file
+bindsym $mod+Shift+Down move down; exec $update_file
+bindsym $mod+Shift+Up move up; exec $update_file
+bindsym $mod+Shift+Right move right; exec $update_file
 
 # split in horizontal orientation
 bindsym $mod+semicolon split h
@@ -109,31 +135,22 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 #bindsym $mod+m focus parent; fullscreen; focus child
 
-bindsym $mod+m floating toggle; resize set height 100 ppt; resize set width 100 ppt; move absolute position center
+# maximize and center
+bindsym $mod+Shift+m floating toggle; resize set height 100 ppt; resize set width 100 ppt; move absolute position center
 
 ## Marks
+# set mark
+bindsym $mod+m exec i3-msg mark $(rofi -dmenu -lines 0 -p 'set mark')
 # read 1 character and go to the window with the character
 #bindsym $mod+apostrophe exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
-bindsym $mod+apostrophe exec i3-msg [con_mark="%s"] focus' -l 1 -P 'Goto: '
+#bindsym $mod+apostrophe exec i3-msg [con_mark="$(rofi -dmenu -lines 0 -p 'choose mark')"] focus
+# jump to a mark
+bindsym $mod+apostrophe exec i3-msg [con_mark="$($scr_mark_sel)"] focus; exec $update_file
+# move current window to a mark (similar to mod+j vs mod+shift+j)
+bindsym $mod+shift+apostrophe exec i3-msg move window to mark $($scr_mark_sel)
 
-bindsym $mod+Shift+m mode "mark"
-mode "mark" {
-	## read 1 character and mark the current window with this character
-	#bindsym m exec i3-input -F 'mark %s' -l 1 -P 'mark: ' -font 'pango: DejaVu Sans Mono 10' 
-	bindsym m exec i3-msg mark $(rofi -dmenu -lines 0 -p 'set mark')
-	# exec notify-send "Mark set"
-	#bindsym $mod+a exec "notify-send \\"Hello, i3; from $USER\\""
-	
-	# move window to [goto] mark
-	#bindsym g exec i3-input -F 'move window to mark %s' -l 1 -P 'Mark: '
-	bindsym g exec i3-msg move window to mark $(rofi -dmenu -lines 0 -p 'move window to mark')
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-
+# move current container to a window
+bindsym $mod+shift+w exec i3-msg move container to workspace $(rofi -dmenu -lines 0 -p 'move to workspace')
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -146,30 +163,26 @@ bindsym $mod+t floating toggle
 # toggle sticky for floating window, e.g. video chat window
 bindsym $mod+shift+s sticky toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
 # rename workspace
-bindsym $mod+F2 exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+#bindsym $mod+F2 exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+bindsym $mod+F2 exec i3-msg rename workspace to $(rofi -dmenu -lines 0 -p 'New name')
 
 # focus the parent container
-bindsym $mod+p focus parent
-bindsym $mod+c focus child
-
+bindsym $mod+p focus parent; exec $update_file
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child; exec $update_file
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 1; exec $update_file
+bindsym $mod+2 workspace 2; exec $update_file
+bindsym $mod+3 workspace 3; exec $update_file
+bindsym $mod+4 workspace 4; exec $update_file
+bindsym $mod+5 workspace 5; exec $update_file
+bindsym $mod+6 workspace 6; exec $update_file
+bindsym $mod+7 workspace 7; exec $update_file
+bindsym $mod+8 workspace 8; exec $update_file
+bindsym $mod+9 workspace 9; exec $update_file
+bindsym $mod+0 workspace 10; exec $update_file
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -191,12 +204,26 @@ bindsym $mod+Shift+b restart
 #bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes' 'i3-msg exit'"
 bindsym $mod+Shift+q exec i3-msg exit
 
+## Variables
 # absolute scaling of a floating window to make it small
 set $scale_h_1 30
 set $scale_w_1 20
 
 set $scale_h_2 60
 set $scale_w_2 40
+
+# 1920, 1080
+set $pos_1_x 50
+set $pos_1_y 50
+
+set $pos_2_x 1500
+set $pos_2_y 50
+
+set $pos_3_x 1500
+set $pos_3_y 740
+
+set $pos_4_x 50
+set $pos_4_y 740
 
 set $resize_rate 10
 # resize window (you can also use the mouse for that)
@@ -221,67 +248,31 @@ mode "resize" {
 	bindsym shift+w resize set height 100 ppt
 	bindsym w resize set width 100 ppt
 
-	bindsym 1 resize set height $scale_h_1 ppt; resize set width $scale_w_1 ppt;
-	bindsym 2 resize set height $scale_h_2 ppt; resize set width $scale_w_2 ppt;
+	# small
+	bindsym s resize set height $scale_h_1 ppt; resize set width $scale_w_1 ppt;
+	# medium
+	bindsym m resize set height $scale_h_2 ppt; resize set width $scale_w_2 ppt;
+
+	# moving to position (to assist resizing), for floating windows
+	bindsym 0 move position center
+
+	bindsym 1 move position $pos_1_x px $pos_1_y px
+	bindsym 2 move position $pos_2_x px $pos_2_y px
+	bindsym 3 move position $pos_3_x px $pos_3_y px
+	bindsym 4 move position $pos_4_x px $pos_4_y px
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 
-## goto mode
-set $goto_1_x 50
-set $goto_1_y 50
-
-# 1920, 1080
-set $goto_2_x 1500
-set $goto_2_y 50
-
-set $goto_3_x 1500
-set $goto_3_y 740
-
-set $goto_4_x 50
-set $goto_4_y 740
-
-## For floating widows: free movement, center
-## For tiling windows: move to positions, center as a float
-set $move_px 20
-mode "goto" {
-	bindsym h move left $move_px px
-	bindsym j move down $move_px px
-	bindsym k move up   $move_px px
-	bindsym l move right   $move_px px
-
-	# move to the current mouse position
-	bindsym period move position mouse
-
-	# absolute center
-	bindsym c floating enable; move absolute position center
-
-	#bindsym 1 move position 50 px 50 px
-	#bindsym 1 move position 10 ppt 10 ppt
-	bindsym 1 move position $goto_1_x px $goto_1_y px
-	#bindsym 1 move position 50 ppt 80 ppt
-
-	bindsym 2 move position $goto_2_x px $goto_2_y px
-	bindsym 3 move position $goto_3_x px $goto_3_y px
-	bindsym 4 move position $goto_4_x px $goto_4_y px
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-
-}
-
-bindsym $mod+g mode "goto"
 
 ## Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 ## panel
 bar {
-        colors {
+	colors {
 
 	background #2f343f
 
@@ -289,13 +280,33 @@ bar {
 	#statusline #2f343f
 	#separator #4b5262
 
-        # colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
+	# colour of border, background, and text
+	focused_workspace       #2f343f #bf616a #d8dee8
+	active_workspace        #2f343f #2f343f #d8dee8
+	inactive_workspace      #2f343f #2f343f #d8dee8
+	urgent_workspace       #2f343f #ebcb8b #2f343f
     }
-        status_command i3status
+	### i3blocks
+	#status_command SCRIPT_DIR=~/.config/i3blocks i3blocks -c ~/.config/i3blocks/config
+	## For Debuggin purposes
+	## Parallely use
+	## tail -f /tmp/i3blocks.err
+	#status_command 2>/tmp/i3blocks.err SCRIPT_DIR=~/.config/i3blocks i3blocks /usr/bin/i3blocks -v -c ~/.config/i3blocks/config | tee /tmp/i3blocks.out
+
+	## i3status
+	# Default
+	status_command i3status
+	#status_command i3status --config ~/.config/i3status/sample/config
+	#status_command i3status --config ~/.config/i3status/sample/config.starterkit
+	#
+	#mode hide
+	
+	tray_output primary
+	# Obey Fitts's law
+	tray_padding 0
+
+	separator_symbol ⁞
+	#separator_symbol none
 }
 
 ## color of border, background, text, indicator, and child_border
@@ -370,14 +381,19 @@ new_float normal $my_width
 #for_window [title="x200: ~/wallpapers"] floating enable
 
 ## Hide vertical borders adjacent to the screen edges. This is useful if you are using scrollbars, or do not want to waste even two pixels in displayspace.
-#hide_edge_borders vertical
+hide_edge_borders vertical
 
 # Enable floating dialogs application window
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
+#for_window [class="Gmsh"] floating enable
+## xprop for gmsh gives FLTK
+## Still doesn't fix crash on resize
+#for_window [class="FLTK"] floating enable
+
 ## Doesn't work
-for_window [class="Xfce4-notifyd"] floating enable; border normal; focus mode_toggle
+#for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 
 
 # Assign application to start on a specific workspace xprop
@@ -386,13 +402,18 @@ for_window [class="Xfce4-notifyd"] floating enable; border normal; focus mode_to
 assign [class="^Firefox$"] 1
 
 # compatibility with awesome
-bindsym $mod+Escape workspace back_and_forth
+bindsym $mod+Escape workspace back_and_forth \
+; exec $update_file
 
 # Don’t focus window upon opening
 no_focus [window_role="pop-up"]
 
 # To prevent cyclic scrolling though the windows
 focus_wrapping no
+
+# Turning off mouse hover for focus, this Windows-like behavior which I dislike
+# But doing this to make rofi's window jump usable
+focus_follows_mouse no
 
 #######################################3
 ## Scratchpad window
@@ -411,17 +432,19 @@ bindsym $mod+minus scratchpad show
 #                           Issues with i3                            #
 #######################################################################
 # Here are the issues. Otherwise, it is very functional wm and not buggy. I like the simple configuration options.
-# * [ ] DBus notifications stay too long
-# * [ ] Font for i3 input prompt
-# * [ ] No native alt+tab support, workaround hasn't been working
+# * [ ] Firefox (pushbullet) notification does not honor xfce4-notifyd settings
 # * [ ] No native maximize (for firefox at least) (not fullscreen) support
-# * [ ] [critical window color needed for xfce4 panel] Urgent windows looking for attention that show up in another workplace is invisible in xfce4-panel
 #
-# * [ ] Cycle through all windows of a particular kind
-# * [ ] Save current window layout and load it (?)
+# * [ ] [still ok] Keep the current mode ('resize' etc) printed while we are on the mode
+# * [ ] [would be nice] Cycle through all windows of a particular kind (e.g. zathura)
+# * [ ] [what would be use really?] Save current window layout and load it (?)
 #
+# * [?] [Not ideal, turning off mouse_focus] Focus jumps to mouse location after using rofi's window shift
+# * [x] [compiled xfce4-i3-workspace plugin][critical window color needed for xfce4 panel] Urgent windows looking for attention that show up in another workplace is invisible in xfce4-panel
+# * [x] [wrote my own with i3get] No native alt+tab support, workaround hasn't been working
+# * [x] [use rofi] Font for i3 input prompt
+# * [x] [xfce4-notifyd settings] DBus notifications stay too long
 # * [?] [probably that is the expected behavior] Maximizing any manpage on terminal does not re-arrange the text
-# * [x] [can't reproduce] After changing to firefox with rofi window mode, new window loses focus and goes back to where the mouse pointer is located
 # * [x] [xfsettingsd] xfce4-panel colorscheme is not same as xfce4
 # * [x] [xfsettingsd] Shift+Print does not work as intended
 # * [x] [xfsettingsd] External monitor connection

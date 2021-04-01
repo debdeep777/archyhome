@@ -1,0 +1,513 @@
+# i = expand anywhere
+# w = expand only if a word (has word boundary)
+# b = expand on a new line
+# r = expand based on the regex provided
+
+#######################################################################
+#                          for peridynamics                           #
+#######################################################################
+
+snippet br "red" w
+\br{${1:u}}$0
+endsnippet
+snippet bb "blue" w
+\bb{${1:u}}$0
+endsnippet
+
+snippet dot "dot" w
+\dot{${1:u}}$0
+endsnippet
+
+snippet ddot "ddot" w
+\ddot{${1:u}}$0
+endsnippet
+
+snippet . "cot" w
+\cdot $0
+endsnippet
+
+#snippet ee "Tensor basis elements" w
+#\ee_{$1} \otimes \ee_{$2} $0
+#endsnippet
+
+snippet lam "Description" w
+\lambda(\norm{\xiB})
+endsnippet
+
+snippet defn "Description" b
+\begin{defn}
+$0
+\end{defn}
+endsnippet
+
+snippet propn "Description" b
+\begin{propn}
+$0
+\end{propn}
+endsnippet
+
+snippet thm "Theorem" b
+\begin{thm}[$1]
+$0
+\end{thm}
+endsnippet
+
+#######################################################################
+#                             for thesis                              #
+#######################################################################
+
+snippet l2 "Description" w
+l^2(\Z_N)$0
+endsnippet
+
+snippet _n "n from 1 to infinity" w
+_{${1:n} = ${2:1}}^${3:\infty}$0
+endsnippet
+
+snippet dp "Description" w
+\partial_{${1:x}'}
+endsnippet
+
+snippet limsup "Description" w
+\limsup_{${1:n} \to \infty} $0
+endsnippet
+
+snippet L2 "H^1 space" w
+L^2(\R^{${1:2}})$0
+endsnippet
+
+snippet L4 "H^1 space" w
+L^4(\R^{${1:2}})$0
+endsnippet
+
+snippet H1 "H^1 space" w
+H^1(\R^{${1:2}})$0
+endsnippet
+
+snippet Hdot "H dot space" w
+\dot{H}^${1:2}(\R^{${2:2}})$0
+endsnippet
+
+snippet Hs "H^s space" w
+H^s(\R^{${1:2}})$0
+endsnippet
+
+snippet Xsb "H^s space" w
+X_{${1:s}, ${2:b}}$0
+endsnippet
+#######################################################################
+#                        end of specific snips                        #
+#######################################################################
+
+#snippet it "item in itemize" w
+#\item
+#endsnippet
+global !p
+
+# fix the alignment of \item while using vimtex
+def fix_indent(snip):
+    vim.eval('feedkeys("\<c-f>")')
+endglobal
+
+post_expand "fix_indent(snip)"
+snippet it "Individual item" b
+\item $0
+endsnippet
+###########
+
+
+snippet rem "Description" b
+\begin{rem}
+$0
+\end{rem}
+endsnippet
+
+snippet cite "Description" w
+\cite{$1}$0
+endsnippet
+
+snippet ... "dots" w
+\dots$0
+endsnippet
+
+snippet text "Description" w
+\text{ $1 } $0
+endsnippet
+
+snippet sum
+\sum_{${1:i}=${2:0}}^{${3:n}}
+endsnippet
+
+snippet "(pf|proof)" "Proof and qed" br
+\proof
+$1
+\qed
+$0
+endsnippet
+
+snippet eqref "(eq)ref" w
+\eqref{$1}$0
+endsnippet
+
+snippet ref "(eq)ref" w
+\ref{$1}$0
+endsnippet
+
+#snippet ref "(eq)ref" w
+#\\${1:eq}ref{$2} $0
+#endsnippet
+
+snippet abs "abs" w
+\abs{$1}$0
+endsnippet
+
+snippet norm "norm" w
+\norm{$1}$0
+endsnippet
+
+snippet jap "Japanese brack" w
+\jap{$1}$0
+endsnippet
+
+snippet hat "wide hat" w
+\widehat{$1}$0
+endsnippet
+
+snippet tilde "wide tilde" w
+\widetilde{$1}$0
+endsnippet
+
+snippet bar "overline" w
+\overline{$1}$0
+endsnippet
+
+snippet int "integration" w
+\int\limits_{$1}^{$2} $0
+endsnippet
+
+snippet "sq(rt)?" "Square root" wr
+\sqrt{$1}$0
+endsnippet
+
+snippet $$ "dollar" w
+$$1$$0
+endsnippet
+
+snippet ^ "Description" i
+^{$1}$0
+endsnippet
+
+snippet _ "Description" i
+_{$1}$0
+endsnippet
+
+snippet / "frac" i
+\frac{$1}{$2}$0
+endsnippet
+
+snippet al* "align*" b
+\begin{align*}
+$0
+\end{align*}	
+endsnippet
+
+snippet cols "Columns - plural env" b
+\begin{columns}
+$0
+\end{columns}
+endsnippet
+
+snippet col "Column inside columns env" b
+\begin{column}{${1:0.5}\textwidth}
+$0
+\end{column}
+endsnippet
+
+#snippet title "Title transformation"
+#${1:a text}
+#${1/\w+\s*/\u$0/}
+#endsnippet
+
+
+snippet bib "bibliography" b
+\bibliographystyle{${1:abbrv}}
+\bibliography{$2}
+$0
+endsnippet
+
+snippet subfig "multiple figures with subfig pkg" b
+\begin{figure}[htpb]
+\centering
+    \subfloat[]{\label{fig:$1}
+        \includegraphics[width=0.5\linewidth]{${1:path}}
+    }
+    \subfloat[]{\label{fig:$2}
+	 \includegraphics[width=0.5\linewidth]{${2:path}}
+    }\\\\
+\caption{${3:full caption}}%
+\label{fig:$3}
+\end{figure}
+endsnippet
+
+#######################################################################
+#                              Templates                              #
+#######################################################################
+
+
+############# Template job Application #####
+snippet _cover "cover letter" b
+%        File: research_statement.tex
+%     Created: Sun Sep 29 04:00 PM 2019 E
+% Last Change: Mon Nov 11 11:00 PM 2019
+% snippet date: `date +%m/%d/%y`
+
+% Documentclass
+\documentclass[12pt]{amsart}
+
+% marginratio keeps amsart package from using different margins
+% in odd and even pages while using the package geometry
+%\usepackage[marginratio=1:1, top=2cm, left=3cm, right=3cm]{geometry}
+%\usepackage[marginratio=1:1, top=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=2cm, right=2.5cm]{geometry}
+% margin
+%\setlength{\topmargin}{0mm} \setlength{\oddsidemargin}{0mm}
+%\setlength{\textwidth}{160mm} \setlength{\textheight}{220mm}
+%\font\bbc=msbm10 scaled 1200
+
+% amsmath:\text{} inside math mode; amssymb:\lesssim, amsthm:\newtheorem; amsfonts:\mathbb{}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+%to use color
+\usepackage{color}
+
+\usepackage{hyperref}
+
+% reduce spacing between references
+\usepackage{natbib}
+\setlength{\bibsep}{0.0pt}
+% smaller bibliography fonts
+\renewcommand*{\bibfont}{\small}
+
+% set gap after paragraph
+\setlength{\parskip}{1em}
+
+% quotes
+\usepackage{csquotes}
+
+% User defined fun
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\br}[1]{\color{red} (#1) \color{black}}
+\newcommand{\bb}[1]{\color{blue} (#1) \color{black}}
+\newcommand{\what}{\bb{??}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\jap}[1]{\left\langle #1 \right\rangle}
+\newcommand{\inn}[1]{\left\langle #1 \right\rangle}
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{rem}{Remark}
+\newtheorem{result}{Result}
+\newtheorem*{notation}{Notation}
+\newtheorem{prob}{Problem}
+\newtheorem{propn}{Proposition}
+% newtheorem{proof}{Proof} is not needed, already available with \begin{proof} .. \end{proof} with nice italic fonts
+
+%% define bold letters
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\rr}{\mathbf{r}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\ff}{\mathbf{f}}
+\newcommand{\Bb}{\mathbf{b}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\TT}{\mathbf{T}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\varepsilonB}{\pmb{\varepsilon}}
+\newcommand{\sigmaB}{\pmb{\sigma}}
+\newcommand{\xiB}{\pmb{\xi}}
+\newcommand{\etaB}{\pmb{\eta}}
+
+
+
+\begin{document}
+\title{}
+\date{}
+\author{}
+%\maketitle 
+
+To the hiring committee,
+
+I am Debdeep Bhattacharya, a PhD candidate at the George Washington University, Washington, D.C., under the supervision of Prof. Frank Baginski and Prof. Svetlana Roudenko. I expect to complete my degree in May 2020. I would like to apply for the
+%% <+Position+>
+${1:postdoctoral research position}
+in the 
+%% <+Department+>
+${2:Department of Mathematics}
+at 
+%% <+University+>
+${3:the Michigan State University}.
+
+
+%%% <+Choice+>: (pure/inter)?${4:pure}
+
+%%% Interdisciplinary
+`!p if t[4] == 'inter':	# if not inter, comment out
+	snip.rv = ''
+else:
+	snip.rv = '%'` My research interests are mainly interdisciplinary, and involve the study of nonlinear partial differential equations, signal processing and continuum mechanics. Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma and optics. Using Fourier and Wavelet techniques, I have worked on the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events caused by the Antarctic ice shield. I have also worked on the peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems. I am also interested in the mathematics of machine learning and am working on a permutation-invariant encoding of data in Euclidean domain.
+
+
+%%%  Pure
+`!p if t[4] == 'pure':	# if not pure, comment out
+	snip.rv = ''
+else:
+	snip.rv = '%'` My main research interest is the study of nonlinear dispersive equations.  Using tools from Harmonic analysis, I have studied the behavior of low-regularity solutions to nonlinear dispersive equations, which model wave propagation in water, plasma, and optics. I have also worked on several problems with interdisciplinary flavor. Using Fourier and Wavelet techniques, I have developed algorithms to solve the deconvolution problem associated with the Antarctic Impulse Transient Antenna (ANITA) project for detecting ultra high-energy neutrino events in the Antarctic region. I have also worked on the nonlocal peridynamic reformulation of continuum mechanics for describing fracture formation and propagation, in particular, on dimension reduction of axisymmetric problems. I am also interested in the mathematics of machine learning and am working on a permutation-invariant encoding of data in Euclidean domain.
+
+
+
+%% <+grammar+>
+The research group${6:s} on 
+%% <+groups+>
+${5:Partial Differential Equations}
+at the 
+%% <+department or group+>
+$2
+%% <+is/are+>
+`!p if t[6]=='s':
+	snip.rv = 'are'
+else:
+	snip.rv = 'is'`
+particularly appealing to me.
+I am eager to collaborate with 
+%% <+Profs+>
+${7:Prof. }
+as well as other faculty members and postdoctoral fellows in the 
+%% <+dept/group+>
+${8:department}. % or research group
+I strongly believe that I can learn from their expertise while complementing their lines of research
+with my background in 
+%% <+nonlinear PDEs,Harmonic,numerical+>
+${9:nonlinear PDEs},
+as described in my research statement.
+
+I have enclosed my 
+curriculum vitae, 
+research statement, 
+teaching statement,
+%% <+pub_list+>
+and ${10:publication list}. 
+In addition, there are 
+%% <+five+>
+${11:five}
+letters of recommendations attached. The research recommendations letters are from 
+%%% <+recommenders+>
+Prof. Frank Baginski, 
+Prof. Svetlana Roudenko, 
+Prof. Luiz Farah,
+and Dr. Pablo Seleson,
+%% <+teaching_reco+>
+${12:and the teaching recommendation letter is from Prof. Alexander Shumakovitch}.
+%%% 
+Please let me know if I can provide additional information or material to help you evaluate my application. Thank you for considering my application, and I look forward to hearing from you. \\\\
+\\\\
+Sincerely,\\\\
+\\\\
+Debdeep Bhattacharya\\\\
+PhD Candidate\\\\
+Department of Mathematics\\\\
+The George Washinton University\\\\
+Washington, D.C.\\\\
+\\\\
+Email: debdeepbh@gwu.edu\\\\
+Webpage: \url{https://debdeepbh.github.io}
+
+\end{document}
+
+%% Ends $0
+%%%%%%%%%%% Overview %%%%%%%%%%%%%%%%%%%%% $18
+%% Position:	$1
+%% Department:	$2
+%% University:	$3
+%% My research:	$4
+%% Group:	$5
+%% Profs:	$7
+%% Background:	$9
+%% Reco#:	$11
+%%%%%%%%%%%% ${17:Reached the end!} %%%%%%%
+endsnippet
+
+snippet _pde "Template PDEs" b
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Created: `date +%b %d %Y`
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage[top=3cm, bottom=2cm, right=2.5cm]{geometry}
+% margin
+%\setlength{\topmargin}{0mm} \setlength{\oddsidemargin}{0mm}
+%\setlength{\textwidth}{160mm} \setlength{\textheight}{220mm}
+%\font\bbc=msbm10 scaled 1200
+
+% amsmath:\text{} inside math mode; amssymb:\lesssim, amsthm:\newtheorem; amsfonts:\mathbb{}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+%to use color
+\usepackage{color}
+
+% User defined functions
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\br}[1]{\color{red} (#1) \color{black}}
+\newcommand{\bb}[1]{\color{blue} (#1) \color{black}}
+\newcommand{\what}{\bb{??}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\jap}[1]{\left\langle #1 \right\rangle}
+\newcommand{\inn}[1]{\left\langle #1 \right\rangle}
+
+% User defined environments
+\newtheorem{thm}{Theorem} \newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{rem}{Remark}
+\newtheorem{result}{Result}
+\newtheorem*{notation}{Notation}
+\newtheorem{prob}{Problem}
+\newtheorem{propn}{Proposition}
+% newtheorem{proof}{Proof} is not needed, already available with \begin{proof} .. \end{proof} with nice italic fonts
+
+
+\begin{document}
+\title{$1}
+\author{$2}
+% empty date
+%\date{}
+\maketitle 
+
+$0
+
+\end{document}
+endsnippet
+
+
+#######################################################################
+#                           Clear Snippets                            #
+#######################################################################
+
+#  removing to avoid expanding \(eq)ref when \ is present
+clearsnippets \

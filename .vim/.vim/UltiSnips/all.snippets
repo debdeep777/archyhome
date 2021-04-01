@@ -1,0 +1,45 @@
+#####################################################################
+#                          Global content                           #
+#####################################################################
+global !p
+from vimsnippets import make_box, get_comment_format
+
+# global function to include a dropdown equivalent
+def complete(t, options):
+	# if the input is nonempty
+	if t:
+		# recompute the options strings to start from current
+		# char
+		options = [ m[len(t):] for m in options if m.startswith(t) ]
+	if len(options) == 1:
+		return options[0]
+	# appends () if wrong option is selected
+	return '(' + '|'.join(options) + ')'
+	#return  '|'.join(options)
+endglobal
+
+################ content ############################################
+#                       also use box and bbox                       #
+#####################################################################
+snippet cline "A divider line of full width with comment char" b
+`!p
+if not snip.c:
+	width = int(vim.eval("&textwidth - (virtcol('.') == 1 ? 0 : virtcol('.'))")) or 71
+box = make_box(len(t[1]), width)
+snip.rv = box[0]`
+$0
+endsnippet
+
+
+# () for word group and ? for exactly one occurance
+# w for matching word boundaries and r for regular exp enclosed by
+# quotes
+snippet "(d|D)?eb(deep)?" "Description" wr
+Debdeep Bhattacharya
+endsnippet
+
+################ content ############################################
+snippet testop "Description" b
+Options $1`!p snip.rv = complete(t[1], ['option 1', 'anoter 2', 'more 3', 'whats more 4', 'option 2'])`
+endsnippet
+
