@@ -1,8 +1,9 @@
 [Configuration]
+#FontName=Ubuntu Mono 14
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
-MiscBordersDefault=FALSE
+MiscBordersDefault=TRUE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
@@ -22,18 +23,22 @@ MiscCopyOnSelect=TRUE
 MiscShowRelaunchDialog=TRUE
 MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
-MiscSlimTabs=FALSE
+MiscSlimTabs=TRUE
 MiscNewTabAdjacent=FALSE
-ColorForeground=#3c3836
-ColorBackground=#fbf1c7
-ColorPalette=#fdf4c1;#cc241d;#98971a;#d79921;#458588;#b16286;#689d6a;#7c6f64;#928374;#9d0006;#79740e;#b57614;#076678;#8f3f71;#427b58;#3c3836
-TabActivityColor=#bf4040
+
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 TitleInitial=Term
-ColorBackgroundVary=TRUE
+# Change color of each new terminal
+ColorBackgroundVary=FALSE
 DropdownWidth=100
 DropdownHeight=30
 DropdownAlwaysShowTabs=FALSE
 DropdownPositionVertical=3
 DropdownToggleFocus=FALSE
 
+#[Scheme]
+#Name=gruvbox light
+ColorForeground=#3c3836
+ColorBackground=#fbf1c7
+ColorPalette=#fdf4c1;#cc241d;#98971a;#d79921;#458588;#b16286;#689d6a;#7c6f64;#928374;#9d0006;#79740e;#b57614;#076678;#8f3f71;#427b58;#3c3836
+TabActivityColor=#bf4040

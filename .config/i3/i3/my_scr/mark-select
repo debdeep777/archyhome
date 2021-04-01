@@ -1,4 +1,0 @@
-#!/bin/bash
-# convert the mark list into a rofi-readable list
-marks=$(i3-msg -t get_marks | sed 's/\(\"\|\[\|\]\)//g' | sed 's/,/\\n/g')
-echo -e $(echo -e $marks | rofi -dmenu -p 'move to mark')

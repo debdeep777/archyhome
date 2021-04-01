@@ -295,7 +295,9 @@ bar {
 
 	## i3status
 	# Default
-	status_command i3status
+	#status_command py3status -c ~/.config/i3status/py3config
+	status_command py3status -c ~/.config/i3status/py3config-dw
+	#status_command i3status
 	#status_command i3status --config ~/.config/i3status/sample/config
 	#status_command i3status --config ~/.config/i3status/sample/config.starterkit
 	#
@@ -305,7 +307,7 @@ bar {
 	# Obey Fitts's law
 	tray_padding 0
 
-	separator_symbol ⁞
+	#separator_symbol ⁞
 	#separator_symbol none
 }
 
@@ -390,7 +392,7 @@ for_window [window_role="task_dialog"] floating enable
 #for_window [class="Gmsh"] floating enable
 ## xprop for gmsh gives FLTK
 ## Still doesn't fix crash on resize
-#for_window [class="FLTK"] floating enable
+for_window [class="FLTK"] floating enable; resize set width 300 ppt
 
 ## Doesn't work
 #for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
