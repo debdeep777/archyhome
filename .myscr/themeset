@@ -8,38 +8,46 @@
 ## I have named the required files accordingly
 
 ## setting up the theme name and term color name
-	Term="gruvbox-$1"
-	GUI="oomox-gruvbox-$1"	#GTK3 theme location: /usr/share/themes, downloaded from git
+Term="gruvbox-$1"
+#GTK3 theme location: /usr/share/themes, downloaded from git
 # local (in .local/share/themes) themes do not work well, not sure why
+GUI="oomox-gruvbox-$1"	
 
-if ! [[ -f $HOME/.local/share/xfce4/terminal/colorschemes/$Term.theme ]]
+#######################################################################
+## Terminal colorscheme
+termconf_loc=$HOME/.config/xfce4/terminal
+if ! [[ -f $termconf_loc/colorschemes/$Term.theme ]]
 then
     echo "No such colorscheme: $Term"
     exit 1
+else
+    # copy the non-color settings part
+    cp $termconf_loc/{terminalrc.settings,.terminalrc.tmp}
+    # copy the color settings part
+    cat "$termconf_loc/colorschemes/$Term.theme" >> $termconf_loc/.terminalrc.tmp
+
+    # copy the newly generated config file
+    # sourcing the file happens automatically on edit
+    mv $termconf_loc/{.terminalrc.tmp,terminalrc}
 fi
-cd ~/.config/xfce4/terminal
-# strip settings from any theme
-grep -Fxvf <(cat /usr/share/xfce4/terminal/colorschemes/*.theme) terminalrc > .terminalrc.tmp
-grep -v -e Name -e Scheme "$HOME/.local/share/xfce4/terminal/colorschemes/$Term.theme" >> .terminalrc.tmp
-cp terminalrc terminalrc.bak
 
-## Applying xfce4-terminal settings on the fly
-mv .terminalrc.tmp terminalrc
-
-## Applying the GUI theme on the fly
+#######################################################################
+## Applying the GUI theme
 xfconf-query -c xsettings -p /Net/ThemeName -s $GUI
 
-################################
+#######################################################################
 ## Editing vim settings
-# Set the vim variable
+
+# Save the vim variable, so that we can load it from .vimrc
 echo "set background=$1" > $HOME/.vim/vimtheme
 # sending remote commands to all running servers to source the new vimrc
 # this works under the assumption that I will always run vim in server mode
 for f in $(vim --serverlist)	# loop through all the running servers
-	do vim --servername $f --remote-send '<ESC>:source ~/.vimrc<CR>'
+    	# only source the background part
+	do vim --servername $f --remote-send '<ESC>:source $HOME/.vim/vimtheme<CR>'
 done
 
-
+#######################################################################
 # if request for full update, i.e. awesome restart
 ## Doesn't work now
 ##  * We need to find better ways to change color without restarting awesome
