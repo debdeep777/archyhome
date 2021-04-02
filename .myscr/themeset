@@ -32,6 +32,29 @@ else
 fi
 
 #######################################################################
+## i3 colorscheme
+#Term="gruvbox-$1"
+
+i3_loc=$HOME/.config/i3
+if ! [[ -f $i3_loc/$Term.config ]]
+then
+    echo "No such colorscheme: $Term"
+    exit 1
+else
+    # copy the non-color settings part
+    cp $i3_loc/{config.base,.config.tmp}
+    # copy the color settings part
+    cat "$i3_loc/$Term.config" >> $i3_loc/.config.tmp
+
+    # copy the newly generated config file
+    # sourcing the file happens automatically on edit
+    mv $i3_loc/{.config.tmp,config}
+
+    # reload
+    i3-msg reload
+fi
+
+#######################################################################
 ## Applying the GUI theme
 xfconf-query -c xsettings -p /Net/ThemeName -s $GUI
 
@@ -52,10 +75,10 @@ done
 ## Doesn't work now
 ##  * We need to find better ways to change color without restarting awesome
 ##  * We need to find a way to dynamically change the variable colortheme in theme-debdeep.lua
-if [ "$2" == "full" ]
-then
-	## restart awesome after swapping the files
-	awmtheme=$HOME/.config/awesome/themes/powerarrow/
-	cp $awmtheme/theme-debdeep-$1.lua $awmtheme/theme-debdeep.lua
-	echo 'awesome.restart()' | awesome-client 
-fi
+#if [ "$2" == "full" ]
+#then
+	### restart awesome after swapping the files
+	#awmtheme=$HOME/.config/awesome/themes/powerarrow/
+	#cp $awmtheme/theme-debdeep-$1.lua $awmtheme/theme-debdeep.lua
+	#echo 'awesome.restart()' | awesome-client 
+#fi

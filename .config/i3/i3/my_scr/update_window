@@ -1,0 +1,9 @@
+#!/bin/bash
+old=$HOME/.config/i3/old_window
+new=$HOME/.config/i3/new_window
+i3get=$HOME/.config/i3/my_scr/i3get
+
+# old is replaced by new
+mv $new $old
+# new gets replaced by current
+$i3get c > $new

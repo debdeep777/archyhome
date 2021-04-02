@@ -1,0 +1,303 @@
+#Modules
+#order += "pomodoro"
+#order += "async_script"
+order += "sysdata 1"
+order += "volume_status mic"
+order += "volume_status speakers"
+order += "disk /home"
+#order += "disk /"
+#order += "imap"
+order += "battery_level"
+#order += "frame time"
+#order += "group tz"
+order += "time"
+
+async_script {
+    format = "Out:{output}"
+
+    script_path = "ping 127.0.0.1"
+    #script_path = "ls"
+    #script_path = "/home/debdeep/testpipe none"
+    #Create this pipe in advance using: mkfifo ~/statuspipe
+    #script_path = "cat < ~/stauspipe"
+    #script_path = "~/testpipe"
+}
+
+
+## Gruvbox colors
+#set $bg #282828
+#set $red #cc241d
+#set $green #98971a
+#set $yellow #d79921
+#set $blue #458588
+#set $purple #b16286
+#set $aqua #689d68
+#set $gray #a89984
+#set $darkgray #1d2021
+#set $neutral_back #fbf1c7
+#set $neutral_back #ebdbb2
+
+py3status {
+    nagbar_font = 'pango:Ubuntu Mono 12'
+
+    #align = 'left'
+    #markup = 'pango'
+    #min_width = 20
+    #separator = True
+    #separator = False
+    #separator_block_width = 0
+
+    #color = '#343434'
+   color = '#ebdbb2'
+    #background = '#285577'
+#background = '#af3a03'
+
+
+    #color_good = '#98971a' # green
+    color_good = '#fbf1c7' #white
+    color_bad = '#cc241d' #red
+    color_degraded = '#d79921' #orange
+
+    #border = '#4c7899'
+    #border_bottom = 1
+    #border_left = 1
+    #border_right = 1
+    #border_top = 1
+
+    #min_length = 15
+    #position = 'right'
+
+    #urgent_background  = 'blue'
+    #urgent_foreground = 'white'
+    #urgent_border = 'red'
+    #urgent_border_bottom = 1
+    #urgent_border_left = 1
+    #urgent_border_right = 1
+    #urgent_border_top = 1
+}
+
+# reload the i3 config when I left click on the i3status time module
+# and restart i3 when I middle click on it
+time {
+#background = '#af3a03'
+    format = "%b %d %a %l:%M"
+    #on_click 1 = "reload"
+
+    on_click 1 = "exec zenity --calendar --text="
+
+    on_click 2 = "restart"
+}
+
+volume_status speakers {
+
+	background = '#b8bb26'
+
+	command = "pactl"
+
+	format = '[\?if=is_input 😮|♪]{percentage}{icon}'
+	format_muted = '[\?if=is_input 😶|♪]{percentage}M'
+
+	button_mute = 1
+	on_click 3 = "exec pavucontrol"
+	button_up = 4
+	button_down = 5
+
+	thresholds = [(0, '#9d0006'), (15, '#076678'), (100, '#af3a03')]
+
+## Gruvbox colors
+#set $bg #282828
+#set $red #cc241d
+#set $green #98971a
+#set $yellow #d79921
+#set $blue #458588
+#set $purple #b16286
+#set $aqua #689d68
+#set $gray #a89984
+#set $darkgray #1d2021
+#set $neutral_back #fbf1c7
+#set $neutral_back #ebdbb2
+	
+	#thresholds = [
+		#(0, "#FF0000"),
+		#(10, "#E2571E"),
+		#(20, "#FF7F00"),
+		#(30, "#FFFF00"),
+		#(40, "#00FF00"),
+		#(50, "#96BF33"),
+		#(60, "#0000FF"),
+		#(70, "#4B0082"),
+		#(80, "#8B00FF"),
+		#(90, "#FFFFFF")
+	    #]	max_volume = 200
+}
+
+volume_status mic {
+
+	background = '#d5c4a1'
+    #format = ' {percentage}%'
+    #format_muted = ' {percentage}%'
+	format = '[\?if=is_input 😮|♪]{percentage}{icon}'
+	format_muted = '[\?if=is_input 😶|♪M]{percentage}'
+
+	button_mute = 1
+	button_up = 4
+	button_down = 5
+
+	is_input = true
+	#thresholds = [(0, 'bad'), (10, 'degraded'), (20, 'good')]
+	thresholds = [(0, '#9d0006'), (15, '#076678'), (100, '#af3a03')]
+}
+
+
+# run wicd-gtk GUI when I left click on the i3status ethernet module
+# and kill it when I right click on it
+ethernet eth0 {
+    # if you use %speed, i3status requires root privileges
+    format_up = "E: %ip"
+    format_down = ""
+    on_click 1 = "exec wicd-gtk"
+    on_click 3 = "exec killall wicd-gtk"
+}
+
+# run lunar when I left click on the / disk info module
+#disk "/" {
+
+ ##background  = '#427b58'
+    #format = "/ %free"
+    #on_click 1 = "exec thunar /"
+    ##separator = False
+#}
+
+disk "/home" {
+ color  = '#8ec07c'
+    format = "%free"
+    on_click 1 = "exec thunar /"
+    #separator = False
+}
+
+battery_level {
+    #background = '#fabd2f'
+    #color_good = '#79740e'
+    #color_degraded = '#8f3f71'
+    #color_bad = '#9d0006'
+    color_charging = '#282828'
+
+    #notification  = True
+    #format_notify_charging = "charging"
+    #format_notify_discharging = "discharging {percent}"
+
+    on_click 1 = "exec xfce4-power-manager-settings"
+
+    on_click 4 = "exec xbacklight -inc 5"
+    on_click 5 = "exec xbacklight -dec 5"
+
+    charging_character = '⌁'
+    format = '{percent}{icon}'
+    #format = '{percent}{ascii_bar}'
+    #hide_when_full = True
+    #measurement_mode = 'sys'
+
+    threshold_bad = 10
+    threshold_degraded = 25
+    threshold_full = 95
+
+}
+
+# A frame showing times in different cities.
+# We also have a button to hide/show the content
+frame time {
+
+   #background = '#550000'
+    format = '{output}{button}'
+    format_separator = ' '  # have space instead of usual i3bar separator
+
+    tztime la {
+        format = "LA %H:%M"
+        timezone = "America/Los_Angeles"
+    }
+    tztime ny {
+        format = "NY %H:%M"
+        timezone = "America/New_York"
+    }
+    tztime du {
+        format = "DU %H:%M"
+        timezone = "Asia/Dubai"
+    }
+
+}
+
+
+# cycle through different timezone hours every 10s
+group tz {
+
+#background = '#af3a03'
+    cycle = 10
+    format = "{output}"
+
+    #button_next = 1
+    #click_mode = "button"
+    #click_mode = "all"
+
+    tztime la {
+        format = "LA %H:%M"
+        timezone = "America/Los_Angeles"
+    }
+
+    tztime ny {
+        format = "NY %H:%M"
+        timezone = "America/New_York"
+    }
+
+    tztime du {
+        format = "DU %H:%M"
+        timezone = "Asia/Dubai"
+    }
+}
+
+# specify a list of cpus to use. see "grep cpu /proc/stat"
+sysdata 1 {
+
+    background = '#076678'
+
+    #cpus = []                # avg + all CPUs
+    #cpus = ['cpu']           # avg             # same as {cpu_used_percent}
+    #cpus = ['cpu0', 'cpu2']  # selective CPUs  # full
+    #cpus = ['cpu?*']         # all CPUs        # fnmatch (default)
+    
+    #format = "{format_cpu}"
+    #format = "CPU {format_cpu}"
+    #format = "CPU:[\?color=cpu_used_percent {cpu_used_percent:.0f}%]  Mem:[\?color=mem_used_percent {mem_used}/{mem_total}  {mem_total_unit} ({mem_used_percent}%)]"
+    format = "CPU:[\?color=cpu_used_percent {cpu_used_percent:.0f}%]  Mem:[\?color=mem_used_percent {mem_used}/{mem_total}]"
+    
+# editing default
+#format_cpu = "CPU: [\?color=cpu_used_percent {cpu_used_percent:.0f}%], ' '[\?color=mem_used_percent Mem: {mem_used}/{mem_total} ' '{mem_total_unit} ({mem_used_percent}%)]"
+    ## display per cpu percents
+    #format_cpu = "{name} [\?color=used_percent {used_percent}%]"
+    ## customize per cpu padding, precision, etc
+    #format_cpu = "[\?min_length=4 [\?color=used_percent {used_percent:.0f}%]]"
+    #
+    
+    ## display per cpu histogram
+    #format = "CPU Histogram [\?color=cpu_used_percent {format_cpu}]"
+    #format_cpu = "[\?if=used_percent>80 ⡇|[\?if=used_percent>60 ⡆"
+    #format_cpu += "|[\?if=used_percent>40 ⡄|[\?if=used_percent>20 ⡀"
+    #format_cpu += "|⠀]]]]"
+    #format_cpu_separator = ""
+    #thresholds = [(0, "good"), (60, "degraded"), (80, "bad")]
+
+    # update interval
+    cache_timeout = 1
+
+    on_click 1 = "exec xfce4-taskmanager"
+}
+
+pomodoro {
+    format = "{mmss} {bar}"
+}
+
+
+#######################################################################
+# to try
+# - Watson to track time
+# - Taskwarrior
+#
