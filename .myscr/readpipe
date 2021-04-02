@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cat < ~/statuspipe 
+#cat < ~/statuspipe | sed 's/ /x/g'
+
+#cat < ~/statuspipe
+## can't strip extra spaces, why not?
+#cat < ~/statuspipe | sed 's/ \+/ /g'
+#ping 127.0.0.1
+#top -b -n 1 | head -n 12  | tail -n 5 | head -1 | awk -F' ' '{ print $9 " "  $12 }'
