@@ -10,6 +10,7 @@ sudo snap install pdftk
 # sudo apt-cache depends octave | grep '[ |]Depends: [^<]' | cut -d: -f2 | tr -d ' ' | xargs sudo apt-get --reinstall install -y
 #
 
+## Bulky, probably avoid: Install i3 workspace plugin for xfce4-panel
 ./install-xfce4-i3-workspace-plugin
 
 ## google-chrome
