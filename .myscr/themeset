@@ -1,5 +1,6 @@
 #! /bin/bash
 
+echo "Hello $1"
 ## downloaded dark gruvbox-gtk3 theme from
 ## https://github.com/bennetthardwick/gruvbox-gtk
 ## and move it to /usr/share/themes
@@ -19,7 +20,7 @@ termconf_loc=$HOME/.config/xfce4/terminal
 if ! [[ -f $termconf_loc/colorschemes/$Term.theme ]]
 then
     echo "No such colorscheme: $Term"
-    exit 1
+    #exit 1
 else
     # copy the non-color settings part
     cp $termconf_loc/{terminalrc.settings,.terminalrc.tmp}
@@ -39,7 +40,7 @@ i3_loc=$HOME/.config/i3
 if ! [[ -f $i3_loc/$Term.config ]]
 then
     echo "No such colorscheme: $Term"
-    exit 1
+    #exit 1
 else
     # copy the non-color settings part
     cp $i3_loc/{config.base,.config.tmp}
@@ -62,6 +63,7 @@ xfconf-query -c xsettings -p /Net/ThemeName -s $GUI
 ## Editing vim settings
 
 # Save the vim variable, so that we can load it from .vimrc
+echo "set background=$1" 
 echo "set background=$1" > $HOME/.vim/vimtheme
 # sending remote commands to all running servers to source the new vimrc
 # this works under the assumption that I will always run vim in server mode
