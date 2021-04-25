@@ -1,3 +1,0 @@
-# Script to free the wlan so that other things can be done to it (e.g. create_ap)
-systemctl stop netctl-auto@wlp6s0.service
-ifconfig wlp6s0 up
