@@ -28,8 +28,12 @@ sudo cp -r gruvbox-gtk /usr/share/themes/
 
 
 ## Install git-like drive for google
-cd gdrive
 sudo snap install drive
+
+## if doesn't exist already
+#drive init ~/gdrive
+#cd gdrive
+#drive pull paper-org book work
 
 ## xbacklight fix
 # write to file
